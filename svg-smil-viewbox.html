@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>SVG SMIL VIEWBOX</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, svg">
+        <meta name="description" content="Diseñador Gráfico y Web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG y Responsive Web Design.">
+        <meta name="author" content="Jorge Aznar">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    </head>
+<body>
+  <div class="contenedor">
+
+
+    <section class="trabajos-interior">
+        <article class="trabajos-definicion">
+            <h1 class="proxima-nova">ViewBox</h1>
+            <p class="letracodepen">Animando el atributo viewBox de <strong>SVG</strong>, el efecto de las letras se consigue animando un efecto de filtro. </br> Puedes ver el código en <a target="_blank" href="http://codepen.io/jorgeatgu/pen/lctyI">CodePen</a></p>
+            <a href="http://jorgeatgu.com/trabajos">
+    <button class="trabajos-btn"> TRABAJOS </button>
+</a>
+        </article>
+      <article class="trabajos-grafico  trabajos-grafico-viewbox  proxima-nova">
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 300">
+    <script type="text/ecmascript" xlink:href="js/smil.user.js"/>
+<rect fill="#73C2AC" width="1200" height="300"/>
+
+<animate attributeName="viewBox" begin="filters.end+2s" dur="15s" values="0 0 1000 220;480 177 3 5;505 177 3 5;405 127 200 200;625 177 3 5;705 177 3 5;705 127 200 200;790 122 5 5;840 122 5 5;0 0 1200 300"/>
+<animate attributeName="viewBox" begin="mover.end+2s" dur="2s" values="0 0 1200 300; 599 90 65 65" fill="freeze"/>
+
+        <filter color-interpolation-filters='sRGB' id='filter3115'>
+            <feTurbulence type='fractalNoise' numOctaves='1' baseFrequency='0.9' id='feTurbulence3117'>
+                <animate id="filters" attributeName="numOctaves" values="0;5;4;3;2;7;8;9;10;1;2" dur="10s" end="10s" fill="remove" begin="principio.end"/>
+                <animate attributeName="baseFrequency" values="0;5;4;3;2;7;8;9;10;1;2" dur="10s" end="10s" fill="remove" begin="principio.end"/>
+            </feTurbulence>
+            <feColorMatrix result='result5' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -4.15' id='feColorMatrix3119'/>
+            <feComposite in2='result5' operator='in' in='SourceGraphic' result='result6' id='feComposite3121' />
+            <feMorphology in='result6' operator='dilate' radius='9' result='result3' id='feMorphology3123'>
+                <animate attributeName="radius" values="1;2;3;4;5;6;7;8;9;1;9;" dur="10s" end="10s" fill="remove" begin="principio.end"/>
+            </feMorphology>
+        </filter>
+
+<g>
+        <path transform="translate(0,700)" fill="#B54035" filter='url(#filter3115)' d="M521.4,81.4l-2.5-17c-0.4-2.5-1-3.4-2.5-4c-3.4-1-8.4-2.3-15.3-2.3c-15.7,0-23.5,7.1-23.5,17.8 c0,13.8,14.2,17.6,30.2,22.4c19.9,6.1,42.1,13.6,42.1,45.1c0,34.4-26.8,47.8-58.9,47.8c-18.9,0-40-4.8-48-8.6v-40.9h23.5l4.2,19.9 c0.4,2.5,0.8,3.1,3.6,3.8c2.5,0.6,9.6,2.3,17.6,2.3c17,0,26.4-6.7,26.4-19.5c0-13.4-11.9-17.6-26-21.6 c-20.7-5.9-46.3-11.5-46.3-45.3c0-32.3,24.3-47.1,56.2-47.1c18,0,33.5,4.4,43,8.4v40.9L521.4,81.4z">
+            <animateTransform id="principio" attributeName="transform" type="translate" begin="1s" dur="0.3s" from="0 700" to="90 0" fill="freeze"/>
+             <animateTransform attributeName="transform" type="translate" begin="filters.end-2s" dur="1s" from="90 0" to="0 0" fill="freeze"/>
+            <animate attributeName="filter" values="#filter3115; none" dur="1s" begin="filters.end" fill="freeze"/>
+        </path>
+        <path transform="translate(-800,0)" fill="#B54035" filter='url(#filter3115)' d="M611.1,188.7L569,59.2c-0.8-2.5-2.5-2.9-5-3.6l-9.4-2.3l2.1-16.3h63.5v16.3l-17,1.9L634.5,160h1.7 l30.4-104.8l-16.8-1.9l2.1-16.3h54.3v16.3l-8.8,2.3c-2.5,0.6-4.6,1.5-5.2,4l-38.3,129.1H611.1z">
+            <animateTransform attributeName="transform" type="translate" begin="1s" dur="0.3s" from="-800 0" to="-20 0" fill="freeze"/>
+            <animateTransform attributeName="transform" type="translate" begin="filters.end-2s" dur="1s" from="-20 0" to="0 0" fill="freeze"/>
+            <animate attributeName="filter" values="#filter3115; none" dur="1s" begin="filters.end" fill="freeze"/>
+        </path>
+        <path transform="translate(1500,0)" fill="#B54035" filter='url(#filter3115)' d="M841.6,133.2c-2.5,0.2-3.4,0.8-3.4,2.9v45.1c-15.9,7.5-36.9,10.1-54.3,10.1c-57.2,0-76.9-33.7-76.9-78.8 c0-44.8,25.8-78.2,78.6-78.2c15.1,0,34.6,3.8,47.4,12.2V86l-23.3-1.7l-3.1-18.9c-0.6-2.9-1.5-3.8-3.4-4.2 c-5.2-1.5-12.8-2.7-19.3-2.7c-27,0-43.2,20.5-43.2,53.4c0,34.6,14.7,55.1,44.6,55.1c5.7,0,12.6-0.6,17.4-1.5 c2.3-0.4,3.4-1,3.4-3.8v-27.5h-23.3l2.9-18.9h64.3v16.8L841.6,133.2z">
+            <animateTransform attributeName="transform" type="translate" begin="1s" dur="0.3s" from="1500 0" to="-150 0" fill="freeze"/>
+            <animateTransform attributeName="transform" type="translate" begin="filters.end-2s" dur="1s" from="-150 0" to="0 0" fill="freeze"/>
+            <animate attributeName="filter" values="#filter3115; none" dur="1s" begin="filters.end" fill="freeze"/>
+        </path>
+        <animate attributeName="fill-opacity" dur="1s" from="1" to="0" begin="filters.end-1s" fill="freeze"/>
+</g>
+
+<g fill-opacity="0">
+        <animate id="apareciendo" attributeName="fill-opacity" dur="1s" from="0" to="1" begin="filters.end-1s" fill="freeze"/>
+        <animate attributeName="fill-opacity" dur="1s" from="1" to="0" begin="ultimoview.end+3s" fill="freeze"/>
+        <path fill="#B54035" d="M521.4,81.4l-2.5-17c-0.4-2.5-1-3.4-2.5-4c-3.4-1-8.4-2.3-15.3-2.3c-15.7,0-23.5,7.1-23.5,17.8 c0,13.8,14.2,17.6,30.2,22.4c19.9,6.1,42.1,13.6,42.1,45.1c0,34.4-26.8,47.8-58.9,47.8c-18.9,0-40-4.8-48-8.6v-40.9h23.5l4.2,19.9 c0.4,2.5,0.8,3.1,3.6,3.8c2.5,0.6,9.6,2.3,17.6,2.3c17,0,26.4-6.7,26.4-19.5c0-13.4-11.9-17.6-26-21.6 c-20.7-5.9-46.3-11.5-46.3-45.3c0-32.3,24.3-47.1,56.2-47.1c18,0,33.5,4.4,43,8.4v40.9L521.4,81.4z">
+            <animateTransform attributeName="transform" type="translate" begin="ultimoview.end+1.5s" dur="1s" from="0 0" to="105 0" fill="freeze"/>
+            <animate attributeName="fill" dur="1s" values="#B54035;#000" begin="ultimoview.end+2s" fill="freeze"/>
+        </path>
+        <path fill="#B54035" d="M611.1,188.7L569,59.2c-0.8-2.5-2.5-2.9-5-3.6l-9.4-2.3l2.1-16.3h63.5v16.3l-17,1.9L634.5,160h1.7 l30.4-104.8l-16.8-1.9l2.1-16.3h54.3v16.3l-8.8,2.3c-2.5,0.6-4.6,1.5-5.2,4l-38.3,129.1H611.1z">
+            <animateTransform attributeName="transform" type="translate" begin="ultimoview.end+1.5s" dur="1s" from="0 0" to="-10 0" fill="freeze"/>
+            <animate attributeName="fill" dur="1s" values="#B54035;#000" begin="ultimoview.end+2s" fill="freeze"/>
+        </path>
+        <path fill="#B54035" d="M841.6,133.2c-2.5,0.2-3.4,0.8-3.4,2.9v45.1c-15.9,7.5-36.9,10.1-54.3,10.1c-57.2,0-76.9-33.7-76.9-78.8 c0-44.8,25.8-78.2,78.6-78.2c15.1,0,34.6,3.8,47.4,12.2V86l-23.3-1.7l-3.1-18.9c-0.6-2.9-1.5-3.8-3.4-4.2 c-5.2-1.5-12.8-2.7-19.3-2.7c-27,0-43.2,20.5-43.2,53.4c0,34.6,14.7,55.1,44.6,55.1c5.7,0,12.6-0.6,17.4-1.5 c2.3-0.4,3.4-1,3.4-3.8v-27.5h-23.3l2.9-18.9h64.3v16.8L841.6,133.2z">
+            <animateTransform id="mover" attributeName="transform" type="translate" begin="ultimoview.end+1.5s" dur="1s" from="0 0" to="-160 0" fill="freeze"/>
+            <animate attributeName="fill" dur="1s" values="#B54035;#000" begin="ultimoview.end+2s" fill="freeze"/>
+        </path>
+</g>
+
+<g id="scawhite" fill-opacity="0">
+    <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="filters.end" dur="2s" fill="freeze"/>
+    <animate attributeName="fill-opacity" attributeType="CSS" from="1" to="0" begin="filters.end+5s" dur="0.5s" fill="freeze"/>
+    <path fill="#FFF" d="M478.5,178.7l-0.1-0.5c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.2-0.1-0.4-0.1c-0.5,0-0.7,0.2-0.7,0.5 c0,0.4,0.4,0.5,0.9,0.6c0.6,0.2,1.2,0.4,1.2,1.3c0,1-0.8,1.4-1.7,1.4c-0.5,0-1.1-0.1-1.4-0.2v-1.2h0.7l0.1,0.6c0,0.1,0,0.1,0.1,0.1 c0.1,0,0.3,0.1,0.5,0.1c0.5,0,0.8-0.2,0.8-0.6c0-0.4-0.3-0.5-0.7-0.6c-0.6-0.2-1.3-0.3-1.3-1.3c0-0.9,0.7-1.3,1.6-1.3 c0.5,0,1,0.1,1.2,0.2v1.2L478.5,178.7z"/>
+    <path fill="#FFF" d="M483.3,181.5c-0.4,0.2-1,0.3-1.5,0.3c-1.5,0-2.1-0.9-2.1-2.3c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.4,0.3 v1.2l-0.7-0.1l-0.1-0.6c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.3-0.1-0.5-0.1c-0.8,0-1.2,0.5-1.2,1.5c0,1.1,0.5,1.6,1.2,1.6 c0.2,0,0.4,0,0.6-0.1c0.1,0,0.1,0,0.1-0.1l0.1-0.6h0.6V181.5z"/>
+    <path fill="#FFF" d="M486.2,181.8v-0.5l0.5-0.1l-0.2-0.6H485l-0.2,0.6l0.5,0.1v0.5h-1.7v-0.5l0.3-0.1c0.1,0,0.1,0,0.1-0.1 l1.3-3.7h1.1l1.3,3.7c0,0.1,0.1,0.1,0.1,0.1l0.3,0.1v0.5H486.2z M485.8,178.4L485.8,178.4l-0.6,1.6h1.1L485.8,178.4z"/>
+    <path fill="#FFF" d="M488.4,181.8v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2v0.5l-0.5,0 c-0.1,0-0.1,0-0.1,0.1v3.1h1.1c0.1,0,0.1,0,0.1-0.1l0.1-0.6h0.7v1.3H488.4z"/>
+    <path fill="#FFF" d="M494.5,181.8v-0.5l0.5-0.1l-0.2-0.6h-1.5l-0.2,0.6l0.5,0.1v0.5h-1.7v-0.5l0.3-0.1c0.1,0,0.1,0,0.1-0.1 l1.3-3.7h1.1l1.3,3.7c0,0.1,0.1,0.1,0.1,0.1l0.3,0.1v0.5H494.5z M494.1,178.4L494.1,178.4l-0.6,1.6h1.1L494.1,178.4z"/>
+    <path fill="#FFF" d="M496.7,181.8v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2c1,0,1.3,0.5,1.3,1.1 c0,0.6-0.4,0.9-0.7,1v0c0.7,0.1,1,0.5,1,1.1c0,0.9-0.7,1.2-1.6,1.2H496.7z M498.3,179.3c0.4,0,0.8-0.1,0.8-0.6 c0-0.5-0.3-0.6-0.7-0.6h-0.3v1.2H498.3z M498.5,181.1c0.5,0,0.8-0.1,0.8-0.6c0-0.5-0.3-0.6-0.7-0.6h-0.5v1.3H498.5z"/>
+    <path fill="#FFF" d="M500.7,181.8v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2v0.5l-0.5,0 c-0.1,0-0.1,0-0.1,0.1v3.1h1.1c0.1,0,0.1,0,0.1-0.1l0.1-0.6h0.7v1.3H500.7z"/>
+    <path fill="#FFF" d="M504.5,181.8v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h3.2v1.2l-0.7,0 l-0.1-0.5c0-0.1,0-0.1-0.1-0.1h-0.9v1.2h1.4v0.7h-1.4v1.2h1.1c0.1,0,0.1,0,0.1-0.1l0.1-0.5h0.7v1.2H504.5z"/>
+</g>
+<g id="vecwhite" fill-opacity="0">
+    <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="filters.end+5s" dur="2s" fill="freeze"/>
+    <animate attributeName="fill-opacity" attributeType="CSS" from="1" to="0" begin="filters.end+10s" dur="0.5s" fill="freeze"/>
+    <path fill="#FFF" d="M623.6,181.6l-1.2-3.7c0-0.1-0.1-0.1-0.1-0.1l-0.3-0.1l0.1-0.5h1.8v0.5l-0.5,0.1l0.9,3h0l0.9-3l-0.5-0.1 l0.1-0.5h1.6v0.5l-0.3,0.1c-0.1,0-0.1,0-0.1,0.1l-1.1,3.7H623.6z"/>
+    <path fill="#FFF" d="M626.6,181.6v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h3.2v1.2l-0.7,0 l-0.1-0.5c0-0.1,0-0.1-0.1-0.1H628v1.2h1.4v0.7H628v1.2h1.1c0.1,0,0.1,0,0.1-0.1l0.1-0.5h0.7v1.2H626.6z"/>
+    <path fill="#FFF" d="M633.9,181.3c-0.4,0.2-1,0.3-1.5,0.3c-1.5,0-2.1-0.9-2.1-2.3c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.4,0.3 v1.2l-0.7-0.1l-0.1-0.6c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.3-0.1-0.5-0.1c-0.8,0-1.2,0.5-1.2,1.5c0,1.1,0.5,1.6,1.2,1.6 c0.2,0,0.4,0,0.6-0.1c0.1,0,0.1,0,0.1-0.1l0.1-0.6h0.6V181.3z"/>
+    <path fill="#FFF" d="M635,181.6v-0.5l0.6,0c0.1,0,0.1,0,0.1-0.1v-3.1h-0.6c-0.1,0-0.1,0-0.1,0.1l-0.1,0.5l-0.7,0v-1.2h3.9v1.2 l-0.7,0l-0.1-0.5c0-0.1,0-0.1-0.1-0.1h-0.6v3.1c0,0.1,0,0.1,0.1,0.1l0.7,0v0.5H635z"/>
+    <path fill="#FFF" d="M638.3,179.4c0-1.3,0.7-2.3,2.1-2.3c1.4,0,2,1,2,2.2c0,1.4-0.7,2.3-2.1,2.3 C638.9,181.6,638.3,180.7,638.3,179.4z M641.5,179.4c0-1-0.4-1.5-1.1-1.5c-0.7,0-1.2,0.5-1.2,1.5c0,1.1,0.5,1.5,1.1,1.5 C641.1,180.9,641.5,180.5,641.5,179.4z"/>
+    <path fill="#FFF" d="M645.5,181.6l-0.5-1.5c-0.1-0.2-0.1-0.3-0.4-0.3h-0.3v1.1c0,0.1,0,0.1,0.1,0.1l0.4,0v0.5h-1.9v-0.5l0.4,0 c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2c1.1,0,1.4,0.6,1.4,1.2c0,0.6-0.3,0.9-0.8,1.2 c0.2,0.1,0.3,0.2,0.3,0.5l0.3,0.9c0,0.1,0.1,0.1,0.2,0.1l0.4,0.1v0.5H645.5z M644.6,179.2c0.4,0,0.8-0.1,0.8-0.7 c0-0.5-0.3-0.6-0.8-0.6h-0.3v1.3H644.6z"/>
+</g>
+<g id="grawhite" fill-opacity="0">
+    <animate attributeName="fill-opacity" attributeType="CSS" from="0" to="1" begin="filters.end+10s" dur="2s" fill="freeze"/>
+    <animate id="ultimoview" attributeName="fill-opacity" attributeType="CSS" from="1" to="0" begin="filters.end+15s" dur="0.5s" fill="freeze"/>
+    <path fill="#FFF" d="M806.2,125C806.2,125,806.1,125,806.2,125l-0.1,1.4c-0.5,0.2-1.1,0.3-1.6,0.3c-1.6,0-2.2-1-2.2-2.3 c0-1.3,0.7-2.2,2.2-2.2c0.4,0,1,0.1,1.4,0.3v1.1l-0.7,0l-0.1-0.5c0-0.1,0-0.1-0.1-0.1c-0.2,0-0.4-0.1-0.6-0.1 c-0.8,0-1.2,0.6-1.2,1.5c0,1,0.4,1.6,1.3,1.6c0.2,0,0.4,0,0.5,0c0.1,0,0.1,0,0.1-0.1V125h-0.7l0.1-0.5h1.8v0.5L806.2,125z"/>
+    <path fill="#FFF" d="M809.3,126.6l-0.5-1.5c-0.1-0.2-0.2-0.3-0.4-0.3h-0.3v1.1c0,0.1,0,0.1,0.1,0.1l0.4,0v0.5h-1.9v-0.5l0.4,0 c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2c1.1,0,1.4,0.6,1.4,1.2c0,0.6-0.3,0.9-0.8,1.2 c0.2,0.1,0.3,0.2,0.3,0.5l0.3,0.9c0,0.1,0.1,0.1,0.2,0.1l0.4,0.1v0.5H809.3z M808.4,124.2c0.4,0,0.8-0.1,0.8-0.7 c0-0.5-0.3-0.6-0.8-0.6h-0.3v1.3H808.4z"/>
+    <path fill="#FFF" d="M813.3,126.6v-0.5l0.5-0.1l-0.2-0.6h-1.5l-0.2,0.6l0.5,0.1v0.5h-1.7v-0.5l0.3-0.1c0.1,0,0.1,0,0.2-0.1 l1.3-3.7h1.1l1.3,3.7c0,0.1,0.1,0.1,0.1,0.1l0.3,0.1v0.5H813.3z M812.9,123.1L812.9,123.1l-0.6,1.6h1.1L812.9,123.1z"/>
+    <path fill="#FFF" d="M815.4,126.6v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2 c1.1,0,1.4,0.6,1.4,1.3c0,1-0.6,1.5-1.6,1.5h-0.4v1c0,0.1,0,0.1,0.1,0.1l0.9,0v0.5H815.4z M817.1,124.3c0.4,0,0.8-0.1,0.8-0.8 c0-0.6-0.4-0.7-0.8-0.7h-0.4v1.4H817.1z"/>
+    <path fill="#FFF" d="M821.9,126.6v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-1.3h-1.6v1.3c0,0.1,0,0.1,0.1,0.1l0.4,0v0.5h-1.9v-0.5l0.4,0 c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h1.9v0.5l-0.4,0c-0.1,0-0.1,0-0.1,0.1v1.1h1.6v-1.1c0-0.1,0-0.1-0.1-0.1 l-0.4,0v-0.5h1.9v0.5l-0.4,0c-0.1,0-0.1,0-0.1,0.1v3.1c0,0.1,0,0.1,0.1,0.1l0.4,0v0.5H821.9z"/>
+    <path fill="#FFF" d="M824.2,126.6v-0.5l0.4,0c0.1,0,0.1,0,0.1-0.1v-3.1c0-0.1,0-0.1-0.1-0.1l-0.4,0v-0.5h2v0.5l-0.5,0 c-0.1,0-0.1,0-0.1,0.1v3.1c0,0.1,0,0.1,0.1,0.1l0.5,0v0.5H824.2z"/>
+    <path fill="#FFF" d="M830.2,126.3c-0.4,0.2-1,0.3-1.5,0.3c-1.5,0-2.1-0.9-2.1-2.3c0-1.3,0.7-2.2,2.2-2.2c0.5,0,1,0.1,1.4,0.3 v1.2l-0.7-0.1l-0.1-0.6c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.3-0.1-0.5-0.1c-0.8,0-1.2,0.5-1.2,1.5c0,1.1,0.5,1.6,1.2,1.6 c0.2,0,0.4,0,0.6-0.1c0.1,0,0.1,0,0.1-0.1l0.1-0.6h0.6V126.3z"/>
+    <path fill="#FFF" d="M833,123.5l-0.1-0.5c0-0.1,0-0.1-0.1-0.1c-0.1,0-0.2-0.1-0.4-0.1c-0.5,0-0.7,0.2-0.7,0.5 c0,0.4,0.4,0.5,0.9,0.6c0.6,0.2,1.2,0.4,1.2,1.3c0,1-0.8,1.4-1.7,1.4c-0.5,0-1.1-0.1-1.4-0.2v-1.2h0.7l0.1,0.6c0,0.1,0,0.1,0.1,0.1 c0.1,0,0.3,0.1,0.5,0.1c0.5,0,0.8-0.2,0.8-0.6c0-0.4-0.3-0.5-0.7-0.6c-0.6-0.2-1.3-0.3-1.3-1.3c0-0.9,0.7-1.3,1.6-1.3 c0.5,0,1,0.1,1.2,0.2v1.2L833,123.5z"/>
+</g>
+<g id="fuckIE" fill-opacity="0">
+    <animate attributeName="fill-opacity" dur="2s" from="0" to="1" begin="mover.end+3s" fill="freeze"/>
+    <path fill="#FFF" d="M571.3,114.8l0.5-0.6c0.4,0.5,1.1,0.9,2.1,0.9c1.2,0,1.5-0.6,1.5-1.1c0-1.7-3.9-0.8-3.9-3.1 c0-1.1,1-1.8,2.2-1.8c1,0,1.8,0.3,2.3,0.9l-0.5,0.6c-0.5-0.5-1.2-0.8-1.9-0.8c-0.8,0-1.3,0.4-1.3,1c0,1.5,3.9,0.6,3.9,3.1 c0,1-0.6,1.9-2.4,1.9C572.7,115.8,571.9,115.4,571.3,114.8z"/>
+    <path fill="#FFF" d="M583.1,115.7v-5.4l-2.2,5.4h-0.3l-2.2-5.4v5.4h-0.8v-6.5h1.2l2,4.9l2-4.9h1.2v6.5H583.1z"/>
+    <path fill="#FFF" d="M585.4,115.7v-6.5h0.8v6.5H585.4z"/>
+    <path fill="#FFF" d="M587.8,115.7v-6.5h0.8v5.8h3v0.7H587.8z"/>
+    <path fill="#FFF" d="M599.9,115.7l-3.8-5.2v5.2h-0.8v-6.5h0.8l3.8,5.1v-5.1h0.8v6.5H599.9z"/>
+    <path fill="#FFF" d="M602,112.4c0-1.9,1.3-3.4,3.2-3.4c1.9,0,3.2,1.5,3.2,3.4c0,1.9-1.3,3.4-3.2,3.4 C603.3,115.8,602,114.3,602,112.4z M607.6,112.4c0-1.5-0.9-2.7-2.4-2.7c-1.5,0-2.4,1.1-2.4,2.7c0,1.5,0.9,2.7,2.4,2.7 C606.7,115.1,607.6,113.9,607.6,112.4z"/>
+    <path fill="#FFF" d="M611.1,115.7v-5.8H609v-0.7h5v0.7h-2.1v5.8H611.1z"/>
+    <path fill="#FFF" d="M617.2,114.8l0.5-0.6c0.4,0.5,1.1,0.9,2.1,0.9c1.2,0,1.5-0.6,1.5-1.1c0-1.7-3.9-0.8-3.9-3.1 c0-1.1,1-1.8,2.2-1.8c1,0,1.8,0.3,2.3,0.9l-0.5,0.6c-0.5-0.5-1.2-0.8-1.9-0.8c-0.8,0-1.3,0.4-1.3,1c0,1.5,3.9,0.6,3.9,3.1 c0,1-0.6,1.9-2.4,1.9C618.6,115.8,617.8,115.4,617.2,114.8z"/>
+    <path fill="#FFF" d="M623.4,113.1v-4h0.8v4c0,1.2,0.6,2,1.9,2c1.2,0,1.9-0.8,1.9-2v-4h0.8v4c0,1.6-0.9,2.7-2.7,2.7 C624.3,115.8,623.4,114.7,623.4,113.1z"/>
+    <path fill="#FFF" d="M630.2,115.7v-6.5h2.6c1.3,0,2.1,0.9,2.1,2c0,1.1-0.8,2-2.1,2h-1.8v2.6H630.2z M634.1,111.1 c0-0.7-0.5-1.2-1.3-1.2h-1.7v2.5h1.7C633.5,112.4,634.1,111.8,634.1,111.1z"/>
+    <path fill="#FFF" d="M636,115.7v-6.5h2.6c1.3,0,2.1,0.9,2.1,2c0,1.1-0.8,2-2.1,2h-1.8v2.6H636z M639.8,111.1 c0-0.7-0.5-1.2-1.3-1.2h-1.7v2.5h1.7C639.3,112.4,639.8,111.8,639.8,111.1z"/>
+    <path fill="#FFF" d="M641.5,112.4c0-1.9,1.3-3.4,3.2-3.4c1.9,0,3.2,1.5,3.2,3.4c0,1.9-1.3,3.4-3.2,3.4 C642.8,115.8,641.5,114.3,641.5,112.4z M647.1,112.4c0-1.5-0.9-2.7-2.4-2.7c-1.5,0-2.4,1.1-2.4,2.7c0,1.5,0.9,2.7,2.4,2.7 C646.2,115.1,647.1,113.9,647.1,112.4z"/>
+    <path fill="#FFF" d="M653.1,115.7l-1.7-2.6h-1.3v2.6h-0.8v-6.5h2.6c1.2,0,2.1,0.8,2.1,2c0,1.2-0.8,1.8-1.7,1.9l1.8,2.7H653.1z  M653.1,111.1c0-0.7-0.5-1.2-1.3-1.2h-1.7v2.5h1.7C652.6,112.4,653.1,111.8,653.1,111.1z"/>
+    <path fill="#FFF" d="M656.8,115.7v-5.8h-2.1v-0.7h5v0.7h-2.1v5.8H656.8z"/>
+    <path fill="#FFF" d="M660.7,115.7v-6.5h4.3v0.7h-3.5v2.1h3.4v0.7h-3.4v2.3h3.5v0.7H660.7z"/>
+    <path fill="#FFF" d="M666.3,115.7v-6.5h2.2c2,0,3.4,1.4,3.4,3.3c0,1.9-1.3,3.3-3.4,3.3H666.3z M671.1,112.4 c0-1.4-0.9-2.6-2.5-2.6h-1.4v5.1h1.4C670.1,115,671.1,113.8,671.1,112.4z"/>
+    <path fill="#FFF" d="M675.7,115.7v-6.5h0.8v6.5H675.7z"/>
+    <path fill="#FFF" d="M682.7,115.7l-3.8-5.2v5.2h-0.8v-6.5h0.8l3.8,5.1v-5.1h0.8v6.5H682.7z"/>
+    <path fill="#FFF" d="M687.5,115.7v-6.5h0.8v6.5H687.5z"/>
+    <path fill="#FFF" d="M689.9,115.7v-6.5h4.3v0.7h-3.5v2.1h3.4v0.7h-3.4v2.3h3.5v0.7H689.9z"/>
+</g>
+<g id="smil" fill-opacity="0">
+    <animate attributeName="fill-opacity" dur="2s" from="0" to="1" begin="mover.end+5s" fill="freeze"/>
+    <path fill="#FFF" d="M630.9,124.1c0-0.4,0.3-0.7,0.7-0.7s0.7,0.3,0.7,0.7s-0.3,0.7-0.7,0.7S630.9,124.5,630.9,124.1z M630.9,129.2c0-0.4,0.3-0.7,0.7-0.7s0.7,0.3,0.7,0.7s-0.3,0.7-0.7,0.7S630.9,129.5,630.9,129.2z"/>
+    <path fill="#FFF" d="M633.4,131.9c0.8-1.6,1.4-3.1,1.4-5.3c0-2.2-0.5-3.7-1.4-5.3l0.6-0.4c1.2,1.6,1.8,3.7,1.8,5.7 c0,2.1-0.7,4.1-1.8,5.7L633.4,131.9z"/>
+</g>
+</svg>
+
+      </article>
+    </section>
+
+    <footer>
+        <a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#twitter"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#codepen"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://vimeo.com/jorgeatgu" title="Vimeo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#vimeo"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#facebook"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://www.dribbble.com/jorgeATGU" title="dribbble">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#dribbble"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://plus.google.com/100226837035863227420?rel=author" title="google+">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#googleplus"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://be.net/jorgeatgu" title="behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#behance"/>
+                    </svg>
+                </a>
+    </footer>
+
+  </div>
+        <script async src="js/svg4everybody.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

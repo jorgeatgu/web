@@ -1,0 +1,22 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2550px" height="3300px" viewBox="0 0 2550 3300">
+<g id="fondo">
+	<rect fill="#FFFFFF" stroke="#FFFFFF" stroke-width="110" stroke-miterlimit="10" width="2550" height="1874.1"/>
+	<rect y="1425.9" fill="#D03053" stroke="#FFFFFF" stroke-width="110" stroke-miterlimit="10" width="2550" height="1874.1"/>
+</g>
+<g id="rectangulos" opacity="0.31">
+		<rect x="930.9" y="2018.8" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+		<rect x="931.9" y="2018.8" transform="matrix(-0.5 0.866 -0.866 -0.5 3960.386 2439.3965)" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+		<rect x="930.9" y="2018.8" transform="matrix(0.2588 -0.9659 0.9659 0.2588 -1337.4414 2982.9387)" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+		<rect x="930.9" y="2018.8" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -1297.4285 1593.6571)" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+		<rect x="930.9" y="2018.8" transform="matrix(0.5 0.866 -0.866 0.5 2683.8862 77.2992)" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+		<rect x="929.6" y="2023.6" transform="matrix(-0.2588 -0.9659 0.9659 -0.2588 -683.5964 4210.8125)" opacity="0.4" fill="#006837" stroke="#FFFFFF" stroke-width="4" stroke-miterlimit="10" width="688.2" height="688.2"/>
+</g>
+<g id="texto">
+	<g>
+		<text transform="matrix(1 0 0 1 217.5412 649.8735)" fill="#436A61" font-family="'Adoquin-Fat'" font-size="396.1957" letter-spacing="11">SCALABLE</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 576.1411 844.2318)"><tspan x="0" y="0" fill="#994C41" font-family="'ProximaNova-Bold'" font-size="107.577" letter-spacing="9">UN LIBRO SOBRE SVG</tspan><tspan x="113.8" y="225.9" fill="#222220" font-family="'ProximaNova-Bold'" font-size="80.6827" letter-spacing="7">por Jorge Aznar Tobajas</tspan></text>
+	</g>
+</g>
+</svg>

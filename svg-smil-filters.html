@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>SVG SMIL FILTERS</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, svg">
+        <meta name="description" content="Diseñador Gráfico y Web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG y Responsive Web Design.">
+        <meta name="author" content="Jorge Aznar">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+    </head>
+<body>
+  <div class="contenedor">
+
+
+    <section class="trabajos-interior">
+        <article class="trabajos-definicion">
+            <h1 class="proxima-nova">SMIL Filters</h1>
+            <p class="letracodepen">Varias demos animando diferentes atributos que tenemos a nuestra disposición con los filtros <strong>SVG</strong>.</p>
+            <a href="http://jorgeatgu.com/trabajos">
+    <button class="trabajos-btn"> TRABAJOS </button>
+</a>
+        </article>
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1250 800">
+        <rect width="1250px" height="800px" fill="#e74c3c" fill-opacity=".85"/>
+        <script type="text/ecmascript" xlink:href="js/smil.user.js"/>
+        <defs>
+            <filter id="sBlur">
+              <feGaussianBlur id="blur" stdDeviation="5,1"/>
+            </filter>
+            <filter id="sepiatone">
+              <feColorMatrix type="matrix" values=".343 .669 .119 0 0 .249 .626 .130 0 0 .172 .334 .111 0 0 .000 .000 .000 1 0"/>
+            </filter>
+            <filter id="convolve" >
+              <feColorMatrix type="luminanceToAlpha"/>
+              <feConvolveMatrix order="3" kernelMatrix="-1 -2 -1 0 0 0 1 2 1"/>
+              <feConvolveMatrix order="3" kernelMatrix="-1 -2 -1 0 0 0 1 2 1"/>
+            </filter>
+            <filter id="saturate" >
+              <feColorMatrix type="saturate" values="6"/>
+            </filter>
+            <filter id="dilate" >
+              <feMorphology operator="dilate" radius="2"/>
+            </filter>
+            <filter id="composite">
+            <feColorMatrix type="hueRotate" in="SourceGraphic" values="180" result="specOut">
+                <animate attributeName="values" values="0;360" dur="1.4s" repeatCount="indefinite"/>
+            </feColorMatrix>
+            <feComposite result="comp" id="feComposite_def" in="SourceGraphic" in2="specOut" operator="arithmetic" k1="1" k2="1" k3="1" k4="0"/>
+        </filter>
+        </defs>
+
+        <g transform="scale(2) translate(100,0)">
+            <polygon transform="translate(0,-14)" id="base" fill="#2C3E50" points="212.8,241.5 205.3,215.4 154.9,215.4 147.4,241.5 138.3,242.7 138.3,245.1 222,245.1 222,242.7"/>
+            <linearGradient id="color" gradientUnits="userSpaceOnUse" x1="239" y1="201" x2="239" y2="26">
+                <stop offset="0.1285" style="stop-color:#BDC3C7"/>
+                <stop offset="0.1362" style="stop-color:#2C3E50"/>
+            </linearGradient>
+            <rect id="azul" x="53.2" y="42" fill="url(#color)" width="254" height="160" rx="6"/>
+            <rect id="pantalla" x="63.1" y="47" fill="#FFFFFF" width="235" height="126"/>
+            <image x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="remove.click" dur="0.1s" fill="freeze"/>
+                <image x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonsepia.click;botonconvolve.click;botonsaturate.click;botondilate.click;botoncomposite.click;botonblur.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botonblur.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#sBlur)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonsepia.click;botonconvolve.click;botonsaturate.click;botondilate.click;botoncomposite.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botonsepia.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#sepiatone)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonblur.click;botonconvolve.click;botonsaturate.click;botondilate.click;botoncomposite.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botonconvolve.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#convolve)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonblur.click;botonsepia.click;botonsaturate.click;botondilate.click;botoncomposite.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botonsaturate.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#saturate)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonblur.click;botonsepia.click;botonconvolve.click;botondilate.click;botoncomposite.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botondilate.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#dilate)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonblur.click;botonsepia.click;botonconvolve.click;botonsaturate.click;botoncomposite.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+            <g opacity="0">
+                <animate attributeName="opacity" attributeType="CSS" from="0" to="1" begin="botoncomposite.click" dur="0.1s" fill="freeze"/>
+                <image filter="url(#composite)" x="63.1" y="46.8" width="235" height="126" xlink:href="http://jorgeatgu.com/img/codepencity.svg"/>
+                <animate attributeName="opacity" attributeType="CSS" from="1" to="0" begin="botonblur.click;botonsepia.click;botonconvolve.click;botonsaturate.click;botondilate.click;remove.click" dur="0.1s" fill="freeze"/>
+            </g>
+        </g>
+
+    <g id="botonblur" cursor="pointer">
+        <rect width="120" height="40" ry="4" x="202" y="502" color="#2C3E50"/>
+        <rect width="120" height="40" ry="4" x="200" y="500" fill="#16a085">
+            <animate attributeName="x" from="200" to="202" begin="botonblur.click" dur="0.1s"/>
+            <animate attributeName="y" from="500" to="502" begin="botonblur.click" dur="0.1s"/>
+        </rect>
+        <text x="240" y="526" fill="#FFFFFF">Blur</text>
+    </g>
+
+    <g id="botonsepia" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="337" y="502" color="#2C3E50"/>
+    <rect id="botonsepia" width="120" height="40" ry="4" x="335" y="500" fill="#16a085">
+        <animate attributeName="x" from="335" to="337" begin="botonsepia.click" dur="0.1s"/>
+        <animate attributeName="y" from="500" to="502" begin="botonsepia.click" dur="0.1s"/>
+    </rect>
+        <text x="370" y="526" fill="#FFFFFF">Sepia</text>
+    </g>
+
+    <g id="botonconvolve" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="472" y="502" color="#2C3E50"/>
+    <rect id="botonconvolve" width="120" height="40" ry="4" x="470" y="500" fill="#16a085">
+        <animate attributeName="x" from="470" to="472" begin="botonconvolve.click" dur="0.1s"/>
+        <animate attributeName="y" from="500" to="502" begin="botonconvolve.click" dur="0.1s"/>
+    </rect>
+        <text x="490" y="526" fill="#FFFFFF">Convolve</text>
+    </g>
+
+    <g id="botonsaturate" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="607" y="502" color="#2C3E50"/>
+    <rect id="botonsaturate" width="120" height="40" ry="4" x="605" y="500" fill="#16a085">
+        <animate attributeName="x" from="605" to="607" begin="botonsaturate.click" dur="0.1s"/>
+        <animate attributeName="y" from="500" to="502" begin="botonsaturate.click" dur="0.1s"/>
+    </rect>
+        <text x="630" y="526" fill="#FFFFFF">Saturate</text>
+    </g>
+
+    <g id="botondilate" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="742" y="502" color="#2C3E50"/>
+    <rect id="botondilate" width="120" height="40" ry="4" x="740" y="500" fill="#16a085">
+        <animate attributeName="x" from="740" to="742" begin="botondilate.click" dur="0.1s"/>
+        <animate attributeName="y" from="500" to="502" begin="botondilate.click" dur="0.1s"/>
+    </rect>
+        <text x="775" y="526" fill="#FFFFFF">Dilate</text>
+    </g>
+
+    <g id="botoncomposite" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="877" y="502" color="#2C3E50"/>
+        <rect id="animate" width="120" height="40" ry="4" x="875" y="500" fill="#16a085">
+            <animate attributeName="x" from="875" to="877" begin="animate.click" dur="0.1s"/>
+            <animate attributeName="y" from="500" to="502" begin="animate.click" dur="0.1s"/>
+        </rect>
+        <text x="890" y="526" fill="#FFFFFF">Composite</text>
+    </g>
+
+    <g id="remove" cursor="pointer">
+    <rect width="120" height="40" ry="4" x="497" y="602" color="#2C3E50"/>
+    <rect id="remove" width="120" height="40" ry="4" x="495" y="600" fill="#16a085">
+        <animate attributeName="x" from="495" to="497" begin="remove.click" dur="0.1s"/>
+        <animate attributeName="y" from="600" to="602" begin="remove.click" dur="0.1s"/>
+    </rect>
+        <text x="520" y="626" fill="#FFFFFF">Remove</text>
+    </g>
+
+    </svg>
+
+    <svg class="svg-filtros" xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox="0 0 100% 100%">
+    <filter color-interpolation-filters='sRGB' id='filter3115'>
+    <script type="text/ecmascript" xlink:href="js/smil.user.js"/>
+            <feTurbulence type='fractalNoise' numOctaves='1' baseFrequency='0.9' id='feTurbulence3117'>
+                <animate attributeName="numOctaves" values="0;5;4;3;2;7;8;9;10;1;2" dur="20s" repeatCount="indefinite"/>
+                <animate attributeName="baseFrequency" values="0;5;4;3;2;7;8;9;10;1;2" dur="20s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feColorMatrix result='result5' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -4.15' id='feColorMatrix3119'/>
+            <feComposite in2='result5' operator='in' in='SourceGraphic' result='result6' id='feComposite3121' />
+            <feMorphology in='result6' operator='dilate' radius='9' result='result3' id='feMorphology3123'>
+                <animate attributeName="radius" values="1;2;3;4;5;6;7;8;9;1;9" dur="20s" repeatCount="indefinite"/>
+            </feMorphology>
+        </filter>
+    <rect width='100%' height='100%' x='0' y='0' id='rect2985' fill='#000000'/>
+    <rect width='100%' height='100%' x='0' y='0' id='rect2985' filter="url(#filter3115)" fill="#611748">
+        <animate attributeName="width" values="90%; 80%; 50%; 60%; 80%; 10%" begin="1s" dur="10s"/>
+        <animate attributeName="fill" dur="20s" values="#1abc9c; #16a085; #3498db; #2980b9; #9b59b6; #8e44ad;" begin="1s" repeatCount="indefinite"/>
+    </rect>
+</svg>
+    <svg class="svg-filtros" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width="100%" height="100%" viewBox='0 0 100% 100%'>
+    <script type="text/ecmascript" xlink:href="js/smil.user.js"/>
+<filter id='i' x='0' y='0'>
+    <feColorMatrix type='matrix' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0 0'/>
+</filter>
+<filter id='n' x='0' y='0'>
+    <feTurbulence type='turbulence' baseFrequency='.7' result='fuzz' numOctaves='2' stitchTiles='stitch'/>
+    <feComposite in='SourceGraphic' in2='fuzz' operator='arithmetic' k1='0' k2='1' k3='-30' k4='.01'>
+        <animate attributeName="k1" values="1; 3; 4; 1; 2" dur="5s" begin="5s"repeatCount="indefinite"/>
+        <animate attributeName="k2" values="1; -1; -2; 2; 4" dur="5s" begin="5s"repeatCount="indefinite"/>
+        <animate attributeName="k3" values="-10; -30; -40; -15; -20" dur="5s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="k4" values=".06; .3; .4; .1; .2" dur="5s" begin="1s"repeatCount="indefinite"/>
+    </feComposite>
+</filter>
+
+<rect width='102%' height='102%' fill='#03031a'/>
+<rect x='-1%' y='-1%' width='102%' height='102%' fill='#ffffff' filter='url(#n)' opacity='1'>
+    <animate attributeName="fill" values="#f1c40f; #e67e22; #e74c3c; #f39c12; #d35400; #c0392b" dur="5s" begin="1s" repeatCount="indefinite"/>
+</rect>
+</svg>
+
+    </section>
+
+    <footer>
+      <a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#twitter"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#codepen"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://vimeo.com/jorgeatgu" title="Vimeo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#vimeo"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#facebook"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://www.dribbble.com/jorgeATGU" title="dribbble">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#dribbble"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://plus.google.com/100226837035863227420?rel=author" title="google+">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#googleplus"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://be.net/jorgeatgu" title="behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#behance"/>
+                    </svg>
+                </a>
+    </footer>
+
+  </div>
+        <script async src="js/svg4everybody.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

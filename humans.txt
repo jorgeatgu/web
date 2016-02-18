@@ -1,0 +1,26 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jorge Aznar -- front-end developer * SVG -- Zaragoza / Aragón
+	https://twitter.com/jorgeATGU
+	http://codepen.io/jorgeatgu
+	http://behance.net/jorgeatgu
+	https://facebook.com/jorgeATGU
+	https://plus.google.com/+jorgeatgu
+	http://dribbble.com/jorgeATGU
+	https://vimeo.com/jorgeatgu
+
+# THANKS
+
+# TECHNOLOGY COLOPHON
+
+
+Last update: 04/04/2015
+
+Standards: SVG, HTML5, CSS3, RESPONSIVE WEB DESIGN, MOBILE-FIRST
+
+Components: Modernizr & VelocityJS
+
+Software: Sublime Text 3 + Illustrator CC

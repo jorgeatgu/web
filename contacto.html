@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Contacto - jorgeatgu diseño gráfico-web</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, svg">
+        <meta name="description" content="Diseñador Gráfico y Web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG y Responsive Web Design.">
+        <meta name="author" content="Jorge Aznar">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js"></script>
+    </head>
+<body>
+    <div class="contenedor">
+
+  <header>
+    <nav class="proxima-nova">
+      <ul class="menu-principal">
+        <li><a href="http://www.jorgeatgu.com/index">INICIO</a></li>
+        <li><a href="http://www.jorgeatgu.com/trabajos">TRABAJOS</a></li>
+        <li><a href="http://www.jorgeatgu.com/contacto">CONTACTO</a></li>
+        <li><a href="http://jorgeatgu.com/blog/">BLOG</a></li>
+      </ul>
+    </nav>
+    <ul class="social-header">
+                <a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#twitter"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://codepen.io/jorgeatgu" title="CodePen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#codepen"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://be.net/jorgeatgu" title="Behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#behance"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://github.com/jorgeatgu" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#github"/>
+                    </svg>
+                </a>
+    </ul>
+  </header>
+
+<article class="content">
+  <script type="text/javascript">
+
+    $( document ).ready(function() {
+
+        $("#nombre").focus(function(){
+          $("#sobre")
+            .velocity({ translateX: "250px" }, { duration: 4000, easing: "spring" })
+
+            setTimeout(function() {
+                $("#sobre")
+                .velocity({ translateY: "50px" }, { queue: false, duration: 2000, easing: [ 325 , 8 ] });
+            }, 500);
+        });
+
+        $("#asunto").focus(function(){
+          $("#folio")
+            .velocity({ translateY: "50px" }, { duration: 4000, easing: "spring" })
+
+              setTimeout(function() {
+                  $("#folio")
+                  .velocity({ translateX: "120px" }, { queue: false, duration: 2000, easing: [ 250 , 7 ] });
+              }, 800);
+        });
+
+        $("textarea").focus(function(){
+          $("#frst-line")
+            .velocity({x2: 102},{duration:1500, easing: "spring"})
+          $("#scnd-line")
+            .delay(50)
+            .velocity({x2: 102},{duration:1500, easing: "spring"})
+          $("#thr-line")
+            .delay(150)
+            .velocity({x2: 102},{duration:1500, easing: "spring"})
+          $("#fr-line")
+            .delay(250)
+            .velocity({x2: 102},{duration:1500, easing: "spring"})
+          $("#folio")
+            .delay(350)
+            .velocity({ translateY: "50px" }, { duration: 2000, easing: "spring" })
+        });
+
+        $("textarea").keypress(function(e){
+          if(e.which == 32) {
+            $("#frst-line")
+            .velocity({x2: 50},{duration:1500, easing: [ 800 , 10 ]})
+            .velocity("reverse")
+            $("#scnd-line")
+            .delay(50)
+            .velocity({x2: 50},{duration:1500, easing: [ 800 , 10 ]})
+            .velocity("reverse")
+            $("#thr-line")
+            .delay(150)
+            .velocity({x2: 50},{duration:1500, easing: [ 800 , 10 ]})
+            .velocity("reverse")
+            $("#fr-line")
+            .delay(300)
+            .velocity({x2: 50},{duration:1500, easing: [ 800 , 10 ]})
+            .velocity("reverse")
+          }
+        });
+    });
+
+    </script>
+
+
+  <article class="formulario">
+
+        <svg class="formulario-sobre" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 150">
+          <g id="sobre" transform="translate(-1000 0)">
+            <polygon fill="#7A8FB5" points="74,52.4 133.7,87.6 133.7,13"/>
+            <polygon fill="#4E699C" points="16,13 16,87.6 133.9,87.6"/>
+            <polygon fill="#7A8FB5" points="80.6,48.2 16,13 16,87.6"/>
+            <polyline fill="#224483" points="133.7,13 76.8,54.3 16,13"/>
+          </g>
+          <g id="folio" transform="translate(240 -500)">
+            <polygon fill="aquamarine" points="113.7,99 40.3,99 40.3,4.1 95,4.1 113.7,22.8"/>
+            <polygon fill="#C5C6C6" points="95,4.1 113.7,22.8 95,22.8"/>
+            <line id="frst-line" fill="none" stroke="#224483" stroke-width="8" x1="50" y1="34" x2="50" y2="34"/>
+            <line id="scnd-line" fill="none" stroke="#224483" stroke-width="8" x1="50" y1="48" x2="50" y2="48"/>
+            <line id="thr-line" fill="none" stroke="#224483" stroke-width="8" x1="50" y1="63" x2="50" y2="63"/>
+            <line id="fr-line" fill="none" stroke="#224483" stroke-width="8" x1="50" y1="78" x2="50" y2="78"/>
+          </g>
+      </svg>
+
+
+      <div class="formulario-cuerpo  proxima-nova">
+
+          <form method="post" action="web_contacto.php" autocomplete="on">
+
+            <input class="prueba" type="text" name="nombre" id="nombre" required="required" placeholder="¿Como te llamas?"/>
+
+            <input type="email" name="email" id="email" placeholder="Email" required="required"/>
+
+            <input type="text" name="asunto" id="asunto" placeholder="¿Que tema quieres tratar?"/>
+
+            <textarea name="comentario" placeholder="Escribe aquí el mensaje... " required="required"></textarea>
+
+            <p class="formulario-obligatorio  proxima-nova"> Todos los campos son obligatorios.</p>
+
+            <input class="formulario-btn  proxima-nova" name="enviar" type="submit" value="ENVIAR!" />
+
+          </form>
+
+      </div>
+    </article>
+
+    <p class="formulario-email">Si no te gustar rellenar formularios puedes ponerte en contacto conmigo a través de: contacto[arroba]jorgeatgu.com</p>
+
+</article>
+
+<footer>
+      <a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#twitter"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#codepen"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://vimeo.com/jorgeatgu" title="Vimeo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#vimeo"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#facebook"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://www.dribbble.com/jorgeATGU" title="dribbble">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#dribbble"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="https://plus.google.com/100226837035863227420?rel=author" title="google+">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#googleplus"/>
+                    </svg>
+                </a>
+                <a target="_blank" href="http://be.net/jorgeatgu" title="behance">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                        <use xlink:href="img/social-sprite.svg#behance"/>
+                    </svg>
+                </a>
+    </footer>
+  </div>
+        <script async src="js/svg4everybody.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>
