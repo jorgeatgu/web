@@ -3,9 +3,14 @@
   display: inline-block;
   text-align: left;
   font-family: var(--fontSystem);
+  color: #001F3F;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  padding-bottom: 20px;
+  border-right: 1px solid lightgrey;
   .jobs-titulo {
-    font-size: 20px;
-    letter-spacing: 1px;
+    font-size: 28px;
+    letter-spacing: 5px;
     margin-bottom: 0;
     border-bottom: 1px solid #111;
     display: inline-block;
@@ -13,6 +18,15 @@
     text-transform: uppercase;
   }
   .jobs-texto {
-
+    width: 70%;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .jobs-link {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 5px;
+    border-top: 1px solid #111;
   }
 }
