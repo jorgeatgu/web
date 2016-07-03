@@ -1,0 +1,186 @@
+/* ==========================================================================
+EXAMPLE Media Queries for Responsive Design.
+Mobile first styles.
+jorgeATGU
+========================================================================== */
+/* ===== == = === desde 30em (480px) === = == ===== */
+
+@media screen and (min-width:31.5em) {
+}
+
+/* ===== == = === desde 48em (768px) === = == ===== */
+@media only screen and (min-width:48em) {
+  nav {
+    width: 70%;
+    display: inline-block;
+    float: left;
+    padding-top: 15px;
+  }
+
+  .svgindex {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .menu-principal {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .menu-principal li {
+    width: 15%;
+    border: 0;
+    margin-right: 3%;
+  }
+  .menu-principal li:first-child {
+    margin-left: 15%;
+  }
+  .menu-principal li:last-child {
+    margin-right: 15%;
+  }
+  .menu-principal li a {
+    font-size: .8em;
+    padding: 0;
+    margin-top: 10px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    width: auto;
+    letter-spacing: 2px;
+    display: inline-block;
+    border-bottom: 0 solid black;
+  }
+  .menu-principal li a:hover {
+    background: none;
+    color: crimson;
+    border-bottom: 3px solid #000;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+
+  }
+  .social-header {
+    width: 30%;
+  }
+  .social-header a {
+    width: 20%;
+  }
+  .social-header a:first-child {
+    margin-left: 20%;
+  }
+  .recuadro {
+    top: 0;
+  }
+
+  .trabajos-lista {
+    width: 350px;
+    max-width: 350px;
+  }
+
+  .encabezados,
+  .encabezados2,
+  .encabezados3 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+  }
+  .formulario {
+    width: 60%;
+    max-width: 900px;
+    margin: 150px auto;
+  }
+  .formulario-cuerpo input,
+  .formulario-cuerpo textarea {
+    width: 60%;
+  }
+
+  form .formulario-btn {
+    font-size: 1.2em;
+  }
+
+  .trabajos {
+    padding: 80px;
+  }
+
+  .trabajos-interior {
+    display: table;
+  }
+
+  .trabajos-definicion p {
+      font-size: 20px;
+      line-height: 28px;
+  }
+
+  .trabajos-definicion {
+    width: 40%;
+    display: table-cell;
+    background: #fff;
+    padding: 100px 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: middle;
+  }
+
+  .trabajos-grafico figure {
+    padding: 0;
+  }
+
+  .trabajos-grafico img,
+  .trabajos-grafico object {
+    width: 50%;
+    float: left;
+    display: inline-block;
+  }
+
+  .trabajos-grafico-curriculum object {
+    width: 100%;
+    float: none;
+  }
+
+  .trabajos-grafico-libro object {
+    width: 50%;
+    float: none;
+  }
+
+  .trabajos-grafico {
+    width: 60%;
+    display: table-cell;
+    padding: 100px 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .cuadro_mio {
+  padding: 10px 0;
+  }
+
+  .textoindex,
+  .texto-libro {
+    max-width: 700px;
+    font-size: 1.1em;
+    width: 50%;
+    padding-bottom: 25px;
+  }
+  .portada-scalable {
+    width: 20%;
+    max-width: 500px;
+  }
+  .encabezado-h1 {
+    font-size: 2em;
+  }
+}
+
+/* ===== == = === 64em (1024px) === = == ===== */
+@media only screen and (min-width:64em) {
+  .svgindex {
+    max-height: none;
+    max-width: 1700px;
+  }
+
+  .formulario .formulario-cuerpo form .formulario-btn {
+    width: 60%;
+  }
+  .diseimagen, .svgimagen {
+    width: 100%;
+    padding-top: 3%;
+  }
+}
