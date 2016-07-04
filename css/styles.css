@@ -438,28 +438,38 @@ textarea {
 
 /* stylelint-enable */
 
-.jobs {
+.portfolio .portfolio-bio p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
-
-  display: inline-block;
-
-  width: 50%;
-  padding-bottom: 20px;
-
+  font-size: 1.75rem;
+  line-height: 2.38rem;
+  width: 100%;
   text-align: left;
+}
 
-  color: #001F3F;
-  border-top: 1px solid lightgrey;
-  border-right: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+.jobs {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+
+    display: inline-block;
+
+    width: 50%;
+    margin-bottom: 40px;
+    padding-left: 25px;
+
+    text-align: left;
+
+    color: #52164b;
+    /*border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;*/
+    border-left: 1px solid lightgrey;
 }
 
 .jobs .jobs-titulo {
   font-size: 1.75rem;
   display: inline-block;
+  margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 10px;
-  letter-spacing: 0.31rem;
+  letter-spacing: 0.19rem;
   text-transform: uppercase;
   border-bottom: 1px solid #111;
 }
@@ -467,13 +477,14 @@ textarea {
 .jobs .jobs-texto {
   font-size: 1rem;
   line-height: 1.38rem;
-  width: 70%;
+  width: 90%;
 }
 
 .jobs .jobs-link {
   font-size: 0.88rem;
   line-height: 1.25rem;
   display: inline-block;
+  margin-right: 20px;
   padding-top: 5px;
   border-top: 1px solid #111;
 }

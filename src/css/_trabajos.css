@@ -1,32 +1,47 @@
+.portfolio {
+    .portfolio-bio {
+        p {
+            font-size: 28px;
+            line-height: 38px;
+            text-align: left;
+            font-family: var(--fontSystem);
+            width: 100%;
+        }
+    }
+}
+
 .jobs {
-  width: 50%;
-  display: inline-block;
-  text-align: left;
-  font-family: var(--fontSystem);
-  color: #001F3F;
-  border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;
-  padding-bottom: 20px;
-  border-right: 1px solid lightgrey;
-  .jobs-titulo {
-    font-size: 28px;
-    letter-spacing: 5px;
-    margin-bottom: 0;
-    border-bottom: 1px solid #111;
+    width: 50%;
     display: inline-block;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-  }
-  .jobs-texto {
-    width: 70%;
-    font-size: 16px;
-    line-height: 22px;
-  }
-  .jobs-link {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 20px;
-    padding-top: 5px;
-    border-top: 1px solid #111;
-  }
+    text-align: left;
+    font-family: var(--fontSystem);
+    color: #52164b;
+    margin-bottom: 40px;
+    /*border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;*/
+    border-left: 1px solid lightgrey;
+    padding-left: 25px;
+    .jobs-titulo {
+        font-size: 28px;
+        margin-top: 0;
+        letter-spacing: 3px;
+        margin-bottom: 0;
+        border-bottom: 1px solid #111;
+        display: inline-block;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .jobs-texto {
+        width: 90%;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .jobs-link {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 20px;
+        padding-top: 5px;
+        border-top: 1px solid #111;
+        margin-right: 20px;
+    }
 }
