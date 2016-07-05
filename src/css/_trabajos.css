@@ -1,3 +1,7 @@
+body {
+  background-color: #F0F8FF;
+}
+
 .portfolio {
   font-size: 0;
     .portfolio-bio {
@@ -21,7 +25,7 @@
     display: inline-block;
     text-align: left;
     font-family: var(--fontSystem);
-    color: #52164b;
+    color: #2f4f4f;
     margin-bottom: 40px;
     /*border-bottom: 1px solid lightgrey;*/
     border-top: 1px solid lightgrey;
@@ -31,6 +35,7 @@
     .jobs-titulo {
         font-size: 28px;
         margin-top: 0;
+        color: #001F3F;
         letter-spacing: 3px;
         margin-bottom: 0;
         border-bottom: 1px solid #111;
@@ -46,6 +51,7 @@
     .jobs-link {
         display: inline-block;
         font-size: 14px;
+        font-weight: bold;
         line-height: 20px;
         padding-top: 5px;
         border-top: 1px solid #111;

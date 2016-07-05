@@ -438,6 +438,10 @@ textarea {
 
 /* stylelint-enable */
 
+body {
+  background-color: #F0F8FF;
+}
+
 .portfolio {
   font-size: 0;
 }
@@ -471,7 +475,7 @@ textarea {
 
     text-align: left;
 
-    color: #52164b;
+    color: #2f4f4f;
     /*border-bottom: 1px solid lightgrey;*/
     border-top: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
@@ -485,6 +489,7 @@ textarea {
   padding-bottom: 10px;
   letter-spacing: 0.19rem;
   text-transform: uppercase;
+  color: #001F3F;
   border-bottom: 1px solid #111;
 }
 
@@ -496,6 +501,7 @@ textarea {
 
 .jobs .jobs-link {
   font-size: 0.88rem;
+  font-weight: bold;
   line-height: 1.25rem;
   display: inline-block;
   margin-right: 20px;
@@ -695,8 +701,6 @@ Author:jorgeATGU
 
 body {
   text-align: center;
-
-  background: #F1F1F1;
 }
 
 /* ==|== TRABAJOS COLORES INTERIORES =====================================================
