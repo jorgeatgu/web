@@ -2,6 +2,44 @@ body {
   background-color: #F0F8FF;
 }
 
+.m5 {
+  margin: 5px 0;
+}
+
+.font {
+  font-family: var(--fontSystem);
+}
+
+.fs-p {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.btn-h {
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 28px;
+  color: #111;
+}
+
+.dctn-h {
+  font-size: 22px;
+  line-height: 30px;
+  color: #111;
+}
+
+.ttl {
+  font-size: 28px;
+  margin-top: 0;
+  color: #001F3F;
+  letter-spacing: 3px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #111;
+  display: inline-block;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+}
+
 .portfolio {
   font-size: 0;
     .portfolio-bio {
@@ -11,10 +49,9 @@ body {
         max-width: 60%;
       }
         p {
-            font-size: 28px;
-            line-height: 38px;
+            font-size: 24px;
+            line-height: 32px;
             text-align: left;
-            font-family: var(--fontSystem);
             width: 100%;
         }
     }
