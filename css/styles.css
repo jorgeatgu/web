@@ -434,9 +434,9 @@ textarea {
   -webkit-appearance: button; /* 1 */
 }
 
-/* stylelint-disable */
-
-/* stylelint-enable */
+* {
+  box-sizing: border-box;
+}
 
 body {
   background-color: #F0F8FF;
@@ -461,14 +461,18 @@ body {
 
   text-decoration: none;
 
-  color: #111;
+  color: #121;
 }
 
 .dctn-h {
   font-size: 1.38rem;
   line-height: 1.88rem;
 
-  color: #111;
+  color: #121;
+}
+
+.navy {
+  color: #001F3F;
 }
 
 .ttl {
@@ -483,74 +487,46 @@ body {
   letter-spacing: 0.19rem;
   text-transform: uppercase;
 
-  color: #001F3F;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #121;
 }
 
-.portfolio {
-  font-size: 0;
-}
-
-.portfolio .portfolio-bio {
+.jobs-d {
   display: inline-block;
-  width: 50%;
-}
 
-.portfolio .portfolio-bio img {
-  max-width: 60%;
-}
-
-.portfolio .portfolio-bio p {
-  font-size: 1.5rem;
-  line-height: 2rem;
   width: 100%;
-  text-align: left;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-left: 20px;
+
+  color: #2f4f4f;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
 }
 
-.jobs {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+.maw2 {
+  max-width: 200px;
+}
+
+.jobs-t {
+    font-size: 1rem;
+    line-height: 1.38rem;
+
+    width: 90%;
+}
+
+.jobs-l {
+    font-size: 0.88rem;
+    font-weight: bold;
+    line-height: 1.25rem;
 
     display: inline-block;
 
-    width: 50%;
-    margin-bottom: 40px;
-    padding-top: 20px;
-    padding-left: 20px;
+    margin-right: 20px;
+    padding-top: 5px;
 
-    text-align: left;
+    text-decoration: none;
 
-    color: #2f4f4f;
-    /*border-bottom: 1px solid lightgrey;*/
-    border-top: 1px solid lightgrey;
-    border-left: 1px solid lightgrey;
-}
-
-.jobs .jobs-titulo {
-  font-size: 1.75rem;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-bottom: 10px;
-  letter-spacing: 0.19rem;
-  text-transform: uppercase;
-  color: #001F3F;
-  border-bottom: 1px solid #111;
-}
-
-.jobs .jobs-texto {
-  font-size: 1rem;
-  line-height: 1.38rem;
-  width: 90%;
-}
-
-.jobs .jobs-link {
-  font-size: 0.88rem;
-  font-weight: bold;
-  line-height: 1.25rem;
-  display: inline-block;
-  margin-right: 20px;
-  padding-top: 5px;
-  border-top: 1px solid #111;
+    border-top: 1px solid #121;
 }
 
 /* ==========================================================================

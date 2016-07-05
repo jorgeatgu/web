@@ -1,5 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #F0F8FF;
+  background-color: var(--bgcColor);
 }
 
 .m5 {
@@ -19,79 +23,58 @@ body {
   text-decoration: none;
   font-size: 20px;
   line-height: 28px;
-  color: #111;
+  color: var(--impureBlack);
 }
 
 .dctn-h {
   font-size: 22px;
   line-height: 30px;
-  color: #111;
+  color: var(--impureBlack);
+}
+
+.navy {
+  color: var(--navy);
 }
 
 .ttl {
   font-size: 28px;
   margin-top: 0;
-  color: #001F3F;
   letter-spacing: 3px;
   margin-bottom: 0;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid var(--impureBlack);
   display: inline-block;
   padding-bottom: 10px;
   text-transform: uppercase;
 }
 
-.portfolio {
-  font-size: 0;
-    .portfolio-bio {
-      width: 50%;
-      display: inline-block;
-      img {
-        max-width: 60%;
-      }
-        p {
-            font-size: 24px;
-            line-height: 32px;
-            text-align: left;
-            width: 100%;
-        }
-    }
+.jobs-d {
+  width: 100%;
+  display: inline-block;
+  color: #2f4f4f;
+  margin-bottom: 40px;
+  border-top: 1px solid var(--lgrey);
+  border-left: 1px solid var(--lgrey);
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
-.jobs {
-    width: 50%;
+.maw2 {
+  max-width: 200px;
+}
+
+.jobs-t {
+    width: 90%;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.jobs-l {
     display: inline-block;
-    text-align: left;
-    font-family: var(--fontSystem);
-    color: #2f4f4f;
-    margin-bottom: 40px;
-    /*border-bottom: 1px solid lightgrey;*/
-    border-top: 1px solid lightgrey;
-    border-left: 1px solid lightgrey;
-    padding-left: 20px;
-    padding-top: 20px;
-    .jobs-titulo {
-        font-size: 28px;
-        margin-top: 0;
-        color: #001F3F;
-        letter-spacing: 3px;
-        margin-bottom: 0;
-        border-bottom: 1px solid #111;
-        display: inline-block;
-        padding-bottom: 10px;
-        text-transform: uppercase;
-    }
-    .jobs-texto {
-        width: 90%;
-        font-size: 16px;
-        line-height: 22px;
-    }
-    .jobs-link {
-        display: inline-block;
-        font-size: 14px;
-        font-weight: bold;
-        line-height: 20px;
-        padding-top: 5px;
-        border-top: 1px solid #111;
-        margin-right: 20px;
-    }
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding-top: 5px;
+    border-top: 1px solid var(--impureBlack);
+    margin-right: 20px;
+    text-decoration: none;
 }
