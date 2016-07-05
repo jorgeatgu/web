@@ -24,6 +24,7 @@ body {
   font-size: 20px;
   line-height: 28px;
   color: var(--impureBlack);
+  text-transform: uppercase;
 }
 
 .dctn-h {
@@ -34,6 +35,14 @@ body {
 
 .navy {
   color: var(--navy);
+}
+
+.i-black {
+  color: var(--impureBlack);
+}
+
+.teal {
+  color: var(--teal);
 }
 
 .ttl {
@@ -50,7 +59,6 @@ body {
 .jobs-d {
   width: 100%;
   display: inline-block;
-  color: #2f4f4f;
   margin-bottom: 40px;
   border-top: 1px solid var(--lgrey);
   border-left: 1px solid var(--lgrey);

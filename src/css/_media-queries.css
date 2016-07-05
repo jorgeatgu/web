@@ -84,16 +84,5 @@ jorgeATGU
 
 /* ===== == = === 64em (1024px) === = == ===== */
 @media only screen and (min-width:64em) {
-  .svgindex {
-    max-height: none;
-    max-width: 1700px;
-  }
 
-  .formulario .formulario-cuerpo form .formulario-btn {
-    width: 60%;
-  }
-  .diseimagen, .svgimagen {
-    width: 100%;
-    padding-top: 3%;
-  }
 }

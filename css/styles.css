@@ -460,6 +460,7 @@ body {
   line-height: 1.75rem;
 
   text-decoration: none;
+  text-transform: uppercase;
 
   color: #121;
 }
@@ -473,6 +474,14 @@ body {
 
 .navy {
   color: #001F3F;
+}
+
+.i-black {
+  color: #121;
+}
+
+.teal {
+  color: #2f4f4f;
 }
 
 .ttl {
@@ -498,7 +507,6 @@ body {
   padding-top: 20px;
   padding-left: 20px;
 
-  color: #2f4f4f;
   border-top: 1px solid lightgrey;
   border-left: 1px solid lightgrey;
 }
@@ -608,17 +616,7 @@ jorgeATGU
 /* ===== == = === 64em (1024px) === = == ===== */
 
 @media only screen and (min-width:64em) {
-  .svgindex {
-    max-width: 1700px;
-    max-height: none;
-  }
-  .formulario .formulario-cuerpo form .formulario-btn {
-    width: 60%;
-  }
-  .diseimagen, .svgimagen {
-    width: 100%;
-    padding-top: 3%;
-  }
+
 }
 
 /* ==|== primary styles  =====================================================
