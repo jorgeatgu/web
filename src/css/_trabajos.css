@@ -1,5 +1,11 @@
 .portfolio {
+  font-size: 0;
     .portfolio-bio {
+      width: 50%;
+      display: inline-block;
+      img {
+        max-width: 60%;
+      }
         p {
             font-size: 28px;
             line-height: 38px;
@@ -17,10 +23,11 @@
     font-family: var(--fontSystem);
     color: #52164b;
     margin-bottom: 40px;
-    /*border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;*/
+    /*border-bottom: 1px solid lightgrey;*/
+    border-top: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
-    padding-left: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
     .jobs-titulo {
         font-size: 28px;
         margin-top: 0;

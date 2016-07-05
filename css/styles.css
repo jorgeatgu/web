@@ -438,6 +438,19 @@ textarea {
 
 /* stylelint-enable */
 
+.portfolio {
+  font-size: 0;
+}
+
+.portfolio .portfolio-bio {
+  display: inline-block;
+  width: 50%;
+}
+
+.portfolio .portfolio-bio img {
+  max-width: 60%;
+}
+
 .portfolio .portfolio-bio p {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 1.75rem;
@@ -453,13 +466,14 @@ textarea {
 
     width: 50%;
     margin-bottom: 40px;
-    padding-left: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
 
     text-align: left;
 
     color: #52164b;
-    /*border-bottom: 1px solid lightgrey;
-  border-top: 1px solid lightgrey;*/
+    /*border-bottom: 1px solid lightgrey;*/
+    border-top: 1px solid lightgrey;
     border-left: 1px solid lightgrey;
 }
 
