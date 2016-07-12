@@ -954,19 +954,19 @@ footer a {
   animation: pulse 1s linear both;
 }
 
-.trabajos-grafico figure {
+.trbjs-r figure {
   padding: 25px 0;
 }
 
-.trabajos-definicion {
+.trbjs-l {
   padding: 0 20px;
 }
 
-.trabajos-interior {
+.trbjs {
   width: 100%;
 }
 
-.trabajos-definicion h1 {
+.trbjs-l h1 {
     text-align: left;
     color: #001F3F;
     font-size: 2em;
@@ -974,7 +974,7 @@ footer a {
     text-transform: uppercase;
 }
 
-.trabajos-definicion p {
+.trbjs-l p {
     font-family: "ff-meta-web-pro",sans-serif;
     font-size: 16px;
     text-align: left;
@@ -982,8 +982,8 @@ footer a {
     color: #2F4F4F;
 }
 
-.trabajos-grafico img,
-.trabajos-grafico object {
+.trbjs-r img,
+.trbjs-r object {
   width: 100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1102,68 +1102,68 @@ figcaption p {
 /* ==|== TRABAJOS COLORES INTERIORES =====================================================
 ========================================================================== */
 
-.trabajos-grafico-calendario {
+.trbjs-r-calendario {
   background-color: paleturquoise;
 }
 
-.trabajos-grafico-visible {
+.trbjs-r-visible {
   background-color: #FAEBD7;
 }
 
-.trabajos-grafico-logotipos {
+.trbjs-r-logotipos {
   background-color: darksalmon;
 }
 
-.trabajos-grafico-curriculum {
+.trbjs-r-curriculum {
   background-color: aquamarine;
 }
 
-.trabajos-grafico-libro {
+.trbjs-r-libro {
   background-color: antiquewhite;
 }
 
-.trabajos-grafico-city {
+.trbjs-r-city {
   background-color: floralwhite;
 }
 
-.trabajos-grafico-error {
+.trbjs-r-error {
   background-color: aqua;
 }
 
-.trabajos-grafico-animacion-portada {
+.trbjs-r-animacion-portada {
   background-color: #45BCD2;
 }
 
-.trabajos-grafico-perfil-codepen {
+.trbjs-r-perfil-codepen {
   background-color: #EFCC52;
 }
 
-.trabajos-grafico-iphone {
+.trbjs-r-iphone {
   background-color: #9AE9C7;
 }
 
-.trabajos-grafico-jetpack {
+.trbjs-r-jetpack {
   background-color: #000;
 }
 
-.trabajos-grafico-postbox {
+.trbjs-r-postbox {
   background-color: #FEE470;
 }
 
-.trabajos-grafico-rodeo {
+.trbjs-r-rodeo {
   background-color: #BDC3C7;
 }
 
-.trabajos-grafico-viewbox {
+.trbjs-r-viewbox {
   background-color: #73C2AC;
 }
 
-.trabajos-grafico-svg-snippets {
+.trbjs-r-svg-snippets {
   background-color: #7FDBFF;
 }
 
-.trabajos-grafico-smil-snippets,
-.trabajos-grafico-charlas {
+.trbjs-r-smil-snippets,
+.trbjs-r-charlas {
   background-color: beige;
 }
 
@@ -1374,16 +1374,16 @@ jorgeATGU
     padding: 80px;
   }
 
-  .trabajos-interior {
+  .trbjs {
     display: table;
   }
 
-  .trabajos-definicion p {
+  .trbjs-l p {
       font-size: 20px;
       line-height: 28px;
   }
 
-  .trabajos-definicion {
+  .trbjs-l {
     width: 40%;
     display: table-cell;
     background: #fff;
@@ -1394,28 +1394,28 @@ jorgeATGU
     vertical-align: middle;
   }
 
-  .trabajos-grafico figure {
+  .trbjs-r figure {
     padding: 0;
   }
 
-  .trabajos-grafico img,
-  .trabajos-grafico object {
+  .trbjs-r img,
+  .trbjs-r object {
     width: 50%;
     float: left;
     display: inline-block;
   }
 
-  .trabajos-grafico-curriculum object {
+  .trbjs-r-curriculum object {
     width: 100%;
     float: none;
   }
 
-  .trabajos-grafico-libro object {
+  .trbjs-r-libro object {
     width: 50%;
     float: none;
   }
 
-  .trabajos-grafico {
+  .trbjs-r {
     width: 60%;
     display: table-cell;
     padding: 100px 50px;

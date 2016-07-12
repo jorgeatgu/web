@@ -1,3 +1,32 @@
+/* README
+
+El crear clases por estilo es una prueba para reutilizar
+absolutamente casi todo. No todo esta hecho así pero
+la experiencia ha sido muy grata.
+
+El diseño y el CSS esta fuertemente influenciado por los
+creadores de Bascss(http://basscss.com) y Tachyons(http://tachyons.io).
+Y ahora se complementa a la perfección con el blog.
+Aquí también utilizo fuentes del sistema y esquemas
+de colores con un contraste alto. Si que es verdad
+que la presentación de trabajos sigue con el diseño
+anterior, me parece clara y me gusta.
+
+Casi todas las clases siguen la nomenclatura de Emmet.
+En el caso de las secciones de trabajo, header y footer
+simplemente he quitado las vocales para que se vea de un
+simple vistazo.
+
+He vuelto a los origenes y no he indentado absolutamente nada.
+Es obvio que una página con un diseño tan amable y sencillo
+no requiere mayores complicaciones pero estaría bien darle
+la vuelta a esas anidaciones que casi pueden llegar al centro
+de la tierra. Pensad.
+
+Jorge Aznar 12 de julio de 2016
+*/
+
+
 @import '_reset';
 @import '_variables';
 @import '_header';
@@ -6,77 +35,68 @@
 @import '_media-queries';
 
 
-/* ==|== primary styles  =====================================================
-Author:jorgeATGU
-========================================================================== */
-
-
-
-/* ==|== TRABAJOS COLORES INTERIORES =====================================================
-========================================================================== */
-
-.trabajos-grafico-calendario {
+.trbjs-r-calendario {
   background-color: paleturquoise;
 }
 
-.trabajos-grafico-visible {
+.trbjs-r-visible {
   background-color: #FAEBD7;
 }
 
-.trabajos-grafico-logotipos {
+.trbjs-r-logotipos {
   background-color: darksalmon;
 }
 
-.trabajos-grafico-curriculum {
+.trbjs-r-curriculum {
   background-color: aquamarine;
 }
 
-.trabajos-grafico-libro {
+.trbjs-r-libro {
   background-color: antiquewhite;
 }
 
-.trabajos-grafico-city {
+.trbjs-r-city {
   background-color: floralwhite;
 }
 
-.trabajos-grafico-error {
+.trbjs-r-error {
   background-color: aqua;
 }
 
-.trabajos-grafico-animacion-portada {
+.trbjs-r-animacion-portada {
   background-color: #45BCD2;
 }
 
-.trabajos-grafico-perfil-codepen {
+.trbjs-r-perfil-codepen {
   background-color: #EFCC52;
 }
 
-.trabajos-grafico-iphone {
+.trbjs-r-iphone {
   background-color: #9AE9C7;
 }
 
-.trabajos-grafico-jetpack {
+.trbjs-r-jetpack {
   background-color: #000;
 }
 
-.trabajos-grafico-postbox {
+.trbjs-r-postbox {
   background-color: #FEE470;
 }
 
-.trabajos-grafico-rodeo {
+.trbjs-r-rodeo {
   background-color: #BDC3C7;
 }
 
-.trabajos-grafico-viewbox {
+.trbjs-r-viewbox {
   background-color: #73C2AC;
 }
 
-.trabajos-grafico-svg-snippets {
+.trbjs-r-svg-snippets {
   background-color: #7FDBFF;
 }
 
-.trabajos-grafico-smil-snippets,
-.trabajos-grafico-charlas {
+.trbjs-r-smil-snippets,
+.trbjs-r-charlas {
   background-color: beige;
 }
 

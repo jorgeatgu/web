@@ -1,8 +1,3 @@
-/* ==========================================================================
-EXAMPLE Media Queries for Responsive Design.
-Mobile first styles.
-jorgeATGU
-
 /* ===== == = === desde 48em (768px) === = == ===== */
 @media only screen and (min-width:48em) {
 
@@ -10,20 +5,18 @@ jorgeATGU
     width: 70%;
   }
 
-  .trabajos {
-    padding: 80px;
-  }
-
-  .trabajos-interior {
+  .trbjs {
     display: table;
+    width: 100%;
+    margin-top: 20px;
   }
 
-  .trabajos-definicion p {
+  .trbjs-l p {
       font-size: 20px;
       line-height: 28px;
   }
 
-  .trabajos-definicion {
+  .trbjs-l {
     width: 40%;
     display: table-cell;
     background: #fff;
@@ -34,53 +27,16 @@ jorgeATGU
     vertical-align: middle;
   }
 
-  .trabajos-grafico figure {
+  .trbjs-r figure {
     padding: 0;
   }
 
-  .trabajos-grafico img,
-  .trabajos-grafico object {
-    width: 50%;
-    float: left;
-    display: inline-block;
-  }
-
-  .trabajos-grafico-curriculum object {
-    width: 100%;
-    float: none;
-  }
-
-  .trabajos-grafico-libro object {
-    width: 50%;
-    float: none;
-  }
-
-  .trabajos-grafico {
+  .trbjs-r {
     width: 60%;
     display: table-cell;
     padding: 100px 50px;
     box-sizing: border-box;
   }
-
-  .cuadro_mio {
-  padding: 10px 0;
-  }
-
-  .textoindex,
-  .texto-libro {
-    max-width: 700px;
-    font-size: 1.1em;
-    width: 50%;
-    padding-bottom: 25px;
-  }
-  .portada-scalable {
-    width: 20%;
-    max-width: 500px;
-  }
-  .encabezado-h1 {
-    font-size: 2em;
-  }
-
 
 }
 

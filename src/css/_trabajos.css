@@ -15,8 +15,8 @@ body {
 }
 
 .fs-p {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 .btn-h {
@@ -101,4 +101,10 @@ body {
   width: 90%;
   margin: 0 auto;
   max-width: 800px;
+}
+
+.trbjs-l {
+  background: #fff;
+  width: 100%;
+  padding: 10px;
 }
