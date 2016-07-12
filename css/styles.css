@@ -457,12 +457,14 @@ body {
 
 .btn-h {
   font-size: 1.25rem;
+  font-weight: bold;
   line-height: 1.75rem;
 
   text-decoration: none;
+  letter-spacing: 0.13rem;
   text-transform: uppercase;
 
-  color: #121;
+  color: #001F3F;
 }
 
 .dctn-h {
@@ -511,6 +513,10 @@ body {
   border-left: 1px solid lightgrey;
 }
 
+.hdr {
+  margin-top: 20px;
+}
+
 .maw2 {
   max-width: 200px;
 }
@@ -537,8 +543,8 @@ body {
     border-top: 1px solid #121;
 }
 
-.portfolio {
-  margin: 2.5rem 0;
+.prtfl {
+  margin: 0.63rem 0 2.5rem 0;
 }
 
 .container {
