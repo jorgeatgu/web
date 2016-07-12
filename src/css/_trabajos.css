@@ -108,3 +108,78 @@ body {
   width: 100%;
   padding: 10px;
 }
+
+.trbjs-lnks {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 10px;
+  margin-left: 0;
+  display: block;
+}
+
+.trbjs-r-calendario {
+  background-color: paleturquoise;
+}
+
+.trbjs-r-visible {
+  background-color: #FAEBD7;
+}
+
+.trbjs-r-logotipos {
+  background-color: darksalmon;
+}
+
+.trbjs-r-curriculum {
+  background-color: aquamarine;
+}
+
+.trbjs-r-libro {
+  background-color: antiquewhite;
+}
+
+.trbjs-r-city {
+  background-color: floralwhite;
+}
+
+.trbjs-r-error {
+  background-color: aqua;
+}
+
+.trbjs-r-animacion-portada {
+  background-color: #45BCD2;
+}
+
+.trbjs-r-perfil-codepen {
+  background-color: #EFCC52;
+}
+
+.trbjs-r-iphone {
+  background-color: #9AE9C7;
+}
+
+.trbjs-r-jetpack {
+  background-color: #000;
+}
+
+.trbjs-r-postbox {
+  background-color: #FEE470;
+}
+
+.trbjs-r-rodeo {
+  background-color: #BDC3C7;
+}
+
+.trbjs-r-viewbox {
+  background-color: #73C2AC;
+}
+
+.trbjs-r-svg-snippets {
+  background-color: #7FDBFF;
+}
+
+.trbjs-r-smil-snippets,
+.trbjs-r-charlas {
+  background-color: beige;
+}

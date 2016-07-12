@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Jorge Aznar -- front-end developer * SVG -- Zaragoza / Aragón
+    Jorge Aznar -- front/design -- Zaragoza / Aragón
 	https://twitter.com/jorgeATGU
 	http://codepen.io/jorgeatgu
 	http://behance.net/jorgeatgu
@@ -17,10 +17,8 @@
 # TECHNOLOGY COLOPHON
 
 
-Last update: 04/04/2015
+Last update: 12/06/2016
 
 Standards: SVG, HTML5, CSS3, RESPONSIVE WEB DESIGN, MOBILE-FIRST
 
-Components: Modernizr & VelocityJS
-
-Software: Sublime Text 3 + Illustrator CC
+Software: Sublime Text 3
