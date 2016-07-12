@@ -1,0 +1,20 @@
+.ftr {
+  margin-top: 40px;
+  font-size: 0;
+}
+
+.ftr-l,
+.ftr-r {
+  display: inline-block;
+  width: 50%;
+  font-size: 16px;
+}
+
+.ftr-r {
+  text-align: right;
+}
+
+.ftr-lks {
+  text-decoration: none;
+  color: var(--navy);
+}

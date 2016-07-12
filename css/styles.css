@@ -639,6 +639,31 @@ jorgeATGU
 
 }
 
+.ftr {
+  font-size: 0;
+
+  margin-top: 40px;
+}
+
+.ftr-l,
+.ftr-r {
+  font-size: 1rem;
+
+  display: inline-block;
+
+  width: 50%;
+}
+
+.ftr-r {
+  text-align: right;
+}
+
+.ftr-lks {
+  text-decoration: none;
+
+  color: #001F3F;
+}
+
 /* ==|== primary styles  =====================================================
 Author:jorgeATGU
 ========================================================================== */
