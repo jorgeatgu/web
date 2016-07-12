@@ -537,6 +537,16 @@ body {
     border-top: 1px solid #121;
 }
 
+.portfolio {
+  margin: 2.5rem 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 /* ==========================================================================
 EXAMPLE Media Queries for Responsive Design.
 Mobile first styles.
@@ -545,6 +555,10 @@ jorgeATGU
 /* ===== == = === desde 48em (768px) === = == ===== */
 
 @media only screen and (min-width:48em) {
+  .container {
+    width: 50%;
+    margin: 0 auto;
+  }
   .trabajos {
     padding: 5rem;
   }

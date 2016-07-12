@@ -86,3 +86,13 @@ body {
     margin-right: 20px;
     text-decoration: none;
 }
+
+.portfolio {
+  margin: 40px 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+}
