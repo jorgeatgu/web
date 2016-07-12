@@ -14,6 +14,7 @@ nano = require('gulp-cssnano');
 notify = require("gulp-notify");
 stylelint = require('stylelint');
 browserSync = require("browser-sync");
+perfTool = require('devbridge-perf-tool');
 
 gulp.task("browserSync", function() {
   browserSync({
@@ -139,6 +140,14 @@ gulp.task('images', function() {
     .pipe(newer(imgDist))
     .pipe(imagemin())
     .pipe(gulp.dest(imgDist));
+});
+
+gulp.task('perf-tool', function() {
+  var options = {
+    siteURL: 'http://www.jorgeatgu.com',
+    sitePages: ['/']
+  };
+  return require('devbridge-perf-tool').performance(options);
 });
 
 /* Tarea por defecto para compilar CSS y comprimir imagenes */
