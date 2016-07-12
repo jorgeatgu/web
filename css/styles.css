@@ -553,6 +553,29 @@ body {
   margin: 0 auto;
 }
 
+.ftr {
+  font-size: 0;
+
+  margin-top: 40px;
+}
+
+.ftr-l,
+.ftr-r {
+  font-size: 1rem;
+
+  display: inline-block;
+
+  width: 100%;
+}
+
+.ftr-lks {
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  color: #001F3F;
+}
+
 /* ==========================================================================
 EXAMPLE Media Queries for Responsive Design.
 Mobile first styles.
@@ -562,8 +585,7 @@ jorgeATGU
 
 @media only screen and (min-width:48em) {
   .container {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
   }
   .trabajos {
     padding: 5rem;
@@ -631,37 +653,23 @@ jorgeATGU
   .encabezado-h1 {
     font-size: 2em;
   }
+
+
 }
 
 /* ===== == = === 64em (1024px) === = == ===== */
 
 @media only screen and (min-width:64em) {
-
-}
-
-.ftr {
-  font-size: 0;
-
-  margin-top: 40px;
-}
-
-.ftr-l,
-.ftr-r {
-  font-size: 1rem;
-
-  display: inline-block;
-
-  width: 50%;
-}
-
-.ftr-r {
-  text-align: right;
-}
-
-.ftr-lks {
-  text-decoration: none;
-
-  color: #001F3F;
+  .container {
+    width: 50%;
+  }
+  .ftr-l,
+  .ftr-r {
+    width: 50%;
+  }
+  .ftr-r {
+    text-align: right;
+  }
 }
 
 /* ==|== primary styles  =====================================================

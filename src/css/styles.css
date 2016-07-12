@@ -1,9 +1,9 @@
 @import '_reset';
 @import '_variables';
-@import '_trabajos';
-@import '_media-queries';
 @import '_header';
+@import '_trabajos';
 @import '_footer';
+@import '_media-queries';
 
 
 /* ==|== primary styles  =====================================================

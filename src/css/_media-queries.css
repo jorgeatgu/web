@@ -7,8 +7,7 @@ jorgeATGU
 @media only screen and (min-width:48em) {
 
   .container {
-    width: 50%;
-    margin: 0 auto;
+    width: 70%;
   }
 
   .trabajos {
@@ -81,9 +80,22 @@ jorgeATGU
   .encabezado-h1 {
     font-size: 2em;
   }
+
+
 }
 
 /* ===== == = === 64em (1024px) === = == ===== */
 @media only screen and (min-width:64em) {
+  .container {
+    width: 50%;
+  }
 
+  .ftr-l,
+  .ftr-r {
+    width: 50%;
+  }
+
+  .ftr-r {
+    text-align: right;
+  }
 }

@@ -6,15 +6,12 @@
 .ftr-l,
 .ftr-r {
   display: inline-block;
-  width: 50%;
+  width: 100%;
   font-size: 16px;
-}
-
-.ftr-r {
-  text-align: right;
 }
 
 .ftr-lks {
   text-decoration: none;
   color: var(--navy);
+  font-size: 16px;
 }
