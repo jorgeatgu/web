@@ -4,6 +4,7 @@
 
 body {
   background-color: var(--bgcColor);
+  line-height: 1.5;
 }
 
 .m5 {
@@ -16,13 +17,11 @@ body {
 
 .fs-p {
   font-size: 20px;
-  line-height: 28px;
 }
 
 .btn-h {
   text-decoration: none;
   font-size: 20px;
-  line-height: 28px;
   font-weight: bold;
   letter-spacing: 2px;
   color: var(--navy);
@@ -31,7 +30,6 @@ body {
 
 .dctn-h {
   font-size: 22px;
-  line-height: 30px;
   color: var(--impureBlack);
 }
 
@@ -79,14 +77,12 @@ body {
 .jobs-t {
     width: 90%;
     font-size: 16px;
-    line-height: 22px;
 }
 
 .jobs-l {
     display: inline-block;
     font-size: 14px;
     font-weight: bold;
-    line-height: 20px;
     padding-top: 5px;
     border-top: 1px solid var(--impureBlack);
     margin-right: 20px;
