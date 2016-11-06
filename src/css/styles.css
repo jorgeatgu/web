@@ -32,7 +32,3 @@ Jorge Aznar 12 de julio de 2016
 @import '_footer';
 @import '_media-queries';
 
-.footer {
-  color: var(--bgcColor);
-
-}
