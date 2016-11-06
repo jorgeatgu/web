@@ -1,5 +1,5 @@
 /* ===== == = === desde 48em (768px) === = == ===== */
-@media only screen and (min-width:48em) {
+@media only screen and (min-width: 48em) {
 
   .container {
     width: 70%;
@@ -40,7 +40,7 @@
 }
 
 /* ===== == = === 64em (1024px) === = == ===== */
-@media only screen and (min-width:64em) {
+@media only screen and (min-width: 64em) {
   .container {
     width: 50%;
   }
