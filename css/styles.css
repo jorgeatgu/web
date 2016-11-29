@@ -473,7 +473,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
   line-height: 1.5;
 
-  background-color: #F0F8FF;
+  background-color: #eeecaf;
 }
 
 .m5 {
@@ -496,7 +496,7 @@ body {
   letter-spacing: 0.13rem;
   text-transform: uppercase;
 
-  color: #001F3F;
+  color: #151553;
 }
 
 .dctn-h {
@@ -506,7 +506,7 @@ body {
 }
 
 .navy {
-  color: #001F3F;
+  color: #151553;
 }
 
 .i-black {
@@ -700,7 +700,7 @@ body {
 
   text-decoration: none;
 
-  color: #001F3F;
+  color: #151553;
 }
 
 /* ===== == = === desde 48em (768px) === = == ===== */
