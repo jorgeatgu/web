@@ -5,14 +5,11 @@
 body {
   background-color: var(--bgcColor);
   line-height: 1.5;
+  font-family: var(--fontSystem);
 }
 
 .m5 {
   margin: 5px 0;
-}
-
-.font {
-  font-family: var(--fontSystem);
 }
 
 .fs-p {
@@ -94,7 +91,7 @@ body {
 }
 
 .prtfl {
-  margin: 10px 0 40px 0;
+  margin: 10px 0 40px;
 }
 
 .container {
@@ -182,4 +179,17 @@ body {
 .trbjs-r-smil-snippets,
 .trbjs-r-charlas {
   background-color: beige;
+}
+
+.di-b {
+  display: inline-block;
+}
+
+.margin-y0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.va-m {
+  vertical-align: middle;
 }
