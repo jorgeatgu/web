@@ -485,7 +485,7 @@ body {
 }
 
 .bold {
-  font-weight: bold;
+  font-weight:bold;  font-weight:bold;
 }
 
 .btn-h {
@@ -680,6 +680,26 @@ body {
   vertical-align: middle;
 }
 
+.border-t10 {
+  border-top: 3px solid #151553;
+}
+
+.width8 {
+  width: 60px;
+}
+
+.width6 {
+  width: 40px;
+}
+
+.width4 {
+  width: 20px;
+}
+
+.display-b {
+  display: block;
+}
+
 .ftr {
   font-size: 0;
 
@@ -759,7 +779,7 @@ body {
     font-size: 1rem;
   }
   .prtfl-logo {
-    width: 20%;
+    width: P%;
   }
   .prtfl-bio {
     width: 80%;
@@ -768,6 +788,5 @@ body {
     font-size: 0;
   }
 }
-
 
 /*# sourceMappingURL=css/styles.css.map */
