@@ -17,8 +17,7 @@ body {
 }
 
 .bold {
-
-  font-weight:bold;  font-weight:bold;
+  font-weight: bold;
 }
 
 .btn-h {
@@ -50,12 +49,8 @@ body {
 .ttl {
   font-size: 28px;
   margin-top: 0;
-  letter-spacing: 3px;
   margin-bottom: 0;
-  border-bottom: 1px solid var(--impureBlack);
   display: inline-block;
-  padding-bottom: 10px;
-  text-transform: uppercase;
 }
 
 .jobs-d {

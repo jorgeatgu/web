@@ -485,7 +485,7 @@ body {
 }
 
 .bold {
-  font-weight:bold;  font-weight:bold;
+  font-weight: bold;
 }
 
 .btn-h {
@@ -524,12 +524,6 @@ body {
 
   margin-top: 0;
   margin-bottom: 0;
-  padding-bottom: 10px;
-
-  letter-spacing: 0.19rem;
-  text-transform: uppercase;
-
-  border-bottom: 1px solid #121;
 }
 
 .jobs-d {
@@ -766,7 +760,7 @@ body {
 
 @media only screen and (min-width: 64em) {
   .container {
-    width: 50%;
+    width: 65%;
   }
   .ftr-l,
   .ftr-r {
@@ -777,12 +771,6 @@ body {
   }
   .fs-p {
     font-size: 1rem;
-  }
-  .prtfl-logo {
-    width: P%;
-  }
-  .prtfl-bio {
-    width: 80%;
   }
   .prtfl {
     font-size: 0;
