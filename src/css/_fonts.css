@@ -1,0 +1,172 @@
+:root {
+  --fontSystem: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+}
+
+.font-system {
+  font-family: var(--fontSystem);
+}
+
+.font-monospace,
+code {
+  font-family: var(--monospace);
+}
+
+.font-0 {
+  font-size: 0;
+}
+
+.font-0__5 {
+  font-size: .5rem;
+}
+
+.font-0__8 {
+  font-size: .8rem;
+}
+
+.font-1 {
+  font-size: 1rem;
+}
+
+.font-1-5 {
+  font-size: 1.5rem;
+}
+
+.font-2 {
+  font-size: 2rem;
+}
+
+.font-3 {
+  font-size: 3rem;
+}
+
+.font-4 {
+  font-size: 4rem;
+}
+
+.font-5 {
+  font-size: 5rem;
+}
+
+@media only screen and (min-width: 30em) {
+
+  .font-0--s {
+    font-size: 0;
+  }
+
+  .font-0__5--s {
+    font-size: .5rem;
+  }
+
+  .font-0__8--s {
+    font-size: .8rem;
+  }
+
+  .font-1--s {
+    font-size: 1rem;
+  }
+
+  .font-1-5--s {
+    font-size: 1.5rem;
+  }
+
+  .font-2--s {
+    font-size: 2rem;
+  }
+
+  .font-3--s {
+    font-size: 3rem;
+  }
+
+  .font-4--s {
+    font-size: 4rem;
+  }
+
+  .font-5--s {
+    font-size: 5rem;
+  }
+
+}
+
+@media only screen and (min-width: 48em) {
+
+  .font-0--m {
+    font-size: 0;
+  }
+
+  .font-0__5--m {
+    font-size: .5rem;
+  }
+
+  .font-0__8--m {
+    font-size: .8rem;
+  }
+
+  .font-1--m {
+    font-size: 1rem;
+  }
+
+  .font-1-5--m {
+    font-size: 1.5rem;
+  }
+
+  .font-2--m {
+    font-size: 2rem;
+  }
+
+  .font-3--m {
+    font-size: 3rem;
+  }
+
+  .font-4--m {
+    font-size: 4rem;
+  }
+
+  .font-5--m {
+    font-size: 5rem;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+
+  .font-0--l {
+    font-size: 0;
+  }
+
+  .font-0__5--l {
+    font-size: .5rem;
+  }
+
+  .font-0__8--l {
+    font-size: .8rem;
+  }
+
+  .font-1--l {
+    font-size: 1rem;
+  }
+
+  .font-1-5--l {
+    font-size: 1.5rem;
+  }
+
+  .font-2--l {
+    font-size: 2rem;
+  }
+
+  .font-3--l {
+    font-size: 3rem;
+  }
+
+  .font-4--l {
+    font-size: 4rem;
+  }
+
+  .font-5--l {
+    font-size: 5rem;
+  }
+
+}
+
+

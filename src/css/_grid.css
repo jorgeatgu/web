@@ -1,0 +1,240 @@
+/* CSS GRID
+
+  El soporte para CSS Grid sin prefijos:
+
+   Firefox 52 >
+   Chrome 57 >
+   Opera 44 >
+   Safari 10.1 >
+   El soporte para Edge e Internet Explorer es con prefijos y con una sintaxis
+   antigua: https://www.w3.org/TR/2011/WD-css3-grid-layout-20110407/
+
+   Al ser una implemntación con propiedades que pueden abarcar diferentes valores
+   he decidido no implementarlas por el momento.
+
+  Documentación:
+  https://tympanus.net/codrops/css_reference/grid/
+  https://css-tricks.com/snippets/css/complete-guide-grid/
+
+*/
+
+.grid {
+  display: grid;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.subgrid {
+  display: subgrid;
+}
+
+.justify-self-start {
+  justify-self: start;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+.align-self-start {
+  align-self: start;
+}
+
+.align-self-end {
+  align-self: end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+.justify-items-start {
+  justify-items: start;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-items-stretch {
+  justify-items: stretch;
+}
+
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-stretch {
+  align-items: stretch;
+}
+
+
+  @media only screen and (min-width: 30em) {
+
+    .grid--s {
+      display: grid;
+    }
+
+    .inline-grid--s {
+      display: inline-grid;
+    }
+
+    .subgrid--s {
+      display: subgrid;
+    }
+
+    .justify-self-start--s {
+      justify-self: start;
+    }
+
+    .justify-self-end--s {
+      justify-self: end;
+    }
+
+    .justify-self-center--s {
+      justify-self: center;
+    }
+
+    .justify-self-stretch--s {
+      justify-self: stretch;
+    }
+
+    .align-self-start--s {
+      align-self: start;
+    }
+
+    .align-self-end--s {
+      align-self: end;
+    }
+
+    .align-self-center--s {
+      align-self: center;
+    }
+
+    .align-self-stretch--s {
+      align-self: stretch;
+    }
+
+  }
+
+  @media only screen and (min-width: 48em) {
+
+    .grid--m {
+      display: grid;
+    }
+
+    .inline-grid--m {
+      display: inline-grid;
+    }
+
+    .subgrid--m {
+      display: subgrid;
+    }
+
+    .justify-self-start--m {
+      justify-self: start;
+    }
+
+    .justify-self-end--m {
+      justify-self: end;
+    }
+
+    .justify-self-center--m {
+      justify-self: center;
+    }
+
+    .justify-self-stretch--m {
+      justify-self: stretch;
+    }
+
+    .align-self-start--m {
+      align-self: start;
+    }
+
+    .align-self-end--m {
+      align-self: end;
+    }
+
+    .align-self-center--m {
+      align-self: center;
+    }
+
+    .align-self-stretch--m {
+      align-self: stretch;
+    }
+
+  }
+
+  @media only screen and (min-width: 64em) {
+
+    .grid--l {
+      display: grid;
+    }
+
+    .inline-grid--l {
+      display: inline-grid;
+    }
+
+    .subgrid--l {
+      display: subgrid;
+    }
+
+    .justify-self-start--l {
+      justify-self: start;
+    }
+
+    .justify-self-end--l {
+      justify-self: end;
+    }
+
+    .justify-self-center--l {
+      justify-self: center;
+    }
+
+    .justify-self-stretch--l {
+      justify-self: stretch;
+    }
+
+    .align-self-start--l {
+      align-self: start;
+    }
+
+    .align-self-end--l {
+      align-self: end;
+    }
+
+    .align-self-center--l {
+      align-self: center;
+    }
+
+    .align-self-stretch--l {
+      align-self: stretch;
+    }
+
+  }

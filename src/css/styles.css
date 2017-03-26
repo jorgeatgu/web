@@ -1,37 +1,30 @@
 /*
 
-README
-
-El crear clases por estilo es una prueba para reutilizar
-absolutamente casi todo. No todo esta hecho así pero
-la experiencia ha sido muy grata.
-
-El diseño y el CSS esta fuertemente influenciado por los
-creadores de Bascss(http://basscss.com) y Tachyons(http://tachyons.io).
-Y ahora se complementa a la perfección con el blog.
-Aquí también utilizo fuentes del sistema y esquemas
-de colores con un contraste alto. Si que es verdad
-que la presentación de trabajos sigue con el diseño
-anterior, me parece clara y me gusta.
-
-Casi todas las clases siguen la nomenclatura de Emmet.
-En el caso de las secciones de trabajo, header y footer
-simplemente he quitado las vocales para que se vea de un
-simple vistazo.
-
-He vuelto a los origenes y no he indentado absolutamente nada.
-Es obvio que una página con un diseño tan amable y sencillo
-no requiere mayores complicaciones pero estaría bien darle
-la vuelta a esas anidaciones que casi pueden llegar al centro
-de la tierra. Pensad.
-
-Jorge Aznar 12 de julio de 2016
+  Astral 0.2.1 por Jorge Aznar
+  http://github.com/jorgeatgu/astral
+  http://jorgeatgu.com
 
 */
 
 @import '_reset';
-@import '_variables';
-@import '_body';
-@import '_header';
-@import '_footer';
-@import '_media-queries';
+@import '_border-radius';
+@import '_border';
+@import '_color';
+@import '_display';
+@import '_flexbox';
+@import '_float';
+@import '_fonts';
+@import '_height';
+@import '_helper';
+@import '_hover';
+@import '_letter-spacing';
+@import '_margin';
+@import '_overflow';
+@import '_padding';
+@import '_position';
+@import '_textalign';
+@import '_vertical-align';
+@import '_weight';
+@import '_width';
+@import '_custom';
+
