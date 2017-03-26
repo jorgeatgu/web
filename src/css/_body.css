@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bgcColor);
+  line-height: 1.5;
+  font-family: var(--fontSystem);
+}

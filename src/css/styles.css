@@ -31,6 +31,7 @@ Jorge Aznar 12 de julio de 2016
 
 @import '_reset';
 @import '_variables';
-@import '_trabajos';
+@import '_body';
+@import '_header';
 @import '_footer';
 @import '_media-queries';
