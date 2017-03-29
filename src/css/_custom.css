@@ -17,6 +17,8 @@ html {
 .grid {
   grid-gap: 20px;
   grid-template-columns: repeat(1, 100%);
+  border: 1px solid black;
+
 }
 
 @media only screen and (min-width: 30em) {
@@ -40,7 +42,7 @@ html {
   }
 
   .grid {
-    grid-gap: 20px;
+    grid-gap: 5vh;
     grid-template-columns: repeat(2, 47%);
     justify-self: center;
     justify-items: center;
