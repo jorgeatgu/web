@@ -18,6 +18,7 @@
   flex-wrap: wrap;
 }
 
+
 .f-items-start {
   align-items: flex-start;
 }
@@ -121,6 +122,10 @@
 
   .f-flex-column--s {
     flex-direction: column;
+  }
+
+  .f-flex-1--s {
+      flex: 1;
   }
 
   .f-flex-wrap--s {
