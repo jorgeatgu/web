@@ -36,12 +36,20 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --bgc-color: #eeecaf;
 }
 
-.txt-c {
+.custom-txt-c {
   color: var(--txt-color);
 }
 
-.bgc-c {
+.custom-bgc-c {
   background-color: var(--bgc-color);
+}
+
+.custom-inv-bgc {
+  background-color: var(--txt-color);
+}
+
+.custom-inv-txt {
+  color: var(--bgc-color);
 }
 
 

@@ -4,6 +4,16 @@ Tus movidas que no están en Astral
 
 */
 
+html {
+  line-height: 1.5;
+}
+
+.ghost:hover,
+.ghost:focus {
+  color: var(--custom-txt-c);
+  border-color: var(--custom-txt-c);
+}
+
 
 @media only screen and (min-width: 30em) {
 

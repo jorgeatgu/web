@@ -1201,12 +1201,20 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 */
 
-.txt-c {
+.custom-txt-c {
   color: #151553;
 }
 
-.bgc-c {
+.custom-bgc-c {
   background-color: #eeecaf;
+}
+
+.custom-inv-bgc {
+  background-color: #151553;
+}
+
+.custom-inv-txt {
+  color: #eeecaf;
 }
 
 /*Primer combo*/
@@ -2548,6 +2556,10 @@ code {
   margin-right: 0;
 }
 
+.margin-t-0__5 {
+  margin-top: .5rem;
+}
+
 .margin-1 {
   margin: 1rem;
 }
@@ -3251,36 +3263,6 @@ code {
 
 }
 
-.padding-0 {
-  padding: 0;
-}
-
-.padding-t0 {
-  padding-top: 0;
-}
-
-.padding-r0 {
-  padding-right: 0;
-}
-
-.padding-b0 {
-  padding-bottom: 0;
-}
-
-.padding-l0 {
-  padding-left: 0;
-}
-
-.padding-y0 {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.padding-x0 {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .padding-1 {
   padding: 1rem;
 }
@@ -3399,6 +3381,36 @@ code {
 .padding-x5 {
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-t0 {
+  padding-top: 0;
+}
+
+.padding-r0 {
+  padding-right: 0;
+}
+
+.padding-b0 {
+  padding-bottom: 0;
+}
+
+.padding-l0 {
+  padding-left: 0;
+}
+
+.padding-y0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.padding-x0 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media only screen and (min-width: 30em) {
@@ -4695,6 +4707,106 @@ code {
       width: 100%;
     }
 
+
+}
+
+/*
+
+Tus movidas que no están en Astral
+
+*/
+
+html {
+  line-height: 1.5;
+}
+
+.ghost:hover,
+.ghost:focus {
+  color: var(--custom-txt-c);
+  border-color: var(--custom-txt-c);
+}
+
+@media only screen and (min-width: 30em) {
+
+  .maw-50--s {
+    max-width: 50%;
+  }
+
+  .maw-60--s {
+    max-width: 60%;
+  }
+
+  .maw-70--s {
+    max-width: 70%;
+  }
+
+  .maw-80--s {
+    max-width: 80%;
+  }
+
+  .maw-90--s {
+    max-width: 90%;
+  }
+
+  .maw-100--s {
+    max-width: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 48em) {
+
+  .maw-50--m {
+    max-width: 50%;
+  }
+
+  .maw-60--m {
+    max-width: 60%;
+  }
+
+  .maw-70--m {
+    max-width: 70%;
+  }
+
+  .maw-80--m {
+    max-width: 80%;
+  }
+
+  .maw-90--m {
+    max-width: 90%;
+  }
+
+  .maw-100--m {
+    max-width: 100%;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+  .maw-50--l {
+    max-width: 50%;
+  }
+
+  .maw-60--l {
+    max-width: 60%;
+  }
+
+  .maw-70--l {
+    max-width: 70%;
+  }
+
+  .maw-80--l {
+    max-width: 80%;
+  }
+
+  .maw-90--l {
+    max-width: 90%;
+  }
+
+  .maw-100--l {
+    max-width: 100%;
+  }
 
 }
 

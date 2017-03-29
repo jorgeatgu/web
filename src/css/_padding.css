@@ -1,32 +1,4 @@
-.padding-0 {
-  padding: 0;
-}
 
-.padding-t0 {
-  padding-top: 0;
-}
-
-.padding-r0 {
-  padding-right: 0;
-}
-
-.padding-b0 {
-  padding-bottom: 0;
-}
-
-.padding-l0 {
-  padding-left: 0;
-}
-
-.padding-y0 {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.padding-x0 {
-  padding-left: 0;
-  padding-right: 0;
-}
 
 .padding-1 {
   padding: 1rem;
@@ -146,6 +118,37 @@
 .padding-x5 {
   padding-left: 5rem;
   padding-right: 5rem;
+}
+
+
+.padding-0 {
+  padding: 0;
+}
+
+.padding-t0 {
+  padding-top: 0;
+}
+
+.padding-r0 {
+  padding-right: 0;
+}
+
+.padding-b0 {
+  padding-bottom: 0;
+}
+
+.padding-l0 {
+  padding-left: 0;
+}
+
+.padding-y0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.padding-x0 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 
