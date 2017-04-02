@@ -123,3 +123,56 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 .bgc-grey {
   background-color: var(--grey);
 }
+
+
+@media only screen and (min-width: 30em) {
+
+
+}
+
+@media only screen and (min-width: 48em) {
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    .color-black--l {
+      color: var(--black);
+    }
+
+    .bgc-black--l {
+      background-color: var(--black);
+    }
+
+    .color-white--l {
+      color: var(--white);
+    }
+
+    .bgc-white--l {
+      background-color: var(--white);
+    }
+
+    .color-grey--l {
+      color: var(--grey);
+    }
+
+    .bgc-grey--l {
+      background-color: var(--grey);
+    }
+
+    .custom-txt-c--l {
+      color: var(--txt-color);
+    }
+
+    .custom-bgc-c--l {
+      background-color: var(--bgc-color);
+    }
+
+    .custom-inv-bgc--l {
+      background-color: var(--txt-color);
+    }
+
+    .custom-inv-txt--l {
+      color: var(--bgc-color);
+    }
+}

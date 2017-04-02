@@ -4,21 +4,22 @@ Tus movidas que no están en Astral
 
 */
 
+* {
+    box-sizing: border-box;
+}
+
 html {
   line-height: 1.5;
 }
 
 .ghost:hover,
 .ghost:focus {
-  color: var(--custom-txt-c);
-  border-color: var(--custom-txt-c);
+  color: var(--txt-color);
+  border-color: var(--bgc-color);
 }
 
 .grid {
-  grid-gap: 20px;
-  grid-template-columns: repeat(1, 100%);
-  border: 1px solid black;
-
+  grid-template-columns: 100%;
 }
 
 @media only screen and (min-width: 30em) {
@@ -92,5 +93,9 @@ html {
   }
   .maw-100--l {
     max-width: 100%;
+  }
+
+  .grid--l {
+    grid-template-columns: repeat(2, 50%);
   }
 }

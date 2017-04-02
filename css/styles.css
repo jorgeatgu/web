@@ -733,7 +733,7 @@ template {
 }
 
 .border-b1 {
-  border-bottom: 1px;
+  border-bottom: 1px solid #121;
 }
 
 .border-l1 {
@@ -1281,6 +1281,58 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 .bgc-grey {
   background-color: #ccc;
+}
+
+@media only screen and (min-width: 30em) {
+
+
+}
+
+@media only screen and (min-width: 48em) {
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    .color-black--l {
+      color: #121;
+    }
+
+    .bgc-black--l {
+      background-color: #121;
+    }
+
+    .color-white--l {
+      color: #fff;
+    }
+
+    .bgc-white--l {
+      background-color: #fff;
+    }
+
+    .color-grey--l {
+      color: #ccc;
+    }
+
+    .bgc-grey--l {
+      background-color: #ccc;
+    }
+
+    .custom-txt-c--l {
+      color: #151553;
+    }
+
+    .custom-bgc-c--l {
+      background-color: #eeecaf;
+    }
+
+    .custom-inv-bgc--l {
+      background-color: #151553;
+    }
+
+    .custom-inv-txt--l {
+      color: #eeecaf;
+    }
 }
 
 .display-i {
@@ -4897,21 +4949,22 @@ Tus movidas que no están en Astral
 
 */
 
+* {
+    box-sizing: border-box;
+}
+
 html {
   line-height: 1.5;
 }
 
 .ghost:hover,
 .ghost:focus {
-  color: var(--custom-txt-c);
-  border-color: var(--custom-txt-c);
+  color: #151553;
+  border-color: #eeecaf;
 }
 
 .grid {
-  grid-gap: 20px;
-  grid-template-columns: repeat(1, 100%);
-  border: 1px solid black;
-
+  grid-template-columns: 100%;
 }
 
 @media only screen and (min-width: 30em) {
@@ -4985,6 +5038,10 @@ html {
   }
   .maw-100--l {
     max-width: 100%;
+  }
+
+  .grid--l {
+    grid-template-columns: repeat(2, 50%);
   }
 }
 
