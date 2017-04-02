@@ -1202,19 +1202,19 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 */
 
 .custom-txt-c {
-  color: #151553;
+  color: #1e2439;
 }
 
 .custom-bgc-c {
-  background-color: #eeecaf;
+  background-color: #e2ddcc;
 }
 
 .custom-inv-bgc {
-  background-color: #151553;
+  background-color: #1e2439;
 }
 
 .custom-inv-txt {
-  color: #eeecaf;
+  color: #e2ddcc;
 }
 
 /*Primer combo*/
@@ -1319,19 +1319,19 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     }
 
     .custom-txt-c--l {
-      color: #151553;
+      color: #1e2439;
     }
 
     .custom-bgc-c--l {
-      background-color: #eeecaf;
+      background-color: #e2ddcc;
     }
 
     .custom-inv-bgc--l {
-      background-color: #151553;
+      background-color: #1e2439;
     }
 
     .custom-inv-txt--l {
-      color: #eeecaf;
+      color: #e2ddcc;
     }
 }
 
@@ -4959,8 +4959,8 @@ html {
 
 .ghost:hover,
 .ghost:focus {
-  color: #151553;
-  border-color: #eeecaf;
+  color: #1e2439;
+  border-color: #e2ddcc;
 }
 
 .grid {
@@ -5014,9 +5014,9 @@ html {
   .maw-100--m {
     max-width: 100%;
   }
-  .grid {
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, 33%);
+
+  .maw-50em--m {
+    max-width: 50em;
   }
 }
 
