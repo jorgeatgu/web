@@ -725,23 +725,23 @@ template {
 }
 
 .border-t1 {
-  border-top: 1px;
+  border-width: 1px;
 }
 
 .border-r1 {
-  border-right: 1px;
+  border-width: 1px;
 }
 
 .border-b1 {
-  border-bottom: 1px solid #121;
+  border-width: 1px solid #121;
 }
 
 .border-l1 {
-  border-left: 1px;
+  border-width: 1px;
 }
 
 .border-t2 {
-  border-top: 2px;
+  border-width: 2px;
 }
 
 .border-r2 {
@@ -749,15 +749,15 @@ template {
 }
 
 .border-b2 {
-  border-bottom: 2px;
+  border-width: 2px;
 }
 
 .border-l2 {
-  border-left: 2px;
+  border-width: 2px;
 }
 
 .border-t3 {
-  border-top: 3px;
+  border-width: 3px;
 }
 
 .border-r3 {
@@ -765,15 +765,15 @@ template {
 }
 
 .border-b3 {
-  border-bottom: 3px;
+  border-width: 3px;
 }
 
 .border-l3 {
-  border-left: 3px;
+  border-width: 3px;
 }
 
 .border-t4 {
-  border-top: 4px;
+  border-width: 4px;
 }
 
 .border-r4 {
@@ -781,15 +781,15 @@ template {
 }
 
 .border-b4 {
-  border-bottom: 4px;
+  border-width: 4px;
 }
 
 .border-l4 {
-  border-left: 4px;
+  border-width: 4px;
 }
 
 .border-t5 {
-  border-top: 5px;
+  border-width: 5px;
 }
 
 .border-r5 {
@@ -797,15 +797,31 @@ template {
 }
 
 .border-b5 {
-  border-bottom: 5px;
+  border-width: 5px;
 }
 
 .border-l5 {
-  border-left: 5px;
+  border-width: 5px;
 }
 
 .borderc-black {
   border-color: #121;
+}
+
+.border-l-0 {
+  border-left-width: 0;
+}
+
+.border-t-0 {
+  border-top-width: 0;
+}
+
+.border-r-0 {
+  border-right-width: 0;
+}
+
+.border-b-0 {
+  border-bottom-width: 0;
 }
 
 @media only screen and (min-width: 30em) {
@@ -847,7 +863,7 @@ template {
   }
 
   .border-t1--s {
-    border-top: 1px;
+    border-width: 1px;
   }
 
   .border-r1--s {
@@ -855,15 +871,15 @@ template {
   }
 
   .border-b1--s {
-    border-bottom: 1px;
+    border-width: 1px;
   }
 
   .border-l1--s {
-    border-left: 1px;
+    border-width: 1px;
   }
 
   .border-t2--s {
-    border-top: 2px;
+    border-width: 2px;
   }
 
   .border-r2--s {
@@ -871,15 +887,15 @@ template {
   }
 
   .border-b2--s {
-    border-bottom: 2px;
+    border-width: 2px;
   }
 
   .border-l2--s {
-    border-left: 2px;
+    border-width: 2px;
   }
 
   .border-t3--s {
-    border-top: 3px;
+    border-width: 3px;
   }
 
   .border-r3--s {
@@ -887,15 +903,15 @@ template {
   }
 
   .border-b3--s {
-    border-bottom: 3px;
+    border-width: 3px;
   }
 
   .border-l3--s {
-    border-left: 3px;
+    border-width: 3px;
   }
 
   .border-t4--s {
-    border-top: 4px;
+    border-width: 4px;
   }
 
   .border-r4--s {
@@ -903,15 +919,15 @@ template {
   }
 
   .border-b4--s {
-    border-bottom: 4px;
+    border-width: 4px;
   }
 
   .border-l4--s {
-    border-left: 4px;
+    border-width: 4px;
   }
 
   .border-t5--s {
-    border-top: 5px;
+    border-width: 5px;
   }
 
   .border-r5--s {
@@ -919,15 +935,31 @@ template {
   }
 
   .border-b5--s {
-    border-bottom: 5px;
+    border-width: 5px;
   }
 
   .border-l5--s {
-    border-left: 5px;
+    border-width: 5px;
   }
 
   .borderc-black--s {
     border-color: #121;
+  }
+
+  .border-l-0--s {
+    border-left-width: 0;
+  }
+
+  .border-t-0--s {
+    border-top-width: 0;
+  }
+
+  .border-r-0--s {
+    border-right-width: 0;
+  }
+
+  .border-b-0--s {
+    border-bottom-width: 0;
   }
 }
 
@@ -970,7 +1002,7 @@ template {
   }
 
   .border-t1--m {
-    border-top: 1px;
+    border-width: 1px;
   }
 
   .border-r1--m {
@@ -978,15 +1010,15 @@ template {
   }
 
   .border-b1--m {
-    border-bottom: 1px;
+    border-width: 1px;
   }
 
   .border-l1--m {
-    border-left: 1px;
+    border-width: 1px;
   }
 
   .border-t2--m {
-    border-top: 2px;
+    border-width: 2px;
   }
 
   .border-r2--m {
@@ -994,15 +1026,15 @@ template {
   }
 
   .border-b2--m {
-    border-bottom: 2px;
+    border-width: 2px;
   }
 
   .border-l2--m {
-    border-left: 2px;
+    border-width: 2px;
   }
 
   .border-t3--m {
-    border-top: 3px;
+    border-width: 3px;
   }
 
   .border-r3--m {
@@ -1010,15 +1042,15 @@ template {
   }
 
   .border-b3--m {
-    border-bottom: 3px;
+    border-width: 3px;
   }
 
   .border-l3--m {
-    border-left: 3px;
+    border-width: 3px;
   }
 
   .border-t4--m {
-    border-top: 4px;
+    border-width: 4px;
   }
 
   .border-r4--m {
@@ -1026,15 +1058,15 @@ template {
   }
 
   .border-b4--m {
-    border-bottom: 4px;
+    border-width: 4px;
   }
 
   .border-l4--m {
-    border-left: 4px;
+    border-width: 4px;
   }
 
   .border-t5--m {
-    border-top: 5px;
+    border-width: 5px;
   }
 
   .border-r5--m {
@@ -1042,15 +1074,31 @@ template {
   }
 
   .border-b5--m {
-    border-bottom: 5px;
+    border-width: 5px;
   }
 
   .border-l5--m {
-    border-left: 5px;
+    border-width: 5px;
   }
 
   .borderc-black--m {
     border-color: #121;
+  }
+
+  .border-l-0--m {
+    border-left-width: 0;
+  }
+
+  .border-t-0--m {
+    border-top-width: 0;
+  }
+
+  .border-r-0--m {
+    border-right-width: 0;
+  }
+
+  .border-b-0--m {
+    border-bottom-width: 0;
   }
 
 }
@@ -1094,7 +1142,7 @@ template {
   }
 
   .border-t1--l {
-    border-top: 1px;
+    border-width: 1px;
   }
 
   .border-r1--l {
@@ -1102,15 +1150,15 @@ template {
   }
 
   .border-b1--l {
-    border-bottom: 1px;
+    border-width: 1px;
   }
 
   .border-l1--l {
-    border-left: 1px;
+    border-width: 1px;
   }
 
   .border-t2--l {
-    border-top: 2px;
+    border-width: 2px;
   }
 
   .border-r2--l {
@@ -1118,15 +1166,15 @@ template {
   }
 
   .border-b2--l {
-    border-bottom: 2px;
+    border-width: 2px;
   }
 
   .border-l2--l {
-    border-left: 2px;
+    border-width: 2px;
   }
 
   .border-t3--l {
-    border-top: 3px;
+    border-width: 3px;
   }
 
   .border-r3--l {
@@ -1134,15 +1182,15 @@ template {
   }
 
   .border-b3--l {
-    border-bottom: 3px;
+    border-width: 3px;
   }
 
   .border-l3--l {
-    border-left: 3px;
+    border-width: 3px;
   }
 
   .border-t4--l {
-    border-top: 4px;
+    border-width: 4px;
   }
 
   .border-r4--l {
@@ -1150,15 +1198,15 @@ template {
   }
 
   .border-b4--l {
-    border-bottom: 4px;
+    border-width: 4px;
   }
 
   .border-l4--l {
-    border-left: 4px;
+    border-width: 4px;
   }
 
   .border-t5--l {
-    border-top: 5px;
+    border-width: 5px;
   }
 
   .border-r5--l {
@@ -1166,15 +1214,31 @@ template {
   }
 
   .border-b5--l {
-    border-bottom: 5px;
+    border-width: 5px;
   }
 
   .border-l5--l {
-    border-left: 5px;
+    border-width: 5px;
   }
 
   .borderc-black--l {
     border-color: #121;
+  }
+
+  .border-l-0--l {
+    border-left-width: 0;
+  }
+
+  .border-t-0--l {
+    border-top-width: 0;
+  }
+
+  .border-r-0--l {
+    border-right-width: 0;
+  }
+
+  .border-b-0--l {
+    border-bottom-width: 0;
   }
 
 }
