@@ -34,6 +34,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --mint: #0fe1be;
   --txt-color: #1e2439;
   --bgc-color: #e2ddcc;
+  --whiteGrey: #f1f1f1;
 }
 
 .custom-txt-c {
@@ -50,6 +51,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 .custom-inv-txt {
   color: var(--bgc-color);
+}
+
+.bgc-whiteGrey {
+    background-color: var(--whiteGrey);
+}
+
+.color-whiteGrey {
+    color: var(--whiteGrey);
 }
 
 
