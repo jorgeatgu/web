@@ -1,0 +1,100 @@
+/*
+
+Tus movidas que no están en Astral
+
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+}
+
+.ghost:hover,
+.ghost:focus {
+  color: var(--txt-color);
+  border-color: var(--bgc-color);
+}
+
+.grid {
+  grid-template-columns: 100%;
+}
+
+@media only screen and (min-width: 30em) {
+  .maw-50--s {
+    max-width: 50%;
+  }
+  .maw-60--s {
+    max-width: 60%;
+  }
+  .maw-70--s {
+    max-width: 70%;
+  }
+  .maw-80--s {
+    max-width: 80%;
+  }
+  .maw-90--s {
+    max-width: 90%;
+  }
+  .maw-100--s {
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-gap: 10vh;
+    justify-self: center;
+    justify-items: center;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .maw-50--m {
+    max-width: 50%;
+  }
+  .maw-60--m {
+    max-width: 60%;
+  }
+  .maw-70--m {
+    max-width: 70%;
+  }
+  .maw-80--m {
+    max-width: 80%;
+  }
+  .maw-90--m {
+    max-width: 90%;
+  }
+  .maw-100--m {
+    max-width: 100%;
+  }
+
+  .maw-50em--m {
+    max-width: 50em;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  .maw-50--l {
+    max-width: 50%;
+  }
+  .maw-60--l {
+    max-width: 60%;
+  }
+  .maw-70--l {
+    max-width: 70%;
+  }
+  .maw-80--l {
+    max-width: 80%;
+  }
+  .maw-90--l {
+    max-width: 90%;
+  }
+  .maw-100--l {
+    max-width: 100%;
+  }
+
+  .grid--l {
+    grid-template-columns: 45% 55%;
+  }
+}

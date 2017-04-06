@@ -1,0 +1,196 @@
+/* COLOR COMBOS
+
+A continuación una serie de combos accesibles.
+Todos los combos han sido creados con colorable: http://jxnblk.com/colorable/demos/text/
+Y con helloColor: http://jxnblk.com/hello-color/
+
+La nomenclatura es la siguiente para el color del texto:
+
+textColor-backgroundColor__contrastRatio {
+  color: var(--blackCurrant);
+}
+
+La nomenclatura es la siguiente para el color del background:
+
+backgroundColor-textColor__contrastRatio {
+  bakcground-color: var(--fuelYellow);
+}
+
+Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
+
+*/
+:root {
+  --black: #121;
+  --white: #fff;
+  --grey: #ccc;
+  --blackCurrant: #65065A;
+  --fuelYellow: #FEC845;
+  --frenchGray: #E1DCE3;
+  --bunting: #271764;
+  --springBud: #E5EDB7;
+  --eclipse: #642626;
+  --nightRider: #431729;
+  --mint: #0fe1be;
+  --txt-color: #1e2439;
+  --bgc-color: #e2ddcc;
+  --whiteGrey: #f1f1f1;
+  --footerColor: #1e251f;
+  --footerText: #e1d6df;
+}
+
+.footer-txt-c {
+    color: var(--footerText);
+}
+
+.footer-bgc-c {
+    background-color: var(--footerColor)
+}
+
+.custom-txt-c {
+  color: var(--txt-color);
+}
+
+.custom-bgc-c {
+  background-color: var(--bgc-color);
+}
+
+.custom-inv-bgc {
+  background-color: var(--txt-color);
+}
+
+.custom-inv-txt {
+  color: var(--bgc-color);
+}
+
+.bgc-whiteGrey {
+    background-color: var(--whiteGrey);
+}
+
+.color-whiteGrey {
+    color: var(--whiteGrey);
+}
+
+
+
+/*Primer combo*/
+
+.txt-blackCurrant-fuelYellow__7_85 {
+  color: var(--blackCurrant);
+}
+
+.bgc-fuelYellow-blackCurrant__7_85 {
+  background-color: var(--fuelYellow);
+}
+
+
+/*Segundo combo*/
+
+.txt-bunting-frenchGray__11_16 {
+  color: var(--bunting);
+}
+
+.bgc-frenchGray-bunting__11_16 {
+  background-color: var(--frenchGray);
+}
+
+
+/*Tercer combo*/
+
+.txt-eclipse-springBud__9_27 {
+  color: var(--eclipse);
+}
+
+.bgc-springBud-eclipse__9_27 {
+  background-color: var(--springBud);
+}
+
+
+/*Cuarto combo*/
+
+.txt-nightRider-mint__9 {
+  color: var(--nightRider);
+}
+
+.bgc-nightRider-mint__9 {
+  background-color: var(--mint);
+}
+
+
+/*FIN COMBOS*/
+
+.color-black {
+  color: var(--black);
+}
+
+.bgc-black {
+  background-color: var(--black);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.bgc-white {
+  background-color: var(--white);
+}
+
+.color-grey {
+  color: var(--grey);
+}
+
+.bgc-grey {
+  background-color: var(--grey);
+}
+
+
+@media only screen and (min-width: 30em) {
+
+
+}
+
+@media only screen and (min-width: 48em) {
+
+}
+
+@media only screen and (min-width: 64em) {
+
+    .color-black--l {
+      color: var(--black);
+    }
+
+    .bgc-black--l {
+      background-color: var(--black);
+    }
+
+    .color-white--l {
+      color: var(--white);
+    }
+
+    .bgc-white--l {
+      background-color: var(--white);
+    }
+
+    .color-grey--l {
+      color: var(--grey);
+    }
+
+    .bgc-grey--l {
+      background-color: var(--grey);
+    }
+
+    .custom-txt-c--l {
+      color: var(--txt-color);
+    }
+
+    .custom-bgc-c--l {
+      background-color: var(--bgc-color);
+    }
+
+    .custom-inv-bgc--l {
+      background-color: var(--txt-color);
+    }
+
+    .custom-inv-txt--l {
+      color: var(--bgc-color);
+    }
+}

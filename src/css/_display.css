@@ -1,0 +1,127 @@
+.display-i {
+  display: inline;
+}
+
+.display-ib {
+  display: inline-block;
+}
+
+.display-t {
+  display: table;
+}
+
+.display-tb {
+  display: table-cell;
+}
+
+.display-b {
+  display: block;
+}
+
+.display-n {
+  display: none;
+}
+
+.t-layout-fixed {
+  table-layout: fixed;
+}
+
+
+@media only screen and (min-width: 30em) {
+
+  .display-i--s {
+    display: inline;
+  }
+
+  .display-ib--s {
+    display: inline-block;
+  }
+
+  .display-t--s {
+    display: table;
+  }
+
+  .display-tb--s {
+    display: table-cell;
+  }
+
+  .display-b--s {
+    display: block;
+  }
+
+  .display-n--s {
+    display: none;
+  }
+
+  .t-layout-fixed--s {
+    table-layout: fixed;
+  }
+
+}
+
+@media only screen and (min-width: 48em) {
+
+
+  .display-i--m {
+    display: inline;
+  }
+
+  .display-ib--m {
+    display: inline-block;
+  }
+
+  .display-t--m {
+    display: table;
+  }
+
+  .display-tb--m {
+    display: table-cell;
+  }
+
+  .display-b--m {
+    display: block;
+  }
+
+  .display-n--m {
+    display: none;
+  }
+
+  .t-layout-fixed--m {
+    table-layout: fixed;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+  .display-i--l {
+    display: inline;
+  }
+
+  .display-ib--l {
+    display: inline-block;
+  }
+
+  .display-t--l {
+    display: table;
+  }
+
+  .display-tb--l {
+    display: table-cell;
+  }
+
+  .display-b--l {
+    display: block;
+  }
+
+  .display-n--l {
+    display: none;
+  }
+
+  .t-layout-fixed--l {
+    table-layout: fixed;
+  }
+
+
+}
+

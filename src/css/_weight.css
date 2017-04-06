@@ -1,0 +1,141 @@
+.font-w1 {
+  font-weight: 100;
+}
+
+.font-w2 {
+  font-weight: 200;
+}
+
+
+.font-w3 {
+  font-weight: 300;
+}
+
+.font-w4 {
+  font-weight: 400;
+}
+
+.font-w5 {
+  font-weight: 500;
+}
+
+.font-w6 {
+  font-weight: 600;
+}
+
+.font-w7 {
+  font-weight: 700;
+}
+
+.font-w8 {
+  font-weight: 800;
+}
+
+
+@media only screen and (min-width: 30em) {
+
+  .font-w1--s {
+    font-weight: 100;
+  }
+
+  .font-w2--s {
+    font-weight: 200;
+  }
+
+  .font-w3--s {
+    font-weight: 300;
+  }
+
+  .font-w4--s {
+    font-weight: 400;
+  }
+
+  .font-w5--s {
+    font-weight: 500;
+  }
+
+  .font-w6--s {
+    font-weight: 600;
+  }
+
+  .font-w7--s {
+    font-weight: 700;
+  }
+
+  .font-w8--s {
+    font-weight: 800;
+  }
+
+}
+
+@media only screen and (min-width: 48em) {
+
+  .font-w1--m {
+    font-weight: 100;
+  }
+
+  .font-w2--m {
+    font-weight: 200;
+  }
+
+  .font-w3--m {
+    font-weight: 300;
+  }
+
+  .font-w4--m {
+    font-weight: 400;
+  }
+
+  .font-w5--m {
+    font-weight: 500;
+  }
+
+  .font-w6--m {
+    font-weight: 600;
+  }
+
+  .font-w7--m {
+    font-weight: 700;
+  }
+
+  .font-w8--m {
+    font-weight: 800;
+  }
+
+}
+
+@media only screen and (min-width: 64em) {
+
+  .font-w1--l {
+    font-weight: 100;
+  }
+
+  .font-w2--l {
+    font-weight: 200;
+  }
+
+  .font-w3--l {
+    font-weight: 300;
+  }
+
+  .font-w4--l {
+    font-weight: 400;
+  }
+
+  .font-w5--l {
+    font-weight: 500;
+  }
+
+  .font-w6--l {
+    font-weight: 600;
+  }
+
+  .font-w7--l {
+    font-weight: 700;
+  }
+
+  .font-w8--l {
+    font-weight: 800;
+  }
+
+}
