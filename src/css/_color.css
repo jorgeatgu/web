@@ -34,6 +34,16 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txt-color: #1e2439;
   --bgc-color: #e2ddcc;
   --whiteGrey: #f1f1f1;
+  --footerColor: #1e251f;
+  --footerText: #e1d6df;
+}
+
+.footer-txt-c {
+    color: var(--footerText);
+}
+
+.footer-bgc-c {
+    background-color: var(--footerColor)
 }
 
 .custom-txt-c {

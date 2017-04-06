@@ -808,6 +808,10 @@ template {
   border-color: #121;
 }
 
+.borderc-impureblack {
+  border-color: #1e251f;
+}
+
 .borderc-grey {
   border-color: #ccc;
 }
@@ -1268,6 +1272,14 @@ backgroundColor-textColor__contrastRatio {
 Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 */
+
+.footer-txt-c {
+    color: #e1d6df;
+}
+
+.footer-bgc-c {
+    background-color: #1e251f
+}
 
 .custom-txt-c {
   color: #1e2439;
