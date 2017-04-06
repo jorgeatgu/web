@@ -43,8 +43,7 @@ html {
   }
 
   .grid {
-    grid-gap: 5vh;
-    grid-template-columns: repeat(2, 47%);
+    grid-gap: 10vh;
     justify-self: center;
     justify-items: center;
   }
@@ -96,6 +95,6 @@ html {
   }
 
   .grid--l {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: 45% 55%;
   }
 }

@@ -808,6 +808,10 @@ template {
   border-color: #121;
 }
 
+.borderc-grey {
+  border-color: #ccc;
+}
+
 .border-l-0 {
   border-left-width: 0;
 }
@@ -5060,8 +5064,7 @@ html {
   }
 
   .grid {
-    grid-gap: 5vh;
-    grid-template-columns: repeat(2, 47%);
+    grid-gap: 10vh;
     justify-self: center;
     justify-items: center;
   }
@@ -5113,7 +5116,7 @@ html {
   }
 
   .grid--l {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: 45% 55%;
   }
 }
 
