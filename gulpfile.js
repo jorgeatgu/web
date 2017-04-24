@@ -81,8 +81,12 @@ gulp.task('compress', function() {
 
 gulp.task('css', function() {
     var processors = [
-        atImport,
-        stylelint(),
+        atImport({
+            plugins: [stylelint]
+        }),
+        stylelint({
+            ignorePath: './src/css/_reset.css'
+        }),
         reporter({
             clearMessages: true
         }),

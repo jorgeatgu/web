@@ -118,15 +118,11 @@
 .padding-x5 {
   padding-left: 5rem;
   padding-right: 5rem;
-  padding: 20px;
 }
-
-
 
 .padding-0 {
   padding: 0;
 }
-
 
 .padding-t0 {
   padding-top: 0;
@@ -153,7 +149,6 @@
   padding-left: 0;
   padding-right: 0;
 }
-
 
 @media only screen and (min-width: 30em) {
 

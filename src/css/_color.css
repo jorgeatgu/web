@@ -43,7 +43,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 }
 
 .footer-bgc-c {
-    background-color: var(--footerColor)
+    background-color: var(--footerColor);
 }
 
 .custom-txt-c {
@@ -58,7 +58,6 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--txt-color);
 }
 
-
 .custom-nv-txt {
   color: var(--bgc-color);
 }
@@ -71,9 +70,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     color: var(--whiteGrey);
 }
 
-
-
-/*Primer combo*/
+/* Primer combo */
 
 .txt-blackCurrant-fuelYellow__7_85 {
   color: var(--blackCurrant);
@@ -83,8 +80,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--fuelYellow);
 }
 
-
-/*Segundo combo*/
+/* Segundo combo */
 
 .txt-bunting-frenchGray__11_16 {
   color: var(--bunting);
@@ -94,8 +90,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--frenchGray);
 }
 
-
-/*Tercer combo*/
+/* Tercer combo */
 
 .txt-eclipse-springBud__9_27 {
   color: var(--eclipse);
@@ -105,8 +100,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--springBud);
 }
 
-
-/*Cuarto combo*/
+/* Cuarto combo */
 
 .txt-nightRider-mint__9 {
   color: var(--nightRider);
@@ -140,16 +134,6 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 .bgc-grey {
   background-color: var(--grey);
-}
-
-
-@media only screen and (min-width: 30em) {
-
-
-}
-
-@media only screen and (min-width: 48em) {
-
 }
 
 @media only screen and (min-width: 64em) {
@@ -193,4 +177,5 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     .custom-inv-txt--l {
       color: var(--bgc-color);
     }
+
 }

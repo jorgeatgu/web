@@ -7,20 +7,19 @@ Tus movidas que no están en Astral
 * {
     box-sizing: border-box;
 }
-
+/* stylelint-disable */
 html {
   line-height: 1.5;
 }
-
 .ghost:hover,
 .ghost:focus {
   color: var(--txt-color);
   border-color: var(--bgc-color);
 }
-
 .grid {
   grid-template-columns: 100%;
 }
+/* stylelint-enable */
 
 @media only screen and (min-width: 30em) {
   .maw-50--s {
