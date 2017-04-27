@@ -46,38 +46,9 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txtFildrop: #1E2439;
   --bgcSnippets: #762638;
   --bgc2Snippets: #8FD9C9;
-}
-
-.snippets-bgc {
-    background-color: var(--bgcSnippets);
-}
-
-.snippets-bgc-two {
-    background-color: var(--bgc2Snippets);
-}
-
-.fildrop-bgc {
-    background-color: var(--bgcFildrop);
-}
-
-.fildrop-txt {
-    color: var(--txtFildrop);
-}
-
-.astral-bgc {
-    background-color: var(--bgcAstral);
-}
-
-.astral-txt {
-    color: var(--txtAstral);
-}
-
-.astral-bgc-inv {
-    background-color: var(--txtAstral);
-}
-
-.astral-txt-inv {
-    color: var(--bgcAstral);
+  --bgcCharlas: #053584;
+  --txtCharlas: #F1F1F1;
+  --lineCharlas: #ccc;
 }
 
 .footer-txt-c {
@@ -234,6 +205,46 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .scalable-txt {
         color: var(--txtScalable);
+    }
+
+    .charlas-bgc {
+        background-color: var(--bgcCharlas);
+    }
+
+    .charlas-txt {
+        color: var(--txtCharlas);
+    }
+
+    .snippets-bgc {
+        background-color: var(--bgcSnippets);
+    }
+
+    .snippets-bgc-two {
+        background-color: var(--bgc2Snippets);
+    }
+
+    .fildrop-bgc {
+        background-color: var(--bgcFildrop);
+    }
+
+    .fildrop-txt {
+        color: var(--txtFildrop);
+    }
+
+    .astral-bgc {
+        background-color: var(--bgcAstral);
+    }
+
+    .astral-txt {
+        color: var(--txtAstral);
+    }
+
+    .astral-bgc-inv {
+        background-color: var(--txtAstral);
+    }
+
+    .astral-txt-inv {
+        color: var(--bgcAstral);
     }
 
 }

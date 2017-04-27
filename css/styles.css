@@ -817,6 +817,10 @@ template {
   border-color: #ccc;
 }
 
+.borderc-lineCharlas {
+    border-color: #ccc;
+}
+
 .border-l-0 {
   border-left-width: 0;
 }
@@ -1274,38 +1278,6 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 */
 
-.snippets-bgc {
-    background-color: #762638;
-}
-
-.snippets-bgc-two {
-    background-color: #8FD9C9;
-}
-
-.fildrop-bgc {
-    background-color: #0FE1BE;
-}
-
-.fildrop-txt {
-    color: #1E2439;
-}
-
-.astral-bgc {
-    background-color: #202763;
-}
-
-.astral-txt {
-    color: #E0DAA2;
-}
-
-.astral-bgc-inv {
-    background-color: #E0DAA2;
-}
-
-.astral-txt-inv {
-    color: #202763;
-}
-
 .footer-txt-c {
     color: #e1d6df;
 }
@@ -1460,6 +1432,46 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .scalable-txt {
         color: #642626;
+    }
+
+    .charlas-bgc {
+        background-color: #053584;
+    }
+
+    .charlas-txt {
+        color: #F1F1F1;
+    }
+
+    .snippets-bgc {
+        background-color: #762638;
+    }
+
+    .snippets-bgc-two {
+        background-color: #8FD9C9;
+    }
+
+    .fildrop-bgc {
+        background-color: #0FE1BE;
+    }
+
+    .fildrop-txt {
+        color: #1E2439;
+    }
+
+    .astral-bgc {
+        background-color: #202763;
+    }
+
+    .astral-txt {
+        color: #E0DAA2;
+    }
+
+    .astral-bgc-inv {
+        background-color: #E0DAA2;
+    }
+
+    .astral-txt-inv {
+        color: #202763;
     }
 
 }
@@ -5034,7 +5046,7 @@ Tus movidas que no están en Astral
 */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* stylelint-disable */
@@ -5051,6 +5063,10 @@ html {
 
 .grid {
   grid-template-columns: 100%;
+}
+
+.list-style-roman {
+    list-style-type: upper-roman;
 }
 
 /* stylelint-enable */
@@ -5074,7 +5090,6 @@ html {
   .maw-100--s {
     max-width: 100%;
   }
-
   .grid {
     grid-gap: 10vh;
     justify-self: center;
@@ -5101,7 +5116,6 @@ html {
   .maw-100--m {
     max-width: 100%;
   }
-
   .maw-50em--m {
     max-width: 50em;
   }
@@ -5132,16 +5146,13 @@ html {
   .maw-100--l {
     max-width: 100%;
   }
-
   .grid--l {
     grid-template-columns: 45% 55%;
   }
-
   .logo {
     width: 10rem;
     height: 10rem;
   }
-
   .scalable-grid {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -5151,19 +5162,22 @@ html {
     justify-items: stretch;
     align-items: stretch;
   }
-
-    .list-style-roman {
-        list-style-type: upper-roman;
-    }
-
-    .snippets-grid {
-        display: grid;
-        grid-template-columns: 20% 40% 35%;
-        grid-column-gap: 0;
-        grid-row-gap: 0;
-        justify-items: stretch;
-        align-items: stretch;
-    }
+  .snippets-grid {
+    display: grid;
+    grid-template-columns: 20% 40% 35%;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .charlas-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 50px;
+    grid-row-gap: 0;
+    justify-items: start;
+    align-items: start;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

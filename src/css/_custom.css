@@ -5,20 +5,31 @@ Tus movidas que no están en Astral
 */
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+
 /* stylelint-disable */
+
 html {
   line-height: 1.5;
 }
+
 .ghost:hover,
 .ghost:focus {
   color: var(--txt-color);
   border-color: var(--bgc-color);
 }
+
 .grid {
   grid-template-columns: 100%;
 }
+
+.list-style-roman {
+    list-style-type: upper-roman;
+}
+
+
 /* stylelint-enable */
 
 @media only screen and (min-width: 30em) {
@@ -40,7 +51,6 @@ html {
   .maw-100--s {
     max-width: 100%;
   }
-
   .grid {
     grid-gap: 10vh;
     justify-self: center;
@@ -67,7 +77,6 @@ html {
   .maw-100--m {
     max-width: 100%;
   }
-
   .maw-50em--m {
     max-width: 50em;
   }
@@ -98,16 +107,13 @@ html {
   .maw-100--l {
     max-width: 100%;
   }
-
   .grid--l {
     grid-template-columns: 45% 55%;
   }
-
   .logo {
     width: 10rem;
     height: 10rem;
   }
-
   .scalable-grid {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -117,17 +123,20 @@ html {
     justify-items: stretch;
     align-items: stretch;
   }
-
-    .list-style-roman {
-        list-style-type: upper-roman;
-    }
-
-    .snippets-grid {
-        display: grid;
-        grid-template-columns: 20% 40% 35%;
-        grid-column-gap: 0;
-        grid-row-gap: 0;
-        justify-items: stretch;
-        align-items: stretch;
-    }
+  .snippets-grid {
+    display: grid;
+    grid-template-columns: 20% 40% 35%;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .charlas-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-column-gap: 50px;
+    grid-row-gap: 0;
+    justify-items: start;
+    align-items: start;
+  }
 }
