@@ -1274,6 +1274,22 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 */
 
+.astral-bgc {
+    background-color: #202763;
+}
+
+.astral-txt {
+    color: #E0DAA2;
+}
+
+.astral-bgc-inv {
+    background-color: #E0DAA2;
+}
+
+.astral-txt-inv {
+    color: #202763;
+}
+
 .footer-txt-c {
     color: #e1d6df;
 }
@@ -1420,6 +1436,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .bislai-txt {
         color: #271764;
+    }
+
+    .scalable-bgc {
+        background-color: #E5EDB7;
+    }
+
+    .scalable-txt {
+        color: #642626;
     }
 
 }
@@ -2212,6 +2236,10 @@ code {
 
   .font-5--l {
     font-size: 5rem;
+  }
+
+  .font-10--l {
+    font-size: 10rem;
   }
 
 }
@@ -5064,6 +5092,12 @@ html {
 }
 
 @media only screen and (min-width: 64em) {
+  .maw-20--l {
+    max-width: 20%;
+  }
+  .maw-30--l {
+    max-width: 30%;
+  }
   .maw-50--l {
     max-width: 50%;
   }
@@ -5091,6 +5125,20 @@ html {
     width: 10rem;
     height: 10rem;
   }
+
+  .scalable-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-column-gap: 5%;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+  }
+
+.list-style-roman {
+    list-style-type: upper-roman;
+}
 }
 
 /*# sourceMappingURL=styles.css.map */

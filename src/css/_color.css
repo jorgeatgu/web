@@ -38,6 +38,26 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --footerText: #e1d6df;
   --bgcBislai: #E1DCE3;
   --txtBislai: #271764;
+  --bgcScalable: #E5EDB7;
+  --txtScalable: #642626;
+  --bgcAstral: #202763;
+  --txtAstral: #E0DAA2;
+}
+
+.astral-bgc {
+    background-color: var(--bgcAstral);
+}
+
+.astral-txt {
+    color: var(--txtAstral);
+}
+
+.astral-bgc-inv {
+    background-color: var(--txtAstral);
+}
+
+.astral-txt-inv {
+    color: var(--bgcAstral);
 }
 
 .footer-txt-c {
@@ -186,6 +206,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .bislai-txt {
         color: var(--txtBislai);
+    }
+
+    .scalable-bgc {
+        background-color: var(--bgcScalable);
+    }
+
+    .scalable-txt {
+        color: var(--txtScalable);
     }
 
 }
