@@ -1274,6 +1274,22 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 */
 
+.snippets-bgc {
+    background-color: #762638;
+}
+
+.snippets-bgc-two {
+    background-color: #8FD9C9;
+}
+
+.fildrop-bgc {
+    background-color: #0FE1BE;
+}
+
+.fildrop-txt {
+    color: #1E2439;
+}
+
 .astral-bgc {
     background-color: #202763;
 }
@@ -5136,9 +5152,18 @@ html {
     align-items: stretch;
   }
 
-.list-style-roman {
-    list-style-type: upper-roman;
-}
+    .list-style-roman {
+        list-style-type: upper-roman;
+    }
+
+    .snippets-grid {
+        display: grid;
+        grid-template-columns: 20% 40% 35%;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+        justify-items: stretch;
+        align-items: stretch;
+    }
 }
 
 /*# sourceMappingURL=styles.css.map */

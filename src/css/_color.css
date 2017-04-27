@@ -42,6 +42,26 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txtScalable: #642626;
   --bgcAstral: #202763;
   --txtAstral: #E0DAA2;
+  --bgcFildrop: #0FE1BE;
+  --txtFildrop: #1E2439;
+  --bgcSnippets: #762638;
+  --bgc2Snippets: #8FD9C9;
+}
+
+.snippets-bgc {
+    background-color: var(--bgcSnippets);
+}
+
+.snippets-bgc-two {
+    background-color: var(--bgc2Snippets);
+}
+
+.fildrop-bgc {
+    background-color: var(--bgcFildrop);
+}
+
+.fildrop-txt {
+    color: var(--txtFildrop);
 }
 
 .astral-bgc {
