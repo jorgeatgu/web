@@ -36,6 +36,8 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --whiteGrey: #f1f1f1;
   --footerColor: #1e251f;
   --footerText: #e1d6df;
+  --bgcBislai: #E1DCE3;
+  --txtBislai: #271764;
 }
 
 .footer-txt-c {
@@ -176,6 +178,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .custom-inv-txt--l {
       color: var(--bgc-color);
+    }
+
+    .bislai-bgc {
+        background-color: var(--bgcBislai);
+    }
+
+    .bislai-txt {
+        color: var(--txtBislai);
     }
 
 }

@@ -1414,6 +1414,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
       color: #e2ddcc;
     }
 
+    .bislai-bgc {
+        background-color: #E1DCE3;
+    }
+
+    .bislai-txt {
+        color: #271764;
+    }
+
 }
 
 .display-i {
@@ -2169,7 +2177,6 @@ code {
 }
 
 @media only screen and (min-width: 64em) {
-
 
   .font-0--l {
     font-size: 0;
@@ -4850,7 +4857,6 @@ code {
       width: 50%;
     }
 
-
     .width-60--s {
       width: 60%;
     }
@@ -4902,7 +4908,6 @@ code {
     .width-50--m {
       width: 50%;
     }
-
 
     .width-60--m {
       width: 60%;
@@ -4975,7 +4980,6 @@ code {
     .width-100--l {
       width: 100%;
     }
-
 
 }
 

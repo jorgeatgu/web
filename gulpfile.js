@@ -84,9 +84,7 @@ gulp.task('css', function() {
         atImport({
             plugins: [stylelint]
         }),
-        stylelint({
-            ignorePath: './src/css/_reset.css'
-        }),
+        stylelint,
         reporter({
             clearMessages: true
         }),
