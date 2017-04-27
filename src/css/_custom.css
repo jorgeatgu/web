@@ -15,12 +15,6 @@ html {
   line-height: 1.5;
 }
 
-.ghost:hover,
-.ghost:focus {
-  color: var(--txt-color);
-  border-color: var(--bgc-color);
-}
-
 .grid {
   grid-template-columns: 100%;
 }

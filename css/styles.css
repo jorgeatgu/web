@@ -2822,6 +2822,7 @@ code {
 .ghost:focus {
   border: 1px solid currentColor;
   background-color: transparent;
+  color: #121;
 }
 
 /* stylelint-enable */
@@ -5053,12 +5054,6 @@ Tus movidas que no están en Astral
 
 html {
   line-height: 1.5;
-}
-
-.ghost:hover,
-.ghost:focus {
-  color: #1e2439;
-  border-color: #e2ddcc;
 }
 
 .grid {

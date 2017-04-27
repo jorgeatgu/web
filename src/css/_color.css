@@ -21,6 +21,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 */
 :root {
   --black: #121;
+  --black7: rgba(17, 34, 17, .7);
   --white: #fff;
   --grey: #ccc;
   --blackCurrant: #65065A;
