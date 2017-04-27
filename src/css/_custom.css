@@ -96,4 +96,9 @@ html {
   .grid--l {
     grid-template-columns: 45% 55%;
   }
+
+  .logo {
+    width: 10rem;
+    height: 10rem;
+  }
 }

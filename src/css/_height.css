@@ -282,4 +282,7 @@
   .mih-100vh--l {
     min-height: 100vh;
   }
+  .mih-100vh--custom--l {
+    min-height: calc(100vh - 69px);
+  }
 }
