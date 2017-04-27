@@ -1,8 +1,13 @@
+/* stylelint-disable */
+
 .ghost:hover,
 .ghost:focus {
   border: 1px solid currentColor;
   background-color: transparent;
+  color: var(--black);
 }
+
+/* stylelint-enable */
 
 .underline:hover,
 .underline:focus {

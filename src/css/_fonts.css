@@ -130,7 +130,6 @@ code {
 
 @media only screen and (min-width: 64em) {
 
-
   .font-0--l {
     font-size: 0;
   }
@@ -167,6 +166,8 @@ code {
     font-size: 5rem;
   }
 
+  .font-10--l {
+    font-size: 10rem;
+  }
+
 }
-
-

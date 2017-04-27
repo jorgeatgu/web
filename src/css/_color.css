@@ -21,6 +21,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 */
 :root {
   --black: #121;
+  --black7: rgba(17, 34, 17, .7);
   --white: #fff;
   --grey: #ccc;
   --blackCurrant: #65065A;
@@ -36,6 +37,19 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --whiteGrey: #f1f1f1;
   --footerColor: #1e251f;
   --footerText: #e1d6df;
+  --bgcBislai: #E1DCE3;
+  --txtBislai: #271764;
+  --bgcScalable: #E5EDB7;
+  --txtScalable: #642626;
+  --bgcAstral: #202763;
+  --txtAstral: #E0DAA2;
+  --bgcFildrop: #0FE1BE;
+  --txtFildrop: #1E2439;
+  --bgcSnippets: #762638;
+  --bgc2Snippets: #8FD9C9;
+  --bgcCharlas: #053584;
+  --txtCharlas: #F1F1F1;
+  --lineCharlas: #ccc;
 }
 
 .footer-txt-c {
@@ -43,7 +57,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 }
 
 .footer-bgc-c {
-    background-color: var(--footerColor)
+    background-color: var(--footerColor);
 }
 
 .custom-txt-c {
@@ -58,7 +72,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--txt-color);
 }
 
-.custom-inv-txt {
+.custom-nv-txt {
   color: var(--bgc-color);
 }
 
@@ -70,9 +84,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     color: var(--whiteGrey);
 }
 
-
-
-/*Primer combo*/
+/* Primer combo */
 
 .txt-blackCurrant-fuelYellow__7_85 {
   color: var(--blackCurrant);
@@ -82,8 +94,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--fuelYellow);
 }
 
-
-/*Segundo combo*/
+/* Segundo combo */
 
 .txt-bunting-frenchGray__11_16 {
   color: var(--bunting);
@@ -93,8 +104,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--frenchGray);
 }
 
-
-/*Tercer combo*/
+/* Tercer combo */
 
 .txt-eclipse-springBud__9_27 {
   color: var(--eclipse);
@@ -104,8 +114,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   background-color: var(--springBud);
 }
 
-
-/*Cuarto combo*/
+/* Cuarto combo */
 
 .txt-nightRider-mint__9 {
   color: var(--nightRider);
@@ -139,16 +148,6 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 .bgc-grey {
   background-color: var(--grey);
-}
-
-
-@media only screen and (min-width: 30em) {
-
-
-}
-
-@media only screen and (min-width: 48em) {
-
 }
 
 @media only screen and (min-width: 64em) {
@@ -192,4 +191,61 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     .custom-inv-txt--l {
       color: var(--bgc-color);
     }
+
+    .bislai-bgc {
+        background-color: var(--bgcBislai);
+    }
+
+    .bislai-txt {
+        color: var(--txtBislai);
+    }
+
+    .scalable-bgc {
+        background-color: var(--bgcScalable);
+    }
+
+    .scalable-txt {
+        color: var(--txtScalable);
+    }
+
+    .charlas-bgc {
+        background-color: var(--bgcCharlas);
+    }
+
+    .charlas-txt {
+        color: var(--txtCharlas);
+    }
+
+    .snippets-bgc {
+        background-color: var(--bgcSnippets);
+    }
+
+    .snippets-bgc-two {
+        background-color: var(--bgc2Snippets);
+    }
+
+    .fildrop-bgc {
+        background-color: var(--bgcFildrop);
+    }
+
+    .fildrop-txt {
+        color: var(--txtFildrop);
+    }
+
+    .astral-bgc {
+        background-color: var(--bgcAstral);
+    }
+
+    .astral-txt {
+        color: var(--txtAstral);
+    }
+
+    .astral-bgc-inv {
+        background-color: var(--txtAstral);
+    }
+
+    .astral-txt-inv {
+        color: var(--bgcAstral);
+    }
+
 }

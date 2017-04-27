@@ -81,8 +81,10 @@ gulp.task('compress', function() {
 
 gulp.task('css', function() {
     var processors = [
-        atImport,
-        stylelint(),
+        atImport({
+            plugins: [stylelint]
+        }),
+        stylelint,
         reporter({
             clearMessages: true
         }),
@@ -172,7 +174,7 @@ gulp.task('default', ["browserSync"], function() {
     gulp.watch('./src/css/**', ['css']);
     gulp.watch('./src/js/**', ['compress']);
     gulp.watch('./src/img/**', ['images']);
-    gulp.watch(["./*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
+    gulp.watch(["*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
 });
 
 /* Tarea final para comprimir CSS y JavaScript */

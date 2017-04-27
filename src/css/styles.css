@@ -1,9 +1,6 @@
-/*
-
-  Astral 0.2.1 por Jorge Aznar
+/* Astral 0.2.1 por Jorge Aznar
   http://github.com/jorgeatgu/astral
   http://jorgeatgu.com
-
 */
 
 @import '_reset';
@@ -28,4 +25,3 @@
 @import '_weight';
 @import '_width';
 @import '_custom';
-
