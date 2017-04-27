@@ -82,6 +82,10 @@
   min-height: 100vh;
 }
 
+.mih-20vh {
+    min-height: 20vh;
+}
+
 .h-400px--s {
   height: 400px;
 }
@@ -281,6 +285,9 @@
   }
   .mih-100vh--l {
     min-height: 100vh;
+  }
+  .mih-20vh--l {
+      min-height: 20vh;
   }
   .mih-100vh--custom--l {
     min-height: calc(100vh - 69px);
