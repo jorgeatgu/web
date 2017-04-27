@@ -1,0 +1,1824 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DRY con group, defs y use · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="chapter11.html" />
+    
+    
+    <link rel="prev" href="chapter10.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html">
+            
+                    
+                    Introducción
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="chapter1.html">
+            
+                <a href="chapter1.html#un-poco-de-historia">
+            
+                    
+                    Un poco de historia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="chapter1.html">
+            
+                <a href="chapter1.html#soporte">
+            
+                    
+                    Soporte
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="chapter1.html">
+            
+                <a href="chapter1.html#formato-y-ejemplos">
+            
+                    
+                    Formato y ejemplos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="chapter2.html">
+            
+                <a href="chapter2.html#adobe-illustrator-1710">
+            
+                    
+                    Adobe Illustrator 17.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="chapter2.html">
+            
+                <a href="chapter2.html#inkscape-0482">
+            
+                    
+                    Inkscape 0.48.2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="chapter2.html">
+            
+                <a href="chapter2.html#sketch-303">
+            
+                    
+                    Sketch 3.0.3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="chapter2.html">
+            
+                <a href="chapter2.html#añadir-svg-al-html">
+            
+                    
+                    Añadir SVG al HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter2.html">
+            
+                <a href="chapter2.html#soporte-para-ie8-y-android-23">
+            
+                    
+                    Soporte para IE8 y Android   2.3
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="chapter2.html">
+            
+                <a href="chapter2.html#añadir-svg-a-wordpress-con-plugin">
+            
+                    
+                    Añadir SVG a WordPress con Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="chapter2.html">
+            
+                <a href="chapter2.html#añadir-svg-a-wordpress-sin-plugin">
+            
+                    
+                    Añadir SVG a WordPress sin Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter3.html">
+            
+                <a href="chapter3.html">
+            
+                    
+                    Etiqueta principal
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="chapter3.html">
+            
+                <a href="chapter3.html#sistema-de-coordenadas-y-unidades-de-medida">
+            
+                    
+                    Sistema de coordenadas y unidades de medida
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="chapter3.html">
+            
+                <a href="chapter3.html#viewbox">
+            
+                    
+                    viewBox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="chapter3.html">
+            
+                <a href="chapter3.html#preserveaspectratio">
+            
+                    
+                    preserveAspectRatio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html">
+            
+                    
+                    Las formas básicas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="chapter4.html">
+            
+                <a href="chapter4.html#fill">
+            
+                    
+                    Fill
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="chapter4.html">
+            
+                <a href="chapter4.html#stroke">
+            
+                    
+                    Stroke
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="chapter4.html">
+            
+                <a href="chapter4.html#rect">
+            
+                    
+                    Rect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="chapter4.html">
+            
+                <a href="chapter4.html#circle">
+            
+                    
+                    Circle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="chapter4.html">
+            
+                <a href="chapter4.html#ellipse">
+            
+                    
+                    Ellipse
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="chapter4.html">
+            
+                <a href="chapter4.html#line">
+            
+                    
+                    Line
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="chapter4.html">
+            
+                <a href="chapter4.html#polyline">
+            
+                    
+                    Polyline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="chapter4.html">
+            
+                <a href="chapter4.html#polygon">
+            
+                    
+                    Polygon
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="chapter4.html">
+            
+                <a href="chapter4.html#path">
+            
+                    
+                    Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="chapter5.html">
+            
+                <a href="chapter5.html">
+            
+                    
+                    Texto
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="chapter5.html">
+            
+                <a href="chapter5.html#text">
+            
+                    
+                    Text
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="chapter5.html">
+            
+                <a href="chapter5.html#tspan">
+            
+                    
+                    Tspan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="chapter5.html">
+            
+                <a href="chapter5.html#textpath">
+            
+                    
+                    textPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="chapter6.html">
+            
+                <a href="chapter6.html">
+            
+                    
+                    Transformaciones
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="chapter6.html">
+            
+                <a href="chapter6.html#translate">
+            
+                    
+                    Translate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="chapter6.html">
+            
+                <a href="chapter6.html#rotate">
+            
+                    
+                    Rotate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="chapter6.html">
+            
+                <a href="chapter6.html#scale">
+            
+                    
+                    Scale
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="chapter6.html">
+            
+                <a href="chapter6.html#skewx">
+            
+                    
+                    SkewX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="chapter6.html">
+            
+                <a href="chapter6.html#skewy">
+            
+                    
+                    SkewY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="chapter6.html">
+            
+                <a href="chapter6.html#matrix">
+            
+                    
+                    Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html">
+            
+                    
+                    Filtros
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feflood">
+            
+                    
+                    feFlood
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feturbulence">
+            
+                    
+                    feTurbulence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feimage">
+            
+                    
+                    feImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fecolormatrix">
+            
+                    
+                    feColorMatrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fecomponenttransfer">
+            
+                    
+                    feComponentTransfer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feconvolvematrix">
+            
+                    
+                    feConvolveMatrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fegaussianblur">
+            
+                    
+                    feGaussianBlur
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fedisplacementmap">
+            
+                    
+                    feDisplacementMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="chapter7.html">
+            
+                <a href="chapter7.html#femorphology">
+            
+                    
+                    feMorphology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feoffset">
+            
+                    
+                    feOffset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.11" data-path="chapter7.html">
+            
+                <a href="chapter7.html#efectos-de-luz">
+            
+                    
+                    Efectos de luz
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.12" data-path="chapter7.html">
+            
+                <a href="chapter7.html#efectos-de-luz">
+            
+                    
+                    feDistantLight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.13" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fepointlight">
+            
+                    
+                    fePointLight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.14" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fespotlight">
+            
+                    
+                    feSpotLight
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.15" data-path="chapter7.html">
+            
+                <a href="chapter7.html#femerge">
+            
+                    
+                    feMerge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.16" data-path="chapter7.html">
+            
+                <a href="chapter7.html#feblend">
+            
+                    
+                    feBlend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.17" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fecomposite">
+            
+                    
+                    feComposite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.18" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fetile">
+            
+                    
+                    feTile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.19" data-path="chapter7.html">
+            
+                <a href="chapter7.html#fildrop">
+            
+                    
+                    FILDROP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="chapter8.html">
+            
+                <a href="chapter8.html">
+            
+                    
+                    Degradados
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="chapter8.html">
+            
+                <a href="chapter8.html#lineargradient">
+            
+                    
+                    linearGradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="chapter8.html">
+            
+                <a href="chapter8.html#radialgradient">
+            
+                    
+                    radialGradient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="chapter8.html">
+            
+                <a href="chapter8.html#spreadmethod">
+            
+                    
+                    spreadMethod
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="chapter8.html">
+            
+                <a href="chapter8.html#gradienttransform">
+            
+                    
+                    gradientTransform
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="chapter9.html">
+            
+                <a href="chapter9.html">
+            
+                    
+                    Patterns, masks, clip-path y symbol
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="chapter9.html">
+            
+                <a href="chapter9.html#patterns">
+            
+                    
+                    Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="chapter9.html">
+            
+                <a href="chapter9.html#mask">
+            
+                    
+                    Mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="chapter9.html">
+            
+                <a href="chapter9.html#clip-path">
+            
+                    
+                    Clip-Path
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="chapter9.html">
+            
+                <a href="chapter9.html#symbol">
+            
+                    
+                    Symbol
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="chapter10.html">
+            
+                <a href="chapter10.html">
+            
+                    
+                    Image
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="chapter10.html">
+            
+                <a href="chapter10.html#links">
+            
+                    
+                    Links
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.12" data-path="chapter11.html">
+            
+                <a href="chapter11.html">
+            
+                    
+                    DRY con group, defs y use
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="chapter11.html">
+            
+                <a href="chapter11.html#group">
+            
+                    
+                    Group
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="chapter11.html">
+            
+                <a href="chapter11.html#defs-y-use">
+            
+                    
+                    Defs y use
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="chapter11.html">
+            
+                <a href="chapter11.html#usando-css-para-aplicar-estilos">
+            
+                    
+                    Usando CSS para aplicar estilos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="chapter11.html">
+            
+                <a href="chapter11.html#sprites-con-svg">
+            
+                    
+                    Sprites con SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="chapter11.html">
+            
+                <a href="chapter11.html#métodos-para-aplicar-estilos-css-a-svg">
+            
+                    
+                    Métodos para aplicar estilos CSS a SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="chapter11.html">
+            
+                <a href="chapter11.html#fragmentos-identificadores">
+            
+                    
+                    Fragmentos identificadores
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="chapter12.html">
+            
+                <a href="chapter12.html">
+            
+                    
+                    Optimizar SVG
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="chapter12.html">
+            
+                <a href="chapter12.html#svg-cleaner">
+            
+                    
+                    SVG CLEANER
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="chapter12.html">
+            
+                <a href="chapter12.html#svgo">
+            
+                    
+                    SVGO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="chapter12.html">
+            
+                <a href="chapter12.html#svgo-en-jorgeatgucom">
+            
+                    
+                    SVGO en jorgeatgu.com
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.4" data-path="chapter12.html">
+            
+                <a href="chapter12.html#optimizando-svg-con-grunt">
+            
+                    
+                    Optimizando SVG con Grunt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.5" data-path="chapter12.html">
+            
+                <a href="chapter12.html#svgo-online">
+            
+                    
+                    SVGO ONLINE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="chapter13.html">
+            
+                <a href="chapter13.html">
+            
+                    
+                    WAI-ARIA en SVG
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="chapter13.html">
+            
+                <a href="chapter13.html#svg-11">
+            
+                    
+                    SVG 1.1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="chapter13.html">
+            
+                <a href="chapter13.html#svg-2">
+            
+                    
+                    SVG 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="chapter13.html">
+            
+                <a href="chapter13.html#describler">
+            
+                    
+                    Describler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="chapter14.html">
+            
+                <a href="chapter14.html">
+            
+                    
+                    Herramientas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="chapter14.html">
+            
+                <a href="chapter14.html#SVG-CROWBAR">
+            
+                    
+                    Crowbar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="chapter14.html">
+            
+                <a href="chapter14.html#Polynom">
+            
+                    
+                    Polynom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="chapter14.html">
+            
+                <a href="chapter14.html#SVGSON">
+            
+                    
+                    SVGSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.4" data-path="chapter14.html">
+            
+                <a href="chapter14.html#XVG">
+            
+                    
+                    XVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="chapter15.html">
+            
+                <a href="chapter15.html">
+            
+                    
+                    CSS en SVG
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.16.1" data-path="chapter15.html">
+            
+                <a href="chapter15.html#metodos-para-aplicar-estilos-css-a-svg">
+            
+                    
+                    Métodos para aplicar estilos CSS a SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.2" data-path="chapter15.html">
+            
+                <a href="chapter15.html#a-traves-de-una-etiqueta-xml">
+            
+                    
+                    A través de una etiqueta XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.3" data-path="chapter15.html">
+            
+                <a href="chapter15.html#a-traves-del-style-en-el-HTML">
+            
+                    
+                    A través del style en el HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.4" data-path="chapter15.html">
+            
+                <a href="chapter15.html#a-traves-de-la-etiqueta-style-en-SVG">
+            
+                    
+                    A través de la etiqueta style en SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16.5" data-path="chapter15.html">
+            
+                <a href="chapter15.html#a-traves-de-un-archivo-CSS-externo">
+            
+                    
+                    A través de un archivo CSS externo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="chapter16.html">
+            
+                <a href="chapter16.html">
+            
+                    
+                    Bibliografia
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >DRY con group, defs y use</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dry-con-group-defs-y-use">DRY con group, defs y use</h1>
+<p><strong><em>Dont repeat yourself</em></strong> que viene a ser que no te repitas a ti mismo. Si ya tenemos una figura que ocupa veinte l&#xED;neas para que vamos a repetir las veinte l&#xED;neas si con una sola l&#xED;nea nos basta y nos sobra. En este cap&#xED;tulo vamos a ver como lo podemos hacer.</p>
+<h2 id="group">Group</h2>
+<p>La etiqueta <code>&lt;g&gt;</code> representa a los grupos, y como su nombre indica la utilizamos para agrupar los diferentes elementos que est&#xE9;n dentro de la propia etiqueta.</p>
+<p>En ella podemos definir una serie de figuras y aplicarles los mismos colores de fondo, grosor y color del borde. A los grupos tambi&#xE9;n le podemos aplicar filtros, animaciones, transformaciones y atributos <strong>CSS</strong>.</p>
+<p>Para mover un grupo vamos a tener que recurrir a <code>transform=&#x201D;translate&#x201D;</code> ya que no disponemos de las coordenadas <strong><em>x</em></strong> e <strong><em>y</em></strong>. Lo mismo para el tama&#xF1;o, el cu&#xE1;l si queremos modificar a la vez lo haremos con <code>transform=&#x201D;scale&#x201D;</code>.</p>
+<p><img src="images/capitulo-11/Capitulo-11-group.jpg" alt=""></p>
+<pre><code>&lt;g fill=&quot;crimson&quot; transform=&quot;rotate(45)&quot;&gt;
+    &lt;rect x=&quot;100&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;rect x=&quot;150&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;rect x=&quot;200&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;rect x=&quot;250&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;rect x=&quot;300&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+&lt;/g&gt;
+</code></pre><p><a href="http://codepen.io/jorgeatgu/details/qexKf/" target="_blank"><img src="images/logo-codepen.jpg" alt=""></a></p>
+<p>En el anterior ejemplo podemos ver como hemos indicado a la vez el mismo color y las mismas transformaciones a todos los rect&#xE1;ngulos.</p>
+<h4 id="soporte">Soporte</h4>
+<p><img src="images/soporte/primera.jpg" alt=""></p>
+<h2 id="defs-y-use">Defs y use</h2>
+<p>Ahora que ya sabemos como crear nuestras propias formas b&#xE1;sicas, patrones, degradados y aplicar a todos ellos m&#xFA;ltiples transformaciones vamos a ver como podemos reutilizar todo este c&#xF3;digo para no tener que ir repitiendo a lo largo de documento los mismos elementos con el consecuente ahorro de c&#xF3;digo y sobre todo de tiempo.</p>
+<p>El c&#xF3;digo que queramos repetir a lo largo del documento deber&#xE1; de ir entre <code>&lt;defs&gt;</code> <code>&lt;/defs&gt;</code> a los elementos les indicaremos un <code>id=&#x201D;&#x201D;</code> con el nombre que queramos y a continuaci&#xF3;n para usar este c&#xF3;digo utilizaremos la etiqueta <code>&lt;use&gt;</code>, lo posicionaremos en el documento a trav&#xE9;s de las coordenadas <strong><em>x</em></strong> e <strong><em>y</em></strong>, le podemos aplicar transformaciones como scale, matrix, rotate etc...</p>
+<p>Todo el c&#xF3;digo que est&#xE9; dentro de la etiquetas <code>&lt;defs&gt;</code> no se va a tener en cuenta a no ser que utilicemos la etiqueta <code>&lt;use&gt;</code>.</p>
+<p>Aunque su uso no es obligatorio la <strong>W3C</strong> recomienda utilizar estas etiquetas para hacer nuestro c&#xF3;digo mucho m&#xE1;s accesible y legible. Vamos a ver unos ejemplo para que nos quede m&#xE1;s claro su funcionamiento.</p>
+<p><img src="images/capitulo-11/Capitulo-11-defs.jpg" alt=""></p>
+<pre><code>&lt;defs&gt;
+    &lt;rect id=&quot;rectangulo&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;circle id=&quot;circulo&quot; r=&quot;30&quot;/&gt;
+&lt;/defs&gt;
+&lt;use xlink:href=&quot;#rectangulo&quot; x=&quot;300&quot; y=&quot;200&quot;fill=&quot;crimson&quot;/&gt;
+&lt;use xlink:href=&quot;#circulo&quot; x=&quot;250&quot; y=&quot;300&quot; fill=&quot;gold&quot;/&gt;
+&lt;use xlink:href=&quot;#circulo&quot; x=&quot;600&quot; y=&quot;200&quot; fill=&quot;darkslategrey&quot;/&gt;
+&lt;use xlink:href=&quot;#rectangulo&quot;x=&quot;700&quot; y=&quot;300&quot; fill=&quot;navajowhite&quot;/&gt;
+</code></pre><p><a href="http://codepen.io/jorgeatgu/details/Cuavg/" target="_blank"><img src="images/logo-codepen.jpg" alt=""></a></p>
+<p>En el ejemplo anterior hemos definido entre las etiquetas <code>&lt;defs&gt;&lt;/defs&gt;</code> un elemento <code>&lt;rect&gt;</code> con un <code>id=&#x201D;rectangulo&#x201D;</code> y un elemento <code>&lt;circle&gt;</code> con un <code>id=&#x201D;circulo&#x201D;</code>. Ahora vamos a llamar a estos dos elementos tantas veces como queramos a trav&#xE9;s de la etiqueta <code>&lt;use&gt;</code> y para ello vamos a utilizar el atributo <code>xlink:href</code> con la # antes del nombre del <strong><em>id</em></strong>, tambi&#xE9;n le indicamos la posici&#xF3;n del elemento a trav&#xE9;s de las coordenadas horizontal y vertical.</p>
+<p>Una advertencia, como pod&#xE9;is observar en el c&#xF3;digo los elementos <code>&lt;rect&gt;</code> y <code>&lt;circle&gt;</code> no tienen un color definido, esto se debe a que si le indicamos un color al elemento que est&#xE1; en <code>&lt;defs&gt;</code> los elementos que creamos a trav&#xE9;s del <code>&lt;use&gt;</code> heredar&#xE1;n ese color y no tendremos oportunidad alguna de cambiar el color, as&#xED; que si la idea es que cada rect&#xE1;ngulo tenga un color diferente tendremos que dejar sin definir el color. En el caso de que no definamos el color ni en <code>&lt;defs&gt;</code> ni en <code>&lt;use&gt;</code> el color por defecto ser&#xE1; negro.</p>
+<p>Vamos a ver qu&#xE9; podemos hacer si combinamos <code>&lt;defs&gt;</code> + <code>&lt;use&gt;</code> + <code>&lt;g&gt;</code></p>
+<p><img src="images/capitulo-11/Capitulo-11-defsGroup.jpg" alt=""></p>
+<pre><code>&lt;defs&gt;
+    &lt;g id=&quot;cuadrados&quot; fill=&quot;crimson&quot;  transform=&quot;translate(150 50)&quot;&gt;
+        &lt;rect x=&quot;30&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+        &lt;rect x=&quot;80&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+        &lt;rect x=&quot;130&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+        &lt;rect x=&quot;180&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+        &lt;rect x=&quot;230&quot; y=&quot;30&quot; width=&quot;40&quot; height=&quot;40&quot;/&gt;
+    &lt;/g&gt;
+&lt;/defs&gt;
+
+&lt;use xlink:href=&quot;#cuadrados&quot;/&gt;
+&lt;use xlink:href=&quot;#cuadrados&quot; transform=&quot;translate(0 100)&quot;/&gt;
+&lt;use xlink:href=&quot;#cuadrados&quot; transform=&quot;translate(0 100) rotate(45)&quot;/&gt;
+&lt;use xlink:href=&quot;#cuadrados&quot; transform=&quot;scale(.5)&quot;/&gt;
+&lt;use xlink:href=&quot;#cuadrados&quot; y=&quot;400&quot; opacity=&quot;.5&quot;/&gt;
+</code></pre><p><a href="http://codepen.io/jorgeatgu/details/lHFAi/" target="_blank"><img src="images/logo-codepen.jpg" alt=""></a></p>
+<p>En este ejemplo con cinco etiquetas <code>&lt;use&gt;</code> hemos creado cinco grupos de cinco rect&#xE1;ngulos cada uno, y a cada grupo le hemos dado una propiedad diferente.</p>
+<h4 id="soporte">Soporte</h4>
+<p><img src="images/soporte/primera.jpg" alt=""></p>
+<h2 id="usando-css-para-aplicar-estilos">Usando CSS para aplicar estilos</h2>
+<p>Vamos a ver c&#xF3;mo podemos aplicar un efecto de filtro, un patr&#xF3;n y un degradado a los elementos de nuestro <strong>SVG</strong> a trav&#xE9;s de <strong>CSS</strong>.</p>
+<p>El m&#xE9;todo es sencillo, una vez declarados nuestros efectos entre las etiquetas <strong>SVG</strong> vamos a crear una clase en nuestro achivo <strong>CSS</strong>, y en esa clase vamos a declarar el efecto por ejemplo el <code>&lt;pattern&gt;</code> declaramos con <code>fill: url(#patron)</code> ahora volvemos al HTML y aplicamos la clase al elemento que queremos que reciba el efecto.</p>
+<p><img src="images/capitulo-11/Capitulo-11-useCSS.jpg" alt=""></p>
+<p>{lang=&quot;css&quot;, linenos=&quot;off&quot;}</p>
+<pre><code>
+.patron {
+fill: url(#patron);
+}
+
+.filtro {
+filter: url(#filtro);
+}
+
+.degradado {
+fill: url(#degradado);
+}
+</code></pre><pre><code>&lt;defs&gt;
+    &lt;pattern id=&quot;patron&quot; width=&quot;40&quot; height=&quot;40&quot; patternUnits=&quot;userSpaceOnUse&quot;&gt;
+        &lt;circle cx=&quot;20&quot; cy=&quot;20&quot; r=&quot;20&quot; fill=&quot;crimson&quot;/&gt;
+    &lt;/pattern&gt;
+    &lt;filter id=&quot;filtro&quot; filterUnits=&quot;objectBoundingBox&quot;&gt;
+        &lt;feColorMatrix type=&quot;hueRotate&quot; in=&quot;SourceGraphic&quot; values=&quot;60&quot;/&gt;
+    &lt;/filter&gt;
+    &lt;linearGradient id=&quot;degradado&quot; gradientUnits=&quot;objectBoundingBox&quot;&gt;
+        &lt;stop offset=&quot;0%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;10%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;10%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;20%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;20%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;30%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;30%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;40%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;40%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;50%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;50%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;60%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;60%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;70%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;70%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;80%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;80%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;90%&quot; stop-color=&quot;khaki&quot;/&gt;
+        &lt;stop offset=&quot;90%&quot; stop-color=&quot;crimson&quot;/&gt;
+        &lt;stop offset=&quot;100%&quot; stop-color=&quot;crimson&quot;/&gt;
+    &lt;/linearGradient&gt;
+&lt;/defs&gt;
+&lt;image class=&quot;filtro&quot; xlink:href=&quot;zgzsky.jpg&quot; width=&quot;200&quot; height=&quot;200&quot; y=&quot;50&quot; x=&quot;150&quot;/&gt;
+&lt;rect class=&quot;patron&quot; width=&quot;200&quot; height=&quot;200&quot; x=&quot;500&quot; y=&quot;150&quot;/&gt;
+&lt;rect class=&quot;degradado&quot; width=&quot;200&quot; height=&quot;200&quot; x=&quot;750&quot; y=&quot;150&quot;/&gt;
+</code></pre><p><a href="http://codepen.io/jorgeatgu/details/xCebt/" target="_blank"><img src="images/logo-codepen.jpg" alt=""></a></p>
+<h4 id="soporte">Soporte</h4>
+<p><img src="images/soporte/primera.jpg" alt=""></p>
+<p>En <strong>IE9 y iOS5</strong> no se aplica el efecto del filtro ya que no est&#xE1;n soportados.</p>
+<h2 id="sprites-con-svg">Sprites con SVG</h2>
+<p>A continuaci&#xF3;n vamos a ver como podemos crear un sprite con SVG y todas las ventajas que ello conlleva.</p>
+<p>Ahora vamos a preparar el archivo que vamos a utilizar como sprite. Lo primero es crear un archivo <strong>XML</strong> con la extensi&#xF3;n <strong>SVG</strong>, lo vamos a llamar <code>sprite-images.svg</code>. Las medidas que vaya a tener nuestro <strong>SVG</strong> no nos tienen que preocupar ya que vamos a ir seleccionando partes que est&#xE1;n dentro de el, a&#xFA;n as&#xED; y aunque no es necesario yo le he dado un <code>viewBox=&quot;0 0 2976.5 299&quot;</code> vuelvo a repetir que las medidas no nos tiene que preocupar, pod&#xE9;is hacer todas las pruebas que quer&#xE1;is modificando el <strong><em>viewBox</em></strong> y si hacemos todo el proceso bien el resultado va a ser el mismo. Para aquellos que no est&#xE9;n familiriazados con <strong>SVG</strong> ni con el <strong><em>viewBox</em></strong> aqu&#xED; os dejo un art&#xED;culo que escrib&#xED; sobre el <a href="http://jorgeatgu.com/blog/atributos-viewbox-y-preserveaspectratio-en-svg/" target="_blank">viewBox</a>, tambi&#xE9;n os dejo otro de <a href="http://sarasoueidan.com/blog/svg-coordinate-systems/" target="_blank">Sara Soudeian</a> bastante m&#xE1;s extenso y con una herramienta visual que deja bastante claro todo el funcionamiento del <strong><em>viewBox</em></strong>.</p>
+<p>Vamos a continuar preparando nuestro archivo de sprites. Ahora vamos a ir copiando el c&#xF3;digo de los archivos que queremos incluir dentro del sprite. Vamos a copiar todo el c&#xF3;digo que este comprendido entre las etiquetas <code>&lt;svg&gt;&lt;/svg&gt;</code>, las etiquetas no las queremos. Ahora nos vamos a ir a nuestro <code>sprite-images.svg</code> y vamos a pegar todo el c&#xF3;digo entre dos etiquetas <code>&lt;g&gt;&lt;/g&gt;</code> a la etiqueta de apertura le vamos a asignar un <code>id=&quot;robot-codepen&quot;</code> para mas tarde poder hacer referencia al <strong>id=&quot;&quot;</strong>. Si dejamos al grupo sin nombre no vamos a poder llamarlo. Con los cuatro archivos restantes vamos a hacer exactamente lo mismo, al final tendremos que tener un archivo con el siguiente c&#xF3;digo. He omitido el c&#xF3;digo que tiene cada archivo <strong>SVG</strong> para no hacer muy extenso el ejemplo.</p>
+<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 2976.5 299&quot;&gt;
+
+&lt;g id=&quot;robot-codepen&quot;&gt;
+    -----&gt;Aqu&#xED; va todo el c&#xF3;digo de robot-codepen
+&lt;/g&gt;
+
+&lt;g id=&quot;perfil-codepen&quot;&gt;
+    -----&gt;Aqu&#xED; va todo el c&#xF3;digo de perfil-codepen
+&lt;/g&gt;
+
+&lt;g id=&quot;github&quot;&gt;
+    -----&gt;Aqu&#xED; va todo el c&#xF3;digo de github
+&lt;/g&gt;
+
+&lt;g id=&quot;visible&quot;&gt;
+    -----&gt;Aqu&#xED; va todo el c&#xF3;digo de visible
+&lt;/g&gt;
+
+&lt;g id=&quot;filtros&quot;&gt;
+    -----&gt;Aqu&#xED; va todo el c&#xF3;digo de filtros
+&lt;/g&gt;
+
+&lt;/svg&gt;
+</code></pre><p>Ahora que ya tenemos preparado nuestro sprite vamos a utilizarlo. Vamos a utilizar de nuevo la etiqueta <code>&lt;use&gt;</code>, ahora en el atributo <code>xlink:href=&quot;&quot;</code> le vamos a indicar la ruta donde se encuentra nuestro <code>sprite-images.svg</code>, en mi caso esta en la carpeta ra&#xED;z as&#xED; que con poner el nombre es suficiente, en caso de que estuviera en una carpeta <strong>images</strong> la ruta ser&#xED;a la siguiente <code>images/sprite-images.svg</code>. Ahora la ruta va acompa&#xF1;ada de una almohadilla(#) y el nombre del grupo donde estaba la imagen, en primer lugar vamos a llamar al <strong>SVG robot CodePen</strong> que estaba dentro del grupo <code>&lt;g id=&quot;robot-codepen&gt;</code> quedando la etiqueta <code>&lt;use&gt;</code>de la siguiente manera:</p>
+<pre><code>&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#robot-codepen&quot;/&gt;
+&lt;/svg&gt;
+</code></pre><p>Una vez incluidas todas las im&#xE1;genes el c&#xF3;digo quedar&#xE1; de la siguiente manera:</p>
+<pre><code>&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#robot-codepen&quot;/&gt;
+&lt;/svg&gt;
+
+--&gt;HTML
+
+&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#perfil-codepen&quot;/&gt;
+&lt;/svg&gt;
+
+--&gt;HTML
+
+&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#github&quot;/&gt;
+&lt;/svg&gt;
+
+--&gt;HTML
+
+&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#visible&quot;/&gt;
+&lt;/svg&gt;
+
+--&gt;HTML
+
+&lt;svg viewBox=&quot;0 0 595.3 299&quot; class=&quot;recuadro&quot;&gt;
+    &lt;use xlink:href=&quot;sprite-images.svg#filtros&quot;/&gt;
+&lt;/svg&gt;
+</code></pre><p>Tambi&#xE9;n he a&#xF1;adido a los <strong>SVG</strong> una clase de <strong>CSS</strong> para modificar el tama&#xF1;o a nuestro gusto.</p>
+<p>{lang=&quot;css&quot;, linenos=&quot;off&quot;}</p>
+<pre><code>.recuadro {
+width: 350px;
+height: 176px;
+}
+</code></pre><p>Por desgracia si hacemos todo esto en local no vamos a ver ning&#xFA;n resultado a no ser que tengamos un servidor local o utilicemos en nuestro flujo de trabajo programas como <a href="https://incident57.com/codekit/" target="_blank">CodeKit</a> o <a href="http://vanamco.com/ghostlab/" target="_blank">GhostLab</a>. Si no utilizamos ninguna de estas opciones tenemos que subir todos los archivos a nuestro propio servidor para poder ver todo en funcionamiento. A continuaci&#xF3;n he subido todo el ejemplo a mi web para que lo ve&#xE1;is en funcionamiento.</p>
+<p>Un &#xFA;ltimo apunte, cualquier elemento que contenga un <code>id=&quot;&quot;</code> en <strong>SVG</strong> puede ser reutilizado a trav&#xE9;s de <code>use</code> aunque no este dentro de las etiquetas <code>defs</code>. A&#xFA;n as&#xED; desde la <strong>W3C</strong> nos recomiendan que todos estos elementos vayan dentro de <code>defs</code> para que nuestro c&#xF3;digo sea mas legible y accesible.</p>
+<p><a href="http://jorgeatgu.com/ejemplos/supercss/trabajos.html" target="_blank">DEMO</a></p>
+<h3 id="soporte">Soporte</h3>
+<p>Este m&#xE9;todo como vamos a ver en la siguiente secci&#xF3;n no tiene soporte en IE.</p>
+<p>Mucho cuidado los SVG que est&#xE9;n dentro del sprite y que contengan filtros o degradados ya que solo se van a ver en Firefox. En Chrome, Opera y Safari veremos la figura o forma que lleve el degradado pero su color de relleno ser&#xE1; negro. En el caso de los filtros algunos se van a ver en negro y otros directamente no se mostrar&#xE1;n.</p>
+<h3 id="malas-y-buenas-noticias">Malas y buenas noticias.</h3>
+<p>Las malas son que esto no tiene soporte en ninguna versi&#xF3;n de <strong>Internet Explorer</strong>, tampoco en IE11. Como suele pasar este m&#xE9;todo funciona sin ning&#xFA;n tipo de problema en los navegadores modernos.</p>
+<h2 id="svg4everybody">svg4everybody</h2>
+<p>Las buenas es que como siempre hay alguien haciendo cosas que molan por amor al arte, en este caso <a href="https://github.com/jonathantneal" target="_blank">Jonathan Neal</a> se ha currado un <strong><em>polyfill</em></strong> para que funcione en Internet Explorer. Simplemente tenemos que subir el script a nuestro servidor y agregar el siguiente c&#xF3;digo con la ruta donde est&#xE1; alojado nuestro script a nuestro <strong>HTML</strong> <code>&lt;script src=&quot;js/svg4everybody.js&quot;&gt;&lt;/script&gt;</code>. Que menos que darle una estrellita al <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">repo de GitHub</a>.</p>
+<p>La demo que he subido a mi web lleva incluido el <strong><em>polyfill</em></strong> para que ve&#xE1;is que si que funciona en ese navegador llamado <strong>Internet Explorer</strong>.</p>
+<p><img src="images/capitulo-11/Capitulo-11-internet-explorer-svgsprite.jpg" alt=""></p>
+<h2 id="svgxuse">svgxuse</h2>
+<p>Otra alternativa para dar soporte a Internet Explorer 9, 10 y 11 es svgxuse creada por <a href="https://twitter.com/keyamoon" target="_blank">Keyamoon</a>, conocido por se el creador de <a href="https://icomoon.io/app/#/select" target="_blank">Icomoon</a>. Svgxuse es una librer&#xED;a mas ligera que svg4everybody ya que carece de soporte para las versiones anteriores a Internet Explorer 9. En navegadores con soporte la librer&#xED;a tampoco hara ninguna petici&#xF3;n extra.</p>
+<p>El uso es bastante sencillo, simplemente vamos a cargar la librer&#xED;a en nuestro <strong>HTML</strong> con <code>&lt;script src=&quot;svgxuse.js&quot; defer&gt;&lt;/script&gt;</code></p>
+<p>El repo de <a href="https://github.com/Keyamoon/svgxuse" target="_blank">GitHub de svgxuse</a></p>
+<p><strong><em>COMPARATIVA</em></strong></p>
+<p>Y para terminar una peque&#xF1;a comparativa.</p>
+<p>Mi <a href="http://jorgeatgu.com/trabajos-object" target="_blank">p&#xE1;gina de trabajos</a> con los <strong>SVG</strong> cargados a trav&#xE9;s de la etiqueta <code>&lt;object&gt;</code> mas un <strong><em>fallback</em></strong> para navegadores que no soportan <strong>SVG</strong>.</p>
+<p><img src="images/capitulo-11/Capitulo-11-sin-svg-sprite-map.jpg" alt=""></p>
+<p>Mi <a href="http://jorgeatgu.com/trabajos" target="_blank">p&#xE1;gina de trabajos</a> con los <strong>SVG</strong> cargados a trav&#xE9;s de <code>images-sprites.svg</code> sin <strong><em>fallback</em></strong> alguno.</p>
+<p><img src="images/capitulo-11/Capitulo-11-con-svg-sprite-map.jpg" alt=""></p>
+<p>Como pod&#xE9;is apreciar en las im&#xE1;genes me ahorro un mont&#xF3;n de <strong><em>request</em></strong> y la p&#xE1;gina carga <strong>mucho m&#xE1;s r&#xE1;pido</strong>.</p>
+<p>Lo &#xFA;nico malo es que cuando utilizamos esta t&#xE9;cnica de importar partes de otro <strong>SVG</strong> aquellos que contengan filtros no se van a importar. Tampoco importa los degradados, as&#xED; que aquellos elementos que contengan degradados se quedar&#xE1;n de color negro.</p>
+<h2 id="fragmentos-identificadores">Fragmentos identificadores</h2>
+<p>Los fragmentos identificadores son otro m&#xE9;todo para poder hacer una <em>llamada</em> a una parte en concreto de un <strong>SVG</strong>. La llamada la podemos realizar desde el <strong>HTML</strong> con la etiqueta <code>img</code> o desde el <strong>CSS</strong> con <code>background-image:</code> a trav&#xE9;s del ID del elemento y tambi&#xE9;n a trav&#xE9;s de la etiqueta <code>view</code>.</p>
+<p>Ademas de hacer la llamada al fragmento tambi&#xE9;n lo podemos modificar con lo siguientes atributos. Todos ellos los vamos a incluir entre par&#xE9;ntesis.</p>
+<p><em>ViewBoxParams</em>: corresponde al atributo viewBox.
+<em>AspectParams</em>: corresponde al atributo preserveAspectRatio.
+<em>TransformParams</em>: corresponde a la transformaci&#xF3;n y todos los m&#xE9;todos que podemos aplicar a trav&#xE9;s de ella.
+<em>ZoomAndPanParams</em>: corresponde al atributo zoomAndPan. Tiene dos valores <em>magnify</em> y <em>disable</em>.</p>
+<p>Si queremos utilizar mas de un atributo simplemente lo separaremos con un punto y coma.</p>
+<p>Ahora vamos a ver como tenemos que preparar nuestro <strong>SVG</strong>. Vamos a crear un archivo con cinco iconos, cada icono es de 32 por 32 pixels. Lo importante es crear una etiqueta <code>view</code> por cada icono, en la etiqueta vamos a indicar un ID para diferenciar cada icono y a trav&#xE9;s del <code>viewBox</code> la posici&#xF3;n que ocupa el icono.</p>
+<p>{lang=&quot;xml&quot;, linenos=&quot;off&quot;}</p>
+<pre><code>&lt;view id=&quot;codepen-view&quot; viewBox=&quot;0 0 32 32&quot;/&gt;
+&lt;view id=&quot;twitter-view&quot; viewBox=&quot;0 32 32 32&quot;/&gt;
+&lt;view id=&quot;github-view&quot; viewBox=&quot;0 64 32 32&quot;/&gt;
+&lt;view id=&quot;dribbble-view&quot; viewBox=&quot;0 96 32 32&quot;/&gt;
+&lt;view id=&quot;behance-view&quot; viewBox=&quot;0 128 32 32&quot;/&gt;
+</code></pre><p>En el viewBox influ&#xED;ra la posici&#xF3;n que ocupe cada icono en nuestro <strong>SVG</strong>.
+  El primer valor corresponde a la coordenada horizontal.
+  El segundo valor corresponde a la coordenada vertical.
+  El tercer valor corresponde al ancho. El cuarto valor corresponde a la altura.</p>
+<h3 id="llamada-desde-el-html">Llamada desde el HTML</h3>
+<p>Ahora vamos a llamar a los iconos desde el <strong>HTML</strong>. Esto lo podemos hacer de dos maneras.</p>
+<p>La primera es a trav&#xE9;s de la etiqueta <code>img</code>, en <code>src</code> vamos a indicar la ruta donde se aloja nuestro archivo <strong>SVG</strong> y a continuaci&#xF3;n lo siguiente: <code>#svgView(viewBox(0,0,32,32))</code> todo esto da lugar al c&#xF3;digo que vemos a continuaci&#xF3;n.</p>
+<pre><code>&lt;img src=&quot;http://jorgeatgu.com/libro/ejemplos/images/iconos.svg#svgView(viewBox(0,32,32,32))&quot; class=&quot;iconos-size&quot;&gt;
+</code></pre><p>El otro m&#xE9;todo que podemos utilizar es llamando al ID que hemos asignado a cada uno de los iconos.</p>
+<pre><code>&lt;img src=&quot;http://jorgeatgu.com/libro/ejemplos/images/iconos.svg#codepen-view&quot; class=&quot;iconos-size&quot;&gt;
+</code></pre><h3 id="llamada-desde-el-css">Llamada desde el CSS</h3>
+<p>Ahora vamos a llamar a los iconos desde el <strong>CSS</strong>. Al igual que con el HTML vamos podemos utilizar los dos m&#xE9;todos.</p>
+<p>El primer m&#xE9;todo a trav&#xE9;s de una clase en <strong>CSS</strong> es igual que el que hemos utilizado en el <strong>HTML</strong> a trav&#xE9;s de la <code>svgView</code></p>
+<p>{lang=&quot;css&quot;, linenos=&quot;off&quot;}</p>
+<pre><code>.view {
+background-image: url(&apos;http://jorgeatgu.com/libro/ejemplos/images/iconos.svg#svgView(viewBox(0,0,32,32))&apos;);
+}
+</code></pre><p>El segundo m&#xE9;todo tambi&#xE9;n es igual que el que hemos utilizado en el <strong>HTML</strong> a trav&#xE9;s del ID que hemos asignado en el <strong>SVG</strong>.</p>
+<p>{lang=&quot;css&quot;, linenos=&quot;off&quot;}</p>
+<pre><code>.view-dos {
+background-image: url(&apos;http://jorgeatgu.com/libro/ejemplos/images/iconos.svg#codepen-view&apos;);
+}
+</code></pre><p><a href="http://codepen.io/jorgeatgu/pen/rqKBg/" target="_blank"><img src="images/logo-codepen.jpg" alt=""></a></p>
+<p>La demo en mi web: <a href="jorgeatgu.com/libro/ejemplos/fragments-iconos.html">DEMO</a></p>
+<h3 id="soporte">SOPORTE</h3>
+<p>A trav&#xE9;s del <strong>HTML</strong></p>
+<p><img src="images/soporte/ocho.jpg" alt=""></p>
+<p>Android Browser es el &#xFA;nico que carece de soporte, en cambio Firefox for Android y Chrome for Android si que dan soporte.</p>
+<p>A trav&#xE9;s del <strong>CSS</strong></p>
+<p><img src="images/soporte/nueve.jpg" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="chapter10.html#links" class="navigation navigation-prev " aria-label="Previous page: Links">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="chapter11.html#group" class="navigation navigation-next " aria-label="Next page: Group">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DRY con group, defs y use","level":"1.12","depth":1,"next":{"title":"Group","level":"1.12.1","depth":2,"anchor":"#group","path":"chapter11.md","ref":"chapter11.md#group","articles":[]},"previous":{"title":"Links","level":"1.11.1","depth":2,"anchor":"#links","path":"chapter10.md","ref":"chapter10.md#links","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter11.md","mtime":"2017-04-25T16:51:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-25T16:56:23.894Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
