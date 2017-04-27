@@ -9,7 +9,7 @@
     <meta name="author" content="Jorge Aznar">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="author" href="humans.txt" />
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css" inline>
     <meta property="twitter:account_id" content="1491442096" />
 </head>
 
@@ -22,17 +22,41 @@
         </nav>
     </header>
     <main>
-        <article class="padding-y1 padding-y3--m border-solid border-1 borderc-grey border-l-0 border-r-0 border-t-0 padding-b0--l padding-t0--l mih-100vh--custom--l">
-            <div class="padding-1 padding-b0 maw-70--s margin-yx maw-50em--m padding-y3--s padding-x0--s grid--l h-100vh--l padding-b0--l padding-t0--l">
-                <h1 class="font-1-5 font-5--l font-w4">Mapas</h1>
-            </div>
+        <div class="padding-1 padding-b0 maw-70--s margin-yx maw-50em--m padding-y3--s padding-x0--s padding-b0--l padding-t0--l">
+            <h1 class="font-1-5 font-5--l font-w6 margin-t1--l margin-b1--l">Mapas</h1>
+        </div>
+        <article class="padding-y1 padding-y3--m border-solid border-1 borderc-grey border-l-0 border-r-0 border-t-0 padding-b0--l padding-t0--l maw-70--s maw-50em--m margin-yx--s">
 
+            <p>Esta es una pequeña colección de mapas que he creado con <strong>Carto</strong> y datos del <a href="https://www.zaragoza.es/ciudad/risp/api.htm">Ayuntamiento de Zaragoza</a> y del <a href="http://opendata.aragon.es">Gobierno de Aragón</a>.</p>
+
+            <h2>Desplobación en Aragón</h2>
+            <p>En este mapa podemos ver como los diferentes municipios de Aragón han ido perdiendo o ganando población. Los datos van desde el año 1900 hasta 2011.</p>
+            <p>El dataset lo adapte a partir de un CSV del Gobierno de Aragón. Esta a vuestra disposición en <a href="https://github.com/jorgeatgu/dataset">GitHub</a>.</p>
             <iframe width="100%" height="520" frameborder="0" src="https://jorgeatgu.carto.com/viz/55249906-4f55-11e6-92cc-0e3ff518bd15/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </article>
+        <article class="padding-y1 padding-y3--m border-solid border-1 borderc-grey border-l-0 border-r-0 border-t-0 padding-b0--l padding-t0--l maw-70--s maw-50em--m margin-yx--s">
+
+            <h2>Contenedores de aceite usado</h2>
+            <p>El año pasado me cambié de barrio, en mi anterior casa sabía donde podía reciclar el aceite usado pero en la nueva casa no hubo manera de encontrar un contenedor. Así que me puse a buscar en internet y las única información que encontre fue la ubicación de algunos contenedores en una noticia perdida en la web del Ayuntamiento de Zaragoza. Así que me puse manos a la obra y siguiendo el formato de la API del Ayuntamiento de Zaragoza cree un geoJSON buscando todas las ubicaciones en Google Maps. Al final lo uní a Carto y quedo algo bastante más accesible que por lo que me ha dicho la gente ha servido para que la gente no pase la odisea que yo pase para poder reciclar.</p>
+
+            <p>Me gustaría seguir actualizando con todos los nuevos contenedores que el Ayuntamiento esta instalando pero he pedido varias veces la información al Ayuntamiento y por el motivo que sea no me la han facilitado. Esperare a que publiquen una noticia.</p>
+
+            <p>El dataset que cree con todas las ubicaciones de los contenedores lo teneis a vuestra disposición en <a href="https://github.com/jorgeatgu/dataset">GitHub</a> </p>
 
             <iframe width="100%" height="520" frameborder="0" src="https://jorgeatgu.carto.com/viz/dc627160-46d9-11e6-b595-0ecd1babdde5/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        </article>
+        <article class="padding-y1 padding-y3--m border-solid border-1 borderc-grey border-l-0 border-r-0 border-t-0 padding-b0--l padding-t0--l maw-70--s maw-50em--m margin-yx--s">
+
+            <h2>Accidentes de peatones y bicicletas</h2>
+            <p>En este mapa podemos ver todos los puntos donde peatones y ciclistas se han visto involucrados en un accidente.</p>
 
             <iframe width="100%" height="520" frameborder="0" src="https://jorgeatgu.carto.com/viz/3a83b5a2-461b-11e6-abfd-0e233c30368f/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
+        </article>
+        <article class="padding-y1 padding-y3--m border-solid border-1 borderc-grey border-l-0 border-r-0 border-t-0 padding-b0--l padding-t0--l maw-70--s maw-50em--m margin-yx--s">
+
+            <h2>Accidentes de tráfico</h2>
+            <p>En este mapa podemos ver todos los puntos donde ha tenido lugar un accidente de tráfico en Zaragoza. Ideal para ver los puntos negros de la ciudad. Se puede ocultar la animación y ver solamente por años.</p>
             <iframe width="100%" height="520" frameborder="0" src="https://jorgeatgu.carto.com/viz/8d638d22-451e-11e6-9a9f-0ee66e2c9693/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
         </article>
     </main>
