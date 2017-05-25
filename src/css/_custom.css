@@ -127,7 +127,7 @@ html {
   }
   .charlas-grid {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 50% 50%;
     grid-column-gap: 50px;
     grid-row-gap: 0;
     justify-items: start;
