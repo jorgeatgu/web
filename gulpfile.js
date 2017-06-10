@@ -151,7 +151,7 @@ gulp.task('images', function() {
 gulp.task('inline', function() {
     return gulp.src('./*.html')
         .pipe(inlinesource())
-        .pipe(gulp.dest('./'))
+        .pipe(gulp.dest('./inline/'))
         .pipe(notify({
             message: 'CSSnano + remove CSS + inline CSS'
         }));
