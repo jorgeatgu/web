@@ -1310,6 +1310,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     color: #f1f1f1;
 }
 
+.color-snippets {
+    color: #c2fabb;
+}
+
 /* Primer combo */
 
 .txt-blackCurrant-fuelYellow__7_85 {
@@ -1435,19 +1439,19 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     }
 
     .charlas-bgc {
-        background-color: #053584;
+        background-color: #781615;
     }
 
     .charlas-txt {
-        color: #F1F1F1;
+        color: #8ce5e6;
     }
 
     .snippets-bgc {
-        background-color: #762638;
+        background-color: #c2fabb;
     }
 
     .snippets-bgc-two {
-        background-color: #8FD9C9;
+        background-color: #3d0144;
     }
 
     .fildrop-bgc {
@@ -1459,19 +1463,19 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
     }
 
     .astral-bgc {
-        background-color: #202763;
+        background-color: #4e3276;
     }
 
     .astral-txt {
-        color: #E0DAA2;
+        color: #b4cf8f;
     }
 
     .astral-bgc-inv {
-        background-color: #E0DAA2;
+        background-color: #b4cf8f;
     }
 
     .astral-txt-inv {
-        color: #202763;
+        color: #4e3276;
     }
 
 }

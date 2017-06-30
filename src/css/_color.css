@@ -41,14 +41,14 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txtBislai: #271764;
   --bgcScalable: #E5EDB7;
   --txtScalable: #642626;
-  --bgcAstral: #202763;
-  --txtAstral: #E0DAA2;
+  --bgcAstral: #4e3276;
+  --txtAstral: #b4cf8f;
   --bgcFildrop: #0FE1BE;
   --txtFildrop: #1E2439;
-  --bgcSnippets: #762638;
-  --bgc2Snippets: #8FD9C9;
-  --bgcCharlas: #053584;
-  --txtCharlas: #F1F1F1;
+  --bgcSnippets: #c2fabb;
+  --bgc2Snippets: #3d0144;
+  --bgcCharlas: #781615;
+  --txtCharlas: #8ce5e6;
   --lineCharlas: #ccc;
 }
 
@@ -82,6 +82,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
 .color-whiteGrey {
     color: var(--whiteGrey);
+}
+
+.color-snippets {
+    color: var(--bgcSnippets);
 }
 
 /* Primer combo */
