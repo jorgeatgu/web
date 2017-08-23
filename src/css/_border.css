@@ -126,10 +126,6 @@
   border-color: var(--grey);
 }
 
-.borderc-lineCharlas {
-    border-color: var(--lineCharlas);
-}
-
 .border-l-0 {
   border-left-width: 0;
 }
