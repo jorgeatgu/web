@@ -207,6 +207,11 @@
     padding-bottom: 1rem;
   }
 
+  .padding-y1__5--s {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .padding-x1--s {
     padding-left: 1rem;
     padding-right: 1rem;

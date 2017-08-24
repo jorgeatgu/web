@@ -2792,8 +2792,8 @@ code {
   .mih-100vh--l {
     min-height: 100vh;
   }
-  .mih-20vh--l {
-      min-height: 20vh;
+  .mih-60vh--l {
+      min-height: 60vh;
   }
   .mih-100vh--custom--l {
     min-height: calc(100vh - 69px);
@@ -3852,6 +3852,11 @@ code {
   .padding-y1--s {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .padding-y1__5--s {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .padding-x1--s {

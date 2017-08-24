@@ -286,8 +286,8 @@
   .mih-100vh--l {
     min-height: 100vh;
   }
-  .mih-20vh--l {
-      min-height: 20vh;
+  .mih-60vh--l {
+      min-height: 60vh;
   }
   .mih-100vh--custom--l {
     min-height: calc(100vh - 69px);
