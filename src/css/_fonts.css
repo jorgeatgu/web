@@ -1,10 +1,15 @@
 :root {
   --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
   --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+  --serif: 'Georgia', serif;
 }
 
 .font-system {
   font-family: var(--fontSystem);
+}
+
+.font-serif {
+  font-family: var(--serif);
 }
 
 .font-monospace,

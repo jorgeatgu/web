@@ -18,6 +18,8 @@ stylelint = require('stylelint');
 browserSync = require('browser-sync');
 inlinesource = require('gulp-inline-source');
 uncss = require('gulp-uncss');
+webp = require('gulp-webp');
+responsive = require('gulp-responsive');
 
 gulp.task("browserSync", function() {
     browserSync({
@@ -169,16 +171,53 @@ gulp.task('removecss', function() {
         }));
 });
 
+gulp.task('webp', () =>
+    gulp.src('img/*.jpg')
+        .pipe(webp())
+        .pipe(gulp.dest('img'))
+);
+
+gulp.task('imgrwd', function () {
+  return gulp.src('src/img/*.{png,jpg}')
+    .pipe(responsive({
+      '*.png': [{
+        width: 300,
+        rename: {
+          suffix: '-300px',
+          extname: '.jpg',
+        },
+        format: 'jpeg',
+      }, {
+        width: 600,
+        rename: {
+          suffix: '-600px',
+          extname: '.jpg',
+        },
+      }, {
+        width: 1200,
+        rename: {
+          suffix: '-1200px',
+          extname: '.jpg',
+        }
+      }],
+    }, {
+      quality: 75,
+      progressive: true,
+      withMetadata: false,
+      errorOnEnlargement: false,
+    }))
+    .pipe(gulp.dest('img'));
+});
+
 /* Tarea por defecto para compilar CSS y comprimir imagenes */
 gulp.task('default', ["browserSync"], function() {
     gulp.watch('./src/css/**', ['css']);
-    gulp.watch('./src/js/**', ['compress']);
     gulp.watch('./src/img/**', ['images']);
-    gulp.watch(["*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
+    gulp.watch('./src/js/**', ['compress']);
+    gulp.watch(["./*.html", "css/*.css", "js/*.js"]).on("change", browserSync.reload);
 });
 
-/* Tarea final para comprimir CSS y JavaScript */
-gulp.task('build', ['minify', 'compress']);
-
-/* Tarea para meter todos los estilos entre etiquetas <style> si el CSS ocupa menos de 50kb */
-
+/* Tarea final para comprimir CSS y JavaScript. Eliminar el CSS sin usar e incluirlo en línea en el HTML
+    Por último creamos las imágenes con diferentes tamaños y las pasamos a WebP.
+*/
+gulp.task('build', ['minify', 'compress', 'removecss', 'inline' , 'imgrwd' , 'webp']);

@@ -41,15 +41,16 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txtBislai: #271764;
   --bgcScalable: #E5EDB7;
   --txtScalable: #642626;
-  --bgcAstral: #4e3276;
-  --txtAstral: #b4cf8f;
+  --bgcAstral: #1e4b78;
+  --txtAstral: #e2e0bb;
   --bgcFildrop: #0FE1BE;
   --txtFildrop: #1E2439;
   --bgcSnippets: #c2fabb;
   --bgc2Snippets: #3d0144;
-  --bgcCharlas: #781615;
-  --txtCharlas: #8ce5e6;
-  --lineCharlas: #ccc;
+  --fornoBgc: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+  --gradient1: #fcde9c;
+  --gradient2: #e34f6f;
+  --gradient3: #7c1d6f;
 }
 
 .footer-txt-c {
@@ -85,7 +86,7 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 }
 
 .color-snippets {
-    color: var(--bgcSnippets);
+    color: var(--bgcSnippets2);
 }
 
 /* Primer combo */
@@ -160,6 +161,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
       color: var(--black);
     }
 
+    .forno-bgc {
+        background: var(--fornoBgc);
+    }
+
     .bgc-black--l {
       background-color: var(--black);
     }
@@ -210,14 +215,6 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .scalable-txt {
         color: var(--txtScalable);
-    }
-
-    .charlas-bgc {
-        background-color: var(--bgcCharlas);
-    }
-
-    .charlas-txt {
-        color: var(--txtCharlas);
     }
 
     .snippets-bgc {
