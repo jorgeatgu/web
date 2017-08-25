@@ -1382,6 +1382,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
       color: #121;
     }
 
+    .forno-bgc {
+        background: linear-gradient(150deg, #fcde9c 15%, #e34f6f 70%, #7c1d6f 94%);
+    }
+
     .bgc-black--l {
       background-color: #121;
     }

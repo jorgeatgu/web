@@ -47,6 +47,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
   --txtFildrop: #1E2439;
   --bgcSnippets: #c2fabb;
   --bgc2Snippets: #3d0144;
+  --fornoBgc: linear-gradient(150deg, var(--gradient1) 15%, var(--gradient2) 70%, var(--gradient3) 94%);
+  --gradient1: #fcde9c;
+  --gradient2: #e34f6f;
+  --gradient3: #7c1d6f;
 }
 
 .footer-txt-c {
@@ -155,6 +159,10 @@ Más combos-accesibles: http://jorgeatgu.github.io/color-combos/;
 
     .color-black--l {
       color: var(--black);
+    }
+
+    .forno-bgc {
+        background: var(--fornoBgc);
     }
 
     .bgc-black--l {
