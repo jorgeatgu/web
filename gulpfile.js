@@ -220,4 +220,9 @@ gulp.task('default', ["browserSync"], function() {
 /* Tarea final para comprimir CSS y JavaScript. Eliminar el CSS sin usar e incluirlo en línea en el HTML
     Por último creamos las imágenes con diferentes tamaños y las pasamos a WebP.
 */
-gulp.task('build', ['minify', 'compress', 'removecss', 'inline' , 'imgrwd' , 'webp']);
+
+// Build para un proyecto sin imágenes
+gulp.task('build', ['minify', 'compress', 'removecss', 'inline']);
+
+//Build para un proyecto con imágenes
+gulp.task('buildimg', ['minify', 'compress', 'removecss', 'inline' , 'imgrwd' , 'webp']);
