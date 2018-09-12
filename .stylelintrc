@@ -1,7 +1,7 @@
 {
     "rules": {
         "at-rule-empty-line-before": ["always", {
-            except: ["blockless-group", "first-nested"],
+            except: ["blockless-after-same-name-blockless", "first-nested"],
             ignore: ["after-comment"],
             message: "Deja un espacio despues de una propiedad"
         }],
@@ -73,6 +73,7 @@
         "keyframe-declaration-no-important": [true, {
             message: "quita ese important"
         }],
+        "max-empty-lines": 1,
         "max-nesting-depth": [2, {
             message: "No, no y no. Deja de abusar del nesting"
         }],
@@ -114,7 +115,7 @@
         "selector-pseudo-class-no-unknown": true,
         "selector-pseudo-class-parentheses-space-inside": "never",
         "selector-pseudo-element-colon-notation": ["single", {
-            message: "Doble para IE8. Estamos en 2016."
+            message: "Doble para IE8. Estamos en 2018."
         }],
         "selector-pseudo-element-no-unknown": true,
         "selector-type-no-unknown": true,

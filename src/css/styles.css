@@ -4,25 +4,29 @@
 */
 
 @import '_reset';
-@import '_border-radius';
-@import '_border';
-@import '_color';
-@import '_display';
-@import '_flexbox';
-@import '_float';
-@import '_fonts';
+@import '_variables';
+@import '_header';
 @import '_grid';
-@import '_height';
-@import '_helper';
-@import '_hover';
-@import '_letter-spacing';
-@import '_margin';
-@import '_overflow';
-@import '_padding';
-@import '_position';
-@import '_textalign';
-@import '_vertical-align';
-@import '_weight';
-@import '_width';
-@import '_custom';
+@import '_proyectos';
+@import '_footer';
 
+* {
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--background);
+}

@@ -1,0 +1,30 @@
+.footer {
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--fondoproyectos);
+}
+
+.footer-container {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.footer-email,
+.footer-links,
+.footer-copyright {
+    font-size: 1rem;
+    font-family: var(--rubik);
+    text-decoration: none;
+    display: block;
+    color: var(--blanco);
+}
+
+.footer-links {
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.footer-dots {
+    color: var(--blanco);
+    padding: 0 .5rem;
+}

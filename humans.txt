@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Jorge Aznar -- front/design -- Zaragoza / Aragón
+    Jorge Aznar -- data/designer -- Zaragoza / Aragón
 	https://twitter.com/jorgeATGU
 	http://codepen.io/jorgeatgu
 	http://behance.net/jorgeatgu
@@ -12,12 +12,10 @@
 	http://dribbble.com/jorgeATGU
 	https://vimeo.com/jorgeatgu
 
-# THANKS
-
 # TECHNOLOGY COLOPHON
 
 
-Last update: 12/06/2016
+Last update: 01/09/2018
 
 Standards: SVG, HTML5, CSS3, RESPONSIVE WEB DESIGN, MOBILE-FIRST
 
