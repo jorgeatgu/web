@@ -1,0 +1,100 @@
+/*
+  Base CSS por Jorge Aznar
+  http://jorgeatgu.com
+  Estructura básica para iniciar cualquier proyecto con postCSS
+*/
+
+@import '_reset';
+@import '_variables';
+
+html {
+    background-color: #f1f1f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    max-width: 60vw;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.grid-title {
+    font-family: var(--fontSystem);
+    font-size: 32px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.grid-element {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 32%;
+    &:not(:nth-of-type(3n)) {
+        margin-right: 2%;
+    }
+
+}
+
+@supports (display: grid) {
+
+    .grid-container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-title {
+        grid-column: 1/4;
+        margin-bottom: 0;
+    }
+
+    .grid-element {
+        width: auto;
+        margin-bottom: 0;
+        &:not(:nth-of-type(3n)) {
+            margin-right: 0;
+        }
+    }
+
+}
+
+.grid-element-text {
+    font-family: var(--monospace);
+}
+
+.uno {
+    background-color: var(--bgc1);
+    color: var(--txt1);
+}
+
+.dos {
+    background-color: var(--bgc2);
+    color: var(--txt2);
+}
+
+.tres {
+    background-color: var(--bgc3);
+    color: var(--txt3);
+}
+
+.cuatro {
+    background-color: var(--bgc4);
+    color: var(--txt4);
+}
+
+.cinco {
+    background-color: var(--bgc5);
+    color: var(--txt5);
+}
+
+.seis {
+    background-color: var(--bgc6);
+    color: var(--txt6);
+}

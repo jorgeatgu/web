@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mozilla Animate Numbers</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, SVG, CSS3, Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/svg-firefox-error-id-utilizan-numeros/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+<svg width="520" height="520"  viewBox="0 0 520 520"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="words">
+    <rect x="10" y="35" height="15" width="0">
+        <animate id="first"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="50"
+                 dur="4s"
+                 begin="0s;third.end" />
+    </rect>
+
+    <rect x="60" y="60" height="15" width="0">
+        <animate id="second"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="25"
+                 dur="2s"
+                 begin="first.end" />
+    </rect>
+
+    <rect x="85" y="85" height="15" width="0">
+        <animate id="third"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="25"
+                 dur="2s"
+                 begin="second.end" />
+    </rect>
+
+    <!-- steps -->
+
+    <text x="10" y="20" text-anchor="middle">0s</text>
+    <line x1="10" y1="25" x2="10" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="35" y="20" text-anchor="middle">2s</text>
+    <line x1="35" y1="25" x2="35" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="60" y="20" text-anchor="middle">4s</text>
+    <line x1="60" y1="25" x2="60" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="85" y="20" text-anchor="middle">6s</text>
+    <line x1="85" y1="25" x2="85" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="110" y="20" text-anchor="middle">8s</text>
+    <line x1="110" y1="25" x2="110" y2="105" stroke="grey" stroke-width=".5" />
+
+    <line x1="10" y1="30" x2="110" y2="30" stroke="grey" stroke-width=".5" />
+    <line x1="10" y1="105" x2="110" y2="105" stroke="grey" stroke-width=".5" />
+</g>
+<g id="numbers" transform="translate(0,100)">
+    <rect x="10" y="35" height="15" width="0">
+        <animate id="1"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="50"
+                 dur="4s"
+                 begin="0s;3.end" />
+    </rect>
+
+    <rect x="60" y="60" height="15" width="0">
+        <animate id="2"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="25"
+                 dur="2s"
+                 begin="1.end" />
+    </rect>
+
+    <rect x="85" y="85" height="15" width="0">
+        <animate id="3"
+                 attributeType="XML"
+                 attributeName="width"
+                 to="25"
+                 dur="2s"
+                 begin="2.end" />
+    </rect>
+
+    <!-- steps -->
+
+    <text x="10" y="20" text-anchor="middle">0s</text>
+    <line x1="10" y1="25" x2="10" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="35" y="20" text-anchor="middle">2s</text>
+    <line x1="35" y1="25" x2="35" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="60" y="20" text-anchor="middle">4s</text>
+    <line x1="60" y1="25" x2="60" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="85" y="20" text-anchor="middle">6s</text>
+    <line x1="85" y1="25" x2="85" y2="105" stroke="grey" stroke-width=".5" />
+    <text x="110" y="20" text-anchor="middle">8s</text>
+    <line x1="110" y1="25" x2="110" y2="105" stroke="grey" stroke-width=".5" />
+
+    <line x1="10" y1="30" x2="110" y2="30" stroke="grey" stroke-width=".5" />
+    <line x1="10" y1="105" x2="110" y2="105" stroke="grey" stroke-width=".5" />
+</g>
+
+</svg>
+
+
+
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

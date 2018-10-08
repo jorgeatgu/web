@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>calcMode</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, SVG, CSS3, Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-iv-calcmode-keytimes-y-keysplines/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  width="1200" height="700" viewBox="0 0 1200 700">
+
+    <text x="360" y="28" fill="black" font-size="28" class="source">LINEAR</text>
+
+	 <g id="ventana" transform="scale(0.5)">
+        <rect x="482" y="121" fill="#2c3e50" stroke="#E6E8D7" stroke-width="8" width="693" height="464">
+            <animate id="amanixer" calcMode="linear" attributeName="fill" dur="14s" values="#2c3e50;#2c3e50;#364c5e;#364c5e;#445f75;#445f75;#4b6a82;#4b6a82;#f1c40f;#3498db;#3498db;#3498db;#3498db;#3498db;#3498db;#f39c12;#f39c12;#f39c12;#e67e22;#e67e22;#34495e;#34495e;#34495e;#34495e" begin="1s"/>
+        </rect>
+        <rect x="468" y="101" fill="#E6E8D7" width="719" height="23"/>
+        <rect x="456" y="82" fill="#E6E8D7" width="745" height="24"/>
+        <rect x="456" y="608" fill="#E6E8D7" width="745" height="22"/>
+        <rect x="468" y="587" fill="#E6E8D7" width="719" height="24"/>
+    </g>
+
+    <text x="840" y="28" fill="black" font-size="28" class="source">DISCRETE</text>
+
+    <g id="ventana" transform="scale(0.5) translate(1000,700)">
+        <rect x="482" y="121" fill="#2c3e50" stroke="#E6E8D7" stroke-width="8" width="693" height="464">
+            <animate id="amanixer" calcMode="discrete" attributeName="fill" dur="14s" values="#2c3e50;#2c3e50;#364c5e;#364c5e;#445f75;#445f75;#4b6a82;#4b6a82;#f1c40f;#3498db;#3498db;#3498db;#3498db;#3498db;#3498db;#f39c12;#f39c12;#f39c12;#e67e22;#e67e22;#34495e;#34495e;#34495e;#34495e" begin="1s"/>
+        </rect>
+        <rect x="468" y="101" fill="#E6E8D7" width="719" height="23"/>
+        <rect x="456" y="82" fill="#E6E8D7" width="745" height="24"/>
+        <rect x="456" y="608" fill="#E6E8D7" width="745" height="22"/>
+        <rect x="468" y="587" fill="#E6E8D7" width="719" height="24"/>
+    </g>
+
+    <text x="360" y="380" fill="black" font-size="28" class="source">PACED</text>
+    <g id="ventana" transform="scale(0.5) translate(1000,0)">
+        <rect x="482" y="121" fill="#2c3e50" stroke="#E6E8D7" stroke-width="8" width="693" height="464">
+            <animate id="amanixer" calcMode="paced" attributeName="fill" dur="14s" values="#2c3e50;#2c3e50;#364c5e;#364c5e;#445f75;#445f75;#4b6a82;#4b6a82;#f1c40f;#3498db;#3498db;#3498db;#3498db;#3498db;#3498db;#f39c12;#f39c12;#f39c12;#e67e22;#e67e22;#34495e;#34495e;#34495e;#34495e" begin="1s"/>
+        </rect>
+        <rect x="468" y="101" fill="#E6E8D7" width="719" height="23"/>
+        <rect x="456" y="82" fill="#E6E8D7" width="745" height="24"/>
+        <rect x="456" y="608" fill="#E6E8D7" width="745" height="22"/>
+        <rect x="468" y="587" fill="#E6E8D7" width="719" height="24"/>
+    </g>
+
+    <text x="882" y="380" fill="black" font-size="28" class="source">SPLINE</text>
+    <g id="ventana" transform="scale(0.5) translate(0,700)">
+        <rect x="482" y="121" fill="#2c3e50" stroke="#E6E8D7" stroke-width="8" width="693" height="464">
+            <animate id="amanixer" calcMode="spline" attributeName="fill" dur="14s" values="#2c3e50;#2c3e50;#364c5e;#364c5e;#445f75;#445f75;#4b6a82;#4b6a82;#f1c40f;#3498db;#3498db;#3498db;#3498db;#3498db;#3498db;#f39c12;#f39c12;#f39c12;#e67e22;#e67e22;#34495e;#34495e;#34495e;#34495e" begin="1s"/>
+        </rect>
+        <rect x="468" y="101" fill="#E6E8D7" width="719" height="23"/>
+        <rect x="456" y="82" fill="#E6E8D7" width="745" height="24"/>
+        <rect x="456" y="608" fill="#E6E8D7" width="745" height="22"/>
+        <rect x="468" y="587" fill="#E6E8D7" width="719" height="24"/>
+    </g>
+
+</svg>
+
+
+
+
+
+
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Web Animations 1.0</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks, svg" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+       <script src="web-animations.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+         <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/web-animations-1-0-el-futuro-de-las-animaciones">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 800">
+
+<rect width="2000" height="800" fill="crimson"/>
+
+<polygon id="uno" fill="#F0DBA5" points="948.742,46.109 923.149,90.439 897.556,46.109"/>
+
+<polygon id="dos" fill="#E7C267" points="923.149,90.439 948.742,46.109 974.337,90.439"/>
+
+<polygon id="tres" fill="#E1AF11" points="999.931,46.109 974.337,90.439 948.742,46.109"/>
+
+<polygon id="cuatro" fill="#DEAC12" points="974.337,90.439 999.931,46.109 1025.523,90.439"/>
+
+<polygon id="cinco" fill="#E1AF11" points="1051.117,46.109 1025.523,90.439 999.931,46.109"/>
+
+<polygon id="seis" fill="#E7C36B" points="1025.523,90.439 1051.117,46.109 1076.712,90.439"/>
+
+<polygon id="siete" fill="#F1DCA9" points="1102.306,46.109 1076.712,90.439 1051.117,46.109"/>
+
+<polygon id="ocho" fill="#EDC44F" points="923.149,90.439 897.556,134.77 871.962,90.439"/>
+
+<polygon id="nueve" fill="#E8BA2B" points="897.556,134.77 923.149,90.439 948.742,134.77"/>
+
+<polygon id="diez" fill="#EEBE0F" points="974.337,90.439 948.742,134.77 923.149,90.439"/>
+
+<polygon id="once" fill="#EAB90C" points="948.742,134.77 974.337,90.439 999.931,134.77"/>
+
+<text id="doce" x="920" y="626" fill="white">Web Animations 1.0</text>
+
+</svg>
+
+<script>
+
+            var tiempo = {direction: 'both', duration: 2, iterations: 2 };
+            var animacion = new AnimationGroup ([
+
+                new Animation(uno, [{transform: 'translateY(15px)', opacity: '.3'}, {transform: 'translateY(0px)', opacity: '1'}], tiempo),
+                new Animation(doce, [{opacity: '.1', fill: 'white'}, {opacity: '1', fill: 'purple'}], tiempo),
+                new Animation(dos, [{transform: 'rotate(-40deg)'}, {transform: 'rotate(53deg)'}], tiempo),
+                new Animation(tres, [{transform: 'rotate(-30deg)'}, {transform: 'rotate(0deg)'}], tiempo),
+                new Animation(cuatro, [{transform: 'rotate(53deg)'}, {transform: 'rotate(-40deg)'}], tiempo),
+                new Animation(cinco,[{transform: 'rotate(0deg)'}, {transform: 'rotate(-30deg)'}], tiempo),
+                new Animation(seis, [{transform: 'rotate(35deg)'}, {transform: 'rotate(-30deg)'}], tiempo),
+                new Animation(siete, [{transform: 'rotate(0deg)'}, {transform: 'rotate(20deg)'}], tiempo),
+                new Animation(ocho, [{transform: 'rotate(-110deg)'}, {transform: 'rotate(-90deg)'}], tiempo),
+                new Animation(nueve, [{transform: 'rotate(-30deg)'}, {transform: 'rotate(35deg)'}], tiempo),
+                new Animation(diez, [{transform: 'rotate(20deg)'}, {transform: 'rotate(0deg)'}], tiempo),
+                new Animation(once, [{transform: 'rotate(-90deg)'}, {transform: 'rotate(-110deg)'}], tiempo)
+            ], {iterations: Infinity});
+
+            document.timeline.play(animacion);
+
+</script>
+
+
+ <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36222123-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+
+    </body>
+</html>

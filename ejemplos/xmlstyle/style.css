@@ -1,0 +1,14 @@
+#rectangulo {
+	fill: crimson;
+	stroke: black;
+}
+
+#circulo {
+	fill: beige;
+	stroke: black;
+}
+
+#redondeado {
+	fill: cyan;
+	stroke: orange;
+}

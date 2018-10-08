@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Value</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, SVG, CSS3, Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/repetir-animaciones-svg-con-value/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1280" height="800px" viewBox="0 0 1280 800">
+
+    <g id="fondo">
+        <rect fill="#FFBFAD" width="1280" height="800"/>
+    </g>
+
+    <g id="avion">
+        <path fill="#2c3e50" d="M490,187h10l5.1,5c0,0,31.1,0,40.9,0s10.2,8,0,8s-45,0-45,0L490,187z">
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="1" to="500" begin="0s" dur="35s"/>
+            <animate attributeName="fill-opacity" attributeType="CSS" from="1" to="0" begin="35s" dur="1s" fill="freeze"/>
+        </path>
+        <polygon fill="#2c3e50"points="507.4,187 517.1,199.9 507.3,207 515,207 529.3,198.1 514.8,187">
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" from="1" to="500" begin="0s" dur="35s"/>
+            <animate attributeName="fill-opacity" attributeType="CSS" from="1" to="0" begin="35s" dur="1s" fill="freeze"/>
+        </polygon>
+
+    </g>
+
+    <g id="nubes">
+    <animateTransform attributeName="transform" type="translate" from="1" to="200" begin="0s" dur="10s"/>
+    <animateTransform attributeName="transform" type="translate" from="200" to="-50" begin="10s" dur="10s"/>
+    <animateTransform attributeName="transform" type="translate" from="-50" to="200" begin="20s" dur="10s"/>
+    <animateTransform attributeName="transform" type="translate" from="200" to="-50" begin="30s" dur="54s"/>
+    <path id="unanube" fill="#FFFFFF" d="M782.4,209.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C800.8,187.3,791,211.9,782.4,209.7z"/>
+    <path id="segundanube" fill="#FFFFFF" d="M952.4,288.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C970.8,266.3,961,290.9,952.4,288.7z"/>
+    </g>
+
+
+
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36222123-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </body>
+</html>

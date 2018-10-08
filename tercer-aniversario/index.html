@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://use.typekit.net/hdk4xoc.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/highcharts.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+</head>
+<body>
+
+    <div id="fullpage">
+        <section class="section  estadisticas">
+
+            <article class="estadisticas-s">
+                <h2 class="acumin titulo">1095</h2>
+                <p class="estadisticas-texto fira-sans"><span id="numero-articulos" class="estadisticas-numero acumin">173</span> artículos</p>
+            </article>
+            <article class="estadisticas-s ss">
+                <p class="estadisticas-texto fira-sans"><span id="numero-palabras" class="estadisticas-numero acumin">66.162</span> palabras</p>
+            </article>
+            <article class="estadisticas-s ts">
+                <p class="estadisticas-texto fira-sans">Solamente me faltan <span id="numero-falta" class="estadisticas-numero acumin">29.774</span> para igualar a 'El Hobbit'</p>
+            </article>
+        </section>
+
+        <div id="container" class="section  visitas-charts  m100"></div>
+
+        <section id="articulos" class="section  articulos m100">
+            <div class="articulos-h">
+                <h2 class="articulos-h--titulo fira-sans  border-n">Artículos más visitados</h2>
+            </div>
+            <article class="articulos-s va-m">
+                <a href="http://jorgeatgu.com/blog/mi-experiencia-con-svg/" class="articulos-s--titulo acumin va-m">Mi experiencia con SVG</a>
+                <div id="v-articulo-uno" class="articulos-s--barra va-m  v-articulo-uno"></div>
+                <span class="articulos-s--numero fira-sans">5305</span>
+            </article>
+            <article class="articulos-s va-m">
+                <a href="http://jorgeatgu.com/blog/exportar-svg-desde-photoshop-cc/" class="articulos-s--titulo acumin va-m">Exportar SVG desde Photoshop</a>
+                <div id="v-articulo-dos" class="articulos-s--barra va-m  v-articulo-dos"></div>
+                <span class="articulos-s--numero fira-sans">4321</span>
+            </article>
+            <article class="articulos-s va-m">
+                <a href="http://jorgeatgu.com/blog/tutorial-animaciones-nativas-en-svg/" class="articulos-s--titulo acumin va-m">Animaciones nativas en SVG</a>
+                <div id="v-articulo-tres" class="articulos-s--barra va-m  v-articulo-tres"></div>
+                <span class="articulos-s--numero fira-sans">2885</span>
+            </article>
+            <article class="articulos-s va-m">
+                <a href="http://jorgeatgu.com/blog/scriptographer-plugin-para-adobe-illustrator/" class="articulos-s--titulo acumin va-m">Scriptographer para Illustrator</a>
+                <div id="v-articulo-cuatro" class="articulos-s--barra va-m  v-articulo-cuatro"></div>
+                <span class="articulos-s--numero fira-sans">2044</span>
+            </article>
+            <article class="articulos-s va-m">
+                <a href="http://jorgeatgu.com/blog/tutorial-animando-un-svg-a-traves-de-css/" class="articulos-s--titulo acumin va-m">Animando SVG con CSS</a>
+                <div id="v-articulo-cinco" class="articulos-s--barra va-m  v-articulo-cinco"></div>
+                <span class="articulos-s--numero fira-sans">1776</span>
+            </article>
+
+        </section>
+
+        <section id="navegadores" class="section  navegadores  articulos m100">
+            <div class="articulos-h">
+                <h2 class="articulos-h--titulo fira-sans  border-n">Navegadores más utilizados</h2>
+            </div>
+
+            <div class="navegadores-ly">
+                <div class="navegadores-y va-m">
+                    <div class="navegadores-ly-c trece  va-m"></div>
+                    <span class="navegadores-ly-t acumin  va-m">2013</span>
+                </div>
+                <div class="navegadores-y va-m">
+                    <div class="navegadores-ly-c catorce va-m"></div>
+                    <span class="navegadores-ly-t acumin va-m">2014</span>
+                </div>
+                <div class="navegadores-y va-m">
+                    <div class="navegadores-ly-c quince  va-m"></div>
+                    <span class="navegadores-ly-t acumin  va-m">2015</span>
+                </div>
+            </div>
+
+            <div class="navegadores-bw">
+                <div class="navegadores-bw--t acumin">
+                    Chrome
+                </div>
+                <div class="navegadores-bw--b">
+                    <div id="chrome-trece" class="navegadores-bw--a trece"><span class="navegadores-bw--c  acumin">54.85%</span></div>
+                    <div id="chrome-catorce" class="navegadores-bw--a catorce"><span class="navegadores-bw--c  acumin">58.83%</span></div>
+                    <div id="chrome-quince" class="navegadores-bw--a quince"><span class="navegadores-bw--c  acumin">67.82%</span></div>
+                </div>
+            </div>
+
+            <div class="navegadores-bw">
+                <div class="navegadores-bw--t acumin">
+                    Firefox
+                </div>
+                <div class="navegadores-bw--b">
+                    <div id="firefox-trece" class="navegadores-bw--a  trece"><span class="navegadores-bw--c  acumin">22.96%</span></div>
+                    <div id="firefox-catorce" class="navegadores-bw--a  catorce"><span class="navegadores-bw--c  acumin">25.49%</span></div>
+                    <div id="firefox-quince" class="navegadores-bw--a  quince"><span class="navegadores-bw--c  acumin">22.01%</span></div>
+                </div>
+            </div>
+
+            <div class="navegadores-bw">
+                <div class="navegadores-bw--t acumin">
+                    Safari
+                </div>
+                <div class="navegadores-bw--b">
+                    <div id="safari-trece" class="navegadores-bw--a  trece"><span class="navegadores-bw--c  acumin">9.99%</span></div>
+                    <div id="safari-catorce" class="navegadores-bw--a  catorce"><span class="navegadores-bw--c  acumin">8.42%</span></div>
+                    <div id="safari-quince" class="navegadores-bw--a  quince"><span class="navegadores-bw--c  acumin">5.63%</span></div>
+                </div>
+            </div>
+
+            <div class="navegadores-bw">
+                <div class="navegadores-bw--t acumin">
+                    Internet Explorer
+                </div>
+                <div class="navegadores-bw--b">
+                    <div id="ie-trece" class="navegadores-bw--a trece"><span class="navegadores-bw--c  acumin">3.27%</span></div>
+                    <div id="ie-catorce" class="navegadores-bw--a catorce"><span class="navegadores-bw--c  acumin">2.30%</span></div>
+                    <div id="ie-quince" class="navegadores-bw--a quince"><span class="navegadores-bw--c  acumin">1.77%</span></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="sistemas" class="section  sistemas  articulos  m100">
+            <div class="sistemas-h">
+                <h2 class="sistemas-h--titulo fira-sans  border-n">Sistemas operativos más utilizados</h2>
+            </div>
+
+            <span class="acumin sistemas-t gg">Windows 60.80%</span>
+            <span class="acumin sistemas-t osx">Mac OS 23.91%</span>
+            <span class="acumin sistemas-t lx">Linux 6.83%</span>
+            <span class="acumin sistemas-t resto">Resto 8.46%</span>
+
+            <div id="gg" class="sistemas-d"></div>
+            <div id="osx" class="sistemas-d"></div>
+            <div id="lx" class="sistemas-d"></div>
+            <div id="resto" class="sistemas-d"></div>
+            <footer class="panel-poison  acumin">
+              <h3>Made with<svg xmlns="http://www.w3.org/2000/svg" width="31.9" height="31.9" viewBox="-263 265.1 31.9 31.9"><path fill="#000" d="M-254.7 271.5c-1.6 0-2.8 1.3-2.8 2.8v19.8c0 1.6 1.3 2.8 2.8 2.8h15.3c1.6 0 2.8-1.3 2.8-2.8v-19.8c0-1.6-1.3-2.8-2.8-2.8h-15.3zm14.9 19.5c0 .9-.7 1.6-1.6 1.6h-11.2c-.9 0-1.6-.7-1.6-1.6v-13.3c0-.9.7-1.6 1.6-1.6h11.2c.9 0 1.6.7 1.6 1.6V291z"/><path fill="#000" d="M-250.7 286.9l.6-1.2v2.9c0 .3.2.7.5.8.6.3 1.6.6 2.9.6 1.2 0 2.1-.3 2.7-.6.4-.2.6-.6.6-1v-2.8.1l.6 1.1c1-.9 1.6-2.2 1.6-3.6 0-2.8-2.5-5.1-5.7-5.1-3.1 0-5.7 2.3-5.7 5.1.2 1.5.9 2.8 1.9 3.7zm4.7-3c0-.2.2-.3.3-.3h2c.2 0 .3.1.3.3 0 .9-.6 1.6-1.3 1.6-.7 0-1.3-.7-1.3-1.6zm-.7 1.5c.1 0 .2 0 .3.1l.8.9-.4.3-.4-.2c-.1-.1-.3-.1-.4 0l-.4.2-.4-.3.8-.9c-.1-.1 0-.1.1-.1zm-3.2-1.5c0-.2.1-.3.3-.3h2c.2 0 .4.1.4.3 0 .9-.6 1.6-1.3 1.6-.8 0-1.4-.7-1.4-1.6zM-242 266.7c0-.9-.7-1.6-1.6-1.6h-6.7c-.9 0-1.6.7-1.6 1.6v3.8h10l-.1-3.8z"/></svg> by <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+            </footer>
+
+        </section>
+    </div>
+
+    <script type="text/javascript" src="js/countUp.min.js"></script>
+    <script type="text/javascript" src="js/mo.min.js"></script>
+    <script type="text/javascript" src="src/js/index.js"></script>
+</body>
+</html>

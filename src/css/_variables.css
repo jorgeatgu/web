@@ -1,18 +1,14 @@
 :root {
-  --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
-  --rubik: 'Rubik', sans-serif;
-  --plex: 'IBM Plex Serif', serif;
-  --blanco: #fff;
-  --f1: #f1f1f1;
-  --background: #DADBDD;
-  --negro: #111;
-  --morado: #2d3164;
-  --fondoproyectos: #0c1e44;
-  --wesLime: #A3A552;
-  --wesYellow: #FFE346;
-  --wesBlue: #284778;
-  --wesLightBlue: #A5D0D0;
-  --wesTurquoise: #568C79;
+    --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+    --rubik: 'Rubik', sans-serif;
+    --plex: 'IBM Plex Serif', serif;
+    --blanco: #fff;
+    --f1: #f1f1f1;
+    --background: #DADBDD;
+    --negro: #111;
+    --morado: #2d3164;
+    --fondoproyectos: #0c1e44;
+    --redtitle: #9F4E5A;
+    --pinktitle: #CEBAC5;
 }
-

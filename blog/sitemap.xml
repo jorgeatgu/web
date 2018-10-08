@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://jorgeatgu.com/blog/retro-bislai/</loc>
+    <lastmod>2018-01-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/vuelve-octuweb-cuarta-edicion/</loc>
+    <lastmod>2017-10-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/retroespecter-theantievent-17/</loc>
+    <lastmod>2017-09-12</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mulleres-tech-evento/</loc>
+    <lastmod>2017-08-31</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/css-grid-layout-supports/</loc>
+    <lastmod>2017-08-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/responsive-webp-gulp/</loc>
+    <lastmod>2017-07-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iniciando-proyectos-con-base-usabilidad/</loc>
+    <lastmod>2017-07-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iniciando-proyectos-con-base/</loc>
+    <lastmod>2017-07-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/bislai-premios-heraldo/</loc>
+    <lastmod>2017-07-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iniciando-proyectos-con-base/</loc>
+    <lastmod>2017-05-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/nueva-version-scalable/</loc>
+    <lastmod>2017-04-26</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/retro-sosz/</loc>
+    <lastmod>2017-03-31</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/bislai-zaragoza-graficas/</loc>
+    <lastmod>2017-03-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/lint-staged-css-stylelint/</loc>
+    <lastmod>2017-03-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/astral-css-toolbet/</loc>
+    <lastmod>2017-03-03</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/retro-front-frest/</loc>
+    <lastmod>2017-02-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/podcast-castellano-wecode/</loc>
+    <lastmod>2016-12-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/retro-word-camp-santander/</loc>
+    <lastmod>2016-11-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iniciando-proyectos-desde-cero/</loc>
+    <lastmod>2016-10-26</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/projects-sublime-text/</loc>
+    <lastmod>2016-10-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/vuelve-octuweb-tres/</loc>
+    <lastmod>2016-10-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/vuelve-octuweb-tres/</loc>
+    <lastmod>2016-10-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mi-experiencia-congreso-web-zaragoza/</loc>
+    <lastmod>2016-06-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/taller-postcss-congreso-web-zaragoza/</loc>
+    <lastmod>2016-05-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/sorting-gzip-postcss/</loc>
+    <lastmod>2016-05-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/aniversario-blog/</loc>
+    <lastmod>2016-04-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-offset-getbounding/</loc>
+    <lastmod>2016-04-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/colorblind-postcss/</loc>
+    <lastmod>2016-03-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cambios-blog/</loc>
+    <lastmod>2016-03-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mi-setup-de-trabajo/</loc>
+    <lastmod>2016-03-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/postcss-produccion/</loc>
+    <lastmod>2016-02-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/postcss-npm/</loc>
+    <lastmod>2016-02-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-css-layout-chrome-safari-opera/</loc>
+    <lastmod>2016-02-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/jquery-svg-addclass/</loc>
+    <lastmod>2016-01-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/grid-lost-postcss/</loc>
+    <lastmod>2016-01-19</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/tota11y-accesibilidad-web/</loc>
+    <lastmod>2016-01-15</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/gulp-notify/</loc>
+    <lastmod>2016-01-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/postcss-sorting/</loc>
+    <lastmod>2016-01-12</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/blink-path-css/</loc>
+    <lastmod>2015-12-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/postcss-internet-explorer-ocho/</loc>
+    <lastmod>2015-12-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/exportar-svg-adobe-illustrator/</loc>
+    <lastmod>2015-12-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/fildrop-svg-filter-effects/</loc>
+    <lastmod>2015-12-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/configurando-gulp-postcss/</loc>
+    <lastmod>2015-11-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/postcss-primeros-pasos/</loc>
+    <lastmod>2015-11-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/vuelve-octuweb/</loc>
+    <lastmod>2015-10-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/motion-path-css/</loc>
+    <lastmod>2015-10-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/sass-bourbon-compass-el-capitan-osx/</loc>
+    <lastmod>2015-10-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/vuelvo-a-escribir/</loc>
+    <lastmod>2015-09-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/el-futuro-de-smil-svg/</loc>
+    <lastmod>2015-05-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/smil-is-dead-long-live-the-smil/</loc>
+    <lastmod>2015-04-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/descubre-y-domina-svg/</loc>
+    <lastmod>2015-04-07</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/input-ios-readonly/</loc>
+    <lastmod>2015-02-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizando-svg-a-mano/</loc>
+    <lastmod>2015-02-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/fallback-javascript-svg-inline/</loc>
+    <lastmod>2015-01-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/package-control-donad-malditos/</loc>
+    <lastmod>2015-01-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/anexo-taller-svg-en-escuelait/</loc>
+    <lastmod>2015-01-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/resumen-anual/</loc>
+    <lastmod>2014-12-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/app-developer-tools/</loc>
+    <lastmod>2014-12-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-loaders-icons/</loc>
+    <lastmod>2014-12-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/taller-svg-en-escuelait/</loc>
+    <lastmod>2014-12-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizando-svg-con-grunt/</loc>
+    <lastmod>2014-11-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizando-svg-desde-adobe-illustrator/</loc>
+    <lastmod>2014-11-13</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-fragments-identifiers/</loc>
+    <lastmod>2014-11-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/skate-d3js/</loc>
+    <lastmod>2014-10-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/gradients-filters-sprite-svg-soporte/</loc>
+    <lastmod>2014-10-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/opciones-ocultas-exportar-svg-sketch/</loc>
+    <lastmod>2014-10-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/2014/10/16/una-guia-sobre-jekyll-post.html</loc>
+    <lastmod>2014-10-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/</loc>
+    <lastmod>2014-10-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/</loc>
+    <lastmod>2014-10-13</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion/</loc>
+    <lastmod>2014-10-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/nuevo-feed/</loc>
+    <lastmod>2014-10-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/octuweb-un-blog-colaborativo-sobre-diseno-web/</loc>
+    <lastmod>2014-10-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/una-guia-sobre-jekyll/</loc>
+    <lastmod>2014-10-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/adios-wordpress-hola-jekyll/</loc>
+    <lastmod>2014-10-06</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/copiar-codigo-desde-adobe-illustrator-a-sublime-text/</loc>
+    <lastmod>2014-09-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/recursos-sobre-svg/</loc>
+    <lastmod>2014-09-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizando-el-logo-svg-de-la-app-store/</loc>
+    <lastmod>2014-09-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-en-la-web/</loc>
+    <lastmod>2014-09-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-smil-snippets/</loc>
+    <lastmod>2014-09-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mi-articulo-en-tras42-animaciones-nativas-en-svg/</loc>
+    <lastmod>2014-09-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-css-layout-properties-en-webkit-nightly/</loc>
+    <lastmod>2014-08-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-icons-social-media/</loc>
+    <lastmod>2014-08-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/libro-publicado/</loc>
+    <lastmod>2014-07-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/amanixer-mi-tema-de-wordpress/</loc>
+    <lastmod>2014-07-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-en-sublime-text/</loc>
+    <lastmod>2014-07-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/charla-sobre-animaciones-css3-sobre-svg/</loc>
+    <lastmod>2014-07-07</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animaciones-css3-sobre-svg-el-viernes-hangout-en-vectoresio/</loc>
+    <lastmod>2014-07-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/primer-borrador-de-mi-libro-sobre-svg/</loc>
+    <lastmod>2014-06-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/charla-sobre-animaciones-svg-en-vectoresio/</loc>
+    <lastmod>2014-05-30</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/web-animations-en-google-chrome-36/</loc>
+    <lastmod>2014-05-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/charla-sobre-animaciones-svg/</loc>
+    <lastmod>2014-05-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-el-viewbox-en-svg/</loc>
+    <lastmod>2014-05-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/scriptographer-videotutorial-mosaic-raster/</loc>
+    <lastmod>2014-05-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-icons-keywords/</loc>
+    <lastmod>2014-05-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animaciones-en-svg-2/</loc>
+    <lastmod>2014-04-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/error-al-abrir-svg-con-adobe-illustrator/</loc>
+    <lastmod>2014-04-26</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/web-animations-1-0-el-futuro-de-las-animaciones/</loc>
+    <lastmod>2014-04-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/todos-los-colores-keywords-para-gutter-color/</loc>
+    <lastmod>2014-04-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cheat-sheet-animaciones-css3/</loc>
+    <lastmod>2014-04-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-svg-de-smil-a-css3/</loc>
+    <lastmod>2014-04-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/filtros-svg-acelerados-por-gpu-en-google-chrome/</loc>
+    <lastmod>2014-04-03</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-svg-con-css3-en-firefox/</loc>
+    <lastmod>2014-03-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/tercera-semana-del-concurso-rodeo-pattern-codepen/</loc>
+    <lastmod>2014-03-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/clip-path-o-trazados-de-recorte-en-svg/</loc>
+    <lastmod>2014-03-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/ya-esta-disponible-el-ebook-de-fpo-awards-2012-2013/</loc>
+    <lastmod>2014-03-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/scriptographer-videotutorial-grid-y-raster/</loc>
+    <lastmod>2014-03-19</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/scriptographer-videotutorial-hexagonal-grid/</loc>
+    <lastmod>2014-03-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mapa-del-festival-asalto-en-svg/</loc>
+    <lastmod>2014-03-06</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/anadir-svg-a-wordpress/</loc>
+    <lastmod>2014-03-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/no-utilizar-guiones-id-svg/</loc>
+    <lastmod>2014-02-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/el-texto-en-svg/</loc>
+    <lastmod>2014-02-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animaciones-con-animatemotion-en-svg/</loc>
+    <lastmod>2014-02-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animaciones-svg-con-animate/</loc>
+    <lastmod>2014-02-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-filtros-svg-con-smil/</loc>
+    <lastmod>2014-02-07</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizar-svg-con-svgcleaner/</loc>
+    <lastmod>2014-02-06</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cheatsheet-sketch/</loc>
+    <lastmod>2014-02-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svgmagic-fallback-para-sustituir-svg-por-png/</loc>
+    <lastmod>2014-01-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/exportar-svg-desde-photoshop-cc/</loc>
+    <lastmod>2014-01-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizar-svg-con-svgo/</loc>
+    <lastmod>2014-01-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/calendario-gratuito-2014/</loc>
+    <lastmod>2014-01-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/charla-sobre-svg-en-vectoresio/</loc>
+    <lastmod>2014-01-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/actualizacion-adobe-illustrator-cc/</loc>
+    <lastmod>2014-01-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/wordpress-svg-icons/</loc>
+    <lastmod>2014-01-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iconos-svg-con-colores-originales-3264px/</loc>
+    <lastmod>2014-01-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/resumen-2013-en-el-blog/</loc>
+    <lastmod>2013-12-31</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/atributo-viewbox-sin-declarar-en-firefox/</loc>
+    <lastmod>2013-12-30</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/atributos-viewbox-y-preserveaspectratio-en-svg/</loc>
+    <lastmod>2013-12-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/</loc>
+    <lastmod>2013-12-26</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svgeneration-texturas-gratuitas-en-formato-svg/</loc>
+    <lastmod>2013-12-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-path-con-smil-svg/</loc>
+    <lastmod>2013-12-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/elemento-path-svg/</loc>
+    <lastmod>2013-12-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animando-polyline-y-polygon-en-svg/</loc>
+    <lastmod>2013-12-19</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svg-firefox-error-id-utilizan-numeros/</loc>
+    <lastmod>2013-12-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/repetir-animaciones-svg-con-value/</loc>
+    <lastmod>2013-12-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/fake-smile-animaciones-smil-svg-en-internet-explorer/</loc>
+    <lastmod>2013-12-13</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/svgeezy-plugin-javascript-para-sustituir-svg-por-png/</loc>
+    <lastmod>2013-12-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/atributo-begin-svg-smil/</loc>
+    <lastmod>2013-12-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/solucion-para-el-problema-del-height-en-svg/</loc>
+    <lastmod>2013-11-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/degradados-en-svg/</loc>
+    <lastmod>2013-11-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mis-notas-sobre-svg-iv-calcmode-keytimes-y-keysplines/</loc>
+    <lastmod>2013-11-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/filtros-svg-en-adobe-illustrator/</loc>
+    <lastmod>2013-11-19</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/iconos-svg-3264px/</loc>
+    <lastmod>2013-11-15</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/animation-smil-svg/</loc>
+    <lastmod>2013-11-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mis-notas-sobre-svg-iii-escalar-objetos-desde-el-centro/</loc>
+    <lastmod>2013-11-12</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/</loc>
+    <lastmod>2013-11-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mis-notas-sobre-svg-ii-etiqueta-defs/</loc>
+    <lastmod>2013-11-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xvi/</loc>
+    <lastmod>2013-07-30</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xvi/</loc>
+    <lastmod>2013-07-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/exportar-svg/</loc>
+    <lastmod>2013-07-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xv/</loc>
+    <lastmod>2013-07-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xv/</loc>
+    <lastmod>2013-07-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/optimizar-svg-illustrator/</loc>
+    <lastmod>2013-07-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xiv/</loc>
+    <lastmod>2013-07-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xiv/</loc>
+    <lastmod>2013-07-15</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/patterns-en-svg/</loc>
+    <lastmod>2013-07-12</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cards-and-films-por-jesus-prudencio/</loc>
+    <lastmod>2013-07-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xiii/</loc>
+    <lastmod>2013-07-09</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xiii/</loc>
+    <lastmod>2013-07-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xii/</loc>
+    <lastmod>2013-07-02</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xii/</loc>
+    <lastmod>2013-07-01</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/libros-sobre-svg/</loc>
+    <lastmod>2013-06-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mis-notas-sobre-svg/</loc>
+    <lastmod>2013-06-26</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-xi/</loc>
+    <lastmod>2013-06-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-xi/</loc>
+    <lastmod>2013-06-24</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/los-filtros-en-svg/</loc>
+    <lastmod>2013-06-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-x/</loc>
+    <lastmod>2013-06-19</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-x/</loc>
+    <lastmod>2013-06-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/scriptographer-plugin-para-adobe-illustrator/</loc>
+    <lastmod>2013-06-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-ix/</loc>
+    <lastmod>2013-06-11</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-ix/</loc>
+    <lastmod>2013-06-10</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/pack-de-iconos-gratuitos-animados-en-svg/</loc>
+    <lastmod>2013-06-05</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-viii/</loc>
+    <lastmod>2013-06-04</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-viii/</loc>
+    <lastmod>2013-06-03</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-vii/</loc>
+    <lastmod>2013-05-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cartel-para-la-semana-cultural-de-la-madalena-zaragoza/</loc>
+    <lastmod>2013-05-28</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-vii/</loc>
+    <lastmod>2013-05-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/documentales-videos-y-charlas-sobre-diseno-grafico/</loc>
+    <lastmod>2013-05-22</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-vi/</loc>
+    <lastmod>2013-05-21</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-vi/</loc>
+    <lastmod>2013-05-20</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/tutorial-animaciones-nativas-en-svg/</loc>
+    <lastmod>2013-05-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-v/</loc>
+    <lastmod>2013-05-14</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-v/</loc>
+    <lastmod>2013-05-13</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mis-favoritos-herramientas-web-i/</loc>
+    <lastmod>2013-05-08</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-iv/</loc>
+    <lastmod>2013-05-07</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-iv/</loc>
+    <lastmod>2013-05-06</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/apocalipsis-tipografico-y-grafico-en-ribamontan-al-mar/</loc>
+    <lastmod>2013-05-03</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-iii/</loc>
+    <lastmod>2013-04-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-iii/</loc>
+    <lastmod>2013-04-29</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/responsive-inspector-extension-para-ver-los-media-queries-de-un-sitio-web/</loc>
+    <lastmod>2013-04-27</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/las-formas-basicas-en-svg/</loc>
+    <lastmod>2013-04-25</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-ii/</loc>
+    <lastmod>2013-04-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-ii/</loc>
+    <lastmod>2013-04-23</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/cmyk-free-icons-social-media-vector-svg/</loc>
+    <lastmod>2013-04-18</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/recursos-para-adaptar-imagenes-en-responsive-web-design/</loc>
+    <lastmod>2013-04-17</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/tutorial-excluir-de-google-analytics-a-los-que-copian-tu-web/</loc>
+    <lastmod>2013-04-16</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-web-portfolio-i/</loc>
+    <lastmod>2013-04-15</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/inspiracion-diseno-grafico-i/</loc>
+    <lastmod>2013-04-15</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/tutorial-animando-un-svg-a-traves-de-css/</loc>
+    <lastmod>2013-04-12</lastmod>
+
+  </url>
+  <url>
+    <loc>http://jorgeatgu.com/blog/mi-experiencia-con-svg/</loc>
+    <lastmod>2013-04-11</lastmod>
+
+  </url>
+</urlset>

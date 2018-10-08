@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exportar SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/exportar-svg/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Exportar SVG</h1>
+          <p class="articulo-fecha">
+          <time datetime="2013-07-25 00:00:00 +0200">
+              El
+              25 de
+                
+                julio
+                    
+                de
+                2013
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>A la hora de exportar <strong>SVG</strong> con <strong>Adobe Illustrator</strong> tenemos varias opciones para elegir, anteriormente había recomendado dejar por defecto todos los valores hasta que el otro día me encontré con este artículo <a href="http://creativedroplets.com/export-svg-for-the-web-with-illustrator-cc/" target="_blank">Export SVG for the web with Illustrator CC</a> de <a href="http://creativedroplets.com/michael-chaize/" target="_blank">Michaël Chaize</a>, en el cual nos dan una serie de recomendaciones a la hora de exportar <strong>SVG</strong> con <strong>Adobe Illustrator</strong>, aunque se centra en la última versión de <strong>Illustrator **estas recomendaciones se pueden aplicar sin problemas en otras versiones de Illustrator</strong>. En este post solo me voy a centrar en el tema de los decimales.</p>
+
+<!--more-->
+
+<h3 id="decimales">DECIMALES</h3>
+
+<p>Por defecto en el menú de Illustrator <strong>esta opción tiene un valor de 3</strong>, esto significa que a la hora de crear las coordenadas de los diferentes elementos estas tendrán hasta 3 decimales – se pueden obtener hasta 7 decimales – <strong>lo cual genera códigos bastante amplios</strong> como este:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M79.381,106.235c-0.506,0-0.821,0.274-0.821,0.996v1.082h-1.502v-0.981c0-1.615,0.809-2.539,2.366-2.539</span>
+<span class="lineno">2 </span><span class="s">				c1.561,0,2.366,0.922,2.366,2.539c0,3.319-3.447,4.459-3.145,6.234h3.002v1.441h-4.589v-1.239c0-2.974,3.146-3.464,3.146-6.378</span>
+<span class="lineno">3 </span><span class="s">				C80.203,106.48,79.886,106.235,79.381,106.235z&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+
+<p>Ahora multiplica este código por todos los elementos que tengas en tu archivo, obtendremos un SVG mas pesado, y a la hora de abrirlo en un editor nos encontraremos con una maraña de coordenadas.</p>
+
+<p>Si a la hora de exportar cambiamos los tres decimales por tan solo un decimal podemos observar en el código inferior que <strong>obtenemos archivos mas ligeros</strong>, lo agradeceremos sobre todo a la hora de modificar el código del <strong>SVG</strong> y también <strong>aliviaremos la carga de los usuarios</strong> que accedan a nuestra web.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M635.1,177.6c-0.8,0-1.4,0.5-1.4,1.7v1.8h-2.5v-1.6c0-2.7,1.4-4.2,4-4.2c2.6,0,4,1.5,4,4.2 c0,5.5-5.8,7.5-5.3,10.4h5v2.4h-7.7v-2.1c0-5,5.3-5.8,5.3-10.7C636.5,178,635.9,177.6,635.1,177.6z&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+
+<p>La calidad no se resiente si exportamos los <strong>SVG</strong> con un decimal en lugar de con tres decimales.</p>
+
+<p>En esta imagen podemos ver los <strong>SVG</strong> que ilustran mi web con tres decimales.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/07/tres-decimales-svg-400x456.png" alt="svg tres decimales" /></p>
+
+<p>En esta otra imagen podemos ver los mismos <strong>SVG</strong> pero con un decimal.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/07/un-decimal-svg.png" alt="svg un decimal" /></p>
+
+<p>La reducción se hace mas visible en los SVG que son mas grandes(<em>captain obvius</em>), pero si ademas de esto <a href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/" target="_blank">optimizamos mas el SVG</a> su reducción sera mas considerable y la carga en la web sera menor.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+            <a class="btn-posterior" href="/blog/inspiracion-diseno-grafico-xvi/">Artículo posterior</a>
+          
+          
+            <a class="btn-anterior" href="/blog/inspiracion-diseno-grafico-xv/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

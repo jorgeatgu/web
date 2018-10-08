@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64">
+	<g id="codepen">
+		<circle fill="magenta" cx="32" cy="32" r="32"/>
+		<polygon fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="31.6,11.8 11.3,25.3 31.6,39.1 52.4,25.3"/>
+		<polygon fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="31.6,24.5 11.3,37.7 31.6,51.5 52.4,37.7"/>
+		<line stroke="#FFFFFF" stroke-width="4" x1="31.6" y1="11.8" x2="31.6" y2="26.3"/>
+		<line stroke="#FFFFFF" stroke-width="4" x1="31.6" y1="39.1" x2="31.6" y2="49.7"/>
+		<line stroke="#FFFFFF" stroke-width="4" x1="11.3" y1="25.3" x2="11.3" y2="37.1"/>
+		<line stroke="#FFFFFF" stroke-width="4" x1="52.4" y1="25.3" x2="52.4" y2="37.1"/>
+	</g>
+</svg>

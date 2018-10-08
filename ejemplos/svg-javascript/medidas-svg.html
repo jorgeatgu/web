@@ -1,0 +1,55 @@
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Obteniendo la altura y la anchura de un SVG con JavaScript</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+
+		<section class="contenedor">
+
+			<article class="contenedor-izda">
+				<svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="265" height="271" viewBox="0 0 265 271" aria-labelledby="title desc">
+				<title id="title">Logo de Jorge Aznar</title>
+				<desc id="desc">Front-end en Zaragoza: HTML5, JavaScript, CSS3, SVG, RWD y Mobile-First.</desc>
+				<polygon fill="#000" points="60.6,120.7 101.9,86.9 124.6,149.1 134.5,178.4 91,178.4">
+
+				</polygon>
+				<polygon fill="#000" points="136.7,70.5 195.2,105.1 150.6,178.4 102.9,178.4">
+
+				</polygon>
+				<line fill="none" stroke="#000" x1="68.3" y1="178.4" x2="188.7" y2="178.4">
+
+				</line>
+				</g>
+				</svg>
+			</article>
+            <article class="contenedor-dcha">
+                <span id="logoAltura" class="texto-valores"></span>
+                <span id="logoAnchura" class="texto-valores"></span>
+                <span id="logoTop" class="texto-valores"></span>
+                <span id="logoRight" class="texto-valores"></span>
+                <span id="logoBottom" class="texto-valores"></span>
+                <span id="logoLeft" class="texto-valores"></span>
+            </article>
+
+            <a href="http://jorgeatgu.com/blog/svg-offset-getbounding/" class="volver-blog" role="button">
+              VOLVER AL BLOG
+            </a>
+		</section>
+
+        <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-36222123-1');ga('send','pageview');
+        </script>
+    </body>
+</html>

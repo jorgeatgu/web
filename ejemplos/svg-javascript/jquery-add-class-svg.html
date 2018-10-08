@@ -1,0 +1,62 @@
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Añadiendo clases a un SVG con jQuery</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,500' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <section class="contenedor">
+        <article class="contenedor-izda">
+            <img class="festival-asalto" src="img/ino-festival-asalto-2015.JPG">
+            <button class="btn btn-add-class fira">
+                addClass jQuery
+            </button>
+            <button class="btn btn-remove-class fira">
+                removeClass jQuery
+            </button>
+        </article>
+        <article class="contenedor-dcha">
+            <img class="tornasol" src="img/tornasol-mazarete.png">
+            <button class="btn btn-attr fira">
+                attr class jQuery
+            </button>
+            <button class="btn btn-remove-attr fira">
+                attr '' jQuery
+            </button>
+        </article>
+    </section>
+    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500" aria-labelledby="title desc">
+        <defs>
+            <filter id="saturate" filterUnits="objectBoundingBox">
+                <feColorMatrix id="saturate-value" type="saturate" in="SourceGraphic" values="14" />
+            </filter>
+            <filter id="sepiatone">
+                <feColorMatrix type="matrix" values=".343 .669 .119 0 0 .249 .626 .130 0 0 .172 .334 .111 0 0 .000 .000 .000 1 0" />
+            </filter>
+        </defs>
+    </svg>
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script>
+    (function(b, o, i, l, e, r) {
+        b.GoogleAnalyticsObject = l;
+        b[l] || (b[l] =
+            function() {
+                (b[l].q = b[l].q || []).push(arguments)
+            });
+        b[l].l = +new Date;
+        e = o.createElement(i);
+        r = o.getElementsByTagName(i)[0];
+        e.src = '//www.google-analytics.com/analytics.js';
+        r.parentNode.insertBefore(e, r)
+    }(window, document, 'script', 'ga'));
+    ga('create','UA-36222123-1');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

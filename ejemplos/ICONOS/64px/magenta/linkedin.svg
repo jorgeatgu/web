@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64">
+	<g id="linkedin">
+		<circle fill="magenta" cx="32" cy="32" r="32"/>
+		<circle fill="#FFFFFF" cx="19" cy="15" r="4"/>
+    	<line stroke="#FFFFFF" stroke-width="8" x1="19" y1="21" x2="19" y2="45.4"/>
+		<path fill="#FFFFFF" d="M29.3,29.1c0-3.1-0.1-5.6-0.2-7.9h6.7l0.4,3.4h0.1c1-1.6,3.5-4,7.6-4c5,0,8.8,3.4,8.8,10.6v14.6h-7.7V32.2 c0-3.2-1.1-5.3-3.9-5.3c-2.1,0-3.4,1.5-3.9,2.9C37,30.2,37,30.9,37,31.6v14.2h-7.7L29.3,29.1L29.3,29.1z"/>
+	</g>
+</svg>

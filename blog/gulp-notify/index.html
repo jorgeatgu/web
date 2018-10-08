@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Notificando errores de Gulp</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/gulp-notify/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Notificando errores de Gulp</h1>
+          <p class="articulo-fecha">
+          <time datetime="2016-01-14 00:00:00 +0100">
+              El
+              14 de
+                
+                enero
+                    
+                de
+                2016
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#gulp">Gulp</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#javascript">Javascript</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#npm">NPM</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>Normalmente cuando estoy trabajando tengo abierto en el mismo escritorio(no soy amigo de los escritorios de OSX) Sublime Text 3, Illustrator, Sip, Chrome, Ghostlab, Mail, Slack, Terminal(iTerm) y Spotify. No soy amigo de tener las aplicaciones a pantalla completa salvo la honrosa excepción de Sublime Text 3, y Chrome con Sublime utilizando <em>split view</em>. Así que al final las tareas que estoy ejecutando en el Terminal suelen quedan enterradas en el fondo. No han sido pocas las veces que he escrito algo mal en <strong>JavaScript</strong> o <strong>CSS</strong> y me he enterado pasado un rato.</p>
+
+<!--more-->
+
+<p>Para evitar este tipo de cosas en este artículo vamos a configurar una serie de alertas con <a href="https://github.com/mikaelbr/gulp-notify">Gulp-Notify</a>, estas alertas nos notificarán si nuestras tareas de Gulp se han ejecutado correctamente o hemos cometido algún error.</p>
+
+<p>Antes de empezar a instalar nada, el autor nos da una serie de recomendaciones dependiendo del sistema operativo que estemos utilizando.</p>
+
+<ul>
+  <li>
+    <p>Mac OSX: no necesita instalar nada más si estas usando OSX 10.8 en adelante</p>
+  </li>
+  <li>
+    <p>Linux: tienes que tener instalado <a href="http://ubuntuforums.org/showthread.php?t=1411620">notify-send/notify-osd</a></p>
+  </li>
+  <li>
+    <p>Windows: no necesita instalar nada más si estas usando Windows 8 en adelante</p>
+  </li>
+  <li>
+    <p>Fallback: se recomienda instalar Growl para <a href="http://growl.info/">OSX</a> y <a href="http://www.growlforwindows.com/gfw/">Windows</a>.</p>
+  </li>
+</ul>
+
+<p>Ahora vamos a instalar Gulp-Notify a través de NPM</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install gulp-notify --save-dev</code></pre></figure>
+
+<p>Ahora vamos a nuestro <code>gulpfile.js</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">var</span> <span class="nx">notify</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;gulp-notify&quot;</span><span class="p">);</span></code></pre></figure>
+
+<p>Lo siguiente sera crear una función para configurar el mensaje y el sonido de la notificación. En este ejemplo vamos a crear una función para las tareas de <strong>JavaScript</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="kd">function</span> <span class="nx">errorAlertJS</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//Aquí configuramos el título y subtítulo del mensaje de error, también el sonido.</span>
+    <span class="nx">notify</span><span class="p">.</span><span class="nx">onError</span><span class="p">({</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Gulp JavaScript&quot;</span><span class="p">,</span>
+        <span class="nx">subtitle</span><span class="o">:</span> <span class="s2">&quot;Algo esta mal en tu JavaScript!&quot;</span><span class="p">,</span>
+        <span class="nx">sound</span><span class="o">:</span> <span class="s2">&quot;Basso&quot;</span>
+    <span class="p">})(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="c1">//También podemos pintar el error en el terminal</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">toString</span><span class="p">());</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s2">&quot;end&quot;</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>El tema de los sonidos dependerá del sistema operativo. En OSX podemos ver los sonidos disponibles en preferencias del sistema &gt; sonidos.</p>
+
+<p>Ahora vamos a configurarlo para que lo muestre en la tarea. En este caso lo utilizo en gulp-uglify.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;compress&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">jsSrc</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">uglify</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="nx">errorAlertJS</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="nx">jsDist</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">notify</span><span class="p">({</span>
+            <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;JavaScript complete&#39;</span>
+        <span class="p">}));</span>
+
+<span class="p">});</span></code></pre></figure>
+
+<p>Muy importante añadir el mensaje de error <code>.on("error", errorAlertJS)</code> detrás del <code>pipe</code></p>
+
+<p>Si cometemos algún error nos mostrará el mensaje como en la imagen</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2016/1/gulp-javascript-error.png" alt="JavaScript error" /></p>
+
+<p>En el terminal lo mostrará de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gulp-notify: <span class="o">[</span>Gulp JavaScript<span class="o">]</span> /path/to/trololololo: Unexpected token: punc <span class="o">(</span>.<span class="o">)</span>
+Error in plugin <span class="s1">&#39;gulp-uglify&#39;</span>
+Message:
+    /path/to/trololololo: Unexpected token: punc <span class="o">(</span>.<span class="o">)</span>
+Details:
+    fileName: /path/to/trololololo
+    lineNumber: <span class="m">15</span></code></pre></figure>
+
+<p>Por el contrario si nos tenemos ningún error nos mostrará este mensaje</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2016/1/gulp-javascript-complete.png" alt="Javascript sin error" /></p>
+
+<p>Y el terminal lo mostrará de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>gulp-notify: <span class="o">[</span>Gulp notification<span class="o">]</span> JavaScript <span class="nb">complete</span></code></pre></figure>
+
+<p>Una buena manera de mantenerte informado de las tareas que va ejecunto Gulp en el Terminal.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+            <a class="btn-posterior" href="/blog/tota11y-accesibilidad-web/">Artículo posterior</a>
+          
+          
+            <a class="btn-anterior" href="/blog/postcss-sorting/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+.fira-sans,
+.highcharts-title,
+.highcharts-axis {
+    font-family: "fira-sans", sans-serif;
+}
+
+.acumin,
+.highcharts-axis-labels,
+.highcharts-legend-item,
+.highcharts-tooltip {
+	font-family: "acumin-pro-condensed";
+}

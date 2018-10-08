@@ -1,0 +1,9 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64">
+	<g id="forrst">
+		<circle fill="yellow" cx="32" cy="32" r="32"/>
+		<polygon fill="#FFFFFF" points="12.1,50.8 28.9,50.8 28.9,30.9 34.9,30.9 34.9,50.8 53.9,50.8 33.2,7.5 "/>
+		<line stroke="yellow" stroke-width="2" x1="25.2" y1="37.5" x2="31.3" y2="42"/>
+		<line stroke="yellow" stroke-width="2" x1="34.1" y1="38.5" x2="39.7" y2="32.7"/>
+		<line stroke="yellow" stroke-width="2" x1="33.6" y1="44" x2="43.5" y2="37.1"/>
+	</g>
+</svg>

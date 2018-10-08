@@ -1,0 +1,14 @@
+.va-m {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.m100 {
+	padding: 2.5% 5%;
+	box-sizing: border-box;
+}
+
+.border-n {
+	border-bottom: 1px solid var(--colorSecundario);
+	border-top: 1px solid var(--colorSecundario);
+}

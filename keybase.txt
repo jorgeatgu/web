@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/jorgeatgu
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jorgeatgu.com
+  * I am jorgeatgu (https://keybase.io/jorgeatgu) on keybase.
+  * I have a public key ASB8WrN0i32MGIS_z1OoP3N-CJ3ipOxfQNrBVvqJm6VvMwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01207c5ab3748b7d8c1884bfcf53a83f737e089de2a4ec5f40dac156fa899ba56f330a",
+      "host": "keybase.io",
+      "kid": "01207c5ab3748b7d8c1884bfcf53a83f737e089de2a4ec5f40dac156fa899ba56f330a",
+      "uid": "6038fdc987983d8c882825260b2cb119",
+      "username": "jorgeatgu"
+    },
+    "merkle_root": {
+      "ctime": 1509019346,
+      "hash": "a950ffd7c1fa38e952d0c7d827d0125494caf93a88a559f335e6177153728a843409de20f03557239851a86ee065defb759d5b5c2ceae841d4a5c8c5b8254af3",
+      "hash_meta": "44257b695a8b40aff159cc3bfb9d1a2c1293e65de120f2b70f99c090b5679934",
+      "seqno": 1632402
+    },
+    "service": {
+      "hostname": "jorgeatgu.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.33"
+  },
+  "ctime": 1509019377,
+  "expire_in": 504576000,
+  "prev": "1331aa665c0ba6b47e6caec36de90129f4a352035fd7e278c6603ca3d192d249",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgfFqzdIt9jBiEv89TqD9zfgid4qTsX0DawVb6iZulbzMKp3BheWxvYWTFA0Z7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwN2M1YWIzNzQ4YjdkOGMxODg0YmZjZjUzYTgzZjczN2UwODlkZTJhNGVjNWY0MGRhYzE1NmZhODk5YmE1NmYzMzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwN2M1YWIzNzQ4YjdkOGMxODg0YmZjZjUzYTgzZjczN2UwODlkZTJhNGVjNWY0MGRhYzE1NmZhODk5YmE1NmYzMzBhIiwidWlkIjoiNjAzOGZkYzk4Nzk4M2Q4Yzg4MjgyNTI2MGIyY2IxMTkiLCJ1c2VybmFtZSI6ImpvcmdlYXRndSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwOTAxOTM0NiwiaGFzaCI6ImE5NTBmZmQ3YzFmYTM4ZTk1MmQwYzdkODI3ZDAxMjU0OTRjYWY5M2E4OGE1NTlmMzM1ZTYxNzcxNTM3MjhhODQzNDA5ZGUyMGYwMzU1NzIzOTg1MWE4NmVlMDY1ZGVmYjc1OWQ1YjVjMmNlYWU4NDFkNGE1YzhjNWI4MjU0YWYzIiwiaGFzaF9tZXRhIjoiNDQyNTdiNjk1YThiNDBhZmYxNTljYzNiZmI5ZDFhMmMxMjkzZTY1ZGUxMjBmMmI3MGY5OWMwOTBiNTY3OTkzNCIsInNlcW5vIjoxNjMyNDAyfSwic2VydmljZSI6eyJob3N0bmFtZSI6ImpvcmdlYXRndS5jb20iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zMyJ9LCJjdGltZSI6MTUwOTAxOTM3NywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiIxMzMxYWE2NjVjMGJhNmI0N2U2Y2FlYzM2ZGU5MDEyOWY0YTM1MjAzNWZkN2UyNzhjNjYwM2NhM2QxOTJkMjQ5Iiwic2Vxbm8iOjgsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA5X7gpLPUGhJ+UzhtV4NNf5KMj+paOuIKENK550yBug5poe2a+dTt/QaFP3CyzBbqgQk0TRSqT/7RIuqZub7hBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOvijfjge1RN1SnfKYURvPhwu1vFa8XrJqB5lZ5svpuvo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jorgeatgu
+
+==================================================================

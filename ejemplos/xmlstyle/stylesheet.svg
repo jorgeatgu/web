@@ -1,0 +1,20 @@
+<?xml-stylesheet type="text/css" href="style.css" ?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" aria-labelledby="title desc">
+
+        <title id="title">Estilos a través de la etiqueta XML</title>
+        <desc id="desc">Aplicando una hoja de estilos externa a través de XML</desc>
+
+
+		<g id="rectangulo">
+			<rect x="10" y="10" width="50" height="50"/>
+		</g>
+		<g id="circulo">
+			<circle r="30" cx="50" cy="100"/>
+		</g>
+
+		<g id="redondeado">
+			<rect x="10" y="100" width="50" height="50" rx="5"/>
+		</g>
+
+
+</svg>

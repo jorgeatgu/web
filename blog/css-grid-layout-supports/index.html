@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Usando Grid Layout con @Supports</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/css-grid-layout-supports/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Usando Grid Layout con @Supports</h1>
+          <p class="articulo-fecha">
+          <time datetime="2017-08-28 00:00:00 +0200">
+              El
+              28 de
+                
+                agosto
+                    
+                de
+                2017
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#css">CSS</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>En este artículo vamos a ver como podemos usar <strong>Grid Layout</strong> en navegadores modernos. Y a la vez crear un <em>fallback</em> para aquellos que no le dan soporte.</p>
+
+<!--more-->
+
+<p>Aclarar que no voy a indagar en la especificación. Si queréis aprender <strong>Grid Layout</strong> ya existen un montón de recursos a vuestra disposición. Voy a dejarlos al final del artículo.</p>
+
+<h2 id="supports">Supports</h2>
+
+<p>La función de <code>@supports</code> es sencilla. Si un navegador soporta la propiedad que hemos definido entre los paréntesis, el navegador ejecutará el código que hay entre las llaves.</p>
+
+<pre><code>
+Si no soporta Grid Layout se ejecutará esto.
+.container {
+    display: table;
+}
+
+
+@supports (display: grid) {
+    
+    //Si soporta Grid Layout ejecutará esto
+    .container {
+        display: grid;
+    }
+
+}
+
+</code></pre>
+
+<p>Si el navegador soporta <strong>Grid Layout</strong>, container tendrá un <code>display: grid;</code>, en caso contrario, tendrá un <code>display: table;</code>.</p>
+
+<p>Hay que recordar que <code>@supports</code> no tiene soporte en <strong>ninguna</strong> versión de Internet Explorer. Si que tiene soporte en Edge.</p>
+
+<p>Algo parecido pasa con <strong>Grid Layout</strong>. Desde IE10 soporta una versión antigua de la especificación, y todo bajo prefijos. Se supone que la próxima versión de Edge ya no necesitará prefijos. Prefiero no usar los prefijos y hacer el grid a mano. Quizás a ti te sirva usar los prefijos.</p>
+
+<h2 id="en-producción">¿En producción?</h2>
+
+<p>Siempre estamos esperando nuevas funcionalidades. Solamente para lamentarnos de no poder usarlas(en producción), como mínimo hasta dentro de cinco años.</p>
+
+<p>La única pega de usar <strong>Grid Layout</strong> y @supports es que vamos a trabajar un poco más. Es posible que dependiendo de la situación esto no te compense.</p>
+
+<p>Vamos a ver como crear un layout simple de tres columnas, con un título al 100%. Y que funcione también en Internet Explorer.</p>
+
+<pre><code>&lt;section class="grid-container"&gt;
+    &lt;h3 class="grid-title"&gt;COMBINACIONES ACCESIBLES&lt;/h3&gt;
+    &lt;article class="grid-element uno"&gt;
+        &lt;p class="grid-element-text"&gt;UNO&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class="grid-element dos"&gt;
+        &lt;p class="grid-element-text"&gt;DOS&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class="grid-element tres"&gt;
+        &lt;p class="grid-element-text"&gt;TRES&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class="grid-element cuatro"&gt;
+        &lt;p class="grid-element-text"&gt;CUATRO&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class="grid-element cinco"&gt;
+        &lt;p class="grid-element-text"&gt;CINCO&lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class="grid-element seis"&gt;
+        &lt;p class="grid-element-text"&gt;SEIS&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+
+</code></pre>
+
+<p>Vamos primero con el <code>grid-container</code>. Para que quede claro, los navegadores que soporten <strong>Grid Layout</strong> heredarán el <code>max-width: 60vw; margin: 0 auto; font-size: 0;</code>. Si algo esta hecho específicamente para IE, y no nos sirve para el resto de navegadores, lo podemos sobreescribir en @supports. En @supports vamos a crear nuestro Grid de tres columnas con una separación de 20px.</p>
+
+<pre><code>
+.grid-container {
+    max-width: 60vw;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+@supports (display: grid) {
+
+    .grid-container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        //Ejemplo: para los navegadores que soporten grid quiero más margin
+        margin: 10vh auto;
+    }
+
+}
+
+</code></pre>
+
+<p>Ahora vamos a ver lo que ejecuta cada navegador.</p>
+
+<p>Internet Explorer:
+<img src="http://jorgeatgu.com/blog/img/2017/08/grid-edge.png" /></p>
+
+<p>Opera:
+<img src="http://jorgeatgu.com/blog/img/2017/08/grid-opera.png" /></p>
+
+<p>Vamos con los <code>grid-element</code>. Aquí el trabajo queda para la parte que no soporta <strong>Grid Layout</strong>, tenemos que definir el Grid artesano en los elementos. El <strong>@support</strong> lo utilizamos para sustituir todas las propiedades que hemos usado para hacer el Grid artesano.</p>
+
+<pre><code>.grid-element {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 32%;
+    &amp;:not(:nth-of-type(3n)) {
+        margin-right: 2%;
+    }
+
+}
+
+@supports (display: grid) {
+
+    .grid-element {
+        width: auto;
+        margin-bottom: 0;
+        &amp;:not(:nth-of-type(3n)) {
+            margin-right: 0;
+        }
+    }
+
+}
+</code></pre>
+
+<p>El código lo tenéis a vuestra disposición en <a href="https://github.com/jorgeatgu/ejemplos-blog/tree/master/css-grid">GitHub</a></p>
+
+<p>Y aquí la <a href="http://jorgeatgu.com/ejemplos/css-grid/">demo</a>.</p>
+
+<p>Si queréis inspeccionar <strong>Grid Layout</strong> conforme es debido os recomiendo <a href="https://www.mozilla.org/en-US/firefox/57.0a1/releasenotes/">FirefoxNightly</a>.</p>
+
+<p>Por último los artículos sobre <strong>Grid Layout</strong>.</p>
+
+<ul>
+  <li><a href="https://hacks.mozilla.org/2016/08/using-feature-queries-in-css/">Using Feature Queries in CSS</a></li>
+  <li><a href="https://gridbyexample.com">Grid by example</a></li>
+  <li><a href="https://escss.blogspot.com.es/search/label/Css%20Grid%20Layout">Múltiples artículos de Kseso</a></li>
+  <li><a href="https://bitsofco.de/how-the-minmax-function-works/">How the minmax() Function Works</a></li>
+  <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid - CSS tricks</a></li>
+  <li><a href="https://tympanus.net/codrops/css_reference/grid/">A Complete Guide to Grid Codrops</a></li>
+  <li><a href="http://griddy.io">Griddy</a></li>
+  <li><a href="https://escuela.it/cursos/taller-de-css-grid-layout">EscuelaiT Taller de Grid Layout</a></li>
+</ul>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+          
+            <a class="btn-anterior" href="/blog/responsive-webp-gulp/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

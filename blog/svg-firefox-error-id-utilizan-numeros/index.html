@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animaciones SVG que contienen números en su ID no funcionan en Firefox</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/svg-firefox-error-id-utilizan-numeros/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Animaciones SVG que contienen números en su ID no funcionan en Firefox</h1>
+          <p class="articulo-fecha">
+          <time datetime="2013-12-18 00:00:00 +0100">
+              El
+              18 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>Mientras colaboraba con <a href="http://thenounproject.com/" target="_blank">The Noun Project</a> en la conversión de un GIF a formato <strong>SVG</strong> me di cuenta de que una parte de la animación no funcionaba en Mozilla Firefox.</p>
+
+<!--more-->
+
+<p>Después de quitar, poner y cambiar buena parte del código al fin encontré la solución. Si el atributo <code>id=""</code> de la animación contiene un número esta no comenzara su carga.</p>
+
+<p>Para el siguiente ejemplo he utilizado una animación que proviene de <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/begin" target="_blank">Mozilla Developers</a></p>
+
+<p>Esto no funcionara en Firefox</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+<span class="lineno"> 2 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;1&quot;</span>
+<span class="lineno"> 3 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno"> 4 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno"> 5 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
+<span class="lineno"> 6 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;4s&quot;</span>
+<span class="lineno"> 7 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;0s;3.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno"> 8 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno"> 9 </span>
+<span class="lineno">10 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+<span class="lineno">11 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
+<span class="lineno">12 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno">13 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno">14 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;25&quot;</span>
+<span class="lineno">15 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;2s&quot;</span>
+<span class="lineno">16 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;1.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">17 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno">18 </span>
+<span class="lineno">19 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+<span class="lineno">20 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;3&quot;</span>
+<span class="lineno">21 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno">22 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno">23 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;25&quot;</span>
+<span class="lineno">24 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;2s&quot;</span>
+<span class="lineno">25 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;2.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">26 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno">27 </span>
+<span class="lineno">28 </span>    <span class="c">&lt;!-- steps --&gt;</span>
+<span class="lineno">29 </span>
+<span class="lineno">30 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>0s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">31 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">32 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>2s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">33 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">34 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>4s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">35 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">36 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>6s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">37 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">38 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>8s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">39 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">40 </span>
+<span class="lineno">41 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">42 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">43 </span>    </code></pre></figure>
+
+<p>Esto si que funcionara</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span>rect x=&quot;10&quot; y=&quot;35&quot; height=&quot;15&quot; width=&quot;0&quot;&gt;
+<span class="lineno"> 2 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;first&quot;</span>
+<span class="lineno"> 3 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno"> 4 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno"> 5 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
+<span class="lineno"> 6 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;4s&quot;</span>
+<span class="lineno"> 7 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;0s;third.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno"> 8 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno"> 9 </span>
+<span class="lineno">10 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+<span class="lineno">11 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;second&quot;</span>
+<span class="lineno">12 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno">13 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno">14 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;25&quot;</span>
+<span class="lineno">15 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;2s&quot;</span>
+<span class="lineno">16 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;first.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">17 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno">18 </span>
+<span class="lineno">19 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">&gt;</span>
+<span class="lineno">20 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;third&quot;</span>
+<span class="lineno">21 </span>                 <span class="na">attributeType</span><span class="o">=</span><span class="s">&quot;XML&quot;</span>
+<span class="lineno">22 </span>                 <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span>
+<span class="lineno">23 </span>                 <span class="na">to</span><span class="o">=</span><span class="s">&quot;25&quot;</span>
+<span class="lineno">24 </span>                 <span class="na">dur</span><span class="o">=</span><span class="s">&quot;2s&quot;</span>
+<span class="lineno">25 </span>                 <span class="na">begin</span><span class="o">=</span><span class="s">&quot;second.end&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">26 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
+<span class="lineno">27 </span>
+<span class="lineno">28 </span>    <span class="c">&lt;!-- steps --&gt;</span>
+<span class="lineno">29 </span>
+<span class="lineno">30 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>0s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">31 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">32 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>2s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">33 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;35&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">34 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>4s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">35 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">36 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>6s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">37 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;85&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">38 </span>    <span class="p">&lt;</span><span class="nt">text</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">text-anchor</span><span class="o">=</span><span class="s">&quot;middle&quot;</span><span class="p">&gt;</span>8s<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">39 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;25&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">40 </span>
+<span class="lineno">41 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">42 </span>    <span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;110&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;105&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;grey&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;.5&quot;</span> <span class="p">/&gt;</span>
+<span class="lineno">43 </span>    </code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/mozillanumeros/mozillaanimate.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Y ya por último mi contribución a The Noun Project</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="romkF" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+            <a class="btn-posterior" href="/blog/animando-polyline-y-polygon-en-svg/">Artículo posterior</a>
+          
+          
+            <a class="btn-anterior" href="/blog/repetir-animaciones-svg-con-value/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

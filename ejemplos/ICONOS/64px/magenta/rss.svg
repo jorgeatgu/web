@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64">
+	<g id="RSS">
+		<circle fill="magenta" cx="32" cy="32" r="32"/>
+		<path fill="#FFFFFF" d="M15,12.5c0,0,32.6-1.5,35.7,34.5c2.2,0-7,0-7,0S45,17.7,15,18.7C15,16.7,15,12.5,15,12.5z"/>
+		<circle fill="#FFFFFF" cx="21.4" cy="42.4" r="6"/>
+		<path fill="#FFFFFF" d="M15,22.4c0,0,22.1-1.5,24.3,24.5c1.5,0-6,0-6,0S33,26.7,15,26.9C15,25.4,15,22.4,15,22.4z"/>
+	</g>
+</svg>

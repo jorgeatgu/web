@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Optimizar SVG con SVGCleaner</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/optimizar-svg-con-svgcleaner/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Optimizar SVG con SVGCleaner</h1>
+          <p class="articulo-fecha">
+          <time datetime="2014-02-06 00:00:00 +0100">
+              El
+              6 de
+                
+                febrero
+                    
+                de
+                2014
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>Vamos a ver otro programa para optimizar SVG, esta vez se trata de <a href="https://github.com/RazrFalcon/SVGCleaner" target="_blank">SVG Cleaner</a> del que acaba de salir su version 0.6.1.</p>
+
+<!--more-->
+
+<p>Para empezar solamente tenemos que pinchar en <em>Wizard</em>, nos saltara un menú con seis opciones, la primera para añadir los archivos que queremos optimizar y tres opciones para guardar los archivos, como ya he dicho en otras ocasiones lo mejor es pasar por el programa una copia de los archivos ya que si en el futuro queremos modificar los SVG nos vamos a encontrar con un código ingobernable.</p>
+
+<h2 id="opciones">OPCIONES</h2>
+
+<p>Tenemos multitud de opciones que podemos configurar todo ello divido en cuatro paneles, <strong><em>elements</em>, <em>paths</em>, <em>attributes *y *optimizations</em></strong>.</p>
+
+<h3 id="elements">Elements</h3>
+
+<p>En primer lugar tenemos los elementos, destaco sobre todo las opciones para eliminar todo el código que va relacionado con el programa que utilizamos para generar SVG ya sea Inkscape, Illustrator o Sketch.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/02/svg-cleaner-elements.png" alt="svg cleaner elements" /></p>
+
+<h3 id="attributes">Attributes</h3>
+
+<p>Ahora vamos con los atributos, por destacar cosas que me gustan por ejemplo que elimine todos los atributos que vengan por defecto por ejemplo las medidas en pixels. Tambien elimina los atributos <code>fill</code> y <code>stroke</code> cuando no tienen valor. En este apartado no me termina de convencer el que agrupe elementos por estilo.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/02/svg-cleaner-atributtes.png" alt="svg cleaner Attributes" /></p>
+
+<h3 id="paths">Paths</h3>
+
+<p>Ahora vamos con esa locura de etiqueta llamada <code>path</code>, antes de ver las opciones recomiendo la <a href="http://jorgeatgu.com/blog/elemento-path-svg/" target="_blank">lectura de este post sobre la etiqueta path</a>. Vamos con las opciones, convierte las coordenadas absolutas en relativas, elimina letras innecesarias en <code>d=""</code>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/02/svg-cleaner-paths.png" alt="svg cleaner paths" /></p>
+
+<h3 id="optimizations">Optimizations</h3>
+
+<p>Por último vamos con las optimizaciones, simplifica colores y hace algo que no me gusta que es convertir las formas básicas en trazados pero bueno si no vamos animar nuestro SVG no pasa nada. Las últimas tres opciones nos sirven para eliminar o redondear decimales, esto nos va a servir de gran utilidad si nuestros SVG <a href="http://jorgeatgu.com/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/" target="_blank">proceden de programas como Sketch o Inkscape</a> en los que no tenemos la oportunidad de seleccionar con cuantos decimales queremos que se exporte el SVG.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/02/svg-cleaner-optimizations.png" alt="svg cleaner optimizations" /></p>
+
+<h2 id="comparativa">Comparativa</h2>
+
+<p>He pasado por SVGCleaner los mismos archivos que pase por <a href="http://jorgeatgu.com/blog/optimizar-svg-con-svgo/" target="_blank">SVGO</a>, vamos a ver los resultados.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/02/svg-optimizados.png" alt="svgcleaner resultados" />
+<img src="http://jorgeatgu.com/blog/img/2014/02/svg-optimizados2.png" alt="svg cleaner resultados dos" />
+<img src="http://jorgeatgu.com/blog/img/2014/01/optimizados-800x693.png" alt="svgo resultados" /></p>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>Como podemos ver en la mayoría de los casos SVGO comprime mas que SVGCleaner pero a la hora de configurar las opciones gana con bastante claridad SVGCleaner. Yo voy a seguir utilizando SVGO pero los SVG que vengan de Sketch van a pasar primero por SVGCleaner así de un plumazo puedo convertir a un decimal, eliminar código publicitario y continuar trabajando con ese SVG sin necesidad de comprimir todo el archivo.</p>
+
+<p><a href="http://jorgeatgu.com/blog/optimizar-svg-con-svgo/" target="_blank">Optimizar SVG con SVGO</a></p>
+
+<p><a href="http://qt-apps.org/content/show.php/SVG+Cleaner?content=147974" target="_blank">Esta disponible para OSX Linux y Windows<br /> </a></p>
+
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+            <a class="btn-posterior" href="/blog/animando-filtros-svg-con-smil/">Artículo posterior</a>
+          
+          
+            <a class="btn-anterior" href="/blog/cheatsheet-sketch/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

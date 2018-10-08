@@ -1,0 +1,31 @@
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100' height='1000'>
+	<defs>
+		<linearGradient id='f' x1='0' x2='0' y1='0' y2='1000' gradientUnits='userSpaceOnUse'>
+			<stop offset='0%' stop-opacity='0' stop-color='#ffffff' />
+			<stop offset='50%' stop-opacity='.3' stop-color='#ffffff' />
+			<stop offset='100%' stop-opacity='1' stop-color='#ffffff' />
+		</linearGradient>
+		<g id='c'>
+			<ellipse cy='150%' ry='150%' rx='350%' fill-opacity='0.11' fill='#ffffff'/>
+		</g>
+	</defs>
+	<rect width='100%' height='100%' fill='#00a7d1'/>
+	<use xlink:href='#c' x='-350%'/>
+	<use xlink:href='#c' x='-300%'/>
+	<use xlink:href='#c' x='-250%'/>
+	<use xlink:href='#c' x='-200%'/>
+	<use xlink:href='#c' x='-150%'/>
+	<use xlink:href='#c' x='-100%'/>
+	<use xlink:href='#c' x='-50%'/>
+	<use xlink:href='#c' x='0%'/>
+	<use xlink:href='#c' x='50%'/>
+	<use xlink:href='#c' x='100%'/>
+	<use xlink:href='#c' x='150%'/>
+	<use xlink:href='#c' x='200%'/>
+	<use xlink:href='#c' x='250%'/>
+	<use xlink:href='#c' x='300%'/>
+	<use xlink:href='#c' x='350%'/>
+	<use xlink:href='#c' x='400%'/>
+	<use xlink:href='#c' x='450%'/>
+	<rect width='100%' height='100%' fill='url(#f)'/>
+</svg>

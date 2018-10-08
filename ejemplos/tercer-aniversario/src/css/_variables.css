@@ -1,0 +1,16 @@
+:root {
+  --bgcPrimera: #FEC845;
+  --tcPrimera:  #001F3F;
+  --bgcSegunda: #39CCCC;
+  --bgcTercera: #8B2D88;
+  --tcTercera: #ADFCFF;
+  --bgcBarras: #85144B;
+  --cc13: #40B7E2;
+  --cc14: #FFCA45;
+  --cc15: #FF7370;
+  --ccWin: #C45164;
+  --ccOsx: #323344;
+  --ccLinux: #F0E7D9;
+  --ccResto: #BF5F55;
+  --colorSecundario: #001F3F;
+}

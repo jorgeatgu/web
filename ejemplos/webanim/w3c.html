@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+     2 <!-- vim: set expandtab ts=2 sw=2 tw=80: -->
+     3 <html>
+     4   <head>
+     5     <title>Animation Elements 1.0</title>
+     6     <meta charset="utf-8">
+     7     <script src="respec/respec-w3c-common-3.1.68.js" class="remove"></script>
+     8     <script src="respec/sh_html.min.js" class="remove"></script>
+     9     <script class='remove'>
+    10       var respecConfig = {
+    11         // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use
+    12         // ED.
+    13         specStatus: "ED",
+    14
+    15         // the specification's short name, as in
+    16         // http://www.w3.org/TR/short-name/
+    17         shortName: "animation-elements",
+    18
+    19         // if your specification has a subtitle that goes below the main
+    20         // formal title, define it here
+    21         // subtitle   :  "an excellent document",
+    22
+    23         // if you wish the publication date to be other than today, set this
+    24         // publishDate:  "2009-08-06",
+    25
+    26         // if the specification's copyright date is a range of years, specify
+    27         // the start date here:
+    28         // copyrightStart: "2005"
+    29
+    30         // if there is a previously published draft, uncomment this and set
+    31         // its YYYY-MM-DD date and its maturity status
+    32         // previousPublishDate: "1977-03-15",
+    33         // previousMaturity: "WD",
+    34
+    35         // if there a publicly available Editor's Draft, this is the link
+    36         // edDraftURI:
+    37         // "http://dev.w3.org/2009/dap/ReSpec.js/documentation.html",
+    38
+    39         // if this is a LCWD, uncomment and set the end of its review period
+    40         // lcEnd: "2009-08-05",
+    41
+    42         // if you want to have extra CSS, append them to this list
+    43         // it is recommended that the respec.css stylesheet be kept
+    44         extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css"],
+    45
+    46         // Turning off inlineCSS for now since if extraCSS points to
+    47         // a relative URL your testing from a file URL the XHR will fail.
+    48         // Probably should turn this back on once this is hosted on a server
+    49         // somewhere.
+    50         inlineCSS: false,
+    51
+    52         // editors, add as many as you like
+    53         // only "name" is required
+    54         editors:  [
+    55             { name: "Brian Birtles", mailto: "bbirtles@mozilla.com",
+    56               company: "Mozilla Japan", companyURL: "http://mozilla.jp/" }
+    57         ],
+    58
+    59         // authors, add as many as you like.
+    60         // This is optional, uncomment if you have authors as well as editors.
+    61         // only "name" is required. Same format as editors.
+    62
+    63         //authors:  [
+    64         //    { name: "Your Name", url: "http://example.org/",
+    65         //      company: "Your Company", companyURL: "http://example.com/" },
+    66         //],
+    67
+    68         // XXX If we continue using ReSpec then we need to tweak it to support
+    69         // multiple working groups. It includes updating the patent section
+    70         // prose to say "groups" instead of "group" etc.
+    71         // name of the WG
+    72         wg: "SVG Working Group (part of the Graphics Activity)",
+    73
+    74         // URI of the public WG page
+    75         wgURI: "http://www.w3.org/Graphics/",
+    76
+    77         // name (without the @w3c.org) of the public mailing to which comments
+    78         // are due
+    79         wgPublicList: "www-svg",
+    80
+    81         // URI of the patent status for this WG, for Rec-track documents
+    82         // !!!! IMPORTANT !!!!
+    83         // This is important for Rec-track documents, do not copy a patent URI
+    84         // from a random document unless you know what you're doing. If in
+    85         // doubt ask your friendly neighbourhood Team Contact.
+    86         wgPatentURI:  "",
+    87
+    88         noIDLSorting: true,
+    89         noIDLIn: true
+    90       };
+    91     </script>
+    92   </head>
+    93   <body>
+    94     <section id='abstract'>
+    95       This specification defines an element-based markup for defining
+    96       animation and time-related changes to a Web page.
+    97       It is intended to replace the animation features of <a
+    98       href="http://www.w3.org/TR/SVG11/">SVG 1.1</a> by building on the model
+    99       defined in <a href="http://www.w3.org/TR/web-animations/">Web
+   100       Animations</a>.
+   101     </section>
+   102
+   103     <section>
+   104       <h2>Introduction</h2>
+   105       <p class="todo">TBD</p>
+   106       <section class="informative">
+   107         <h2>Use cases</h2>
+   108         <h4>Tweening and cutout animation</h4>
+   109         <p>
+   110           A common animation technique involves taking some graphical elements
+   111           and interpolating their properties such as position or color or moving
+   112           them along a path.
+   113           This is sometimes referred to as <em>cutout animation</em> since the
+   114           moving parts were traditionally represented by separate shapes cut
+   115           from cardboard or similar material.
+   116         </p>
+   117         <p>
+   118           For example, in the following segment of a cartoon, a golfer swings
+   119           his arms (and club!) and as a result the golf ball follows
+   120           a trajectory through the air before bouncing along the ground.
+   121         </p>
+   122         <pre class='example sh_html'>
+   123 &lt;path id="golferBody" d="&hellip;"/&gt;
+   124 &lt;g id="armsAndClub"&gt;
+   125   &lt;path id="club" d="&hellip;"/&gt;
+   126   &lt;path id="arms" d="&hellip;"/&gt;
+   127 &lt;/g&gt;
+   128 &lt;circle id="ball" &hellip;/&gt;
+   129 &lt;seq&gt;
+   130   &lt;!-- Rotate man's arms and club --&gt;
+   131   &lt;animate href="armsAndClub" attributeName="transform"
+   132     values="rotate(0); rotate(-120); rotate(30); rotate(0)"
+   133     keyTimes="0; 0.5; 0.8; 1" additive="sum" dur="1.2s"/&gt;
+   134   &lt;!-- Show course of ball --&gt;
+   135   &lt;animateMotion href="ball" begin="-0.312s" path="&hellip;"/&gt;
+   136 &lt;/seq&gt;
+   137         </pre>
+   138         <h4>Timesheets</h4>
+   139         <p>
+   140           In simple examples such as the above cartoon, it is useful to
+   141           represent graphical content and timing side-by-side.
+   142           However, for applications that involve complex sequencing of effects
+   143           it is often convenient to separate the temporal markup into a separate
+   144           subtree or document sometimes referred to as
+   145           a &ldquo;timesheet&rdquo;&mdash;the temporal equivalent of
+   146           a stylesheet.
+   147         </p>
+   148         <p>
+   149           Such a timesheet may define animations directly or simply set classes
+   150           and define the animation effects using, for example, CSS Animations
+   151           [[CSS3-ANIMATIONS]].
+   152         </p>
+   153         <p>
+   154           For example, the title screen and first scene of an interactive
+   155           story might use the following timesheet:
+   156         </p>
+   157         <pre class='example sh_html'>
+   158 &lt;!-- Title screen --&gt;
+   159 &lt;seq begin="0s"&gt;
+   160   &lt;!-- Draw curtains to the side --&gt;
+   161   &lt;par&gt;
+   162     &lt;animate href="leftCurtain" attributeName="transform"
+   163       to="translate(-100 0)" dur="1s" additive="sum"/&gt;
+   164     &lt;animate href="rightCurtain" attributeName="transform"
+   165       to="translate(100 0)" dur="1s" additive="sum"/&gt;
+   166   &lt;/par&gt;
+   167   &lt;!-- Then show the title by setting a class which may trigger,
+   168        for example, a fade animation defined in CSS --&gt;
+   169   &lt;set href="title" attributeName="class" to="active"/&gt;
+   170 &lt;/seq&gt;
+   171
+   172 &lt;!-- Show the first scene when the user clicks the title screen --&gt;
+   173 &lt;seq begin="titleScreen.click" restart="whenNotActive"&gt;
+   174   &lt;!-- Cross fade to show background --&gt;
+   175   &lt;par&gt;
+   176     &lt;animate href="titleScreen" attributeName="opacity" to="0" dur="1s"/&gt;
+   177     &lt;animate href="scene1Background" attributeName="opacity" to="1" dur="1s"/&gt;
+   178   &lt;/par&gt;
+   179   &lt;!-- Move narrator onstage --&gt;
+   180   &lt;animate href="narrator" attributeName="transform"
+   181     to="translate(180 90)" dur="0.3s"/&gt;
+   182   &lt;!-- Set the active class on the narrator which may trigger further
+   183        animations or perhaps update the pointer-events property so he
+   184        becomes clickable--&gt;
+   185   &lt;set href="narrator" attributeName="class" to="active"/&gt;
+   186 &lt;/seq&gt;
+   187         </pre>
+   188         <p>
+   189           The triggers for these effects can be defined declaratively as in
+   190           the example above or they can be applied using script (see the
+   191           <code>beginElement</code> and <code>beginElementAt</code> methods).
+   192         </p>
+   193         <div class="feedbackWanted">
+   194           <p>
+   195             For more complex usage such as an interactive comic book the
+   196             following features would be useful:
+   197           </p>
+   198           <ul>
+   199             <li>Ability to define a &ldquo;sequence&rdquo; (which may or may not
+   200                 be a type of <code>&lt;seq&gt;</code>) where each step is
+   201                 gated on certain conditions (e.g. mouse clicks or keyboard
+   202                 presses).
+   203             <li>Ability to step backwards through such a sequence.
+   204             <li>Ability to define alternative animations when stepping
+   205                 backwards.
+   206             <li>Ability to step forwards causing the current in-play step to
+   207                 skip to its end and triggering the next step.
+   208             <li>Ability to hyperlink to a particular step (including when steps
+   209                 when such steps are nested)
+   210           </ul>
+   211           <p>
+   212             The features currently defined in this specification can be used to
+   213             realize some of these sort of use cases but typically it is
+   214             quite cumbersome.
+   215           </p>
+   216           <p>
+   217             It is possible to extend this specification to cover the above
+   218             features or we can defer it and introduce a more fully-featured
+   219             state tracking feature in a subsequent version.
+   220           </p>
+   221         </div>
+   222         <h4>Round-trip ad-hoc animation</h4>
+   223         <p>
+   224           When performing DOM manipulation, it is often useful to attach
+   225           animation to an element in such a form that it can be serialized for
+   226           later playback and editing.
+   227         </p>
+   228         <p>
+   229           For example, a presentation authoring tool allows a user to select
+   230           items on a slide and tween their various properties at different times
+   231           or in response to events such as mouse clicks.
+   232           This could be achieved by annotating the element in question with
+   233           a child element as follows:
+   234         </p>
+   235         <pre class='example sh_html'>
+   236 &lt;image&gt;
+   237   &lt;animate begin="3s" dur="1s" attributeName="opacity" to="1" fill="forwards"/&gt;
+   238 &lt;/image&gt;
+   239         </pre>
+   240         <p>
+   241           In many cases, such an approach is easier to generate and re-parse
+   242           than doing so with stylesheet animation:
+   243         </p>
+   244         <pre class='example sh_html'>
+   245 &lt;image&gt;
+   246   &lt;style scoped&gt;
+   247     image {
+   248       animation: fadeIn 1s 3s forwards;
+   249     }
+   250     @keyframes fadeIn {
+   251       to {
+   252         opacity: 1.0;
+   253       }
+   254     }
+   255   &lt;/style&gt;
+   256 &lt;/image&gt;
+   257         </pre>
+   258         <h4>Frame-based animation</h4>
+   259         <p>
+   260           Rather than smoothly tweening values, sometimes it is desirable to
+   261           overlay a series of independent images in quick succession.
+   262         </p>
+   263         <p>
+   264           For example, a children's workshop teaching animation principles
+   265           allows children to draw a series of similar images and then show and
+   266           hide them in turn creating the illusion of movement.
+   267         </p>
+   268         <p>
+   269           Supposing each drawn image is contained in an SVG
+   270           <code>&lt;g&gt;</code> element, the animation could be produced as
+   271           follows:
+   272         </p>
+   273         <pre class='example sh_html'>
+   274   &lt;!-- Graphical content --&gt;
+   275   &lt;g class="frame" visibility="hidden"&gt;&hellip;&lt;/g&gt;
+   276   &lt;g class="frame" visibility="hidden"&gt;&hellip;&lt;/g&gt;
+   277   &lt;g class="frame" visibility="hidden"&gt;&hellip;&lt;/g&gt;
+   278   &lt;g class="frame" visibility="hidden"&gt;&hellip;&lt;/g&gt;
+   279
+   280   &lt;!-- Timing --&gt;
+   281   &lt;seq repeatCount="indefinite"&gt;
+   282     &lt;set select=".frame" dur="0.2s" attributeName="visibility" to="visible"/&gt;
+   283   &lt;/seq&gt;
+   284         </pre>
+   285         <h4>Animated user interface widgets</h4>
+   286         <p>
+   287           User interface widgets are often accompanied by animated effects that
+   288           provides affordances to the user.
+   289           These effects should be defined in a manner that allows re-use across
+   290           a variety of similar widgets.
+   291         </p>
+   292         <p>
+   293           For example, following is a re-usable definition of mouse hover
+   294           effects applied to some content representing a button.
+   295         </p>
+   296         <pre class='example sh_html'>
+   297 &lt;!-- A button-like object --&gt;
+   298 &lt;g role="button"&gt;
+   299   &lt;rect &hellip; /&gt;
+   300   &lt;text filter="child"&gt;
+   301     &lt;filter &hellip; /&gt;&hellip;&lt;feGaussianBlur &hellip; /&gt;&lt;/filter&gt;
+   302     Button label
+   303   &lt;/text&gt;
+   304 &lt;/g&gt;
+   305
+   306 &lt;!-- A complex mouseover effect --&gt;
+   307 &lt;par select="g[role=button]" begin="mouseover" end="mouseout"&gt;
+   308   &lt;!-- Tween background color of button --&gt;
+   309   &lt;animate select="rect" attributeName="fill" to="blue" dur="0.3s" fill="forwards"/&gt;
+   310   &lt;seq&gt;
+   311     &lt;!-- Wiggle text to the side --&gt;
+   312     &lt;animate select="text" attributeName="transform" dur="0.3s"
+   313       additive="sum" values="translate(0); translate(-10); translate(0)"/&gt;
+   314     &lt;!-- Then make it glow by tweaking part of the filter --&gt;
+   315     &lt;animate select="feGaussianBlur" attributeName="stdDeviation"
+   316       from="0" to="2" fill="forwards" dur="0.3s"/&gt;
+   317   &lt;/seq&gt;
+   318 &lt;/par&gt;
+   319
+   320 &lt;!-- Fade out button background on mouseout --&gt;
+   321 &lt;par select="g[role=button]" begin="mouseout" end="mouseover; indefinite"&gt;
+   322   &lt;animate select="rect" begin="mouseout" attributeName="fill"
+   323     to="navy" dur="0.3s" fill="forwards"/&gt;
+   324   &lt;set select="feGaussianBlur" attributeName="stdDeviation" to="0"/&gt;
+   325 &lt;/par&gt;
+   326         </pre>
+   327         <div class="annotation">
+   328           This use case would also benefit from the custom reversing suggested
+   329           for timesheets / interactive comics.
+   330         </div>
+   331       </section>
+   332       <section>
+   333         <h2>Relationship to SVG 1.1 Animation</h2>
+   334         <p>
+   335           This specification is intended to be backwards-compatible with the
+   336           animation features defined in SVG 1.1 Second Edition [[SVG11]] with
+   337           the following exceptions:
+   338         </p>
+   339         <ul>
+   340           <li>The special behavior of a frozen to-animation has been altered to
+   341               follow the regular behavior of the model since no user agent
+   342               implemented the specified behavior.
+   343           <li>The procedure for resolving syncbase dependencies and particularly
+   344               breaking cyclic dependencies has been rewritten in a manner that
+   345               may produce slight variations in some circumstances.
+   346               This was done because the previous definition was incredibly vague
+   347               and as a result was implemented inconsistently in every user
+   348               agent.
+   349           <li>The <span class="elem">animateColor</span> element has been
+   350               removed since it was deprecated in SVG 1.1.
+   351         </ul>
+   352         <p>
+   353           The following features defined in SVG 1.1 have been deprecated in this
+   354           specification:
+   355         </p>
+   356         <ul>
+   357           <li>The <span class="elem">animateTransform</span> element.
+   358               This is because the <span class="elem">animate</span> element is
+   359               now able to animate transform lists which produces more
+   360               predictable behavior that avoids many of the issues surrounding
+   361               <span class="elem">animateTransform</span>.
+   362         </ul>
+   363         <p>
+   364           The following additional features not present in SVG 1.1 have been
+   365           added to this specification:
+   366         </p>
+   367         <ul>
+   368           <li>All features are now defined in terms of the Web Animations
+   369               [[web-animations]] model providing a consistent foundation for
+   370               applications also using CSS-based animations or the Web Animations
+   371               API.
+   372               This also makes it possible for the author to programmatically
+   373               inspect and modify the animations generated by the markup defined
+   374               in this specification.
+   375           <li>The <span class="elem">par</span> and
+   376               <span class="elem">seq</span> elements have been introduced to
+   377               provide more powerful synchronization behavior that avoids many of
+   378               the problems associated with syncbase timing such as being unable
+   379               to cancel a chain of animations or seek a document in constant
+   380               time.
+   381               These elements also facilitate re-use of complex animation
+   382               definitions.
+   383           <li>Animation elements now include the <span
+   384               class="attr">select</span> attribute for targetting a range of
+   385               elements making animations re-useable
+   386               (see <a
+   387               href="#attributes-to-identify-the-target-elements-for-a-timed-element"
+   388               class="sectionRef"></a>).
+   389           <li>The <span class="attr">href</span> attribute no longer requires
+   390               the XLink namespace in keeping with changes made in SVG 2.0
+   391               (see <a
+   392               href="#attributes-to-identify-the-target-elements-for-a-timed-element"
+   393               class="sectionRef"></a>).
+   394           <li>The <span class="attr">cancel</span> attribute has been added to
+   395               completely remove an animation or a group of animations including
+   396               fill effects when its conditions are met.
+   397           <li>The <span class="attr">reverse</span> attribute has been added to
+   398               specify conditions that cause and animation or a group of
+   399               animations to change direction.
+   400           <li>The <span class="attr">repeatStart</span> attribute has been added
+   401               to allow starting an animation part-way through its interval.
+   402           <li>The <span class="attr">playback-rate</span> attribute has been
+   403               added to control the playback rate of animations and groups
+   404               including reversing them.
+   405           <li>The <span class="attr">direction</span> attribute has been added
+   406               to allow controlling the direction of alternate iterations of
+   407               animations and groups.
+   408           <li>The <span class="attr">easing</span> and <span
+   409               class="attr">easing-times</span> attributes have been added to
+   410               allow specifying easing behavior using a common syntax to CSS and
+   411               Web Animations including the ability to specify step timing
+   412               functions.
+   413           <li>The <span class="attr">fill</span> attribute has been extended to
+   414               support the &lsquo;backwards&rsquo;, &lsquo;both&rsquo;, and
+   415               &lsquo;auto&rsquo; values.
+   416           <li>The <span class="elem">discard</span> element has been added so
+   417               that long-running animations can manually remove no-longer needed
+   418               resources and provide more performant playback, particularly on
+   419               resource-constrained devices.
+   420           <li>The <span class="attr">timelineStart</span> attribute has been
+   421               added to allow starting animations prior to the document load
+   422               event such as &ldquo;spinner&rdquo; and progress-bar animations
+   423               shown during page load.
+   424           <li>The <code>beginElement</code> and <code>beginElementAt</code>
+   425               methods have been extended to allow applying an animation
+   426               definition to an arbitrary target element or in an arbitrary
+   427               context (for example, another document;
+   428               see <a href="#timed-element-interfaces" class="sectionRef"></a>).
+   429         </ul>
+   430         <div class="todo">
+   431           Link the above to the appropriate sections once they have been
+   432           written.
+   433         </div>
+   434         <div class="todo">
+   435           Add support for Web Animations custom effects&mdash;perhaps through
+   436           a <code>sample</code> event dispatched to animation elements, or
+   437           perhaps only those that don't specify any <a>target elements</a>.
+   438         </div>
+   439       </section>
+   440       <section>
+   441         <h2>Relationship to SMIL Animation</h2>
+   442         <p>
+   443           To the extent that this specification is backwards-compatible with SVG
+   444           1.1's animation features, most of which are defined in terms of SMIL
+   445           Animation [[SMIL-ANIMATION]], this specification defines many features
+   446           similar to those defined in SMIL Animation.
+   447           However, since such features are fully-defined either in this
+   448           specification or in Web Animations [[!web-animations]], this
+   449           specification does not make any normative reference to SMIL Animation.
+   450         </p>
+   451       </section>
+   452       <section>
+   453         <h2>Relationship to Web Animations</h2>
+   454         <p>
+   455           Many of the features defined in this specification are defined in
+   456           terms of the Web Animations [[!web-animations]] model which serves as
+   457           a normative reference for this specification.
+   458         </p>
+   459       </section>
+   460     </section>
+   461
+   462     <section>
+   463       <h2>Timed elements</h2>
+   464       <p>
+   465         This specification defines a number of elements that share common timing
+   466         behavior referred to as <dfn title="timed element">timed elements</dfn>.
+   467         The common timing features of timed elements are described first
+   468         followed by the specific elements.
+   469       </p>
+   470       <section class="informative">
+   471         <h2>Introduction</h2>
+   472         <p>
+   473           The <a>timed elements</a> defined by Animation Elements act as
+   474           templates for creating animations and timing groups as defined by
+   475           [[!web-animations]].
+   476         </p>
+   477         <p>
+   478           The relationship between <a>timed elements</a> and Web Animations'
+   479           timed items is one-to-many since:
+   480         </p>
+   481         <ul>
+   482           <li>multiple elements may be targetted (for example,
+   483               <code>select="div.warning"</code>),
+   484           <li>animation triggers may match multiple times (for example,
+   485               <code>begin="2s; 5s; click"</code>),
+   486           <li>automatically-generated reverse effects are realized by separate
+   487               timed items (for example <code>reverse="mouseout"</code>), and
+   488           <li>a timed element can be applied to an arbitrary target using the
+   489               <code>beginElement</code> and <code>beginElementAt</code> methods
+   490               which will generate further timed items.
+   491         </ul>
+   492         <p class="todo">
+   493           Example and diagram
+   494         </p>
+   495       </section>
+   496       <section>
+   497         <h2>Timed element hierarchies</h2>
+   498         <p>
+   499           <a>Timing group elements</a> can contain other <a>timed elements</a>
+   500           to produce hierarchical tree structures.
+   501           Such structures can be described using the following definitions:
+   502         </p>
+   503         <dl>
+   504           <dt><dfn>parent timed element</dfn></dt>
+   505           <dd>
+   506             For a given <a>timed element</a> <var>A</var>, the first <a>timed
+   507             element</a>, if any, encountered when traversing the list of <a
+   508             href="http://www.w3.org/TR/dom/#concept-tree-ancestor">ancestor
+   509             elements</a> [[!DOM4]] beginning with the <a
+   510             href="http://www.w3.org/TR/dom/#concept-tree-parent">parent</a>
+   511             [[!DOM4]] of <var>A</var> and without leaving the current <a
+   512             href="http://www.w3.org/TR/SVG2/intro.html#TermSVGContext">SVG
+   513             context</a> [[!SVG2]].
+   514           </dd>
+   515           <dt><dfn>child timed element</dfn></dt>
+   516           <dd>
+   517             A <a>timed element</a> whose <a>parent timing group</a> is this
+   518             <a>timed element</a>.
+   519           </dd>
+   520           <dt><dfn>root timed element</dfn></dt>
+   521           <dd>
+   522             A <a>timed element</a> with no <a>parent timed element</a>.
+   523           </dd>
+   524         </dl>
+   525       </section>
+   526       <section>
+   527         <h2>Namespace</h2>
+   528         <p>
+   529           The <a>timed elements</a> defined in this specification belong to the
+   530           SVG namespace as defined in [[!SVG11]].
+   531         </p>
+   532         <div class="issue">
+   533           <p>If SVG2 allows SVG elements to exist outside the SVG namespace then
+   534              we will reflect that here as well.</p>
+   535           <p>Furthermore, SVG2 aside, it may be worth investigating allowing
+   536              these elements directly in HTML.</p>
+   537         </div>
+   538       </section>
+   539       <section>
+   540         <h2>Attributes to identify the target elements for a timed element</h2>
+   541         <p>
+   542           Each <a>timed element</a> may specify a set of <dfn>target
+   543           elements</dfn> which are used to determine:
+   544         </p>
+   545         <ul>
+   546           <li>which <a
+   547               href="http://www.w3.org/TR/web-animations/#dfn-target-element">timed items</a> to generate for a given <a>context
+   548               node</a>,
+   549           <li>the scopes in which the <a>target elements</a> of <a>child
+   550               timed elements</a> are resolved, and
+   551           <li>the <a
+   552               href="http://www.w3.org/TR/web-animations/#dfn-target-element">target
+   553               elements</a> of the <a
+   554               href="http://www.w3.org/TR/web-animations/#dfn-animation">animations</a>
+   555               generated by <a>animation elements</a>.
+   556         </ul>
+   557         <p class="annotation">
+   558           When we add media reference elements, the <a>target elements</a> will
+   559           be used to establish the source media element when not explicitly set.
+   560         </p>
+   561         <p>
+   562           Each element in the list of <a>target elements</a> may have an
+   563           associated <dfn>context element</dfn> which represents the scope in
+   564           which the reference to the target element was resolved.
+   565           Each pair of a target element and optional <a>context element</a> is
+   566           unique within the list of <a>target elements</a>.
+   567         </p>
+   568         <p>
+   569           The following attributes are the <dfn>target element attributes</dfn>
+   570           which specify the <a>target elements</a> for a <a>timed element</a>.
+   571         </p>
+   572         <p><em>Attribute definitions:</em></p>
+   573         <table class="propdef attrdef">
+   574           <thead>
+   575             <tr>
+   576               <th>Name
+   577               <th>Value
+   578               <th>Lacuna value
+   579               <th>Animatable
+   580           <tbody>
+   581             <tr>
+   582               <td><span class="attr">select</span>
+   583               <td><a
+   584                   href="http://www.w3.org/TR/selectors4/#selector-list">&lt;selector-list&gt;</a>
+   585               <td>(none)
+   586               <td>No
+   587           <tbody>
+   588             <tr>
+   589               <td><span class="attr">href</span>
+   590               <td>local IRI
+   591               <td>(none)
+   592               <td>No
+   593             <tr>
+   594               <td><span class="attr">xlink:href</span>
+   595               <td>local IRI
+   596               <td>(none)
+   597               <td>No
+   598         </table>
+   599         <p>
+   600           A <a>timed element</a> where one or more of the <a>target element
+   601           attributes</a> is specified is said to have a <dfn>specified
+   602           target</dfn>.
+   603           The list of <a>target elements</a> of a <a>timed element</a> without
+   604           a <a>specified target</a> is an empty list.
+   605         </p>
+   606         <p>
+   607           If more than one of the <a>target element attributes</a> is specified
+   608           then the attribute with the highest precedence is used even if its
+   609           value is empty or invalid; the other attributes are ignored.
+   610           <span class="attr">select</span> has the highest precedence followed
+   611           by <span class="attr">href</span> then <span
+   612           class="attr">xlink:href</span>.
+   613         </p>
+   614         <p>
+   615           A set of <a>target elements</a> is resolved with reference to a given
+   616           <dfn>context node</dfn> which may be either an <a
+   617           href="http://www.w3.org/TR/dom/#concept-element">element</a> or
+   618           a <a
+   619           href="http://www.w3.org/TR/dom/#concept-document">document</a>.
+   620         </p>
+   621         <p>
+   622           The <span class="attr">href</span> and <span
+   623           class="attr">xlink:href</span> attributes specify an element
+   624           belonging to the same document as the <a>context node</a>'s <a
+   625           href="http://www.w3.org/TR/dom/#concept-node-document">node
+   626           document</a>.
+   627           The syntax is that of a fragment identifier including the leading hash
+   628           (#, U+0023) but <em>without</em> an absolute IRI or relative IRI as
+   629           defined by [[!IRI]]. For example, <code>#button12</code>.
+   630           The fragment identifier is interpreted as an ID reference which is
+   631           resolved using the same definition for <a
+   632           href="http://www.w3.org/TR/dom/#dom-document-getelementbyid">getElementById</a>
+   633           from [[!DOM4]] with the <a>context node</a> as the <var>context
+   634           object</var>.
+   635           If no element matches the ID reference or it is malformed, the
+   636           resulting set of <a>target elements</a> is an empty list.
+   637         </p>
+   638         <p>
+   639           The <span class="attr">select</span> attribute specifies a CSS <a
+   640           href="http://www.w3.org/TR/selectors4/#selector-list">selector
+   641           list</a> [[!selectors4]] that is matched against the subtree beginning
+   642           with the <a>context node</a> using the same procedure as for <a
+   643           href="http://www.w3.org/TR/selectors-api2/#queryselectorall">querySelectorAll</a>
+   644           [[!SELECTORS-API2]].
+   645           If no element matches or the selector list is malformed, the
+   646           resulting set of <a>target elements</a> is an empty list.
+   647         </p>
+   648         <p class="todo">
+   649           <span class="attr">select</span> should match content inside
+   650           a seamless iframe
+   651         </p>
+   652         <p class="todo">
+   653           Describe how to handle changes to what is selected (including an
+   654           iframe becoming seamless or not).
+   655         </p>
+   656         <p class="todo">
+   657           Describe how to handle dynamic changes to the attributes.
+   658         </p>
+   659         <section>
+   660           <h3>Generating new instances</h3>
+   661           <p>
+   662             <dfn title="generate new instances">New instance are
+   663             generated</dfn> for a given <a>timed element</a>, <var>current
+   664             element</var>, and either:
+   665           </p>
+   666           <ul>
+   667             <li>a <a>context node</a>, <var>current context</var>, or
+   668             <li>a <a>target element</a>, <var>initial target</var>,
+   669           </ul>
+   670           <p>using the following procedure.</p>
+   671           <ol>
+   672             <li>Initialize the list of <var>target elements</var> based on the
+   673                 first matching condition from the following:
+   674               <dl class="switch">
+   675                 <dt>If an <var>initial target</var> is provided,</dt>
+   676                 <dd>
+   677                    Let <var>target elements</var> be a list consisting of
+   678                    a single element, <var>initial target</var>.
+   679                 </dd>
+   680                 <dt>If <var>element</var> has a <a>specified target</a>,</dt>
+   681                 <dd>
+   682                   Let <var>target elements</var> be the result of evaluating the
+   683                   <var>current element</var>'s <a>target element attributes</a>
+   684                   as defined in <a
+   685                   href="#attributes-to-identify-the-target-elements-for-a-timed-element"
+   686                   class="sectionRef"></a> using <var>current context</var> as
+   687                   the <a>context node</a>.
+   688                 </dd>
+   689                 <dt>Otherwise,</dt>
+   690                 <dd>
+   691                   Let <var>target elements</var> be a list consisting of
+   692                   a single element, <var>current context</var>.
+   693                 </dd>
+   694               </dl>
+   695             <li>Let <var>generated items</var> be an empty list.
+   696             <li>For each element, <var>current target</var>, in <var>target
+   697                 elements</var>:
+   698               <ol>
+   699                 <li>Let <var>current item</var> be the result of generating a
+   700                     timed item for the specific type of <var>current
+   701                     element</var> as defined in <a
+   702                     href="#generating-an-instance-of-an-animation-element"
+   703                     class="sectionRef"></a> <span class="todo">and so on (TBD:
+   704                     add specific references here to other sections as they are
+   705                     added).</span>
+   706                     The <a>context node</a> to be passed in each case is
+   707                     <var>current target</var>.
+   708                 <li>If <var>current element</var> is a <a>group timing
+   709                     element</var>, then for each <a>child timed item</a>,
+   710                     <var>current child</var> of <var>current element</var>
+   711                     perform the following steps:
+   712                     <ol>
+   713                       <li>Recursively apply this procedure (i.e. <a
+   714                         href="#generating-new-instances"
+   715                         class="sectionRef"></a> with <var>current child</var> as
+   716                         the <a>context node</a>.
+   717                       <li>Append the resulting list of timed items to
+   718                         <var>current item</var>'s list of <a
+   719                         href="http://www.w3.org/TR/web-animations/#dfn-child-timed-item">child
+   720                         timed items</a>.
+   721                     </ol>
+   722                     <li>Append <var>current item</var> to <var>generated
+   723                         items</var>.
+   724               </ol>
+   725             <li>Return <var>generated items</var>.
+   726           </ol>
+   727           <p class="todo">
+   728             Make a section about interval handling where we say that when the
+   729             conditions match, we call the above procedure using the <a
+   730             href="http://www.w3.org/TR/dom/#concept-node-document">node
+   731             document</a> of the <a>timed element</a> as the <a>context node</a>.
+   732             For external timesheets we'll need to override it.
+   733           </p>
+   734         </section>
+   735       </section>
+   736       <section>
+   737         <h2>Attributes to control the triggering of timed elements</h2>
+   738         <section>
+   739           <h3>The <span class="attr">begin</span> attribute</h3>
+   740           <p class="todo">
+   741             TBD.<br>
+   742             Need to define that this is ignored in template-contexts. It's
+   743             treated as if it was indefinite.
+   744           </p>
+   745         </section>
+   746       </section>
+   747       <section>
+   748         <h2>Attributes to control timing</h2>
+   749       </section>
+   750       <section>
+   751         <h2>Timed element interfaces</h2>
+   752         <dl title="interface TimedElement" class="idl">
+   753           <dt>sequence&lt;TimedItem&gt; beginElement(optional BeginElementOptions options)</dt>
+   754           <dd>
+   755             <p>
+   756               <a title="generate new instances">Generates new instances</a> from
+   757               this timed element.
+   758             </p>
+   759             <p>
+   760               The <var>target element</var> or <var>context node</var> is based
+   761               on the first matching condition from below:
+   762             </p>
+   763             <dl class="switch">
+   764               <dt>If <code>options</code> and <code>options.target</code> are
+   765                   not <code>null</code>,</dt>
+   766               <dd>Use <code>options.target</code> as the <var>target
+   767                   element</var>.</dd>
+   768               <dt>If <code>options</code> and <code>options.context</code> are
+   769                   not <code>null</code>,</dt>
+   770               <dd>Use <code>options.context</code> as the <var>context
+   771                   node</var>.</dd>
+   772               <dt>Otherwise,</dt>
+   773               <dd>Use the <a
+   774                   href="http://www.w3.org/TR/dom/#concept-node-document">node
+   775                   document</a> of this element as the <var>context
+   776                   node</var>.</dd>
+   777             </dl>
+   778             <p>
+   779               The return value is the set of generated timed items as returned
+   780               by <a href="#generating-new-instances" class="sectionRef"></a>.
+   781             </p>
+   782           </dd>
+   783           <dt>sequence&lt;TimedItem&gt; beginElementAt(float offset,
+   784             optional BeginElementOptions options)</dt>
+   785           <dd>
+   786             <p class="todo">
+   787               TBD.
+   788             </p>
+   789           </dd>
+   790         </dl>
+   791         <dl title="dictionary BeginElementOptions" class="idl">
+   792           <dt>Element? target = null</dt>
+   793           <dd>
+   794           </dd>
+   795           <dt>(Element or Document)? context = null</dt>
+   796           <dd>
+   797           </dd>
+   798           <dt>BeginElementAtReferenceTime since = "now"</dt>
+   799           <dd>
+   800           </dd>
+   801         </dl>
+   802         <p class="issue">
+   803           Add <code>sequence&lt;Element&gt;? targets = null</code> as well?
+   804         </p>
+   805         <dl title="enum BeginElementAtReferenceTime" class="idl">
+   806           <dt>now</dt>
+   807           <dd>
+   808           </dd>
+   809           <dt>start</dt>
+   810           <dd>
+   811           </dd>
+   812         </dl>
+   813       </section>
+   814       <section>
+   815         <h2>Animation elements</h2>
+   816         <section>
+   817           <h2>Attributes to identify the target attribute or property for an
+   818               animation</h2>
+   819         </section>
+   820         <section>
+   821           <h2>Attributes that define animation values over time</h2>
+   822         </section>
+   823         <section>
+   824           <h2>Attributes that control whether animations are additive</h2>
+   825         </section>
+   826         <section>
+   827           <h2>Elements, attributes and properties that can be animated</h2>
+   828         </section>
+   829         <section>
+   830           <h2>Generating an instance of an animation element</h2>
+   831           <p>
+   832             <a>Animation elements</a> generate <a
+   833             href="http://www.w3.org/TR/web-animations/#dfn-animation">animations</a>.
+   834           </p>
+   835           <p>
+   836             The <a
+   837             href="http://www.w3.org/TR/web-animations/#dfn-target-element">target
+   838             element</a> of the generated animation is the <a>context node</a>
+   839             provided when the animation was generated, provided it is an <a
+   840             href="http://www.w3.org/TR/dom/#concept-element">element</a>.
+   841             If the <a>context node</a> is a <a
+   842             href="http://www.w3.org/TR/dom/#concept-document">document</a> the
+   843             target element is the parent element of the <a>animation
+   844             element</a>'s <a>root timed element</a>.
+   845           </p>
+   846           <p class="issue">
+   847             What if the <a>root timed element</a> is not in the same document as
+   848             the context node?
+   849             Generate the animation with no target element? Abort?
+   850           </p>
+   851         </section>
+   852         <section>
+   853           <h2>The <span class="elem">animate</span> element</h2>
+   854         </section>
+   855         <section>
+   856           <h2>The <span class="elem">set</span> element</h2>
+   857         </section>
+   858         <section>
+   859           <h2>The <span class="elem">animateMotion</span> element</h2>
+   860         </section>
+   861       </section>
+   862       <section>
+   863         <h2>Timing group elements</h2>
+   864         <section>
+   865           <h2>The <span class="elem">par</span> element</h2>
+   866         </section>
+   867         <section>
+   868           <h2>The <span class="elem">seq</span> element</h2>
+   869         </section>
+   870       </section>
+   871       <section>
+   872         <h2>Structural elements</h2>
+   873         <section>
+   874           <h2>The <span class="elem">discard</span> element</h2>
+   875         </section>
+   876       </section>
+   877       <section>
+   878         <h2>Deprecated elements</h2>
+   879         <section>
+   880           <h2>The <span class="elem">animateTransform</span> element</h2>
+   881         </section>
+   882       </section>
+   883     </section>
+   884
+   885     <section>
+   886       <h2>Integration with SVG</h2>
+   887       <section>
+   888         <h2>Start of the timeline</h2>
+   889       </section>
+   890       <section>
+   891         <h2>The <span class="elem">svg</span> element</h2>
+   892       </section>
+   893       <section>
+   894         <h2>Reclaiming resources</h2>
+   895       </section>
+   896       <section>
+   897         <h2>Animations in elements referenced by a
+   898             <span class="elem">use</span> element</h2>
+   899         <p class="issue">
+   900           Can you have <span class="elem">use</span> elements inside
+   901           a <span class="elem">par</span> or <span class="elem">seq</span> that
+   902           pull in other animation elements?
+   903         </p>
+   904         <p class="issue">
+   905           What is the behavior in general?
+   906         </p>
+   907       </section>
+   908       <section>
+   909         <h2>Integration with Media Fragments</h2>
+   910         <p>
+   911           The Media Fragments specification [[!MEDIA-FRAGMENTS]] defines a means
+   912           for addressing a temporal range of a media resource.
+   913           The application of the temporal parameters to documents with the <a
+   914           href="http://www.w3.org/TR/SVG/intro.html#MIMEType">SVG MIME type</a>
+   915           [[!SVG11] is as follows.
+   916         </p>
+   917         <ul>
+   918           <li>If there is a begin time, seek the document controller to
+   919               the begin time at the earliest of two moments: when the document
+   920               begins to play or document load.
+   921               <p class="note">
+   922                 Note that seeking behavior is well-defined even when the
+   923                 document has yet to start.
+   924               </p>
+   925           </li>
+   926           <li>If there is an end time, set a flag on the controller to say
+   927               auto-pause at the given time.</li>
+   928           <li>Any calls to seek / pause / play etc. on that controller clear the
+   929               flag.</li>
+   930           <li>If the controller reaches (or passes) the end time and the flag is
+   931               still set, call pause and clear the flag.</li>
+   932         </ul>
+   933         <p class="todo">
+   934           What happens if the fragment is changed after the document has loaded
+   935         </p>
+   936         <p class="note">
+   937           Note that media fragments are defined to operate on resources based on
+   938           their MIME type.
+   939           As a result, temporal addressing may not have any effect for SVG
+   940           content that is served in a document with a MIME type other than the
+   941           SVG MIME type such as SVG embedded in HTML.
+   942         </p>
+   943       </section>
+   944     </section>
+   945
+   946     <section>
+   947       <h2>Resources in other documents</h2>
+   948       <div class="todo">
+   949         <p>
+   950           Need to define the document time used when:
+   951         </p>
+   952         <ul>
+   953           <li>You have an animation element in a separate
+   954               document&mdash;presumably you should use the document time of the
+   955               target elements.</li>
+   956           <li>What if you put a filter in a separate document and then pull it
+   957               in?</li>
+   958           <li>Likewise for clip paths, images referenced by image, iframe, use
+   959               etc.</li>
+   960         </ul>
+   961       </div>
+   962     </section>
+   963
+   964     <section>
+   965       <h2>DOM interfaces</h2>
+   966       <section>
+   967         <h2>The <code>TimedElement</code> interface</h2>
+   968         <p>
+   969           <dl title="interface TimedElement : Element" class="idl">
+   970           </dl>
+   971         </p>
+   972         <div class="issue">
+   973           <p>
+   974             Need to add <code>ownerSVGElement</code> from
+   975             <code>SVGElement</code> interface?
+   976           </p>
+   977           <p>
+   978             Add other attributes from <code>SVGElement</code> for backwards
+   979             compatibility?
+   980           </p>
+   981         </div>
+   982       </section>
+   983       <section>
+   984         <h2>The <code>AnimationElement</code> interface</h2>
+   985         <p>
+   986           <dl title="interface AnimationElement : TimedElement" class="idl">
+   987           </dl>
+   988         </p>
+   989       </section>
+   990       <section>
+   991         <h2>Reflecting changes to the DOM</h2>
+   992       </section>
+   993     </section>
+   994   </body>
+   995 </html>

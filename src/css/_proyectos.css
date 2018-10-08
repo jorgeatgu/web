@@ -11,7 +11,7 @@
 
 .proyectos-element {
     padding: 1rem;
-    background-color: var(--wesLime);
+    background-color: var(--fondoproyectos);
     border-radius: 4px;
     width: 100%;
     display: inline-block;
@@ -21,9 +21,6 @@
         transform: translateY(-.25rem);
         background-color: var(--morado);
     }
-    &:nth-child(2) {
-        background-color: var(--wesLightBlue);
-    }
 }
 
 .proyectos-element-title {
@@ -31,7 +28,7 @@
     font-family: var(--rubik);
     font-weight: bold;
     letter-spacing: 1px;
-    color: var(--negro);
+    color: var(--redtitle);
     display: block;
     margin: 0;
     padding-bottom: .25rem;
@@ -41,7 +38,7 @@
     font-size: .75rem;
     font-family: var(--monospace);
     font-weight: bold;
-    color: var(--negro);
+    color: var(--pinktitle);
     text-transform: uppercase;
     display: inline-block;
 }
@@ -49,7 +46,7 @@
 .proyectos-element-text {
     font-size: 1rem;
     font-family: var(--plex);
-    color: var(--negro);
+    color: var(--blanco);
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;

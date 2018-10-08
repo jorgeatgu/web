@@ -1,0 +1,16 @@
+:root {
+  --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+  --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+  --bgc1: #be52b7;
+  --txt1: #080f1c;
+  --bgc2: #5adbb8;
+  --txt2: #3c4b50;
+  --bgc3: #964370;
+  --txt3: #dae97e;
+  --bgc4: #ebb218;
+  --txt4: #3e0810;
+  --bgc5: #5a091d;
+  --txt5: #d4910e;
+  --bgc6: #801bbf;
+  --txt6: #baf000;
+}

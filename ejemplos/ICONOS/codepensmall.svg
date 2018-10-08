@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1280px" height="800px" viewBox="0 0 1280 800">
+
+        <g id="small" transform="translate(150,45)">
+            <circle cx="361" cy="28" r="15" stroke="black" stroke-width="3" fill="none"/>
+
+            <polygon id="codepen" points="360.86,19.84 352.3,25.7 360.86,31.61 369.68,25.7" stroke="black" stroke-linejoin="round" stroke-width="1.5" fill="none"/>
+            <use xlink:href="#codepen" transform="translate(0,5)"/>
+
+            <line x1="360.86" y1="19.84" x2="360.86" y2="25.7" stroke="black" stroke-width="1.5"/>
+            <line x1="360.86" y1="31.61" x2="360.86" y2="36.61" stroke="black" stroke-width="1.5"/>
+            <line x1="352.3" y1="25.3" x2="352.3" y2="31" stroke="black" stroke-width="1.5"/>
+            <line x1="369.6" y1="25.3" x2="369.6" y2="31" stroke="black" stroke-width="1.5"/>
+
+        </g>
+</svg>

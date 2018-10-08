@@ -1,0 +1,32 @@
+body {
+	background-color: #001F3F;
+	filter: alpha(opacity=45);
+}
+
+section {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 0;
+}
+
+section article {
+	width: 50%;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 20px;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	color: #FFDC00;
+}
+
+section article:after {
+	content: '*';
+	font-size: 32px;
+	color: #ed6a43;
+}
+
+section :first-child + article {
+	background-color: #ed6a43;
+	color: #fff;
+}

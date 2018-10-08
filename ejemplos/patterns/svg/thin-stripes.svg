@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns='http://www.w3.org/2000/svg' x="0px" y="0px"
+   width="100%" height="100%" viewBox="0 0 100% 100%"
+   enable-background="new 0 0 100% 100%" xml:space="preserve">
+
+      <defs>
+        <pattern id="textura" width="5" height="5"
+        patternUnits="userSpaceOnUse">
+          <rect width='5' height='5' fill='#9e9e9e'/>
+          <path d='M0 5L5 0ZM6 4L4 6ZM-1 1L1 -1Z' stroke='#888' stroke-width='1'/>
+        </pattern>
+      </defs>
+
+
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#textura)"/>
+
+  </svg>

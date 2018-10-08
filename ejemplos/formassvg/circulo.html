@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Círculo SVG</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks, svg" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animate-custom.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/las-formas-basicas-en-svg/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+
+<svg width="665" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 665 250" xml:space="preserve">
+  <title>SVG Animation - Cube Demonstration</title>
+  <!-- example originally from Antoine Quint, stolen from "Digging Animation" at http://www.xml.com/pub/a/2002/01/23/svg/index.html -->
+  <!-- fixes by A. Neumann (added namespaces, changed DTD and replaced style attributes with presentation attributes -->
+  <defs>
+    <symbol id="cube" stroke="#000000" stroke-width="0.5" stroke-linejoin="bevel">
+      <path fill="#333333" d="M0.112,26.271l25.032,12.485V25.164L0.112,12.68V26.271z"/>
+      <path fill="#666666" d="M25.144,38.756l25.033-12.485H50.12V12.708L25.144,25.164V38.756z"/>
+      <path fill="#cccccc" d="M50.12,12.708l0.057-0.028L25.144,0.224L0.112,12.68l25.032,12.484L50.12,12.708z"/>
+    </symbol>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#999999" stroke="none" />
+
+  <g id="cubes" transform="translate(300.25, 143.45)" >
+    <use xlink:href="#cube" transform="translate(0,-72)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(24,-60)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(48,-48)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-24,-60)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(0,-48)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-48,-48)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(24,-36)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-24,-36)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-72,-36)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(72,-36)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(48,-24)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-48,-24)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(0,-24)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(24,-12)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(-24,-12)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+    <use xlink:href="#cube" transform="translate(0,0)">
+      <animate  dur="&dur;" values="&values;" keyTimes="&keyTimes;" keySplines="&keySplines;"
+                attributeName="y" begin="&begin;" restart="whenNotActive" calcMode="&calcMode;" />
+    </use>
+  </g>
+  <a xlink:href="http://www.xml.com/pub/a/2002/01/23/svg/index.html"><text font-size="12px" text-anchor="middle" x="332.5" y="245">Example provided by A. Quint (published in Sacré SVG column at O'Reilly), Modifications by A. Neumann</text></a>
+</svg>
+
+
+  </div>
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36222123-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,292 @@
+/*CHULETA CSS3 por jorgeATGU
+www.jorgeatgu.com
+www.codepen.io/jorgeatgu
+www.behance.net/jorgeatgu*/
+
+
+/*KEYFRAMES OPCIONES
+SI UTILIZAMOS NUMEROS PODEMOS UTILIZAR HASTA DOS DECIMALES(40.15%)
+*/
+
+@keyframes RENOMBRAR {
+  0%  {
+
+  }
+
+  100% {
+
+  }
+}
+
+@keyframes RENOMBRAR {
+  from  {
+
+  }
+
+  to {
+
+  }
+}
+
+/*---------TRANSLATE-----------*/
+
+/*translate(X,Y)*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:translate(0px, 0px);
+  }
+
+  100% {
+  transform:translate(0px, 0px);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:translateX(0px);
+  }
+
+  100% {
+  transform:translateX(0px);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:translateY(0px);
+  }
+
+  100% {
+  transform:translateY(0px);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:translateZ(0px);
+  }
+
+  100% {
+  transform:translateZ(0px);
+  }
+}
+
+/*translate3d(x,y,z)*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:translate3d(0px, 0px, 0px);
+  }
+
+  100% {
+  transform:translate3d(0px, 0px, 0px);
+  }
+}
+
+
+/*---------ROTATE-----------*/
+
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:rotate(0deg);
+  }
+
+  100% {
+  transform:rotate(0deg);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:rotateX(0deg);
+  }
+
+  100% {
+  transform:rotateX(0deg);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:rotateY(0deg);
+  }
+
+  100% {
+  transform:rotateY(0deg);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:rotateZ(0deg);
+  }
+
+  100% {
+  transform:rotateZ(0deg);
+  }
+}
+
+/*ROTATE3D(X,Y,Z,ANGULO)*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:rotate3d(0px,0px,0px,0deg);
+  }
+
+  100% {
+  transform:rotate3d(0px,0px,0px,0deg);
+  }
+}
+
+/*---------SKEW-----------*/
+
+/*SKEW(X-ANGULO,Y-ANGULO)*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:skew(0deg,0deg);
+  }
+
+  100% {
+  transform:skew(0deg,0deg);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:skewX(0deg);
+  }
+
+  100% {
+  transform:skewX(0deg);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:skewY(0deg);
+  }
+
+  100% {
+  transform:skewY(0deg);
+  }
+}
+
+/*---------scale-----------*/
+
+/*scale(X,Y)*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:scale(0, 0);
+  }
+
+  100% {
+  transform:scale(0, 0);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:scaleX(0);
+  }
+
+  100% {
+  transform:scaleX(0);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:scaleY(0);
+  }
+
+  100% {
+  transform:scaleY(0);
+  }
+}
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:scaleZ(0);
+  }
+
+  100% {
+  transform:scaleZ(0);
+  }
+}
+
+/*KEYFRAMES CON VARIAS PROPIEDADES TRANSFORM
+SOLAMENTE SE SEPARAN CON UN ESPACIO
+*/
+
+@keyframes RENOMBRAR {
+  0%  {
+  transform:scale(0px) translate(0px) skew(0deg) rotate(0deg);
+  }
+
+  100% {
+  transform:scale(0px) translate(0px) skew(0deg) rotate(0deg);
+  }
+}
+
+/*CLASE CON SHORTHAND! - RESPETAD EL ORDEN -
+PARA INCLUIR OTRA ANIMACIÓN EN EL MISMO SHORTHAND SIMPLEMENTE SEPARADLAS CON UNA COMA
+*/
+
+.aquivatuclase {
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+}
+
+.aquivandosanimaciones {
+animation: name duration timing-function delay iteration-count direction fill-mode play-state, name duration timing-function delay iteration-count direction fill-mode play-state;
+}
+
+/*OPCIONES PARA TIMING-FUNCTION - POR DEFECTO: EASE
+UN BUEN RECURSO PARA ENTENDER LA FUNCIÓN EASING: http://easings.net/es
+*/
+
+animation-timing-function: linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit;
+
+/*OPCIONES PARA DIRECTION - POR DEFECTO: NORMAL*/
+
+animation-direction: normal|reverse|alternate|alternate-reverse|initial|inherit;
+
+
+/*OPCIONES PARA FILL-MODE - POR DEFECTO: NONE
+SI QUEREMOS CONGELAR NUESTRA ANIMACIÓN FORWARDS ES NUESTRO AMIGO*/
+
+animation-fill-mode: none|forwards|backwards|both|initial|inherit;
+
+
+/*OPCIONES PARA PLAY-STATE - POR DEFECTO: RUNNING*/
+
+animation-play-state: paused|running|initial|inherit;
+
+
+/*FIX PARA LAS ROTACIONES EN FIREFOX MAS INFO EN: http://jorgeatgu.com/blog/animando-svg-con-css3-en-firefox/
+LOS VALORES Y CLASES SON MERAMENTE INFORMATIVOS, HAY QUE SUSTITUIRLOS POR LOS QUE NECESITEMOS PARA CADA CASO
+*/
+
+/*MAS INFO EN MDN: https://developer.mozilla.org/es/docs/CSS/Using_CSS_transforms*/
+
+.corregir {
+-moz-transform: translate(629px,427.2px);
+}
+.corregir polygon {
+-moz-transform: translate(-629px,-427.2px);
+}
+
+/*FIX PARA ROTACIONES ALREDEDOR Y SOBRE SI MISMO*/
+
+transform-origin:50% 50%;
+
+EJEMPLO: http://codepen.io/jorgeatgu/pen/6ab03945374ef132c6dadcf2022f47f5
+
+transform-origin:100% 100%;
+
+EJEMPLO(SOLO EL MOVIMIENTO DE LAS SAETAS DEL RELOJ)
+LINEA DE CSS-> 256
+http://codepen.io/jorgeatgu/pen/EvyhL

@@ -1,0 +1,38 @@
+---
+layout: default
+title: Archive
+permalink: "archive/index.html"
+---
+<article class="post-contenido">
+{% for post in site.posts %}
+  <p class="post-autores-categoria">
+  {% assign newer_post_month_year = post.next.date | date: "%-d %m %Y" %}
+  {{ post.date | date: "%-d" }} de
+            {% assign m = post.date | date: "%-m" %}
+            {% case m %}
+              {% when '1' %}enero
+                {% when '2' %}febrero
+                {% when '3' %}marzo
+                {% when '4' %}abril
+                {% when '5' %}mayo
+                {% when '6' %}junio
+                {% when '7' %}julio
+                {% when '8' %}agosto
+                {% when '9' %}septiembre
+                {% when '10' %}octubre
+                {% when '11' %}noviembre
+                {% when '12' %}diciembre
+            {% endcase %}
+            de
+            {{ post.date | date: "%Y" }}
+  </p>
+  {% if post_month_year != newer_post_month_year %}
+    <h2 class="post-autores-categoria">
+      {{ post_month_year }}
+    </h2º>
+  {% endif %}
+  <h2>
+    <a href="{{ post.url | prepend:site.baseurl}}" class="categoria-titulo">{{ post.title }}</a>
+  </h2>
+{% endfor %}
+</article>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Scale SVG</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks, svg" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, CSS3, SVG Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-iii-escalar-objetos-desde-el-centro/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+<rect id="Container" x="37.5" y="42.5" width="90" height="70"
+fill="rgb(0,204,153)" />
+<rect x="60" y="60" width="45" height="35" fill="rgb(231,15,15)">
+<animate dur="1s" fill="freeze" attributeName="x" from="60" to="37.5"
+calcMode="linear"/>
+<animate dur="1s" fill="freeze" attributeName="y" from="60" to="42.5"
+calcMode="linear"/>
+<animate dur="1s" fill="freeze" attributeName="width" from="45" to="90"
+calcMode="linear"/>
+<animate dur="1s" fill="freeze" attributeName="height" from="35" to="70"
+calcMode="linear"/>
+</rect>
+</svg>
+
+
+
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-36222123-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </body>
+</html>

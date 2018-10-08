@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>smooth curveto path svg</title>
+        <meta name="keywords" content="diseño gráfico, diseño web, responsive web design, ebooks" >
+        <meta name="description" content="Diseñador gráfico y web en Zaragoza. Maquetación y diseño web con HTML5, SVG, CSS3, Responsive Web Design y Mobile-First.">
+        <meta name="author" content="jorgeATGU" >
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="author" href="humans.txt" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+  <header>
+
+    <label class="btn" for="toggle">Menu</label>
+    <input id="toggle" type="checkbox"/>
+
+    <nav>
+      <ul id="nav">
+        <li class="current"><a href="http://jorgeatgu.com/blog/elemento-path-svg/">VOLVER AL BLOG</a></li>
+        <li id="close"><label for="toggle">Close</label></li>
+      </ul>
+    </nav>
+    <ul class="menu">
+          <li class="facebook"><a target="_blank" href="https://twitter.com/jorgeATGU" title="Twitter">Twitter</a></li>
+          <li class="correo"><a target="_blank" href="https://www.facebook.com/jorgeATGU" title="Facebook">Facebook</a></li>
+          <li class="dribbble"><a target="_blank" href="http://codepen.io/jorgeatgu" title="codepen">Codepen</a></li>
+          <li class="twitter"><a target="_blank" href="http://be.net/jorgeatgu" title="behance">Behance</a></li>
+    </ul>
+  </header>
+
+
+<svg width="5cm" height="4cm" viewBox="0 0 500 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <title>Example cubic01- cubic Bézier commands in path data</title>
+  <desc>Picture showing a simple example of path data
+        using both a "C" and an "S" command,
+        along with annotations showing the control points
+        and end points</desc>
+  <style type="text/css"><![CDATA[
+    .Border { fill:none; stroke:blue; stroke-width:1 }
+    .Connect { fill:none; stroke:#888888; stroke-width:2 }
+    .SamplePath { fill:none; stroke:red; stroke-width:5 }
+    .EndPoint { fill:none; stroke:#888888; stroke-width:2 }
+    .CtlPoint { fill:#888888; stroke:none }
+    .AutoCtlPoint { fill:none; stroke:blue; stroke-width:4 }
+    .Label { font-size:22; font-family:Verdana }
+  ]]></style>
+
+  <rect class="Border" x="1" y="1" width="498" height="398" />
+
+  <polyline class="Connect" points="100,200 100,100" />
+  <polyline class="Connect" points="250,100 250,200" />
+  <polyline class="Connect" points="250,200 250,300" />
+  <polyline class="Connect" points="400,300 400,200" />
+  <path class="SamplePath" d="M100,200 C100,100 250,100 250,200
+                                       S400,300 400,200" />
+  <circle class="EndPoint" cx="100" cy="200" r="10" />
+  <circle class="EndPoint" cx="250" cy="200" r="10" />
+  <circle class="EndPoint" cx="400" cy="200" r="10" />
+  <circle class="CtlPoint" cx="100" cy="100" r="10" />
+  <circle class="CtlPoint" cx="250" cy="100" r="10" />
+  <circle class="CtlPoint" cx="400" cy="300" r="10" />
+  <circle class="AutoCtlPoint" cx="250" cy="300" r="9" />
+  <text class="Label" x="25" y="70">M100,200 C100,100 250,100 250,200</text>
+  <text class="Label" x="325" y="350"
+        style="text-anchor:middle">S400,300 400,200</text>
+</svg>
+
+        <script type="text/javascript" src="//use.typekit.net/dco8xwz.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

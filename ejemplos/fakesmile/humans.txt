@@ -1,0 +1,34 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Jorge ATGU -- diseñador gráfico & web -- Zaragoza, Aragón
+	https://twitter.com/jorgeATGU
+	http://www.behance.net/jorgeatgu
+	https://www.facebook.com/jorgeATGU
+	https://plus.google.com/100226837035863227420
+	http://dribbble.com/jorgeATGU ¿tienes una invitación? Gracias :D!
+
+# THANKS
+
+    http://tympanus.net/codrops/
+
+    Para los botones he utilizado y modificado(ligeramente) este tutorial
+
+	http://tympanus.net/codrops/2013/06/13/creative-button-styles/
+
+	Para el efecto de la sección de trabajos he utilizado y modificado(ligeramente) este tutorial
+
+	http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
+
+# TECHNOLOGY COLOPHON
+
+
+Last update: 03/07/2013
+
+Standards: HTML5, CSS3, RESPONSIVE WEB DESIGN, MOBILE-FIRST
+
+Components: Modernizr, jQuery
+
+Software: Sublime Text 2 + Illustrator

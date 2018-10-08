@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Web Animations 1.0  ¿El futuro de las animaciones?</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.5.2">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/web-animations-1-0-el-futuro-de-las-animaciones/">
+</head>
+
+
+<body>
+    <section class="container-boira">
+        <header class="header">
+    <nav class="header-nav  post-contenido va-m">
+        <ul class="menu-principal va-m">
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="/blog/archivo/">Categorias</a>
+            </li>
+            <li class="menu-principal-li va-m">
+                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+        <article>
+                <main>
+      <article class="categoria-titulo">
+  	    <h1>Web Animations 1.0  ¿El futuro de las animaciones?</h1>
+          <p class="articulo-fecha">
+          <time datetime="2014-04-22 00:00:00 +0200">
+              El
+              22 de
+                
+                abril
+                    
+                de
+                2014
+            </time>
+        </p>
+  	    <span class="archivado">Archivado en:
+  	    
+  	    <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+          
+  	    <a class="archivado-texto" href="/blog/archivo/#web-animations">Web Animations</a>
+          
+          </span>
+  	    <!-- Categorías:  -->
+
+      </article>
+
+      <article class="post-contenido">
+  	    <p>La unión hace la fuerza, y eso es lo que se pretende conseguir desde la W3C con Web Animations 1.0.</p>
+
+<!--more-->
+
+<p>El origen de todo esto lo podemos centrar en la cabezonería de una persona, <a href="http://brian.sol1.net/svg/" target="_blank">Brian Birtles</a> de Mozilla Japón, que desde hace un tiempo lleva proponiendo varias opciones para ir un paso adelante en el tema de las animaciones en la web ( <a href="http://www.w3.org/Graphics/SVG/WG/wiki/F2F/Seattle_2011/Agenda/Animations/Harmonisation" target="_blank">Seattle 2011</a> – <a href="http://brian.sol1.net/svg/pres/SVG%202%20Animation.html#(1)" target="_blank">Auckland 2011</a> y <a href="http://www.w3.org/Graphics/SVG/WG/wiki/F2F/Sydney_2012/Agenda/Animations/WebAnimations" target="_blank">Sydney 2012</a>). Según sus propias palabras las animaciones CSS3 y las animaciones SVG(SMIL :_( ) tienen varios problemas.</p>
+
+<blockquote>
+  <p>On the Web today we have CSS Animation (including Transitions) and SVG Animation and they both have their problems. For example, CSS is so simple it doesn’t even support synchronization and SVG is pretty hairy when it comes to interval negotiation and syncbase timing—and it’s SVG-only. Most of all though, they’re completely separate.</p>
+</blockquote>
+
+<p>La idea es reunir en una sola especificación las animaciones de CSS3 y Animation SVG. La imagen resume lo que quieren conseguir con Web Animations.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/04/CSS-SVG-Web-Animations-500.png" alt="web animations" /></p>
+
+<p>Por ahora tenemos el primer <a href="http://www.w3.org/TR/web-animations/" target="_blank">Working Draft publicado en Junio de 2013</a>, también el ultimo <a href="http://dev.w3.org/fxtf/web-animations/" target="_blank">editor Draft del 18 de abril de 2014</a>. Lo cual nos hace ver que esto esta muy pero que muy reciente.</p>
+
+<p>La especificación se esta discutiendo y por ahora se esta implementando en Blink, Gecko esta trabajando en ello y por ahora podemos probar Web Animations con un polyfill de JS que ha creado la gente de <a href="polymer-project.org" target="_blank">Polymer</a>, para estar al día lo mejor es seguir todos los repositorios de Web-Animation-JS que hay en <a href="https://github.com/web-animations" target="_blank">Github</a>.</p>
+
+<p>Mucho cuidado ya que todo va cambiando y quizás lo que funcione hoy ya no funcione el día que veas esto, así que quizás este ejemplo que voy a poner ahora no funcione dentro de un tiempo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 2000 800&quot;</span><span class="p">&gt;</span>
+<span class="lineno"> 2 </span>
+<span class="lineno"> 3 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;2000&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;800&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;crimson&quot;</span><span class="p">/&gt;</span>
+<span class="lineno"> 4 </span>
+<span class="lineno"> 5 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;uno&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#F0DBA5&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;948.742,46.109 923.149,90.439 897.556,46.109&quot;</span><span class="p">/&gt;</span>
+<span class="lineno"> 6 </span>
+<span class="lineno"> 7 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;dos&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#E7C267&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;923.149,90.439 948.742,46.109 974.337,90.439&quot;</span><span class="p">/&gt;</span>
+<span class="lineno"> 8 </span>
+<span class="lineno"> 9 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;tres&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#E1AF11&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;999.931,46.109 974.337,90.439 948.742,46.109&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">10 </span>
+<span class="lineno">11 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cuatro&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#DEAC12&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;974.337,90.439 999.931,46.109 1025.523,90.439&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">12 </span>
+<span class="lineno">13 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;cinco&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#E1AF11&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;1051.117,46.109 1025.523,90.439 999.931,46.109&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">14 </span>
+<span class="lineno">15 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;seis&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#E7C36B&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;1025.523,90.439 1051.117,46.109 1076.712,90.439&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">16 </span>
+<span class="lineno">17 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;siete&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#F1DCA9&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;1102.306,46.109 1076.712,90.439 1051.117,46.109&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">18 </span>
+<span class="lineno">19 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ocho&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#EDC44F&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;923.149,90.439 897.556,134.77 871.962,90.439&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">20 </span>
+<span class="lineno">21 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;nueve&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#E8BA2B&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;897.556,134.77 923.149,90.439 948.742,134.77&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">22 </span>
+<span class="lineno">23 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;diez&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#EEBE0F&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;974.337,90.439 948.742,134.77 923.149,90.439&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">24 </span>
+<span class="lineno">25 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;once&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#EAB90C&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;948.742,134.77 974.337,90.439 999.931,134.77&quot;</span><span class="p">/&gt;</span>
+<span class="lineno">26 </span>
+<span class="lineno">27 </span><span class="p">&lt;</span><span class="nt">text</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;doce&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;920&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;626&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;white&quot;</span><span class="p">&gt;</span>Web Animations 1.0<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+<span class="lineno">28 </span>
+<span class="lineno">29 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+<span class="lineno">30 </span>
+<span class="lineno">31 </span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="lineno">32 </span>
+<span class="lineno">33 </span>            <span class="kd">var</span> <span class="nx">tiempo</span> <span class="o">=</span> <span class="p">{</span><span class="nx">direction</span><span class="o">:</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="nx">duration</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nx">iterations</span><span class="o">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="lineno">34 </span>            <span class="kd">var</span> <span class="nx">animacion</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AnimationGroup</span> <span class="p">([</span>
+<span class="lineno">35 </span>
+<span class="lineno">36 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">uno</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;translateY(15px)&#39;</span><span class="p">,</span> <span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;.3&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;translateY(0px)&#39;</span><span class="p">,</span> <span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">37 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">doce</span><span class="p">,</span> <span class="p">[{</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;.1&#39;</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;white&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">opacity</span><span class="o">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="nx">fill</span><span class="o">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">38 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">dos</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-40deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(53deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">39 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">tres</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-30deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(0deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">40 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">cuatro</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(53deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-40deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">41 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">cinco</span><span class="p">,[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(0deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-30deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">42 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">seis</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(35deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-30deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">43 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">siete</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(0deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(20deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">44 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">ocho</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-110deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-90deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">45 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">nueve</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-30deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(35deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">46 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">diez</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(20deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(0deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">),</span>
+<span class="lineno">47 </span>                <span class="k">new</span> <span class="nx">Animation</span><span class="p">(</span><span class="nx">once</span><span class="p">,</span> <span class="p">[{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-90deg)&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;rotate(-110deg)&#39;</span><span class="p">}],</span> <span class="nx">tiempo</span><span class="p">)</span>
+<span class="lineno">48 </span>            <span class="p">],</span> <span class="p">{</span><span class="nx">iterations</span><span class="o">:</span> <span class="kc">Infinity</span><span class="p">});</span>
+<span class="lineno">49 </span>
+<span class="lineno">50 </span>            <span class="nb">document</span><span class="p">.</span><span class="nx">timeline</span><span class="p">.</span><span class="nx">play</span><span class="p">(</span><span class="nx">animacion</span><span class="p">);</span>
+<span class="lineno">51 </span>
+<span class="lineno">52 </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/webanim/webanim.html">EJEMPLO</a>
+</button></p>
+
+<p>A continuación os dejo con el enlace de un vídeo donde <a href="http://replay-progressive.ethz.ch/h264-medium.http/10.3930/ETHZ/AV-f8a1c756-a4de-4e64-98f5-c2c0b90bc9af/20120913_1100_HILE3_SVG_Danilo_2-dm.m4v" target="_blank">Brian Birties y Alex Danilo presentan Web Animations 1.0</a></p>
+
+<p>Una presentación sobre Web Animations en la Linux Conference de 2014 en Australia</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/F6gXkHM-gPU?list=PLmiuOcBMoxjfeNAuAAJEeLvc3TDqjaC1E" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Una demo de Brian Birties</p>
+
+<iframe width="420" height="315" src="http://www.youtube.com/embed/VvNQNtIfXXI" frameborder="0" allowfullscreen=""></iframe>
+
+<p>La sección de <a href="http://www.polymer-project.org/platform/web-animations.html" target="_blank">Web Animations en Polymer</a></p>
+
+<p>Para estar al día sobre Web Animations os recomiendo que os suscribáis a la <a href="http://lists.w3.org/Archives/Public/public-fx/" target="_blank">lista de FX de la W3C</a>, a veces es un pelín tedioso y enrevesado pero así es la W3C.</p>
+
+<p>También os dejo el blog de <a href="http://brian.sol1.net/svg/" target="_blank">Brian Birties</a></p>
+
+<p>Y recordad que el asunto esta verde, pero aunque este verde y nadie sepa si su futuro sera <em>recomendation</em> o <em>deprecated</em>, desde aquí seguiré informando.</p>
+
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+      </article>
+    </main>
+
+    <article class="paginacion post-contenido">
+          
+            <a class="btn-posterior" href="/blog/error-al-abrir-svg-con-adobe-illustrator/">Artículo posterior</a>
+          
+          
+            <a class="btn-anterior" href="/blog/todos-los-colores-keywords-para-gutter-color/">Artículo anterior</a>
+          
+    </article>
+
+    
+    <article id="disqus_thread"></article>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+  
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36222123-1', 'jorgeatgu.com');
+  ga('send', 'pageview');
+
+</script>
+
+    </section>
+</body>
+
+</html>

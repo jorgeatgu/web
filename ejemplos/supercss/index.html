@@ -1,0 +1,19 @@
+		<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 800 800" width="800" height="800" aria-labelledby="title desc">
+
+<defs>
+	<rect id="rectangulo" width="50" height="50" x="100" y="100" fill="crimson" stroke="darkorange" stroke-width="2"/>
+	 <circle id="circulo" r="30" cx="200" cy="200" fill="gold" stroke="black" stroke-width="2">
+	 	<animate attributeName="r" values="20; 10; 0; 40" begin="2s" dur="5s" calcMode="paced" keyTimes="0; 0.4; 0.8; 1" fill="freeze"/>
+	 </circle>
+</defs>
+
+	<use xlink:href="#rectangulo"/>
+	<use xlink:href="#rectangulo" x="150" y="75"/>
+	<use xlink:href="#rectangulo" x="150" transform="rotate(45)"/>
+
+	<use xlink:href="#circulo"/>
+	<use xlink:href="#circulo" x="300" y="200"/>
+	<use xlink:href="#circulo" transform="scale(2)"/>
+
+</svg>

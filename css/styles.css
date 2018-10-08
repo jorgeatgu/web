@@ -470,21 +470,18 @@ template {
 /* stylelint-enable */
 
 :root {
-  --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
-  --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
-  --rubik: 'Rubik', sans-serif;
-  --plex: 'IBM Plex Serif', serif;
-  --blanco: #fff;
-  --f1: #f1f1f1;
-  --background: #DADBDD;
-  --negro: #111;
-  --morado: #2d3164;
-  --fondoproyectos: #0c1e44;
-  --wesLime: #A3A552;
-  --wesYellow: #FFE346;
-  --wesBlue: #284778;
-  --wesLightBlue: #A5D0D0;
-  --wesTurquoise: #568C79;
+    --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    --monospace: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
+    --rubik: 'Rubik', sans-serif;
+    --plex: 'IBM Plex Serif', serif;
+    --blanco: #fff;
+    --f1: #f1f1f1;
+    --background: #DADBDD;
+    --negro: #111;
+    --morado: #2d3164;
+    --fondoproyectos: #0c1e44;
+    --redtitle: #9F4E5A;
+    --pinktitle: #CEBAC5;
 }
 
 .header {
@@ -600,8 +597,8 @@ template {
 
 .proyectos-element {
     padding: 1rem;
-    background-color: #A3A552;
-    background-color: var(--wesLime);
+    background-color: #0c1e44;
+    background-color: var(--fondoproyectos);
     border-radius: 4px;
     width: 100%;
     display: inline-block;
@@ -615,19 +612,14 @@ template {
         background-color: var(--morado);
     }
 
-.proyectos-element:nth-child(2) {
-        background-color: #A5D0D0;
-        background-color: var(--wesLightBlue);
-    }
-
 .proyectos-element-title {
     font-size: 1.5rem;
     font-family: 'Rubik', sans-serif;
     font-family: var(--rubik);
     font-weight: bold;
     letter-spacing: 1px;
-    color: #111;
-    color: var(--negro);
+    color: #9F4E5A;
+    color: var(--redtitle);
     display: block;
     margin: 0;
     padding-bottom: .25rem;
@@ -638,8 +630,8 @@ template {
     font-family: 'SFMono-Regular', Consolas, Menlo, Courier, monospace;
     font-family: var(--monospace);
     font-weight: bold;
-    color: #111;
-    color: var(--negro);
+    color: #CEBAC5;
+    color: var(--pinktitle);
     text-transform: uppercase;
     display: inline-block;
 }
@@ -648,8 +640,8 @@ template {
     font-size: 1rem;
     font-family: 'IBM Plex Serif', serif;
     font-family: var(--plex);
-    color: #111;
-    color: var(--negro);
+    color: #fff;
+    color: var(--blanco);
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;
