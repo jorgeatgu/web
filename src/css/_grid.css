@@ -1,14 +1,15 @@
-.grid {
-    margin: 10vh 0;
+.bio {
+    margin: 10vh auto;
+    max-width: 80vw;
 }
 
-.grid-element {
+.bio-element {
     width: max-content;
     max-width: 20rem;
     padding: 2rem;
 }
 
-.grid-element-title {
+.bio-element-title {
     font-size: 1.5rem;
     text-transform: uppercase;
     margin: 0;
@@ -16,7 +17,7 @@
     font-family: var(--rubik);
 }
 
-.grid-element-text {
+.bio-element-text {
     font-size: 1rem;
     font-family: var(--plex);
     margin: .5rem 0;
@@ -27,10 +28,9 @@
 
 @media only screen and (min-width: 48em) {
 
-    .grid-element {
-        margin: 0 auto;
-        margin-left: 20vw;
-        max-width: 30rem;
+    .bio-element {
+        width: 100%;
+        max-width: 100%;
     }
 
 }

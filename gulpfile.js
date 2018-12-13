@@ -9,13 +9,13 @@ sorting = require('postcss-sorting');
 nested = require('postcss-nested');
 reporter = require('postcss-reporter');
 imagemin = require('gulp-imagemin');
-uglify = require('gulp-uglify');
 newer = require('gulp-newer');
 nano = require('gulp-cssnano');
 notify = require('gulp-notify');
 stylelint = require('stylelint');
 browserSync = require('browser-sync');
-webp = require('gulp-webp');
+terser = require('gulp-terser');
+postcssNormalize = require('postcss-normalize');
 
 
 var paths = {
@@ -77,16 +77,6 @@ function errorAlertPost(error) {
     this.emit("end");
 };
 
-/* Comprimiendo JavaScript */
-gulp.task('compress', function() {
-    return gulp.src(watch.js)
-        .pipe(uglify())
-        .on("error", errorAlertJS)
-        .pipe(gulp.dest(paths.buildJs))
-        .pipe(notify({
-            message: 'JavaScript complete'
-        }));
-});
 
 /* ==========================================================================
    Lanzando postCSS
@@ -103,6 +93,7 @@ gulp.task('compress', function() {
 
 gulp.task('css', function() {
     var processors = [
+
         atImport({
             plugins: [stylelint]
         }),
@@ -116,7 +107,11 @@ gulp.task('css', function() {
         sorting({
             "sort-order": "csscomb"
         }),
-        autoprefixer
+        autoprefixer,
+        postcssNormalize({
+            browsers: 'last 2 versions',
+            forceImport: true
+        }),
     ];
     return gulp.src('./src/css/styles.css')
 
@@ -164,18 +159,19 @@ gulp.task('images', function() {
         .pipe(gulp.dest(paths.buildImages));
 });
 
-gulp.task('webp', () =>
-    gulp.src('img/*.jpg')
-        .pipe(webp())
-        .pipe(gulp.dest(paths.buildImages))
-);
+/* Comprimiendo JavaScript */
+gulp.task('compress', function() {
+    return gulp.src(paths.js)
+        .pipe(newer(paths.js))
+        .pipe(imagemin())
+        .pipe(gulp.dest(paths.buildJs));
+});
 
 /* Tarea por defecto para compilar CSS y comprimir imagenes */
 gulp.task('default', ["browserSync"], function() {
     //Add interval to watcher!
     gulp.watch(watch.css, { interval: 300 }, ['css']);
     gulp.watch(watch.images, { interval: 300 }, ['images']);
-    gulp.watch(watch.js, { interval: 300 }, ['compress']);
     gulp.watch(["*.html", "css/*.css", "js/*.js", "./*.csv", "./*.json"]).on("change", browserSync.reload);
 });
 

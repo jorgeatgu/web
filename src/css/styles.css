@@ -14,19 +14,3 @@
     box-sizing: border-box;
     line-height: 1.5;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-}
-
-body {
-    background-color: var(--background);
-}

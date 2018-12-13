@@ -3,23 +3,23 @@
     display: grid;
     margin: 2rem auto;
     grid-template-columns: 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
     justify-items: stretch;
     align-items: stretch;
 }
 
 .proyectos-element {
     padding: 1rem;
-    background-color: var(--fondoproyectos);
     border-radius: 4px;
     width: 100%;
     display: inline-block;
     text-decoration: none;
     transition: all .3s ease-in;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .31), 0 2px 4px 0 rgba(50, 50, 58, .2);
     &:hover {
         transform: translateY(-.25rem);
-        background-color: var(--morado);
+        opacity: .9;
     }
 }
 
@@ -28,7 +28,6 @@
     font-family: var(--rubik);
     font-weight: bold;
     letter-spacing: 1px;
-    color: var(--redtitle);
     display: block;
     margin: 0;
     padding-bottom: .25rem;
@@ -38,7 +37,6 @@
     font-size: .75rem;
     font-family: var(--monospace);
     font-weight: bold;
-    color: var(--pinktitle);
     text-transform: uppercase;
     display: inline-block;
 }
@@ -46,43 +44,76 @@
 .proyectos-element-text {
     font-size: 1rem;
     font-family: var(--plex);
-    color: var(--blanco);
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;
 }
 
-.proyectos-elements-buttons {
-    padding: 1rem 0;
+.proyecto-1 {
+    background-color: var(--project1bg);
 }
 
-.proyectos-element-link {
-    font-size: 1rem;
-    font-family: var(--rubik);
-    color: var(--blanco);
-    text-decoration: underline;
-    padding-right: .5rem;
-    display: inline-block;
-    vertical-align: middle;
-    &:not(:last-child) {
-        &:after {
-            content: '';
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 1rem;
-            height: 3vh;
-            width: 1px;
-            background-color: var(--blanco);
-        }
-    }
+.proyecto-1-text {
+    color: var(--project1txt);
+}
 
+.proyecto-2 {
+    background-color: var(--project2bg);
+}
+
+.proyecto-2-text {
+    color: var(--project2txt);
+}
+
+.proyecto-3 {
+    background-color: var(--project3bg);
+}
+
+.proyecto-3-text {
+    color: var(--project3txt);
+}
+
+.proyecto-4 {
+    background-color: var(--project4bg);
+}
+
+.proyecto-4-text {
+    color: var(--project4txt);
+}
+
+.proyecto-5 {
+    background-color: var(--project5bg);
+}
+
+.proyecto-5-text {
+    color: var(--project5txt);
+}
+
+.proyecto-6 {
+    background-color: var(--project6bg);
+}
+
+.proyecto-6-text {
+    color: var(--project6txt);
+}
+
+.proyecto-7 {
+    background-color: var(--project7bg);
+}
+
+.proyecto-7-text {
+    color: var(--project7txt);
 }
 
 @media only screen and (min-width: 48em) {
 
     .proyectos {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         max-width: 80vw;
+    }
+
+    .proyectos-element {
+        padding: 2rem;
     }
 
 }
