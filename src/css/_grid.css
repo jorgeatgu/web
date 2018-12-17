@@ -21,6 +21,7 @@
     font-size: 1rem;
     font-family: var(--plex);
     margin: .5rem 0;
+    max-width: 30rem;
     .trough {
         text-decoration: line-through;
     }
