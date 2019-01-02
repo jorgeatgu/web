@@ -1,5 +1,5 @@
 .header {
-    background-color: var(--blanco);
+    background-color: var(--f1);
     /* stylelint-disable */
     position: sticky;
     position: -webkit-sticky;
@@ -19,7 +19,6 @@
 .header-elements {
     width: 100%;
     display: block;
-    margin-bottom: .5rem;
 }
 
 .header-links {

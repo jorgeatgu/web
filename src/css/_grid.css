@@ -1,27 +1,31 @@
 .bio {
     margin: 10vh auto;
-    max-width: 80vw;
+    max-width: 90vw;
 }
 
 .bio-element {
     width: max-content;
-    max-width: 20rem;
-    padding: 2rem;
+    max-width: 25rem;
 }
 
 .bio-element-title {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    margin: 0;
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
     font-weight: bold;
     font-family: var(--rubik);
+}
+
+.bio-element-subtitle {
+    font-size: 1.25rem;
+    margin: 0;
+    font-family: var(--fontSystem);
 }
 
 .bio-element-text {
     font-size: 1rem;
     font-family: var(--plex);
-    margin: .5rem 0;
-    max-width: 30rem;
+    margin: 0 0 2rem 1rem;
+    max-width: 35rem;
     .trough {
         text-decoration: line-through;
     }
@@ -29,9 +33,14 @@
 
 @media only screen and (min-width: 48em) {
 
+    .bio {
+        max-width: 80vw;
+    }
+
     .bio-element {
         width: 100%;
         max-width: 100%;
+        padding: 2rem;
     }
 
 }
