@@ -105,6 +105,14 @@
     color: var(--project7txt);
 }
 
+.proyecto-8 {
+    background-color: var(--project8bg);
+}
+
+.proyecto-8-text {
+    color: var(--project8txt);
+}
+
 @media only screen and (min-width: 48em) {
 
     .proyectos {
