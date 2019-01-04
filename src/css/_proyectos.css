@@ -118,7 +118,7 @@
 
     .proyectos {
         grid-template-columns: 1fr 1fr;
-        max-width: 80vw;
+        max-width: 68rem;
     }
 
     .proyectos-element {
