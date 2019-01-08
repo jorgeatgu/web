@@ -2,6 +2,7 @@
     max-width: 90%;
     display: grid;
     margin: 2rem auto;
+    margin-top: 0;
     grid-template-columns: 1fr;
     grid-column-gap: 4rem;
     grid-row-gap: 4rem;
@@ -13,7 +14,6 @@
     padding: 1rem;
     border-radius: 4px;
     width: 100%;
-    max-width: 30rem;
     display: inline-block;
     text-decoration: none;
     transition: all .3s ease-in;
@@ -118,11 +118,19 @@
 
     .proyectos {
         grid-template-columns: 1fr 1fr;
-        max-width: 68rem;
+        max-width: 42rem;
     }
 
     .proyectos-element {
         padding: 2rem;
     }
 
+}
+
+@media only screen and (min-width: 64em) {
+
+    .proyectos {
+        grid-template-columns: 1fr 1fr;
+        max-width: 68rem;
+    }
 }

@@ -1,5 +1,5 @@
 .bio {
-    margin: 10vh auto;
+    margin: 10vh auto 0;
     max-width: 90vw;
 }
 
@@ -9,8 +9,8 @@
 }
 
 .bio-element-title {
-    font-size: 1.75rem;
-    margin: 2rem 0 1rem;
+    font-size: 1.25rem;
+    margin: 1rem 0;
     font-weight: bold;
     font-family: var(--rubik);
 }
@@ -24,7 +24,7 @@
 .bio-element-text {
     font-size: 1rem;
     font-family: var(--plex);
-    margin: 0 0 2rem 1rem;
+    margin: 0 0 2rem;
     max-width: 35rem;
     .trough {
         text-decoration: line-through;
@@ -34,13 +34,21 @@
 @media only screen and (min-width: 48em) {
 
     .bio {
-        max-width: 80vw;
+        max-width: 68rem;
     }
 
     .bio-element {
         width: 100%;
         max-width: 100%;
-        padding: 2rem;
+        padding: 2rem 0;
+    }
+
+    .bio-element-title {
+        font-size: 2rem;
+    }
+
+    .bio-element-text {
+        margin: 0 0 2rem 1rem;
     }
 
 }
