@@ -114,6 +114,18 @@
     color: var(--project8txt);
 }
 
+.proyecto-9 {
+    background-color: var(--project9bg);
+}
+
+.proyecto-9-text {
+    color: var(--project9txt);
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
 @media only screen and (min-width: 48em) {
 
     .proyectos {
@@ -131,6 +143,6 @@
 
     .proyectos {
         grid-template-columns: 1fr 1fr;
-        max-width: 68rem;
+        max-width: 58rem;
     }
 }

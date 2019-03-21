@@ -8,9 +8,11 @@
 @import '_header';
 @import '_grid';
 @import '_proyectos';
+@import '_renta';
 @import '_footer';
 
 * {
     box-sizing: border-box;
     line-height: 1.5;
 }
+

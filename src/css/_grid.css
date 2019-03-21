@@ -26,29 +26,69 @@
     font-family: var(--plex);
     margin: 0 0 2rem;
     max-width: 35rem;
+    width: 100%;
     .trough {
         text-decoration: line-through;
     }
 }
 
-@media only screen and (min-width: 48em) {
+.charla-element {
+    width: 100%;
+    &:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
+.charla-element-year {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: var(--monospace);
+    display: block;
+    margin-bottom: .25rem;
+}
+
+.charla-element-title {
+    font-size: 1rem;
+    font-family: var(--plex);
+    font-weight: 500;
+    color: var(--negro);
+    display: block;
+    margin-left: 1rem;
+}
+
+.charla-element-text {
+    color: #515456;
+    font-family: var(--plex);
+    margin-bottom: .75rem;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.charla-element-link {
+    font-size: 1rem;
+    font-family: var(--plex);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media only screen and (min-width: 48rem) {
 
     .bio {
-        max-width: 68rem;
+        max-width: 42rem;
     }
 
     .bio-element {
         width: 100%;
-        max-width: 100%;
         padding: 2rem 0;
     }
 
-    .bio-element-title {
-        font-size: 2rem;
-    }
 
-    .bio-element-text {
-        margin: 0 0 2rem 1rem;
+}
+
+@media only screen and (min-width: 64rem) {
+
+    .bio {
+        max-width: 58rem;
     }
 
 }
