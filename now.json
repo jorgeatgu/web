@@ -1,9 +1,5 @@
 {
     "name": "jorgeatgu",
-    "env":
-    {
-        "NODE_ENV": "production"
-    },
     "alias": [
         "jorgeatgu.com"
     ],

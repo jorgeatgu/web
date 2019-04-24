@@ -122,6 +122,22 @@
     color: var(--project9txt);
 }
 
+.proyecto-10 {
+    background-color: var(--negro);
+}
+
+.proyecto-10-text {
+    color: var(--blanco);
+}
+
+.proyecto-11 {
+    background-color: var(--project11bg);
+}
+
+.proyecto-11-text {
+    color: var(--project11txt);
+}
+
 .line-through {
     text-decoration: line-through;
 }
