@@ -138,6 +138,14 @@
     color: var(--project11txt);
 }
 
+.proyecto-12 {
+    background-color: var(--project12bg);
+}
+
+.proyecto-12-text {
+    color: var(--project12txt);
+}
+
 .line-through {
     text-decoration: line-through;
 }

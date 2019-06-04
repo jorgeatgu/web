@@ -6,62 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Animando filtros SVG con SMIL</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.4.3">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/animando-filtros-svg-con-smil/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <div class="categoria-titulo">
-  	    <h1>Animando filtros SVG con SMIL</h1>
-          <p class="articulo-fecha">
-          <time datetime="2014-02-07 00:00:00 +0100">
-              El
-              7 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animando filtros SVG con SMIL</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-02-07 00:00:00 +0100">
+                El
+                7 de
+                
                 febrero
-
+                
                 de
                 2014
             </time>
-            </div></p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </div>
-
-      <div class="post-contenido">
-  	    <p>Continuo experimentando con SVG, esta vez añadiendo animaciones con SMIL a los filtros.</p>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Continuo experimentando con SVG, esta vez añadiendo animaciones con SMIL a los filtros.</p>
 
 <!--more-->
 
@@ -87,87 +84,110 @@
 
 <h3 id="animando-feturbulence">Animando feTurbulence</h3>
 
-<p>La primera animación recae sobre el filtro <code>feTurbulence</code> y como podeis ver en el código vamos a animar <em>baseFrequency</em> que es la frecuencia del ruido, si solo le damos un valor este se aplica para las coordenadas <code>X</code> e <code>Y</code>, si le damos dos valores el primero sera para la coordenada <code>X</code> y el segundo para la coordenada <code>Y</code>.
-La siguiente animación recae sobre <code>numOctaves</code> que representa el parámetro del ruido, cuanto mas valor tenga mas estrecho y complejo sera el resultado.</p>
+<p>La primera animación recae sobre el filtro <code class="highlighter-rouge">feTurbulence</code> y como podeis ver en el código vamos a animar <em>baseFrequency</em> que es la frecuencia del ruido, si solo le damos un valor este se aplica para las coordenadas <code class="highlighter-rouge">X</code> e <code class="highlighter-rouge">Y</code>, si le damos dos valores el primero sera para la coordenada <code class="highlighter-rouge">X</code> y el segundo para la coordenada <code class="highlighter-rouge">Y</code>.
+La siguiente animación recae sobre <code class="highlighter-rouge">numOctaves</code> que representa el parámetro del ruido, cuanto mas valor tenga mas estrecho y complejo sera el resultado.</p>
 
 <p>Vamos a ver el código</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">animate</span>    <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;numOctaves&quot;</span>
-<span class="lineno">2 </span>            <span class="na">values</span><span class="o">=</span><span class="s">&quot;0;5;4;3;2;7;8;9;10;1;2&quot;</span>
-<span class="lineno">3 </span>            <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span>
-<span class="lineno">4 </span>            <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;</span><span class="nt">animate</span>    <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;baseFrequency&quot;</span>
-<span class="lineno">6 </span>            <span class="na">values</span><span class="o">=</span><span class="s">&quot;0;5;4;3;2;7;8;9;10;1;2&quot;</span>
-<span class="lineno">7 </span>            <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span>
-<span class="lineno">8 </span>            <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animate</span>    <span class="na">attributeName=</span><span class="s">"numOctaves"</span>
+            <span class="na">values=</span><span class="s">"0;5;4;3;2;7;8;9;10;1;2"</span>
+            <span class="na">dur=</span><span class="s">"20s"</span>
+            <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span>    <span class="na">attributeName=</span><span class="s">"baseFrequency"</span>
+            <span class="na">values=</span><span class="s">"0;5;4;3;2;7;8;9;10;1;2"</span>
+            <span class="na">dur=</span><span class="s">"20s"</span>
+            <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="animando-femorphology">Animando feMorphology</h3>
 
-<p>Ahora vamos con la animación que he aplicado a <code>feMorphology</code>, este filtro se utiliza para conseguir el efecto de agrandar o empequeñecer la imagen, tiene dos valores <code>erode </code>y <code>dilate</code>, en este caso he animado <code>radius</code> que se encarga del radio que se aplica al filtro.</p>
+<p>Ahora vamos con la animación que he aplicado a <code class="highlighter-rouge">feMorphology</code>, este filtro se utiliza para conseguir el efecto de agrandar o empequeñecer la imagen, tiene dos valores <code class="highlighter-rouge">erode </code>y <code class="highlighter-rouge">dilate</code>, en este caso he animado <code class="highlighter-rouge">radius</code> que se encarga del radio que se aplica al filtro.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">animate</span>    <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;radius&quot;</span>
-<span class="lineno">2 </span>            <span class="na">values</span><span class="o">=</span><span class="s">&quot;1;2;3;4;5;6;7;8;9;1;9;&quot;</span>
-<span class="lineno">3 </span>            <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span>
-<span class="lineno">4 </span>            <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indifinite&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nt">&lt;animate</span>    <span class="na">attributeName=</span><span class="s">"radius"</span>
+            <span class="na">values=</span><span class="s">"1;2;3;4;5;6;7;8;9;1;9;"</span>
+            <span class="na">dur=</span><span class="s">"20s"</span>
+            <span class="na">repeatCount=</span><span class="s">"indifinite"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Si queréis obtener otro resultado simplemente tenéis que modificar los <em>values</em> de las tres animaciones. Si tenéis cuenta en <a href="http://codepen.io" target="_blank">CodePen </a>podéis hacer un <em>fork</em> y ver los resultados, si alguien se anima que me avise por <a href="http://twitter.com/jorgeatgu" target="_blank">twitter </a>y me voy añadiendo los <em>fork</em>.</p>
 
 <p>Aquí os dejo el resto del código, como podéis ver son muy pocas líneas para un resultado bastante lisérgico.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">version</span><span class="o">=</span><span class="s">&#39;1.1&#39;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 2 </span>    <span class="p">&lt;</span><span class="nt">filter</span> <span class="na">color-interpolation-filters</span><span class="o">=</span><span class="s">&#39;sRGB&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;filter3115&#39;</span><span class="p">&gt;</span>
-<span class="lineno"> 3 </span>            <span class="p">&lt;</span><span class="nt">feTurbulence</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;fractalNoise&#39;</span> <span class="na">numOctaves</span><span class="o">=</span><span class="s">&#39;1&#39;</span> <span class="na">baseFrequency</span><span class="o">=</span><span class="s">&#39;0.9&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;feTurbulence3117&#39;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>                <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;numOctaves&quot;</span> <span class="na">values</span><span class="o">=</span><span class="s">&quot;0;5;4;3;2;7;8;9;10;1;2&quot;</span> <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span> <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 5 </span>                <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;baseFrequency&quot;</span> <span class="na">values</span><span class="o">=</span><span class="s">&quot;0;5;4;3;2;7;8;9;10;1;2&quot;</span> <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span> <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 6 </span>            <span class="p">&lt;/</span><span class="nt">feTurbulence</span><span class="p">&gt;</span>
-<span class="lineno"> 7 </span>            <span class="p">&lt;</span><span class="nt">feColorMatrix</span> <span class="na">result</span><span class="o">=</span><span class="s">&#39;result5&#39;</span> <span class="na">values</span><span class="o">=</span><span class="s">&#39;1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -4.15&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;feColorMatrix3119&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 8 </span>            <span class="p">&lt;</span><span class="nt">feComposite</span> <span class="na">in2</span><span class="o">=</span><span class="s">&#39;result5&#39;</span> <span class="na">operator</span><span class="o">=</span><span class="s">&#39;in&#39;</span> <span class="na">in</span><span class="o">=</span><span class="s">&#39;SourceGraphic&#39;</span> <span class="na">result</span><span class="o">=</span><span class="s">&#39;result6&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;feComposite3121&#39;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>            <span class="p">&lt;</span><span class="nt">feMorphology</span> <span class="na">in</span><span class="o">=</span><span class="s">&#39;result6&#39;</span> <span class="na">operator</span><span class="o">=</span><span class="s">&#39;dilate&#39;</span> <span class="na">radius</span><span class="o">=</span><span class="s">&#39;9&#39;</span> <span class="na">result</span><span class="o">=</span><span class="s">&#39;result3&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;feMorphology3123&#39;</span><span class="p">&gt;</span>
-<span class="lineno">10 </span>                <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;radius&quot;</span> <span class="na">values</span><span class="o">=</span><span class="s">&quot;1;2;3;4;5;6;7;8;9;1;9&quot;</span> <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span> <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">11 </span>            <span class="p">&lt;/</span><span class="nt">feMorphology</span><span class="p">&gt;</span>
-<span class="lineno">12 </span>        <span class="p">&lt;/</span><span class="nt">filter</span><span class="p">&gt;</span>
-<span class="lineno">13 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;100%&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;100%&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&#39;0&#39;</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;0&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;rect2985&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#000000&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">14 </span>    <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;100%&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;100%&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&#39;0&#39;</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;0&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;rect2985&#39;</span> <span class="na">filter</span><span class="o">=</span><span class="s">&quot;url(#filter3115)&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#611748&quot;</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;width&quot;</span> <span class="na">values</span><span class="o">=</span><span class="s">&quot;90%; 80%; 50%; 60%; 80%; 10%&quot;</span> <span class="na">begin</span><span class="o">=</span><span class="s">&quot;1s&quot;</span> <span class="na">dur</span><span class="o">=</span><span class="s">&quot;10s&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">16 </span>        <span class="p">&lt;</span><span class="nt">animate</span> <span class="na">attributeName</span><span class="o">=</span><span class="s">&quot;fill&quot;</span> <span class="na">dur</span><span class="o">=</span><span class="s">&quot;20s&quot;</span> <span class="na">values</span><span class="o">=</span><span class="s">&quot;#1abc9c; #16a085; #3498db; #2980b9; #9b59b6; #8e44ad;&quot;</span> <span class="na">begin</span><span class="o">=</span><span class="s">&quot;1s&quot;</span> <span class="na">repeatCount</span><span class="o">=</span><span class="s">&quot;indefinite&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">17 </span>    <span class="p">&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
-<span class="lineno">18 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">version=</span><span class="s">'1.1'</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;filter</span> <span class="na">color-interpolation-filters=</span><span class="s">'sRGB'</span> <span class="na">id=</span><span class="s">'filter3115'</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;feTurbulence</span> <span class="na">type=</span><span class="s">'fractalNoise'</span> <span class="na">numOctaves=</span><span class="s">'1'</span> <span class="na">baseFrequency=</span><span class="s">'0.9'</span> <span class="na">id=</span><span class="s">'feTurbulence3117'</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"numOctaves"</span> <span class="na">values=</span><span class="s">"0;5;4;3;2;7;8;9;10;1;2"</span> <span class="na">dur=</span><span class="s">"20s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"baseFrequency"</span> <span class="na">values=</span><span class="s">"0;5;4;3;2;7;8;9;10;1;2"</span> <span class="na">dur=</span><span class="s">"20s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/feTurbulence&gt;</span>
+            <span class="nt">&lt;feColorMatrix</span> <span class="na">result=</span><span class="s">'result5'</span> <span class="na">values=</span><span class="s">'1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 6 -4.15'</span> <span class="na">id=</span><span class="s">'feColorMatrix3119'</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;feComposite</span> <span class="na">in2=</span><span class="s">'result5'</span> <span class="na">operator=</span><span class="s">'in'</span> <span class="na">in=</span><span class="s">'SourceGraphic'</span> <span class="na">result=</span><span class="s">'result6'</span> <span class="na">id=</span><span class="s">'feComposite3121'</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;feMorphology</span> <span class="na">in=</span><span class="s">'result6'</span> <span class="na">operator=</span><span class="s">'dilate'</span> <span class="na">radius=</span><span class="s">'9'</span> <span class="na">result=</span><span class="s">'result3'</span> <span class="na">id=</span><span class="s">'feMorphology3123'</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"radius"</span> <span class="na">values=</span><span class="s">"1;2;3;4;5;6;7;8;9;1;9"</span> <span class="na">dur=</span><span class="s">"20s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/feMorphology&gt;</span>
+        <span class="nt">&lt;/filter&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'100%'</span> <span class="na">height=</span><span class="s">'100%'</span> <span class="na">x=</span><span class="s">'0'</span> <span class="na">y=</span><span class="s">'0'</span> <span class="na">id=</span><span class="s">'rect2985'</span> <span class="na">fill=</span><span class="s">'#000000'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'100%'</span> <span class="na">height=</span><span class="s">'100%'</span> <span class="na">x=</span><span class="s">'0'</span> <span class="na">y=</span><span class="s">'0'</span> <span class="na">id=</span><span class="s">'rect2985'</span> <span class="na">filter=</span><span class="s">"url(#filter3115)"</span> <span class="na">fill=</span><span class="s">"#611748"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"width"</span> <span class="na">values=</span><span class="s">"90%; 80%; 50%; 60%; 80%; 10%"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">dur=</span><span class="s">"10s"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span> <span class="na">dur=</span><span class="s">"20s"</span> <span class="na">values=</span><span class="s">"#1abc9c; #16a085; #3498db; #2980b9; #9b59b6; #8e44ad;"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/rect&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-
-  	    <div class="compartir">
-  	        <a class="compartir-twitter" href="https://twitter.com/intent/tweet?text=Animando filtros SVG con SMIL&url=http://jorgeatgu.com/blog/animando-filtros-svg-con-smil/&via=jorgeATGU&related=jorgeATGU" rel="nofollow" target="_blank" title="Comparte en Twitter">Twitter</a>
-  	        <a class="compartir-facebook" href="https://facebook.com/sharer.php?u=http://jorgeatgu.com/blog/animando-filtros-svg-con-smil/" rel="nofollow" target="_blank" title="Comparte en Facebook">Facebook</a>
-  	        <a class="compartir-google" href="https://plus.google.com/share?url=http://jorgeatgu.com/blog/animando-filtros-svg-con-smil/" rel="nofollow" target="_blank" title="Comparte en Google+">Google+</a>
-  	    </div>
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </div>
-    </main>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/animaciones-svg-con-animate/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/optimizar-svg-con-svgcleaner/">Artículo anterior</a>
+    
+</article>
 
-    <div class="paginacion post-contenido">
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-            <a class="btn-posterior" href="/blog/animaciones-svg-con-animate/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/optimizar-svg-con-svgcleaner/">Artículo anterior</a>
-
-    </div>
-
-
-    <div id="disqus_thread"></div>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -175,7 +195,6 @@ La siguiente animación recae sobre <code>numOctaves</code> que representa el pa
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

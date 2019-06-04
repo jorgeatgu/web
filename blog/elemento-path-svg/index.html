@@ -6,66 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Elemento path en SVG</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/elemento-path-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Elemento path en SVG</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-12-20 00:00:00 +0100">
-              El
-              20 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Elemento path en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-20 00:00:00 +0100">
+                El
+                20 de
+                
                 diciembre
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>El elemento <code>path</code> es la piedra angular de las formas básicas en <strong>SVG</strong>. Vamos a ver todo su potencial a la hora de dibujar en SVG.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>El elemento <code class="highlighter-rouge">path</code> es la piedra angular de las formas básicas en <strong>SVG</strong>. Vamos a ver todo su potencial a la hora de dibujar en SVG.</p>
 
 <!--more-->
 
-<p>No es fácil de usar por la cantidad de comandos que tenemos a nuestra disposición a la hora de dibujar trazados con <code>path</code>, siendo honesto he recurrido pocas veces a sus uso por la complejidad que conlleva el dibujar a mano este tipo de trazados, casi siempre prefiero dibujar los trazados en Adobe Illustrator y mas tarde exportar a **SVG **ya que con ello ahorro una gran cantidad de tiempo.</p>
+<p>No es fácil de usar por la cantidad de comandos que tenemos a nuestra disposición a la hora de dibujar trazados con <code class="highlighter-rouge">path</code>, siendo honesto he recurrido pocas veces a sus uso por la complejidad que conlleva el dibujar a mano este tipo de trazados, casi siempre prefiero dibujar los trazados en Adobe Illustrator y mas tarde exportar a **SVG **ya que con ello ahorro una gran cantidad de tiempo.</p>
 
 <h3 id="comando-moveto">Comando moveto</h3>
 
@@ -124,13 +121,16 @@ Los comandos en minúsculas indican posiciones relativas.</p>
 
 <p>Vamos a ver un ejemplo.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M50,50 L100,100&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">2 </span>
-<span class="lineno">3 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M150,150 L200,200&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M50,50 L100,100"</span> <span class="na">stroke=</span><span class="s">"#000"</span><span class="nt">/&gt;</span>
 
-<p>En el primer <code>path</code> con M50,50 le indicamos que el punto comience en las coordenadas 50,50 y con L100,100 que dibuje una línea hasta las coordenadas 100,100.</p>
+    <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M150,150 L200,200"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>En el segundo <code>path</code> añadimos grosor a la línea con <code>stroke-width="5"</code>.</p>
+<p>En el primer <code class="highlighter-rouge">path</code> con M50,50 le indicamos que el punto comience en las coordenadas 50,50 y con L100,100 que dibuje una línea hasta las coordenadas 100,100.</p>
+
+<p>En el segundo <code class="highlighter-rouge">path</code> añadimos grosor a la línea con <code class="highlighter-rouge">stroke-width="5"</code>.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/path/lineto.html">VER EJEMPLO!</a>
@@ -164,7 +164,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
   </tbody>
 </table>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M50,50 H500&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M50,50 H500"</span> <span class="na">stroke=</span><span class="s">"#000"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Con M50,50 le indicamos el puntos de partida y con H500 le indicamos que dibuje una línea horizontal hasta la 500. Al ser horizontal obviamente solo le tenemos que indicar la coordenada(x).</p>
 
@@ -200,7 +201,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
   </tbody>
 </table>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M50,50 V500&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M50,50 V500"</span> <span class="na">stroke=</span><span class="s">"#000"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Con M50,50 le indicamos el punto de partida y con V500 le indicamos que dibuje una línea vertical hasta la 500. Al ser vertical solamente le tenemos que indicar la coordenada(y).</p>
 
@@ -236,7 +238,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
   </tbody>
 </table>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M230 230 C 240 240, 260 240, 270 230&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M230 230 C 240 240, 260 240, 270 230"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>El trazado comienza en 230,230. La primera coordenada de la curva corresponde a x1,y1 en este caso van hasta 240,240. La segunda coordenada corresponde a x2,y2 en este caso van hasta 260 240. La última coordenada corresponde a x,y en este caso van hasta 270 230.</p>
 
@@ -246,7 +249,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
 
 <p>Vamos a hacer que la curva sea mas pronunciada, para ello tenemos que modificar las coordenada y1 e y2, en el anterior ejemplo llegaban hasta 240, ahora vamos a aumentar en 100 la posición de las coordenadas.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M230 230 C 240 340, 260 340, 270 230&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M230 230 C 240 340, 260 340, 270 230"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/path/curveto2.html">VER EJEMPLO!</a>
@@ -282,7 +286,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
 
 <p>Este ejemplo está disponible en la especificación <a href="http://www.w3.org/TR/SVG/paths.html" target="_blank">sobre SVG en la W3C</a>. La explicación me ha parecido lo suficientemente clara.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;SamplePath&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M100,200 C100,100 250,100 250,200 S400,300 400,200&quot;</span> <span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">class=</span><span class="s">"SamplePath"</span> <span class="na">d=</span><span class="s">"M100,200 C100,100 250,100 250,200 S400,300 400,200"</span> <span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/path/smoothcurveto.html">VER EJEMPLO!</a>
@@ -319,7 +324,8 @@ Los comandos en minúsculas indican posiciones relativas.</p>
 
 <p>El trazado comienza en 200,300. La primera coordenada de Q(quadratic bezier) corresponde a x1,y1 en este caso va hasta 400,50. La segunda coordenada de Q(quadratic bezier) corresponde a x,y en este caso va hasta 600 30. La coordenada de T(smooth quadratic bezier) corresponde a x,y en este caso se prolonga hasta 1000,300.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M200,300 Q400,50 600,300 T1000,300&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">"M200,300 Q400,50 600,300 T1000,300"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/path/quadraticbezier.html">VER EJEMPLO!</a>
@@ -357,36 +363,34 @@ Los comandos en minúsculas indican posiciones relativas.</p>
 <a href="http://tutorials.jenkov.com/svg/path-element.html" target="_blank">Jenkov</a>
 <a href="http://www.w3.org/TR/SVG/paths.html" target="_blank">W3C SVG</a></p>
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/animando-path-con-smil-svg/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/animando-polyline-y-polygon-en-svg/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/animando-path-con-smil-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/animando-polyline-y-polygon-en-svg/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -394,7 +398,6 @@ Los comandos en minúsculas indican posiciones relativas.</p>
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

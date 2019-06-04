@@ -19,121 +19,183 @@ tags:</p>
 
 <p>Bueno lo primero vamos con el <strong>layout de default</strong>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="lineno"> 2 </span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<span class="lineno"> 3 </span>
-<span class="lineno"> 4 </span>  {% include head.html %}
-<span class="lineno"> 5 </span>
-<span class="lineno"> 6 </span>  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="lineno"> 7 </span>
-<span class="lineno"> 8 </span>    {% include header.html %}
-<span class="lineno"> 9 </span>
-<span class="lineno">10 </span>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;page-content&quot;</span><span class="p">&gt;</span>
-<span class="lineno">11 </span>      <span class="p">&lt;</span><span class="nt">div</span> <span class="p">&gt;</span>
-<span class="lineno">12 </span>        {{ content }}
-<span class="lineno">13 </span>      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno">14 </span>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>
-<span class="lineno">16 </span>    {% include footer.html %}
-<span class="lineno">17 </span>
-<span class="lineno">18 </span>  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="lineno">19 </span>
-<span class="lineno">20 </span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
 
-<p>Lo más importante es la variable <code>{{ content }}</code> con esta variable vamos a incluir todo el contenido que tenemos alojado en los post.</p>
+  {% include head.html %}
 
-<p>Los includes de <code>header.html head.html footer.html</code> como vimos anteriormente los utilizamos para incluir porciones de código que se van a ir repitiendo constantemente a lo largo de nuestro tema.</p>
+  <span class="nt">&lt;body&gt;</span>
+
+    {% include header.html %}
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="nt">&gt;</span>
+        {{ content }}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    {% include footer.html %}
+
+  <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo más importante es la variable <code class="highlighter-rouge">{{ content }}</code> con esta variable vamos a incluir todo el contenido que tenemos alojado en los post.</p>
+
+<p>Los includes de <code class="highlighter-rouge">header.html head.html footer.html</code> como vimos anteriormente los utilizamos para incluir porciones de código que se van a ir repitiendo constantemente a lo largo de nuestro tema.</p>
 
 <h2 id="post">post</h2>
 
 <p>Ahora vamos a ver todo lo que incluye nuestro <strong>layout post</strong>. Hay que tener en cuenta que este layout implementa a través del <strong>front matter</strong> el <strong>layout default</strong>. Así que todo lo que viene en el layout default es utilizado por el layout post. A continuación el <strong>front matter</strong> de post.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span>---
-<span class="lineno">2 </span>layout:default
-<span class="lineno">3 </span>---</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>---
+layout:default
+---</pre></td></tr></tbody></table></code></pre></figure>
 
 <p>A continuación el layout de post que viene por defecto con <strong>Jekyll</strong>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 2 </span>
-<span class="lineno"> 3 </span>  <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-header&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>    <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-title&quot;</span><span class="p">&gt;</span>{{ page.title }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-<span class="lineno"> 5 </span>    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-meta&quot;</span><span class="p">&gt;</span>{{  page.date | date: }} {% if page.author %} • {{ page.author }} {% endif %} {% if page.meta %} • {{ page.meta }}{% endif %}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>  <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
-<span class="lineno"> 7 </span>
-<span class="lineno"> 8 </span>  <span class="p">&lt;</span><span class="nt">article</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;post-content&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 9 </span>     {{ content }}
-<span class="lineno">10 </span>  <span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
-<span class="lineno">11 </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post"</span><span class="nt">&gt;</span>
 
-<p>Con <code>{{ page.title }}</code> obtenemos el nombre que tenga la página, esto se lo daremos en el <strong>front matter</strong>.</p>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"post-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>{{  page.date | date: }} {% if page.author %} • {{ page.author }} {% endif %} {% if page.meta %} • {{ page.meta }}{% endif %}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post-content"</span><span class="nt">&gt;</span>
+     {{ content }}
+  <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Con <code class="highlighter-rouge">{{ page.title }}</code> obtenemos el nombre que tenga la página, esto se lo daremos en el <strong>front matter</strong>.</p>
 
 <h3 id="fecha-y-autor">Fecha y autor</h3>
 
 <p>Lo siguiente es la manera de obtener la fecha y autor. A mi este método que trae por defecto <strong>Jekyll</strong> no me gusta así que os voy a mostrar el que utilizo en el blog.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span>        Por {{ page.author }} el
-<span class="lineno"> 2 </span>          {{  page.date | date: &#39;%-d&#39; }} de
-<span class="lineno"> 3 </span>            {% assign m = page.date | date: &#39;%-m&#39; %}
-<span class="lineno"> 4 </span>            {% case m %}
-<span class="lineno"> 5 </span>              {% when &#39;1&#39; %}enero
-<span class="lineno"> 6 </span>                {% when &#39;2&#39; %}febrero
-<span class="lineno"> 7 </span>                {% when &#39;3&#39; %}marzo
-<span class="lineno"> 8 </span>                {% when &#39;4&#39; %}abril
-<span class="lineno"> 9 </span>                {% when &#39;5&#39; %}mayo
-<span class="lineno">10 </span>                {% when &#39;6&#39; %}junio
-<span class="lineno">11 </span>                {% when &#39;7&#39; %}julio
-<span class="lineno">12 </span>                {% when &#39;8&#39; %}agosto
-<span class="lineno">13 </span>                {% when &#39;9&#39; %}septiembre
-<span class="lineno">14 </span>                {% when &#39;10&#39; %}octubre
-<span class="lineno">15 </span>                {% when &#39;11&#39; %}noviembre
-<span class="lineno">16 </span>                {% when &#39;12&#39; %}diciembre
-<span class="lineno">17 </span>            {% endcase %}
-<span class="lineno">18 </span>            de
-<span class="lineno">19 </span>            {{  page.date | date: &#39;%Y&#39; }}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>        Por {{ page.author }} el
+          {{  page.date | date: '%-d' }} de
+            {% assign m = page.date | date: '%-m' %}
+            {% case m %}
+              {% when '1' %}enero
+                {% when '2' %}febrero
+                {% when '3' %}marzo
+                {% when '4' %}abril
+                {% when '5' %}mayo
+                {% when '6' %}junio
+                {% when '7' %}julio
+                {% when '8' %}agosto
+                {% when '9' %}septiembre
+                {% when '10' %}octubre
+                {% when '11' %}noviembre
+                {% when '12' %}diciembre
+            {% endcase %}
+            de
+            {{  page.date | date: '%Y' }}</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Lo primero que vemos es <code>{{ page.author }}</code> con ella vamos a obtener el nombre del autor.</p>
+<p>Lo primero que vemos es <code class="highlighter-rouge">{{ page.author }}</code> con ella vamos a obtener el nombre del autor.</p>
 
-<p>Con la variable <code>{{  page.date | date: '%-d' }}</code> vamos a obtener el día en el que se publicó el artículo.</p>
+<p>Con la variable <code class="highlighter-rouge">{{  page.date | date: '%-d' }}</code> vamos a obtener el día en el que se publicó el artículo.</p>
 
-<p>Con la variable <code>{% assign m = page.date | date: '%-m' %}</code> vamos a obtener el mes en el que se publicó el artículo. Por defecto <strong>Jekyll</strong> viene con los meses en inglés así que vamos a utilizar un <code>case</code> para cambiar el nombre de los meses.</p>
+<p>Con la variable <code class="highlighter-rouge">{% assign m = page.date | date: '%-m' %}</code> vamos a obtener el mes en el que se publicó el artículo. Por defecto <strong>Jekyll</strong> viene con los meses en inglés así que vamos a utilizar un <code class="highlighter-rouge">case</code> para cambiar el nombre de los meses.</p>
 
-<p>Abrimos el <code>case</code> y le añadimos el valor <code>m</code> que es el que representa a los meses.</p>
+<p>Abrimos el <code class="highlighter-rouge">case</code> y le añadimos el valor <code class="highlighter-rouge">m</code> que es el que representa a los meses.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span>{% case m %}</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>{% case m %}</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Lo siguiente es utilizar <code>when</code> y la posición del mes. Así el valor 1 corresponde a enero.</p>
+<p>Lo siguiente es utilizar <code class="highlighter-rouge">when</code> y la posición del mes. Así el valor 1 corresponde a enero.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span>{% when &#39;1&#39; %}enero</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>{% when '1' %}enero</pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Así que con este trozo de código le decimos que en caso de que sea <code>m</code> sustituya los valores por los nombres en castellano de los meses. Recordad que los nombres de los meses van en minúscula.</p>
+<p>Así que con este trozo de código le decimos que en caso de que sea <code class="highlighter-rouge">m</code> sustituya los valores por los nombres en castellano de los meses. Recordad que los nombres de los meses van en minúscula.</p>
 
-<p>Por último con la variable <code>{{  page.date | date: '%Y' }}</code> vamos a obtener el año en el que se publicó el artículo.</p>
+<p>Por último con la variable <code class="highlighter-rouge">{{  page.date | date: '%Y' }}</code> vamos a obtener el año en el que se publicó el artículo.</p>
 
 <p>Así que todo este código al final da como resultado lo siguiente</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span>Por  el
-<span class="lineno">2 </span>          16 de
-<span class="lineno">3 </span>            
-<span class="lineno">4 </span>            octubre
-<span class="lineno">5 </span>                
-<span class="lineno">6 </span>            de
-<span class="lineno">7 </span>            2014</code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre>Por  el
+          16 de
+            
+            octubre
+                
+            de
+            2014</pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="artículo-anterior-y-posterior">Artículo anterior y posterior</h3>
 
 <p>Ahora vamos a añadir un par de botones para facilitar la navegación entre artículos.</p>
 
-<p>Con el siguiente código le vamos a decir con un <code>if</code> que nos añada un enlace y que la url sea la siguiente al artículo donde estamos. El orden será por fecha.</p>
+<p>Con el siguiente código le vamos a decir con un <code class="highlighter-rouge">if</code> que nos añada un enlace y que la url sea la siguiente al artículo donde estamos. El orden será por fecha.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span>{% if page.next %}
-  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{  site.baseurl }}{{  page.next.url }}&quot;</span><span class="p">&gt;</span>Artículo posterior<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if page.next %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{  site.baseurl }}{{  page.next.url }}"</span><span class="nt">&gt;</span>Artículo posterior<span class="nt">&lt;/a&gt;</span>
 {% endif %}</code></pre></figure>
 
 <p>Para obtener el artículo anterior lo haremos con el siguiente código que en este caso obtendrá la url del artículo anterior.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span>{% if page.previous %}
-  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{  site.baseurl }}{{  page.previous.url }}&quot;</span><span class="p">&gt;</span>Artículo anterior<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if page.previous %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{  site.baseurl }}{{  page.previous.url }}"</span><span class="nt">&gt;</span>Artículo anterior<span class="nt">&lt;/a&gt;</span>
 {% endif %}</code></pre></figure>
 
 <p>Ahora solo hace aplicarle unos estilos a través de <strong>CSS</strong> y ya tenemos un par de botones que irán de artículo en artículo.</p>
@@ -142,7 +204,7 @@ tags:</p>
 
 <p>Y ya para acabar con el layout de post vamos a incluir los comentarios. Como ya dije anteriormente yo utilizó los comentarios de <a href="http://disqus.com" target="_blank">Disqus</a>.</p>
 
-<p>No tiene mayor complicación que añadir un <code>if</code> con page.comments y dentro de el incluir el código que nos proporciona Disqus.</p>
+<p>No tiene mayor complicación que añadir un <code class="highlighter-rouge">if</code> con page.comments y dentro de el incluir el código que nos proporciona Disqus.</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"></code></pre></figure>
 

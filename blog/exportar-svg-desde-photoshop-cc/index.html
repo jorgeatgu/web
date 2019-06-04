@@ -6,64 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Exportar SVG desde Photoshop CC</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/exportar-svg-desde-photoshop-cc/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Exportar SVG desde Photoshop CC</h1>
-          <p class="articulo-fecha">
-          <time datetime="2014-01-27 00:00:00 +0100">
-              El
-              27 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Exportar SVG desde Photoshop CC</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-01-27 00:00:00 +0100">
+                El
+                27 de
+                
                 enero
-
+                
                 de
                 2014
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#adobe-photoshop">Adobe Photoshop</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Vamos a ver dos métodos para generar archivos SVG desde Adobe Photoshop CC. <strong>Muy importante</strong>, solo afectara a nuestras capas que estén compuestas de vectores.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-photoshop">Adobe Photoshop</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Vamos a ver dos métodos para generar archivos SVG desde Adobe Photoshop CC. <strong>Muy importante</strong>, solo afectara a nuestras capas que estén compuestas de vectores.</p>
 
 <!--more-->
 
@@ -89,7 +86,7 @@
 
 <p><img src="http://jorgeatgu.com/blog/img/2014/01/archivos.png" alt="archivos export" /></p>
 
-<p><strong>El código del SVG es el horror.</strong> Para empezar ha creado cuatro <code>path</code> para unas tristes formas básicas cuando lo mas normal y lo que hace Adobe Illustrator es utilizar la etiqueta correspondiente a la forma como vimos en <a href="http://jorgeatgu.com/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/" target="_blank">Exportar SVG</a>. Lo siguiente y mas curioso es que de las cuatro figuras que hay en el documento ha decidido quitarle el color de relleno a las tres primeras figuras añadiendo en el código un <code>style="fill-rule:evenodd;clip-rule:evenodd;fill:none;"</code>, solamente vemos una de ellas puede ser que al estar en la misma capa decida ocultar el resto vaya a usted a saber el motivo.</p>
+<p><strong>El código del SVG es el horror.</strong> Para empezar ha creado cuatro <code class="highlighter-rouge">path</code> para unas tristes formas básicas cuando lo mas normal y lo que hace Adobe Illustrator es utilizar la etiqueta correspondiente a la forma como vimos en <a href="http://jorgeatgu.com/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/" target="_blank">Exportar SVG</a>. Lo siguiente y mas curioso es que de las cuatro figuras que hay en el documento ha decidido quitarle el color de relleno a las tres primeras figuras añadiendo en el código un <code class="highlighter-rouge">style="fill-rule:evenodd;clip-rule:evenodd;fill:none;"</code>, solamente vemos una de ellas puede ser que al estar en la misma capa decida ocultar el resto vaya a usted a saber el motivo.</p>
 
 <h2 id="exportar-svg-desde-photoshop-con-adobe-generator">Exportar SVG desde Photoshop con Adobe Generator</h2>
 
@@ -97,11 +94,16 @@
 
 <p>Lo primero es crear un archivo con el nombre de generator.json y dentro de ese archivo añadimos el siguiente código</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="lineno">1 </span><span class="p">{</span>
-<span class="lineno">2 </span>    <span class="s2">&quot;generator-assets&quot;</span><span class="o">:</span>  <span class="p">{</span>
-<span class="lineno">3 </span>        <span class="s2">&quot;svg-enabled&quot;</span><span class="o">:</span> <span class="kc">true</span>
-<span class="lineno">4 </span>    <span class="p">}</span>
-<span class="lineno">5 </span><span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="p">{</span>
+    <span class="s2">"generator-assets"</span><span class="p">:</span>  <span class="p">{</span>
+        <span class="s2">"svg-enabled"</span><span class="p">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Vamos a guardar el archivo en nuestra carpeta de usuario, en mi caso Mac HD &gt; Usuarios &gt; jorgeatgu</p>
 
@@ -115,51 +117,56 @@
 
 <p>Este metódo no necesita en ningún momento la ayuda de Adobe Illustrator.
 El código que volvemos a obtener sigue siendo el horror ya que vuelve a utilizar un
-<code>path</code> para generar formas básicas, en este caso se agrava al agrupar las cuatro figuras en un solo <code>path</code>.</p>
+<code class="highlighter-rouge">path</code> para generar formas básicas, en este caso se agrava al agrupar las cuatro figuras en un solo <code class="highlighter-rouge">path</code>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">baseProfile</span><span class="o">=</span><span class="s">&quot;full&quot;</span>
-<span class="lineno">2 </span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">3 </span> <span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
-<span class="lineno">4 </span> <span class="na">xmlns:ev</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2001/xml-events&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span>  <span class="na">fill</span><span class="o">=</span><span class="s">&quot;rgb( 0, 150, 64 )&quot;</span>
-<span class="lineno">6 </span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M727.961,548.547 C727.961,548.547 522.956,581.016 522.956,581.016 C522.956,581.016 428.726,396.079 428.726,396.079 C428.726,396.079 575.493,249.312 575.493,249.312 C575.493,249.312 760.431,343.542 760.431,343.542 C760.431,343.542 727.961,548.547 727.961,548.547 ZM517.000,259.000 C517.000,259.000 420.000,259.000 420.000,259.000 C414.477,259.000 410.000,254.523 410.000,249.000 C410.000,249.000 410.000,152.000 410.000,152.000 C410.000,146.477 414.477,142.000 420.000,142.000 C420.000,142.000 517.000,142.000 517.000,142.000 C522.523,142.000 527.000,146.477 527.000,152.000 C527.000,152.000 527.000,249.000 527.000,249.000 C527.000,254.523 522.523,259.000 517.000,259.000 ZM161.000,130.000 C161.000,130.000 343.000,130.000 343.000,130.000 C343.000,130.000 343.000,312.000 343.000,312.000 C343.000,312.000 161.000,312.000 161.000,312.000 C161.000,312.000 161.000,130.000 161.000,130.000 ZM238.500,388.000 C283.511,388.000 320.000,424.489 320.000,469.500 C320.000,514.511 283.511,551.000 238.500,551.000 C193.489,551.000 157.000,514.511 157.000,469.500 C157.000,424.489 193.489,388.000 238.500,388.000 Z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">7 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">baseProfile=</span><span class="s">"full"</span>
+ <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+ <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+ <span class="na">xmlns:ev=</span><span class="s">"http://www.w3.org/2001/xml-events"</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span>  <span class="na">fill=</span><span class="s">"rgb( 0, 150, 64 )"</span>
+ <span class="na">d=</span><span class="s">"M727.961,548.547 C727.961,548.547 522.956,581.016 522.956,581.016 C522.956,581.016 428.726,396.079 428.726,396.079 C428.726,396.079 575.493,249.312 575.493,249.312 C575.493,249.312 760.431,343.542 760.431,343.542 C760.431,343.542 727.961,548.547 727.961,548.547 ZM517.000,259.000 C517.000,259.000 420.000,259.000 420.000,259.000 C414.477,259.000 410.000,254.523 410.000,249.000 C410.000,249.000 410.000,152.000 410.000,152.000 C410.000,146.477 414.477,142.000 420.000,142.000 C420.000,142.000 517.000,142.000 517.000,142.000 C522.523,142.000 527.000,146.477 527.000,152.000 C527.000,152.000 527.000,249.000 527.000,249.000 C527.000,254.523 522.523,259.000 517.000,259.000 ZM161.000,130.000 C161.000,130.000 343.000,130.000 343.000,130.000 C343.000,130.000 343.000,312.000 343.000,312.000 C343.000,312.000 161.000,312.000 161.000,312.000 C161.000,312.000 161.000,130.000 161.000,130.000 ZM238.500,388.000 C283.511,388.000 320.000,424.489 320.000,469.500 C320.000,514.511 283.511,551.000 238.500,551.000 C193.489,551.000 157.000,514.511 157.000,469.500 C157.000,424.489 193.489,388.000 238.500,388.000 Z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="conclusión">Conclusión</h2>
 
 <p>Seguire utilizando Inkscape, Illustrator o Sketch para generar SVG. <strong>No encuentro ni una sola ventaja a la hora de exportar SVG con Adobe Photoshop.</strong></p>
 
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/svgmagic-fallback-para-sustituir-svg-por-png/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/optimizar-svg-con-svgo/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/svgmagic-fallback-para-sustituir-svg-por-png/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/optimizar-svg-con-svgo/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -167,7 +174,6 @@ El código que volvemos a obtener sigue siendo el horror ya que vuelve a utiliza
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

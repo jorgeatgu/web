@@ -6,66 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Solución para el problema del height en SVG</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/solucion-para-el-problema-del-height-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Solución para el problema del height en SVG</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-11-29 00:00:00 +0100">
-              El
-              29 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Solución para el problema del height en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-29 00:00:00 +0100">
+                El
+                29 de
+                
                 noviembre
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>El problema principal viene a la hora de insertar SVG a través de las etiquetas <code>object</code> o <code>img</code>, la cuestión es que navegadores como IE9, IE10 y Safari para iOS5.1 añaden mas <em>height</em> a los archivos, así que una vez insertados nos encontramos con archivos excesivamente altos.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>El problema principal viene a la hora de insertar SVG a través de las etiquetas <code class="highlighter-rouge">object</code> o <code class="highlighter-rouge">img</code>, la cuestión es que navegadores como IE9, IE10 y Safari para iOS5.1 añaden mas <em>height</em> a los archivos, así que una vez insertados nos encontramos con archivos excesivamente altos.</p>
 
 <!--more-->
 
@@ -87,7 +84,7 @@
 
 <p><strong>SOLUCION</strong></p>
 
-<p>La solución al problema es bastante sencilla, <strong>simplemente tenemos que añadir a nuestro SVG una clase que tenga <code>max-height</code></strong> con la altura que nosotros queramos y así conseguimos limitar el <em>height</em> del SVG.</p>
+<p>La solución al problema es bastante sencilla, <strong>simplemente tenemos que añadir a nuestro SVG una clase que tenga <code class="highlighter-rouge">max-height</code></strong> con la altura que nosotros queramos y así conseguimos limitar el <em>height</em> del SVG.</p>
 
 <p><strong>Safari iOS5.1</strong>
 <img src="http://jorgeatgu.com/blog/img/2013/11/maxheight-iOS.png" alt="maxheight ios" /></p>
@@ -99,36 +96,34 @@
 <img src="http://jorgeatgu.com/blog/img/2013/11/iemaxheight.png" alt="maxheight internet explorer 9" /></p>
 
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/atributo-begin-svg-smil/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/degradados-en-svg/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/atributo-begin-svg-smil/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/degradados-en-svg/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -136,7 +131,6 @@
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

@@ -6,64 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Las formas básicas en SVG</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/las-formas-basicas-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Las formas básicas en SVG</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-04-25 00:00:00 +0200">
-              El
-              25 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Las formas básicas en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-04-25 00:00:00 +0200">
+                El
+                25 de
+                
                 abril
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#html5">HTML5</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>En <strong>SVG</strong> tenemos a nuestra disposición las siguientes formas básicas:</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#html5">HTML5</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>En <strong>SVG</strong> tenemos a nuestra disposición las siguientes formas básicas:</p>
 
 <ul>
   <li>rectángulos <br /></li>
@@ -78,30 +75,40 @@
 
 <h2 id="rectángulos">RECTÁNGULOS</h2>
 
-<p>Para generar un rectángulo con <strong>SVG</strong> utilizaremos la etiqueta <code>rect</code></p>
+<p>Para generar un rectángulo con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">rect</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">3 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;300&quot;</span>
-<span class="lineno">4 </span><span class="na">fill</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"300"</span>
+<span class="na">fill=</span><span class="s">"black"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"20"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>A la etiqueta <code>rect</code> le asignamos los siguientos atributos:
-<code>x="400"</code> donde x situa el rectangulo en las coordenadas que le asignamos al eje x, en este caso 400.
-<code>y="50"</code> donde y situa el rectangulo en las coordeandas que le asignamos al eje y, en este caso 50.
-<code>width="400"</code> determina el ancho del rectángulo, en este caso 400 pixeles.
-<code>height="300"</code> determina la altura del rectángulo, en este caso 300 pixeles.
-<code>fill="black"</code> determina el color del rectangulo, en este caso black.
-<code>stroke="red"</code> determina el color del borde del rectángulo, en este caso red.
-<code>stroke-width="20"</code> determina el grosor del borde del rectángulo, en este caso 20 pixeles.</p>
+<p>A la etiqueta <code class="highlighter-rouge">rect</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">x="400"</code> donde x situa el rectangulo en las coordenadas que le asignamos al eje x, en este caso 400.
+<code class="highlighter-rouge">y="50"</code> donde y situa el rectangulo en las coordeandas que le asignamos al eje y, en este caso 50.
+<code class="highlighter-rouge">width="400"</code> determina el ancho del rectángulo, en este caso 400 pixeles.
+<code class="highlighter-rouge">height="300"</code> determina la altura del rectángulo, en este caso 300 pixeles.
+<code class="highlighter-rouge">fill="black"</code> determina el color del rectangulo, en este caso black.
+<code class="highlighter-rouge">stroke="red"</code> determina el color del borde del rectángulo, en este caso red.
+<code class="highlighter-rouge">stroke-width="20"</code> determina el grosor del borde del rectángulo, en este caso 20 pixeles.</p>
 
-<p>Ahora generaremos un rectángulo con los bordes redondeados, tan solo tenemos que añadir el atributo <code>rx="40"</code>, en este caso el redondeado sera de 40 pixeles.</p>
+<p>Ahora generaremos un rectángulo con los bordes redondeados, tan solo tenemos que añadir el atributo <code class="highlighter-rouge">rx="40"</code>, en este caso el redondeado sera de 40 pixeles.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">3 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;50&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;300&quot;</span>
-<span class="lineno">4 </span><span class="na">fill</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;40&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"50"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"300"</span>
+<span class="na">fill=</span><span class="s">"black"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"20"</span> <span class="na">rx=</span><span class="s">"40"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/rectangulo.html">VER EJEMPLO!</a>
@@ -109,22 +116,28 @@
 
 <h2 id="círculo">CÍRCULO</h2>
 
-<p>Para generar un círculo con <strong>SVG</strong> utilizaremos la etiqueta <code>circle</code></p>
+<p>Para generar un círculo con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">circle</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">3 </span>
-<span class="lineno">4 </span><span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">r</span><span class="o">=</span><span class="s">&quot;150&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">5 </span>
-<span class="lineno">6 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
 
-<p>A la etiqueta <code>circle</code> le asignamos los siguientos atributos:
-<code>cx="600"</code> donde x situa el círculo en las coordenadas que le asignamos al eje x, en este caso 400.
-<code>cy="200"</code> donde y situa el círculo en las coordeandas que le asignamos al eje y, en este caso 50.
-<code>r="150"</code> determina el radio que tendra el círculo, en este caso 150 pixeles.
-<code>fill="black"</code> determina el color del círculo, en este caso black.
-<code>stroke="red"</code> determina el color del borde del círculo, en este caso red.
-<code>stroke-width="10"</code> determina el grosor del borde del círculo, en este caso 10 pixeles.</p>
+<span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"600"</span> <span class="na">cy=</span><span class="s">"200"</span> <span class="na">r=</span><span class="s">"150"</span> <span class="na">fill=</span><span class="s">"black"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A la etiqueta <code class="highlighter-rouge">circle</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">cx="600"</code> donde x situa el círculo en las coordenadas que le asignamos al eje x, en este caso 400.
+<code class="highlighter-rouge">cy="200"</code> donde y situa el círculo en las coordeandas que le asignamos al eje y, en este caso 50.
+<code class="highlighter-rouge">r="150"</code> determina el radio que tendra el círculo, en este caso 150 pixeles.
+<code class="highlighter-rouge">fill="black"</code> determina el color del círculo, en este caso black.
+<code class="highlighter-rouge">stroke="red"</code> determina el color del borde del círculo, en este caso red.
+<code class="highlighter-rouge">stroke-width="10"</code> determina el grosor del borde del círculo, en este caso 10 pixeles.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/circulo.html">VER EJEMPLO!</a>
@@ -132,25 +145,33 @@
 
 <h2 id="elipse">ELIPSE</h2>
 
-<p>Para generar una elipse con <strong>SVG</strong> utilizaremos la etiqueta <code>ellipse</code></p>
+<p>Para generar una elipse con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">ellipse</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
-<span class="lineno">3 </span><span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">4 </span>
-<span class="lineno">5 </span><span class="p">&lt;</span><span class="nt">ellipse</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;600&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;150&quot;</span> <span class="na">ry</span><span class="o">=</span><span class="s">&quot;50&quot;</span>
-<span class="lineno">6 </span><span class="na">fill</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;10&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">7 </span>
-<span class="lineno">8 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+<span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
 
-<p>A la etiqueta <code>ellipse</code> le asignamos los siguientos atributos:
-<code>cx="600"</code> donde x situa la elipse en las coordenadas que le asignamos al eje x, en este caso 600.
-<code>cy="200"</code> donde y situa la elipse en las coordeandas que le asignamos al eje y, en este caso 200.
-<code>rx="150"</code> determina el radio que tendra la elipse en el eje x, en este caso 150 pixeles.
-<code>ry="50"</code> determina el radio que tendra la elipse en el eje y, en este caso 50 pixeles.
-<code>fill="black"</code> determina el color de la elipse, en este caso black.
-<code>stroke="red"</code> determina el color de la elipse, en este caso red.
-<code>stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
+<span class="nt">&lt;ellipse</span> <span class="na">cx=</span><span class="s">"600"</span> <span class="na">cy=</span><span class="s">"200"</span> <span class="na">rx=</span><span class="s">"150"</span> <span class="na">ry=</span><span class="s">"50"</span>
+<span class="na">fill=</span><span class="s">"black"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"10"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A la etiqueta <code class="highlighter-rouge">ellipse</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">cx="600"</code> donde x situa la elipse en las coordenadas que le asignamos al eje x, en este caso 600.
+<code class="highlighter-rouge">cy="200"</code> donde y situa la elipse en las coordeandas que le asignamos al eje y, en este caso 200.
+<code class="highlighter-rouge">rx="150"</code> determina el radio que tendra la elipse en el eje x, en este caso 150 pixeles.
+<code class="highlighter-rouge">ry="50"</code> determina el radio que tendra la elipse en el eje y, en este caso 50 pixeles.
+<code class="highlighter-rouge">fill="black"</code> determina el color de la elipse, en este caso black.
+<code class="highlighter-rouge">stroke="red"</code> determina el color de la elipse, en este caso red.
+<code class="highlighter-rouge">stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/elipse.html">VER EJEMPLO!</a>
@@ -158,23 +179,30 @@
 
 <h2 id="línea">LÍNEA</h2>
 
-<p>Para generar una línea con <strong>SVG</strong> utilizaremos la etiqueta <code>line</code></p>
+<p>Para generar una línea con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">line</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">mlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">3 </span>
-<span class="lineno">4 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">x1</span><span class="o">=</span><span class="s">’250′</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;150&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">’600′</span> <span class="na">y2</span><span class="o">=</span><span class="s">’150′</span>
-<span class="lineno">5 </span><span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;20&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">6 </span>
-<span class="lineno">7 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">mlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
 
-<p>A la etiqueta <code>line</code> le asignamos los siguientos atributos:
-<code>x1="250"</code> x1 son las coordenadas de principio y situa la línea en el eje x, en este caso 250.
-<code>y1="150"</code> y1 son las coordenadas de principio y situa la línea en el eje y, en este caso 150.
-<code>x2="600"</code> x2 son las coordenadas del final y situa la línea en el eje x, en este caso 600.
-<code>y2="150"</code> y2 son las coordenadas del final y situa la línea en el eje y, en este caso 150.
-<code>stroke="red"</code> determina el color de la elipse, en este caso red.
-<code>stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
+<span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">’250′</span> <span class="na">y1=</span><span class="s">"150"</span> <span class="na">x2=</span><span class="s">’600′</span> <span class="na">y2=</span><span class="s">’150′</span>
+<span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"20"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A la etiqueta <code class="highlighter-rouge">line</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">x1="250"</code> x1 son las coordenadas de principio y situa la línea en el eje x, en este caso 250.
+<code class="highlighter-rouge">y1="150"</code> y1 son las coordenadas de principio y situa la línea en el eje y, en este caso 150.
+<code class="highlighter-rouge">x2="600"</code> x2 son las coordenadas del final y situa la línea en el eje x, en este caso 600.
+<code class="highlighter-rouge">y2="150"</code> y2 son las coordenadas del final y situa la línea en el eje y, en este caso 150.
+<code class="highlighter-rouge">stroke="red"</code> determina el color de la elipse, en este caso red.
+<code class="highlighter-rouge">stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/linea.html">VER EJEMPLO!</a>
@@ -182,21 +210,28 @@
 
 <h2 id="polilíneas">POLILÍNEAS</h2>
 
-<p>Para generar una polilínea con <strong>SVG</strong> utilizaremos la etiqueta <code>polyline</code></p>
+<p>Para generar una polilínea con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">polyline</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">3 </span>
-<span class="lineno">4 </span><span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;0,40 40,40 40,80 80,80 80,120&quot;</span>
-<span class="lineno">5 </span><span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">6 </span>
-<span class="lineno">7 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
 
-<p>A la etiqueta <code>polyline</code> le asignamos los siguientos atributos:
-<code>points="0,40 40,40 40,80 80,80 80,120"</code> utilizaremos pares de coordenadas separadas por comas, donde el primer número corresponde a la coordenada x y el segundo número corresponde a la coordenada y. Para llevara a cabo una polilínea necesitaremos al menos dos pares de coordenadas, es decir <code>points="0,40 40,40"</code>
-<code>fill="none"</code> determina el color de la elipse, en este caso ninguno.
-<code>stroke="red"</code> determina el color de la elipse, en este caso red.
-<code>stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
+<span class="nt">&lt;polyline</span> <span class="na">points=</span><span class="s">"0,40 40,40 40,80 80,80 80,120"</span>
+<span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A la etiqueta <code class="highlighter-rouge">polyline</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">points="0,40 40,40 40,80 80,80 80,120"</code> utilizaremos pares de coordenadas separadas por comas, donde el primer número corresponde a la coordenada x y el segundo número corresponde a la coordenada y. Para llevara a cabo una polilínea necesitaremos al menos dos pares de coordenadas, es decir <code class="highlighter-rouge">points="0,40 40,40"</code>
+<code class="highlighter-rouge">fill="none"</code> determina el color de la elipse, en este caso ninguno.
+<code class="highlighter-rouge">stroke="red"</code> determina el color de la elipse, en este caso red.
+<code class="highlighter-rouge">stroke-width="10"</code> determina el grosor del borde de la elipse, en este caso 10 pixeles.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/polilinea.html">VER EJEMPLO!</a>
@@ -204,57 +239,63 @@
 
 <h2 id="poligonos">POLIGONOS</h2>
 
-<p>Para generar una poligono con <strong>SVG</strong> utilizaremos la etiqueta <code>polygon</code></p>
+<p>Para generar una poligono con <strong>SVG</strong> utilizaremos la etiqueta <code class="highlighter-rouge">polygon</code></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">2 </span><span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span>
-<span class="lineno">3 </span><span class="na">width</span><span class="o">=</span><span class="s">&quot;1198&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;398&quot;</span> <span class="p">&gt;</span>
-<span class="lineno">4 </span>
-<span class="lineno">5 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;200,100 250,180 160,210&quot;</span>
-<span class="lineno">6 </span><span class="na">fill</span><span class="o">=</span><span class="s">&quot;black&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;red&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;4&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">7 </span>
-<span class="lineno">8 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+<span class="na">width=</span><span class="s">"1198"</span> <span class="na">height=</span><span class="s">"398"</span> <span class="nt">&gt;</span>
 
-<p>A la etiqueta <code>poligono</code> le asignamos los siguientos atributos:
-<code>points="200,100 250,180 160,210"</code> en este caso con el atributo points asignaremos el número de lados que queramos que tenga el poligono, sera definido por números de pares, donde el primer número corresponde a la coordenada x, y el segundo número corresponde a la coordenada y. En este caso hemos utilizado tres pares por lo tanto obtendremos un triángulo.
-<code>fill="black"</code> determina el color del poligono, en este caso black.
-<code>stroke="red"</code> determina el color del poligono, en este caso red.
-<code>stroke-width="10"</code> determina el grosor del borde del poligono, en este caso 4 pixeles.</p>
+<span class="nt">&lt;polygon</span> <span class="na">points=</span><span class="s">"200,100 250,180 160,210"</span>
+<span class="na">fill=</span><span class="s">"black"</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"4"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A la etiqueta <code class="highlighter-rouge">poligono</code> le asignamos los siguientos atributos:
+<code class="highlighter-rouge">points="200,100 250,180 160,210"</code> en este caso con el atributo points asignaremos el número de lados que queramos que tenga el poligono, sera definido por números de pares, donde el primer número corresponde a la coordenada x, y el segundo número corresponde a la coordenada y. En este caso hemos utilizado tres pares por lo tanto obtendremos un triángulo.
+<code class="highlighter-rouge">fill="black"</code> determina el color del poligono, en este caso black.
+<code class="highlighter-rouge">stroke="red"</code> determina el color del poligono, en este caso red.
+<code class="highlighter-rouge">stroke-width="10"</code> determina el grosor del borde del poligono, en este caso 4 pixeles.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/formassvg/poligono.html">VER EJEMPLO!</a>
 </button></p>
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/responsive-inspector-extension-para-ver-los-media-queries-de-un-sitio-web/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/inspiracion-diseno-web-ii/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/responsive-inspector-extension-para-ver-los-media-queries-de-un-sitio-web/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/inspiracion-diseno-web-ii/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -262,7 +303,6 @@
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

@@ -6,78 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recursos para adaptar imágenes en Responsive Web Design</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/recursos-para-adaptar-imagenes-en-responsive-web-design/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Recursos para adaptar imágenes en Responsive Web Design</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-04-17 00:00:00 +0200">
-              El
-              17 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Recursos para adaptar imágenes en Responsive Web Design</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-04-17 00:00:00 +0200">
+                El
+                17 de
+                
                 abril
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#html5">HTML5</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#responsive-web-design">Responsive Web Design</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Por el momento no tenemos ninguna etiqueta en <strong>HTML</strong> que sirva para adaptar las imágenes a las diferentes resoluciones y dispositivos que pueblan el mercado,<!--more--> ya sean smartphones, tabletas o monitores. En</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#html5">HTML5</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#responsive-web-design">Responsive Web Design</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Por el momento no tenemos ninguna etiqueta en <strong>HTML</strong> que sirva para adaptar las imágenes a las diferentes resoluciones y dispositivos que pueblan el mercado,<!--more--> ya sean smartphones, tabletas o monitores. En</p>
 
 <p><a href="http://responsiveimages.org/" target="_blank"><strong>RICG</strong></a>(<strong>Responsive Images Comunity Group</strong>) han propuesto una etiqueta y un atributo para adaptar las imágenes pero las cosas de palacio van despacio, muy despacio.</p>
 
 <h1 id="etiqueta-picture">ETIQUETA PICTURE</h1>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
-<span class="lineno">2 </span>  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">media</span><span class="o">=</span><span class="s">&quot;(min-width: 40em)&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;big.jpg 1x, big-hd.jpg 2x&quot;</span><span class="p">&gt;</span>
-<span class="lineno">3 </span>  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;small.jpg 1x, small-hd.jpg 2x&quot;</span><span class="p">&gt;</span>
-<span class="lineno">4 </span>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;fallback.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nt">&lt;picture&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 40em)"</span> <span class="na">srcset=</span><span class="s">"big.jpg 1x, big-hd.jpg 2x"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"small.jpg 1x, small-hd.jpg 2x"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"fallback.jpg"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h1 id="atributo-srcset">ATRIBUTO SRCSET</h1>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;fallback.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;&quot;</span> <span class="na">srcset</span><span class="o">=</span><span class="s">&quot;small.jpg 640w 1x, small-hd.jpg 640w 2x, med.jpg 1x, med-hd.jpg 2x &quot;</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"fallback.jpg"</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">srcset=</span><span class="s">"small.jpg 640w 1x, small-hd.jpg 640w 2x, med.jpg 1x, med-hd.jpg 2x "</span><span class="nt">&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Si alguien esta interesado en seguir la evolución puede apuntarse a la lista de correo: http://list.responsiveimages.org</p>
 
@@ -99,16 +102,26 @@ Para el data-media=”(min-width:64em) utilizaremos “fondojorgeatgu.jpg” 102
 
 <p>Ahora vamos a incluir este código en nuestro **HTML **.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-picture</span> <span class="na">data-alt</span><span class="o">=</span><span class="s">&quot;A giant stone face at The Bayon temple in Angkor Thom, Cambodia&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 2 </span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-picture</span> <span class="na">data-alt</span><span class="o">=</span><span class="s">&quot;portada JORGEATGU&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 3 </span>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&quot;img/fondosmall.jpg&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&quot;img/fondomedium.jpg&quot;</span> <span class="na">data-media</span><span class="o">=</span><span class="s">&quot;(min-width:30em)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&quot;img/fondolarge.jpg&quot;</span> <span class="na">data-media</span><span class="o">=</span><span class="s">&quot;(min-width:48em)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-src</span><span class="o">=</span><span class="s">&quot;img/fondojorgeatgu.jpg&quot;</span> <span class="na">data-media</span><span class="o">=</span><span class="s">&quot;(min-width:64em)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<span class="lineno"> 7 </span>
-<span class="lineno"> 8 </span>      <span class="c">&lt;!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. --&gt;</span>
-<span class="lineno"> 9 </span>      <span class="p">&lt;</span><span class="nt">noscript</span><span class="p">&gt;&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;img/fondojorgeatgu.jpg&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;portada JORGEATGU&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
-<span class="lineno">10 </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">data-picture</span> <span class="na">data-alt=</span><span class="s">"A giant stone face at The Bayon temple in Angkor Thom, Cambodia"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">data-picture</span> <span class="na">data-alt=</span><span class="s">"portada JORGEATGU"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/fondosmall.jpg"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/fondomedium.jpg"</span> <span class="na">data-media=</span><span class="s">"(min-width:30em)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/fondolarge.jpg"</span> <span class="na">data-media=</span><span class="s">"(min-width:48em)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">data-src=</span><span class="s">"img/fondojorgeatgu.jpg"</span> <span class="na">data-media=</span><span class="s">"(min-width:64em)"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+      <span class="c">&lt;!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. --&gt;</span>
+      <span class="nt">&lt;noscript&gt;&lt;img</span> <span class="na">src=</span><span class="s">"img/fondojorgeatgu.jpg"</span> <span class="na">alt=</span><span class="s">"portada JORGEATGU"</span><span class="nt">&gt;&lt;/noscript&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>En el atributo data-src indicaremos la ruta que lleva a nuestra imagen.
 En el data-media indicaremos la medida en <strong>EM</strong>. Con un mind-width: 30em le estamos diciendo que sirva la imagen a los dispositivos que tengan mas de 30em, y lo mismo para el resto de data-media.</p>
@@ -130,36 +143,34 @@ En el data-media indicaremos la medida en <strong>EM</strong>. Con un mind-width
 <p><a href="http://adaptive-images.com/" target="_blank">Adaptive Images Web</a></p>
 
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/cmyk-free-icons-social-media-vector-svg/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/tutorial-excluir-de-google-analytics-a-los-que-copian-tu-web/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/cmyk-free-icons-social-media-vector-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/tutorial-excluir-de-google-analytics-a-los-que-copian-tu-web/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -167,7 +178,6 @@ En el data-media indicaremos la medida en <strong>EM</strong>. Con un mind-width
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

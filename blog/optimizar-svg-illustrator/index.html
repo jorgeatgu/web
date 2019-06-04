@@ -6,66 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Optimizar SVG Illustrator</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Optimizar SVG Illustrator</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-07-18 00:00:00 +0200">
-              El
-              18 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Optimizar SVG Illustrator</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-07-18 00:00:00 +0200">
+                El
+                18 de
+                
                 julio
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-gráfico">Diseño Gráfico</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Hoy vamos a ver como optimizar un <strong>SVG</strong> que hemos generado a través de <strong>Adobe Illustrator</strong>.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-gráfico">Diseño Gráfico</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Hoy vamos a ver como optimizar un <strong>SVG</strong> que hemos generado a través de <strong>Adobe Illustrator</strong>.</p>
 
 <p>Cuando exportamos código desde un programa ya sabemos de antemano que va a generar mas código de lo normal, un <strong>SVG</strong> por su composición no suele ocupar mucho espacio, aun así podemos hacer que ocupe todavía menos si <em>limpiamos</em> el código.</p>
 
@@ -75,357 +72,670 @@
 
 <p>Este es el código que genera Illustrator con las opciones por defecto. El archivo en total pesa 19KB.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">  1 </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="lineno">  2 </span><span class="cp">&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;</span>
-<span class="lineno">  3 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Capa_1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno">  4 </span>	 <span class="na">width</span><span class="o">=</span><span class="s">&quot;453.015px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;326.903px&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;97.901 205.445 453.015 326.903&quot;</span>
-<span class="lineno">  5 </span>	 <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 97.901 205.445 453.015 326.903&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno">  6 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> 	<span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;7&quot;</span>
-<span class="lineno">  7 </span>					<span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno">  8 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;261.769&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;126.766&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">  9 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> 	<span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span>
-<span class="lineno"> 10 </span>					<span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno"> 11 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;532.349&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 12 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> 	<span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#6D7575&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno"> 13 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;417.632&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 14 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#34495E&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M550.725,399.876H253.01c0,0,0.372-132.317,3.637-142.253c2.234,0.034,285.124-0.132,286.8,0</span>
-<span class="lineno"> 15 </span><span class="s">	C552.773,259.225,550.725,399.876,550.725,399.876z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 16 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#2C3E50&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M550.725,399.876H253.01c0,0,288.764-142.385,290.437-142.253</span>
-<span class="lineno"> 17 </span><span class="s">	C552.773,259.225,550.725,399.876,550.725,399.876z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 18 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#47C9AF&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;167.908,338.555 239.688,380.977 239.688,291.115 &quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 19 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#16A085&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;97.901,291.198 97.901,380.997 240.075,380.997 &quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 20 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> 	<span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#E74C3C&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;19&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno"> 21 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;277.58&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;215.579&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;338.489&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;215.579&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 22 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> 	<span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#E74C3C&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;13&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno"> 23 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;286.275&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;335.418&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;286.275&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;211.499&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 24 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#47C9AF&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;175.828,333.536 97.901,291.115 97.901,380.977 &quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 25 </span><span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#237C6B&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;239.688,291.115 171.27,340.936 97.901,291.198 &quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 26 </span><span class="p">&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Capa_3&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 27 </span><span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno"> 28 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;281.765&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;323.055&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#2C3E50&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;9.311&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;9.311&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 29 </span><span class="p">&lt;</span><span class="nt">g</span> <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new    &quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 30 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648</span>
-<span class="lineno"> 31 </span><span class="s">		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404</span>
-<span class="lineno"> 32 </span><span class="s">		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566</span>
-<span class="lineno"> 33 </span><span class="s">		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648</span>
-<span class="lineno"> 34 </span><span class="s">		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351</span>
-<span class="lineno"> 35 </span><span class="s">		C339.988,377.156,339.718,377.237,339.61,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 36 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M342.203,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702</span>
-<span class="lineno"> 37 </span><span class="s">		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186</span>
-<span class="lineno"> 38 </span><span class="s">		C342.176,380.775,342.122,380.208,342.203,379.776z M346.335,384.854c-0.027,0-0.054,0.027-0.081,0.027</span>
-<span class="lineno"> 39 </span><span class="s">		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186</span>
-<span class="lineno"> 40 </span><span class="s">		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621</span>
-<span class="lineno"> 41 </span><span class="s">		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L346.335,384.854z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 42 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M351.708,386.149c0,0.055-0.864,0.108-0.945,0.136c-0.081,0.026-0.135-0.189-0.162-0.271</span>
-<span class="lineno"> 43 </span><span class="s">		c-0.081-0.297-0.054-0.621-0.054-0.918v-1.675c0.027-0.918,0.027-1.539,0-1.836c0-0.622,0.027-1.188,0-2.404</span>
-<span class="lineno"> 44 </span><span class="s">		c0-1.107,0.081-2.403,0.081-3.511c0-0.189,0.918-0.162,1.216-0.027v0.648c0.242-0.352,0.566-0.433,0.972-0.648</span>
-<span class="lineno"> 45 </span><span class="s">		c0.189-0.107,0.567-0.188,1.08-0.27c0.541-0.081,0.945-0.055,1.188,0.054c0.757,0.324,1.188,1.188,1.351,1.972</span>
-<span class="lineno"> 46 </span><span class="s">		c0.486,2.134,0.297,3.754,0.297,5.915c0,1.053,0.136,1.593,0,2.781c-0.297-0.054-1.08,0.297-1.08-0.108v-0.161</span>
-<span class="lineno"> 47 </span><span class="s">		c0-0.027,0.027-0.081,0.027-0.108c0.135-1.513-0.027-2.215-0.027-3.592v-0.54c0-0.136-0.027-0.648-0.054-1.54</span>
-<span class="lineno"> 48 </span><span class="s">		c-0.027-0.892-0.081-1.566-0.162-1.998c-0.108-0.864-0.405-1.594-1.161-1.594c-0.676,0-1.107,0.216-1.891,0.729</span>
-<span class="lineno"> 49 </span><span class="s">		c-0.378,0.242-0.567,0.675-0.595,1.35c-0.026,0.676-0.026,1.864-0.054,3.565s-0.027,2.728-0.054,3.052</span>
-<span class="lineno"> 50 </span><span class="s">		C351.682,385.394,351.898,386.123,351.708,386.149z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 51 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M359.568,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027</span>
-<span class="lineno"> 52 </span><span class="s">		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891</span>
-<span class="lineno"> 53 </span><span class="s">		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486</span>
-<span class="lineno"> 54 </span><span class="s">		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L359.568,373.564z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 55 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M365.509,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266</span>
-<span class="lineno"> 56 </span><span class="s">		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026</span>
-<span class="lineno"> 57 </span><span class="s">		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243</span>
-<span class="lineno"> 58 </span><span class="s">		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54</span>
-<span class="lineno"> 59 </span><span class="s">		C365.78,377.21,365.158,376.373,365.509,376.184z M369.723,382.99c0-0.352,0.026-2.134,0.026-2.485</span>
-<span class="lineno"> 60 </span><span class="s">		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702</span>
-<span class="lineno"> 61 </span><span class="s">		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 62 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M379.255,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648</span>
-<span class="lineno"> 63 </span><span class="s">		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404</span>
-<span class="lineno"> 64 </span><span class="s">		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566</span>
-<span class="lineno"> 65 </span><span class="s">		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648</span>
-<span class="lineno"> 66 </span><span class="s">		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.676-3.97c0.729-1.486,4.563-0.945,4.915,0.351</span>
-<span class="lineno"> 67 </span><span class="s">		C379.633,377.156,379.364,377.237,379.255,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 68 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M382.226,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027</span>
-<span class="lineno"> 69 </span><span class="s">		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891</span>
-<span class="lineno"> 70 </span><span class="s">		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486</span>
-<span class="lineno"> 71 </span><span class="s">		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L382.226,373.564z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 72 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M387.278,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702</span>
-<span class="lineno"> 73 </span><span class="s">		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186</span>
-<span class="lineno"> 74 </span><span class="s">		C387.25,380.775,387.197,380.208,387.278,379.776z M391.409,384.854c-0.027,0-0.054,0.027-0.081,0.027</span>
-<span class="lineno"> 75 </span><span class="s">		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186</span>
-<span class="lineno"> 76 </span><span class="s">		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621</span>
-<span class="lineno"> 77 </span><span class="s">		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L391.409,384.854z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 78 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M396.324,368.027c0.945-0.081,2.565-0.027,3.376,0.189c0.054,0.324,0.242,0.918-0.108,0.837</span>
-<span class="lineno"> 79 </span><span class="s">		c-0.514-0.216-2.215-0.216-2.512-0.081c-0.027,0-0.027,0-0.027,0.027c0.297,4.267-0.107,8.696,0.189,13.288</span>
-<span class="lineno"> 80 </span><span class="s">		c0.081,1.134-0.352,4.402,0.188,4.618c0.243,0.107,0.864,0.243,1.945,0c0.324,0.162,0.243,0.837,0.188,0.837</span>
-<span class="lineno"> 81 </span><span class="s">		c-3.754,0.567-3.457,0.297-3.511,0.027c-0.216-0.864-0.081-4.214-0.081-5.348c-0.081-4.673-0.189-9.237-0.216-13.909</span>
-<span class="lineno"> 82 </span><span class="s">		C395.838,368.189,396.081,368,396.324,368.027z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 83 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M401.59,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266</span>
-<span class="lineno"> 84 </span><span class="s">		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026</span>
-<span class="lineno"> 85 </span><span class="s">		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243</span>
-<span class="lineno"> 86 </span><span class="s">		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54</span>
-<span class="lineno"> 87 </span><span class="s">		C401.861,377.21,401.24,376.373,401.59,376.184z M405.804,382.99c0-0.352,0.026-2.134,0.026-2.485</span>
-<span class="lineno"> 88 </span><span class="s">		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702</span>
-<span class="lineno"> 89 </span><span class="s">		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 90 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M409.881,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027</span>
-<span class="lineno"> 91 </span><span class="s">		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891</span>
-<span class="lineno"> 92 </span><span class="s">		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486</span>
-<span class="lineno"> 93 </span><span class="s">		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L409.881,373.564z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 94 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M415.066,368.271c0.838-0.243,1.405-0.081,2.242-0.216c0.216-0.189,0.783-0.136,0.973,0.054</span>
-<span class="lineno"> 95 </span><span class="s">		c0.216,0.189,0.242,0.459,0.107,0.675c-0.188,2.81,0.027,5.699,0.243,8.508c0.216,2.593,0.081,6.428,0.216,9.615</span>
-<span class="lineno"> 96 </span><span class="s">		c0.433,1.485,0.217,0.594-0.647,0.891c-0.757,0-2.998,0.055-2.998-0.135c0-0.216-0.271-0.567,0.107-0.811</span>
-<span class="lineno"> 97 </span><span class="s">		c0.676-0.404,1.404,0.136,2.161,0c0.081-2.809,0.026-6.562-0.189-9.507c0.081-2.728-0.324-5.671-0.243-8.399</span>
-<span class="lineno"> 98 </span><span class="s">		c-0.647,0.027-1.026-0.026-1.674,0.162C415.12,369.188,414.877,368.676,415.066,368.271z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 99 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M423.088,376.562c0,2.215,0.27,3.431,0.135,5.727c0.054,0.621,0.081,1.161,0.107,1.593</span>
-<span class="lineno">100 </span><span class="s">		c0.027,0.433,0.055,0.973,0.027,1.647c0,1.297,0.054,1.945-0.081,3.214c0,0.783-0.621,3.431-3.619,2.62</span>
-<span class="lineno">101 </span><span class="s">		c-0.188,0.271,0.135-0.621,0.054-0.837c1.459,0.594,2.458-0.892,2.458-1.729c0.081-0.621,0.108-1.161,0.081-1.594v-1.647</span>
-<span class="lineno">102 </span><span class="s">		c0-0.675,0-1.216-0.027-1.62c-0.026-0.433-0.054-0.973-0.107-1.594c0.216-2.242-0.216-3.728,0-6.32</span>
-<span class="lineno">103 </span><span class="s">		c0.188-0.188,0.811-0.054,1.053,0.136c0.027,0.054,0.027,0.081,0.027,0.081C423.168,376.4,423.115,376.508,423.088,376.562z</span>
-<span class="lineno">104 </span><span class="s">		 M421.926,373.051c-0.026-0.135,0-0.297,0.081-0.459c0.027-0.027,0.055-0.081,0.081-0.108c0.189-0.135,0.378,0.027,0.595,0.027</span>
-<span class="lineno">105 </span><span class="s">		c0.702,0,0.81,0.918,0.513,1.377c-0.188,0.217-0.297,0.162-0.594,0.081c-0.352,0.081-0.567-0.026-0.648-0.27</span>
-<span class="lineno">106 </span><span class="s">		c-0.081-0.189-0.054-0.352-0.054-0.54C421.9,373.104,421.9,373.078,421.926,373.051z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">107 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M425.787,379.776c0-1.297,0.081-2.593,1.026-3.538c0.541-0.541,1.378-0.702,2.377-0.702</span>
-<span class="lineno">108 </span><span class="s">		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186</span>
-<span class="lineno">109 </span><span class="s">		C425.761,380.775,425.707,380.208,425.787,379.776z M429.92,384.854c-0.027,0-0.054,0.027-0.081,0.027</span>
-<span class="lineno">110 </span><span class="s">		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186</span>
-<span class="lineno">111 </span><span class="s">		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621</span>
-<span class="lineno">112 </span><span class="s">		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L429.92,384.854z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">113 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M439.022,377.372c-0.729-0.648-1.485-1.08-2.484-0.675c-1.135,0.432-0.864,2.296-0.945,3.295</span>
-<span class="lineno">114 </span><span class="s">		c-0.081,1.026,0.054,0.648,0.054,1.513c0.027,1.053-0.162,2.133-0.026,3.214c0,0.297-0.108,1.404-0.027,1.674</span>
-<span class="lineno">115 </span><span class="s">		c0,0.081-0.271,0.108-0.567,0.108h-0.432c-0.136,0-0.216,0-0.243-0.027c0.081-1.27,0.107-3.483,0.027-4.942</span>
-<span class="lineno">116 </span><span class="s">		c-0.081-1.107,0-2.241-0.027-3.511c-0.027-0.108-0.054-0.189-0.054-0.216c0,0,0.188-1.297-0.729-1.513</span>
-<span class="lineno">117 </span><span class="s">		c-0.189-0.135,0.216-0.514,0.513-0.756c0.405,0,1.188,0.566,1.135,0.891c0.54-0.432,1.404-0.891,2.7-0.756</span>
-<span class="lineno">118 </span><span class="s">		c0.757,0.081,0.838,0.486,1.54,0.702C439.535,376.616,439.239,377.291,439.022,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">119 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M442.263,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783</span>
-<span class="lineno">120 </span><span class="s">		c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188</span>
-<span class="lineno">121 </span><span class="s">		c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.81-1.404-0.729-2.458</span>
-<span class="lineno">122 </span><span class="s">		c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214</span>
-<span class="lineno">123 </span><span class="s">		c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999</span>
-<span class="lineno">124 </span><span class="s">		c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433</span>
-<span class="lineno">125 </span><span class="s">		c-0.46-0.351-0.783-1.08-0.811-2.377C441.264,387.905,441.966,387.852,442.263,388.176z M441.723,379.884</span>
-<span class="lineno">126 </span><span class="s">		c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918</span>
-<span class="lineno">127 </span><span class="s">		c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051</span>
-<span class="lineno">128 </span><span class="s">		c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">129 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M454.956,381.505c-0.783,0.135-3.592,0.107-4.456,0.026h-0.054c-0.027,0.324,0,0.216-0.027,0.973</span>
-<span class="lineno">130 </span><span class="s">		c0,1.026,0.297,2.484,1.026,2.7c1.161,0.379,2.484-0.459,2.619-1.458c0-0.271,1-0.054,1.054,0.135</span>
-<span class="lineno">131 </span><span class="s">		c-0.351,1.675-3.024,3.35-4.753,2.106c-1.216-0.837-1.135-3.942-1.216-5.293c-0.081-1.297-0.027-3.295,0.756-4.43</span>
-<span class="lineno">132 </span><span class="s">		c0.486-0.702,0.676-0.648,1.621-0.945c0.405-0.135,0.945-0.107,1.351,0c2.16,0.081,2.269,4.187,2.188,5.563</span>
-<span class="lineno">133 </span><span class="s">		C455.037,381.126,454.956,381.505,454.956,381.505z M450.716,377.21c-0.351,0.892-0.513,2.134-0.405,3.241</span>
-<span class="lineno">134 </span><span class="s">		c1.054,0.243,2.296,0.271,3.674,0.108c0.323-1.513-0.081-5.564-2.647-4.079C451.04,376.643,450.851,376.886,450.716,377.21z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">135 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M457.71,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266</span>
-<span class="lineno">136 </span><span class="s">		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026</span>
-<span class="lineno">137 </span><span class="s">		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243</span>
-<span class="lineno">138 </span><span class="s">		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54</span>
-<span class="lineno">139 </span><span class="s">		C457.981,377.21,457.36,376.373,457.71,376.184z M461.924,382.99c0-0.352,0.026-2.134,0.026-2.485</span>
-<span class="lineno">140 </span><span class="s">		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702</span>
-<span class="lineno">141 </span><span class="s">		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">142 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M466.001,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027</span>
-<span class="lineno">143 </span><span class="s">		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891</span>
-<span class="lineno">144 </span><span class="s">		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486</span>
-<span class="lineno">145 </span><span class="s">		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L466.001,373.564z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">146 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M472.834,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783</span>
-<span class="lineno">147 </span><span class="s">		c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188</span>
-<span class="lineno">148 </span><span class="s">		c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.811-1.404-0.729-2.458</span>
-<span class="lineno">149 </span><span class="s">		c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214</span>
-<span class="lineno">150 </span><span class="s">		c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999</span>
-<span class="lineno">151 </span><span class="s">		c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433</span>
-<span class="lineno">152 </span><span class="s">		c-0.459-0.351-0.783-1.08-0.811-2.377C471.835,387.905,472.537,387.852,472.834,388.176z M472.294,379.884</span>
-<span class="lineno">153 </span><span class="s">		c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918</span>
-<span class="lineno">154 </span><span class="s">		c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051</span>
-<span class="lineno">155 </span><span class="s">		c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">156 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M480.504,375.914c0.351,0.135-0.108,0.675,0.026,3.052c0,2.053-0.188,2.458,0.162,4.537</span>
-<span class="lineno">157 </span><span class="s">		c0.297,1.729,2.269,3.106,3.35,1.107c0.242-0.432,0.188-2.322,0.188-4.213c0.027-1.647,0.054-2.755,0.054-4.402</span>
-<span class="lineno">158 </span><span class="s">		c0-0.189,0.838-0.189,1.243-0.027c0,1.647-0.055,2.728-0.055,4.402c0,1.566,0.405,3.187-0.459,4.699</span>
-<span class="lineno">159 </span><span class="s">		c-1.296,2.323-4.618,1.513-5.186-0.702c-0.594-2.322-0.405-3.079-0.324-5.429c0-0.729,0.136-2.188,0-2.862</span>
-<span class="lineno">160 </span><span class="s">		C479.423,375.752,480.287,375.833,480.504,375.914z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">161 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M487.985,386.258c-0.513-0.216-0.647-0.729-0.081-1.296c0.027-0.027,0.081-0.055,0.136-0.055</span>
-<span class="lineno">162 </span><span class="s">		c0.351-0.026,0.566,0.027,0.702,0.136c0.324,0.242,0.324,0.27,0.324,0.566C488.93,386.555,488.498,386.501,487.985,386.258z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">163 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M497.302,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648</span>
-<span class="lineno">164 </span><span class="s">		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404</span>
-<span class="lineno">165 </span><span class="s">		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566</span>
-<span class="lineno">166 </span><span class="s">		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648</span>
-<span class="lineno">167 </span><span class="s">		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.676-3.97c0.729-1.486,4.563-0.945,4.915,0.351</span>
-<span class="lineno">168 </span><span class="s">		C497.68,377.156,497.41,377.237,497.302,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">169 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M499.895,379.776c0-1.297,0.081-2.593,1.026-3.538c0.541-0.541,1.378-0.702,2.377-0.702</span>
-<span class="lineno">170 </span><span class="s">		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186</span>
-<span class="lineno">171 </span><span class="s">		C499.868,380.775,499.815,380.208,499.895,379.776z M504.028,384.854c-0.027,0-0.054,0.027-0.081,0.027</span>
-<span class="lineno">172 </span><span class="s">		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186</span>
-<span class="lineno">173 </span><span class="s">		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621</span>
-<span class="lineno">174 </span><span class="s">		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L504.028,384.854z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">175 </span>	<span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M509.833,377.075c-0.026,0.405-0.054,0.648-0.026,0.675c-0.055,1.323-0.081,2.215-0.081,2.674</span>
-<span class="lineno">176 </span><span class="s">		c-0.027,3.133-0.055,5.051-0.055,5.726c0,0.189-0.999,0.298-1.188,0.027c0-0.675,0.027-2.593,0.081-5.698</span>
-<span class="lineno">177 </span><span class="s">		c0-0.892-0.081-1.837-0.081-2.701c0-0.271,0.055-1.485-0.026-2.646c0.135-0.136,1.161-0.108,1.323,0.188</span>
-<span class="lineno">178 </span><span class="s">		c-0.081,0.297,0.054,0.595,0.054,0.838c1.161-0.919,2.566-1.324,3.35-0.136c0,0.055,0.026,0.108,0.054,0.189l0.892-0.514</span>
-<span class="lineno">179 </span><span class="s">		c0.54-0.216,0.351-0.242,0.944-0.378c1.837-0.297,2.188,2.106,2.053,3.862c-0.026,0.324-0.054,1.404-0.081,3.241</span>
-<span class="lineno">180 </span><span class="s">		c0,1.81,0.027,3.052,0.055,3.727c-0.055,0.162-0.54,0.081-0.973,0.136c-0.243,0.026-0.297-0.271-0.216-1.459</span>
-<span class="lineno">181 </span><span class="s">		c0.027-0.621,0.054-1.566,0.027-2.836v-3.024c0.135-2.053-0.243-2.944-1.351-2.323c-0.54,0.298-0.648,0.324-1.081,0.757</span>
-<span class="lineno">182 </span><span class="s">		c0.027,1.026,0.055,2.377,0.027,4.078v2.781c0,0.324,0.027,0.676,0.108,1.621c0.026,0.054,0.026,0.135,0.026,0.27v0.108</span>
-<span class="lineno">183 </span><span class="s">		c-0.243,0-1.404,0-1.296-0.135c0-0.757,0-2.025,0.027-3.781c0.026-1.782,0.026-3.079,0-3.916c0.107-1.972-0.838-2.485-1.675-1.837</span>
-<span class="lineno">184 </span><span class="s">		C510.428,376.724,510.13,376.886,509.833,377.075z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">185 </span><span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno">186 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;</span>
+<span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">id=</span><span class="s">"Capa_1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+	 <span class="na">width=</span><span class="s">"453.015px"</span> <span class="na">height=</span><span class="s">"326.903px"</span> <span class="na">viewBox=</span><span class="s">"97.901 205.445 453.015 326.903"</span>
+	 <span class="na">enable-background=</span><span class="s">"new 97.901 205.445 453.015 326.903"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> 	<span class="na">stroke=</span><span class="s">"#95A5A6"</span> <span class="na">stroke-width=</span><span class="s">"7"</span>
+					<span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"261.769"</span> <span class="na">y1=</span><span class="s">"395.169"</span> <span class="na">x2=</span><span class="s">"126.766"</span> <span class="na">y2=</span><span class="s">"395.169"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> 	<span class="na">stroke=</span><span class="s">"#95A5A6"</span>
+					<span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"532.349"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> 	<span class="na">stroke=</span><span class="s">"#6D7575"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"417.632"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#34495E"</span> <span class="na">d=</span><span class="s">"M550.725,399.876H253.01c0,0,0.372-132.317,3.637-142.253c2.234,0.034,285.124-0.132,286.8,0
+	C552.773,259.225,550.725,399.876,550.725,399.876z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#2C3E50"</span> <span class="na">d=</span><span class="s">"M550.725,399.876H253.01c0,0,288.764-142.385,290.437-142.253
+	C552.773,259.225,550.725,399.876,550.725,399.876z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#47C9AF"</span> <span class="na">points=</span><span class="s">"167.908,338.555 239.688,380.977 239.688,291.115 "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#16A085"</span> <span class="na">points=</span><span class="s">"97.901,291.198 97.901,380.997 240.075,380.997 "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> 	<span class="na">stroke=</span><span class="s">"#E74C3C"</span> <span class="na">stroke-width=</span><span class="s">"19"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"277.58"</span> <span class="na">y1=</span><span class="s">"215.579"</span> <span class="na">x2=</span><span class="s">"338.489"</span> <span class="na">y2=</span><span class="s">"215.579"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> 	<span class="na">stroke=</span><span class="s">"#E74C3C"</span> <span class="na">stroke-width=</span><span class="s">"13"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"286.275"</span> <span class="na">y1=</span><span class="s">"335.418"</span> <span class="na">x2=</span><span class="s">"286.275"</span> <span class="na">y2=</span><span class="s">"211.499"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#47C9AF"</span> <span class="na">points=</span><span class="s">"175.828,333.536 97.901,291.115 97.901,380.977 "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;polyline</span> <span class="na">fill=</span><span class="s">"#237C6B"</span> <span class="na">points=</span><span class="s">"239.688,291.115 171.27,340.936 97.901,291.198 "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"Capa_3"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"281.765"</span> <span class="na">y=</span><span class="s">"323.055"</span> <span class="na">fill=</span><span class="s">"#2C3E50"</span> <span class="na">width=</span><span class="s">"9.311"</span> <span class="na">height=</span><span class="s">"9.311"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;g</span> <span class="na">enable-background=</span><span class="s">"new    "</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648
+		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404
+		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566
+		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648
+		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351
+		C339.988,377.156,339.718,377.237,339.61,377.372z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M342.203,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702
+		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186
+		C342.176,380.775,342.122,380.208,342.203,379.776z M346.335,384.854c-0.027,0-0.054,0.027-0.081,0.027
+		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186
+		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621
+		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L346.335,384.854z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M351.708,386.149c0,0.055-0.864,0.108-0.945,0.136c-0.081,0.026-0.135-0.189-0.162-0.271
+		c-0.081-0.297-0.054-0.621-0.054-0.918v-1.675c0.027-0.918,0.027-1.539,0-1.836c0-0.622,0.027-1.188,0-2.404
+		c0-1.107,0.081-2.403,0.081-3.511c0-0.189,0.918-0.162,1.216-0.027v0.648c0.242-0.352,0.566-0.433,0.972-0.648
+		c0.189-0.107,0.567-0.188,1.08-0.27c0.541-0.081,0.945-0.055,1.188,0.054c0.757,0.324,1.188,1.188,1.351,1.972
+		c0.486,2.134,0.297,3.754,0.297,5.915c0,1.053,0.136,1.593,0,2.781c-0.297-0.054-1.08,0.297-1.08-0.108v-0.161
+		c0-0.027,0.027-0.081,0.027-0.108c0.135-1.513-0.027-2.215-0.027-3.592v-0.54c0-0.136-0.027-0.648-0.054-1.54
+		c-0.027-0.892-0.081-1.566-0.162-1.998c-0.108-0.864-0.405-1.594-1.161-1.594c-0.676,0-1.107,0.216-1.891,0.729
+		c-0.378,0.242-0.567,0.675-0.595,1.35c-0.026,0.676-0.026,1.864-0.054,3.565s-0.027,2.728-0.054,3.052
+		C351.682,385.394,351.898,386.123,351.708,386.149z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M359.568,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027
+		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891
+		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486
+		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L359.568,373.564z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M365.509,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266
+		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026
+		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243
+		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54
+		C365.78,377.21,365.158,376.373,365.509,376.184z M369.723,382.99c0-0.352,0.026-2.134,0.026-2.485
+		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702
+		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M379.255,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648
+		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404
+		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566
+		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648
+		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.676-3.97c0.729-1.486,4.563-0.945,4.915,0.351
+		C379.633,377.156,379.364,377.237,379.255,377.372z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M382.226,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027
+		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891
+		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486
+		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L382.226,373.564z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M387.278,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702
+		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186
+		C387.25,380.775,387.197,380.208,387.278,379.776z M391.409,384.854c-0.027,0-0.054,0.027-0.081,0.027
+		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186
+		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621
+		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L391.409,384.854z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M396.324,368.027c0.945-0.081,2.565-0.027,3.376,0.189c0.054,0.324,0.242,0.918-0.108,0.837
+		c-0.514-0.216-2.215-0.216-2.512-0.081c-0.027,0-0.027,0-0.027,0.027c0.297,4.267-0.107,8.696,0.189,13.288
+		c0.081,1.134-0.352,4.402,0.188,4.618c0.243,0.107,0.864,0.243,1.945,0c0.324,0.162,0.243,0.837,0.188,0.837
+		c-3.754,0.567-3.457,0.297-3.511,0.027c-0.216-0.864-0.081-4.214-0.081-5.348c-0.081-4.673-0.189-9.237-0.216-13.909
+		C395.838,368.189,396.081,368,396.324,368.027z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M401.59,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266
+		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026
+		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243
+		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54
+		C401.861,377.21,401.24,376.373,401.59,376.184z M405.804,382.99c0-0.352,0.026-2.134,0.026-2.485
+		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702
+		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M409.881,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027
+		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891
+		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486
+		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L409.881,373.564z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M415.066,368.271c0.838-0.243,1.405-0.081,2.242-0.216c0.216-0.189,0.783-0.136,0.973,0.054
+		c0.216,0.189,0.242,0.459,0.107,0.675c-0.188,2.81,0.027,5.699,0.243,8.508c0.216,2.593,0.081,6.428,0.216,9.615
+		c0.433,1.485,0.217,0.594-0.647,0.891c-0.757,0-2.998,0.055-2.998-0.135c0-0.216-0.271-0.567,0.107-0.811
+		c0.676-0.404,1.404,0.136,2.161,0c0.081-2.809,0.026-6.562-0.189-9.507c0.081-2.728-0.324-5.671-0.243-8.399
+		c-0.647,0.027-1.026-0.026-1.674,0.162C415.12,369.188,414.877,368.676,415.066,368.271z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M423.088,376.562c0,2.215,0.27,3.431,0.135,5.727c0.054,0.621,0.081,1.161,0.107,1.593
+		c0.027,0.433,0.055,0.973,0.027,1.647c0,1.297,0.054,1.945-0.081,3.214c0,0.783-0.621,3.431-3.619,2.62
+		c-0.188,0.271,0.135-0.621,0.054-0.837c1.459,0.594,2.458-0.892,2.458-1.729c0.081-0.621,0.108-1.161,0.081-1.594v-1.647
+		c0-0.675,0-1.216-0.027-1.62c-0.026-0.433-0.054-0.973-0.107-1.594c0.216-2.242-0.216-3.728,0-6.32
+		c0.188-0.188,0.811-0.054,1.053,0.136c0.027,0.054,0.027,0.081,0.027,0.081C423.168,376.4,423.115,376.508,423.088,376.562z
+		 M421.926,373.051c-0.026-0.135,0-0.297,0.081-0.459c0.027-0.027,0.055-0.081,0.081-0.108c0.189-0.135,0.378,0.027,0.595,0.027
+		c0.702,0,0.81,0.918,0.513,1.377c-0.188,0.217-0.297,0.162-0.594,0.081c-0.352,0.081-0.567-0.026-0.648-0.27
+		c-0.081-0.189-0.054-0.352-0.054-0.54C421.9,373.104,421.9,373.078,421.926,373.051z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M425.787,379.776c0-1.297,0.081-2.593,1.026-3.538c0.541-0.541,1.378-0.702,2.377-0.702
+		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186
+		C425.761,380.775,425.707,380.208,425.787,379.776z M429.92,384.854c-0.027,0-0.054,0.027-0.081,0.027
+		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186
+		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621
+		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L429.92,384.854z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M439.022,377.372c-0.729-0.648-1.485-1.08-2.484-0.675c-1.135,0.432-0.864,2.296-0.945,3.295
+		c-0.081,1.026,0.054,0.648,0.054,1.513c0.027,1.053-0.162,2.133-0.026,3.214c0,0.297-0.108,1.404-0.027,1.674
+		c0,0.081-0.271,0.108-0.567,0.108h-0.432c-0.136,0-0.216,0-0.243-0.027c0.081-1.27,0.107-3.483,0.027-4.942
+		c-0.081-1.107,0-2.241-0.027-3.511c-0.027-0.108-0.054-0.189-0.054-0.216c0,0,0.188-1.297-0.729-1.513
+		c-0.189-0.135,0.216-0.514,0.513-0.756c0.405,0,1.188,0.566,1.135,0.891c0.54-0.432,1.404-0.891,2.7-0.756
+		c0.757,0.081,0.838,0.486,1.54,0.702C439.535,376.616,439.239,377.291,439.022,377.372z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M442.263,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783
+		c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188
+		c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.81-1.404-0.729-2.458
+		c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214
+		c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999
+		c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433
+		c-0.46-0.351-0.783-1.08-0.811-2.377C441.264,387.905,441.966,387.852,442.263,388.176z M441.723,379.884
+		c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918
+		c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051
+		c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M454.956,381.505c-0.783,0.135-3.592,0.107-4.456,0.026h-0.054c-0.027,0.324,0,0.216-0.027,0.973
+		c0,1.026,0.297,2.484,1.026,2.7c1.161,0.379,2.484-0.459,2.619-1.458c0-0.271,1-0.054,1.054,0.135
+		c-0.351,1.675-3.024,3.35-4.753,2.106c-1.216-0.837-1.135-3.942-1.216-5.293c-0.081-1.297-0.027-3.295,0.756-4.43
+		c0.486-0.702,0.676-0.648,1.621-0.945c0.405-0.135,0.945-0.107,1.351,0c2.16,0.081,2.269,4.187,2.188,5.563
+		C455.037,381.126,454.956,381.505,454.956,381.505z M450.716,377.21c-0.351,0.892-0.513,2.134-0.405,3.241
+		c1.054,0.243,2.296,0.271,3.674,0.108c0.323-1.513-0.081-5.564-2.647-4.079C451.04,376.643,450.851,376.886,450.716,377.21z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M457.71,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266
+		c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026
+		c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243
+		c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54
+		C457.981,377.21,457.36,376.373,457.71,376.184z M461.924,382.99c0-0.352,0.026-2.134,0.026-2.485
+		c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702
+		c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M466.001,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027
+		c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891
+		c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486
+		c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L466.001,373.564z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M472.834,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783
+		c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188
+		c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.811-1.404-0.729-2.458
+		c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214
+		c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999
+		c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433
+		c-0.459-0.351-0.783-1.08-0.811-2.377C471.835,387.905,472.537,387.852,472.834,388.176z M472.294,379.884
+		c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918
+		c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051
+		c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M480.504,375.914c0.351,0.135-0.108,0.675,0.026,3.052c0,2.053-0.188,2.458,0.162,4.537
+		c0.297,1.729,2.269,3.106,3.35,1.107c0.242-0.432,0.188-2.322,0.188-4.213c0.027-1.647,0.054-2.755,0.054-4.402
+		c0-0.189,0.838-0.189,1.243-0.027c0,1.647-0.055,2.728-0.055,4.402c0,1.566,0.405,3.187-0.459,4.699
+		c-1.296,2.323-4.618,1.513-5.186-0.702c-0.594-2.322-0.405-3.079-0.324-5.429c0-0.729,0.136-2.188,0-2.862
+		C479.423,375.752,480.287,375.833,480.504,375.914z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M487.985,386.258c-0.513-0.216-0.647-0.729-0.081-1.296c0.027-0.027,0.081-0.055,0.136-0.055
+		c0.351-0.026,0.566,0.027,0.702,0.136c0.324,0.242,0.324,0.27,0.324,0.566C488.93,386.555,488.498,386.501,487.985,386.258z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M497.302,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648
+		c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404
+		c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566
+		c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648
+		c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.676-3.97c0.729-1.486,4.563-0.945,4.915,0.351
+		C497.68,377.156,497.41,377.237,497.302,377.372z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M499.895,379.776c0-1.297,0.081-2.593,1.026-3.538c0.541-0.541,1.378-0.702,2.377-0.702
+		c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186
+		C499.868,380.775,499.815,380.208,499.895,379.776z M504.028,384.854c-0.027,0-0.054,0.027-0.081,0.027
+		c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186
+		c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621
+		c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L504.028,384.854z"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M509.833,377.075c-0.026,0.405-0.054,0.648-0.026,0.675c-0.055,1.323-0.081,2.215-0.081,2.674
+		c-0.027,3.133-0.055,5.051-0.055,5.726c0,0.189-0.999,0.298-1.188,0.027c0-0.675,0.027-2.593,0.081-5.698
+		c0-0.892-0.081-1.837-0.081-2.701c0-0.271,0.055-1.485-0.026-2.646c0.135-0.136,1.161-0.108,1.323,0.188
+		c-0.081,0.297,0.054,0.595,0.054,0.838c1.161-0.919,2.566-1.324,3.35-0.136c0,0.055,0.026,0.108,0.054,0.189l0.892-0.514
+		c0.54-0.216,0.351-0.242,0.944-0.378c1.837-0.297,2.188,2.106,2.053,3.862c-0.026,0.324-0.054,1.404-0.081,3.241
+		c0,1.81,0.027,3.052,0.055,3.727c-0.055,0.162-0.54,0.081-0.973,0.136c-0.243,0.026-0.297-0.271-0.216-1.459
+		c0.027-0.621,0.054-1.566,0.027-2.836v-3.024c0.135-2.053-0.243-2.944-1.351-2.323c-0.54,0.298-0.648,0.324-1.081,0.757
+		c0.027,1.026,0.055,2.377,0.027,4.078v2.781c0,0.324,0.027,0.676,0.108,1.621c0.026,0.054,0.026,0.135,0.026,0.27v0.108
+		c-0.243,0-1.404,0-1.296-0.135c0-0.757,0-2.025,0.027-3.781c0.026-1.782,0.026-3.079,0-3.916c0.107-1.972-0.838-2.485-1.675-1.837
+		C510.428,376.724,510.13,376.886,509.833,377.075z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="etiqueta-line">ETIQUETA LINE</h3>
 
-<p>En las etiquetas <code>line</code> al no tener un color de fondo definido añade un <code>fill="none"</code> el cual no cumple ninguna función ya que el color de la línea lo vamos a definir en <code>stroke=""</code>, así que lo borramos.</p>
+<p>En las etiquetas <code class="highlighter-rouge">line</code> al no tener un color de fondo definido añade un <code class="highlighter-rouge">fill="none"</code> el cual no cumple ninguna función ya que el color de la línea lo vamos a definir en <code class="highlighter-rouge">stroke=""</code>, así que lo borramos.</p>
 
-<p>También añade un <code>stroke-miterlimit="10"</code> esta propiedad se utiliza para limitar el impacto que ocasiona la unión de dos puntos en un segmento. Mucho mejor ver un ejemplo: <a href="http://tutorials.jenkov.com/svg/stroke.html#stroke-miterlimit" target="_blank">http://tutorials.jenkov.com/svg/stroke.html#stroke-miterlimit</a>
+<p>También añade un <code class="highlighter-rouge">stroke-miterlimit="10"</code> esta propiedad se utiliza para limitar el impacto que ocasiona la unión de dos puntos en un segmento. Mucho mejor ver un ejemplo: <a href="http://tutorials.jenkov.com/svg/stroke.html#stroke-miterlimit" target="_blank">http://tutorials.jenkov.com/svg/stroke.html#stroke-miterlimit</a>
 También borraremos esta propiedad ya que en este caso no nos sirve para nada.</p>
 
 <p>Las coordenadas en este ejemplo podemos ver se generan con tres decimales, esta opción la podemos configurar a la hora de exportar desde el panel de Illustrator, <del datetime="2013-11-29T12:36:16+00:00">en el propio panel nos aconsejan dejarlo en tres, si bajamos de número vamos a perder precisión a la hora de posicionar los puntos.</del> <a href="http://jorgeatgu.com/blog/exportar-svg/" target="_blank">Exportar SVG con un decimal.</a></p>
 
-<p>Veamos el antes y el después de las tres primeras etiquetas <code>line</code>.</p>
+<p>Veamos el antes y el después de las tres primeras etiquetas <code class="highlighter-rouge">line</code>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;7&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno">2 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;261.769&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;126.766&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">3 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno">4 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;532.349&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">5 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#6D7575&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span>
-<span class="lineno">6 </span>					<span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;417.632&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span> <span class="na">stroke-width=</span><span class="s">"7"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"261.769"</span> <span class="na">y1=</span><span class="s">"395.169"</span> <span class="na">x2=</span><span class="s">"126.766"</span> <span class="na">y2=</span><span class="s">"395.169"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"532.349"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#6D7575"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span>
+					<span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"417.632"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;7&quot;</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;261.769&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;126.766&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;395.169&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">2 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#95A5A6&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;532.349&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">3 </span><span class="p">&lt;</span><span class="nt">line</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#6D7575&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">x1</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y1</span><span class="o">=</span><span class="s">&quot;417.632&quot;</span> <span class="na">x2</span><span class="o">=</span><span class="s">&quot;410.313&quot;</span> <span class="na">y2</span><span class="o">=</span><span class="s">&quot;398.792&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span> <span class="na">stroke-width=</span><span class="s">"7"</span> <span class="na">x1=</span><span class="s">"261.769"</span> <span class="na">y1=</span><span class="s">"395.169"</span> <span class="na">x2=</span><span class="s">"126.766"</span> <span class="na">y2=</span><span class="s">"395.169"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"532.349"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#6D7575"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">x1=</span><span class="s">"410.313"</span> <span class="na">y1=</span><span class="s">"417.632"</span> <span class="na">x2=</span><span class="s">"410.313"</span> <span class="na">y2=</span><span class="s">"398.792"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h3 id="etiquetas-g">ETIQUETAS G</h3>
 
-<p>En el código podemos ver que Illustrator genera etiquetas <code>g</code> para cada capa, dentro de ellas engloba el contenido de cada capa y lo identifica con un <code>id</code>, si no vamos a animar nuestro <strong>SVG</strong> podemos prescindir de ellas. Una recomendación es no borrarlas hasta que terminemos nuestro <strong>SVG</strong>, ya que con los nombres de los <code>id</code> vamos a identificar rápidamente a que pertenece cada parte de nuestro código.</p>
+<p>En el código podemos ver que Illustrator genera etiquetas <code class="highlighter-rouge">g</code> para cada capa, dentro de ellas engloba el contenido de cada capa y lo identifica con un <code class="highlighter-rouge">id</code>, si no vamos a animar nuestro <strong>SVG</strong> podemos prescindir de ellas. Una recomendación es no borrarlas hasta que terminemos nuestro <strong>SVG</strong>, ya que con los nombres de los <code class="highlighter-rouge">id</code> vamos a identificar rápidamente a que pertenece cada parte de nuestro código.</p>
 
 <h3 id="etiquetas-path-y-defs">ETIQUETAS PATH Y DEFS</h3>
 
-<p>Las etiquetas <code>path</code> de la parte final de este <strong>SVG</strong> pertenecen a las letras de mi dirección de correo electrónico las cuales he convertido a trazado en Illustrator. La conversión a trazado genera mucho código así que vamos aprovechar parte de ese código para las letras que se repiten a lo largo del documento.</p>
+<p>Las etiquetas <code class="highlighter-rouge">path</code> de la parte final de este <strong>SVG</strong> pertenecen a las letras de mi dirección de correo electrónico las cuales he convertido a trazado en Illustrator. La conversión a trazado genera mucho código así que vamos aprovechar parte de ese código para las letras que se repiten a lo largo del documento.</p>
 
-<p>Abrimos una etiqueta <code>defs</code> y dentro de ella vamos a colocar la primera etiqueta <code>path</code> que pertenece a la letra c, y le añadiremos un <code>id="C"</code> para identificar la letra y poder repetir el código a través de la etiqueta <code>use</code>.</p>
+<p>Abrimos una etiqueta <code class="highlighter-rouge">defs</code> y dentro de ella vamos a colocar la primera etiqueta <code class="highlighter-rouge">path</code> que pertenece a la letra c, y le añadiremos un <code class="highlighter-rouge">id="C"</code> para identificar la letra y poder repetir el código a través de la etiqueta <code class="highlighter-rouge">use</code>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">2 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;C&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648</span>
-<span class="lineno">3 </span><span class="s">    c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404</span>
-<span class="lineno">4 </span><span class="s">    c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566</span>
-<span class="lineno">5 </span><span class="s">    c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648</span>
-<span class="lineno">6 </span><span class="s">    c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351</span>
-<span class="lineno">7 </span><span class="s">    C339.988,377.156,339.718,377.237,339.61,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">8 </span><span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;defs&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"C"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648
+    c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404
+    c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566
+    c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648
+    c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351
+    C339.988,377.156,339.718,377.237,339.61,377.372z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/defs&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>Ahora lo que haremos será invocar este <code>path</code> a través de la etiqueta <code>use</code>.</p>
+<p>Ahora lo que haremos será invocar este <code class="highlighter-rouge">path</code> a través de la etiqueta <code class="highlighter-rouge">use</code>.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">1 </span><span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">2 </span><span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(39.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">3 </span><span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(158)&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span> <span class="na">transform=</span><span class="s">"translate(39.5)"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span> <span class="na">transform=</span><span class="s">"translate(158)"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>El primer <code>use</code> corresponde a la primera letra C.
-El segundo y tercer<code>use</code> corresponde a la segunda letra C, le añadimos <code>translate</code> para mover la letra horizontalmente a lo largo del documento. En los parentesis de <code>translate</code> indicamos con el primer valor el movimiento horizontal y con el segundo valor el movimiento vertical.</p>
+<p>El primer <code class="highlighter-rouge">use</code> corresponde a la primera letra C.
+El segundo y tercer<code class="highlighter-rouge">use</code> corresponde a la segunda letra C, le añadimos <code class="highlighter-rouge">translate</code> para mover la letra horizontalmente a lo largo del documento. En los parentesis de <code class="highlighter-rouge">translate</code> indicamos con el primer valor el movimiento horizontal y con el segundo valor el movimiento vertical.</p>
 
 <p>Ahora repetiremos esta acción con el resto de letras que se repiten.</p>
 
-<p>Vamos a ver todo el código que hemos generado dentro de la etiqueta <code>defs</code> y que corresponde a las letras que se repiten.</p>
+<p>Vamos a ver todo el código que hemos generado dentro de la etiqueta <code class="highlighter-rouge">defs</code> y que corresponde a las letras que se repiten.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 2 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;C&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648</span>
-<span class="lineno"> 3 </span><span class="s">    c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404</span>
-<span class="lineno"> 4 </span><span class="s">    c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566</span>
-<span class="lineno"> 5 </span><span class="s">    c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648</span>
-<span class="lineno"> 6 </span><span class="s">    c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351</span>
-<span class="lineno"> 7 </span><span class="s">    C339.988,377.156,339.718,377.237,339.61,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 8 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;O&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M342.203,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702</span>
-<span class="lineno"> 9 </span><span class="s">    c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186</span>
-<span class="lineno">10 </span><span class="s">    C342.176,380.775,342.122,380.208,342.203,379.776z M346.335,384.854c-0.027,0-0.054,0.027-0.081,0.027</span>
-<span class="lineno">11 </span><span class="s">    c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186</span>
-<span class="lineno">12 </span><span class="s">    c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621</span>
-<span class="lineno">13 </span><span class="s">    c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L346.335,384.854z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">14 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;T&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M359.568,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027</span>
-<span class="lineno">15 </span><span class="s">    c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891</span>
-<span class="lineno">16 </span><span class="s">    c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486</span>
-<span class="lineno">17 </span><span class="s">    c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L359.568,373.564z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">18 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;A&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M365.509,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266</span>
-<span class="lineno">19 </span><span class="s">    c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026</span>
-<span class="lineno">20 </span><span class="s">    c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243</span>
-<span class="lineno">21 </span><span class="s">    c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54</span>
-<span class="lineno">22 </span><span class="s">    C365.78,377.21,365.158,376.373,365.509,376.184z M369.723,382.99c0-0.352,0.026-2.134,0.026-2.485</span>
-<span class="lineno">23 </span><span class="s">    c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702</span>
-<span class="lineno">24 </span><span class="s">    c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">25 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;G&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M442.263,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783</span>
-<span class="lineno">26 </span><span class="s">    c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188</span>
-<span class="lineno">27 </span><span class="s">    c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.81-1.404-0.729-2.458</span>
-<span class="lineno">28 </span><span class="s">    c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214</span>
-<span class="lineno">29 </span><span class="s">    c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999</span>
-<span class="lineno">30 </span><span class="s">    c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433</span>
-<span class="lineno">31 </span><span class="s">    c-0.46-0.351-0.783-1.08-0.811-2.377C441.264,387.905,441.966,387.852,442.263,388.176z M441.723,379.884</span>
-<span class="lineno">32 </span><span class="s">    c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918</span>
-<span class="lineno">33 </span><span class="s">    c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051</span>
-<span class="lineno">34 </span><span class="s">    c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">35 </span><span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre><span class="nt">&lt;defs&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"C"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M339.61,377.372c-0.107,0.135-0.297,0.297-0.378,0.324c-0.648-1.351-3.079-1.756-3.538-0.648
+    c-0.513,1.188-0.513,2.053-0.432,3.214c0.107,1.945-0.027,2.782,0.107,3.538c0.136,0.757,0.54,1.216,1.81,1.404
+    c0.54,0.081,1.783-1.053,1.999-1.944c0.081-0.216,1.026,0.243,0.972,0.378c-0.864,1.432-0.566,1.918-2.646,2.566
+    c-2.241,0.729-3.214-1.837-3.295-2.188c-0.189-0.729-0.189-1.162-0.189-1.566c0-0.217,0-0.433,0.027-0.648
+    c0.027-0.243,0.027-0.702,0-1.432c-0.081-1.944-0.297-2.161,0.675-3.97c0.729-1.486,4.564-0.945,4.916,0.351
+    C339.988,377.156,339.718,377.237,339.61,377.372z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"O"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M342.203,379.776c0-1.297,0.08-2.593,1.025-3.538c0.541-0.541,1.378-0.702,2.377-0.702
+    c2.62,0,2.512,3.727,2.512,6.4c0,2.917-0.648,4.349-2.593,4.349c-2.89,0-3.349-2.485-3.349-5.186
+    C342.176,380.775,342.122,380.208,342.203,379.776z M346.335,384.854c-0.027,0-0.054,0.027-0.081,0.027
+    c0.081-0.027,0.108-0.108,0.189-0.189c0.297-0.459,0.404-0.675,0.404-2.917c0-2.593-0.054-5.186-1.296-5.186
+    c-0.648,0-1.27,0.216-1.566,0.514c-0.648,0.621-0.729,1.647-0.729,2.728v0.459c0,0.081,0.027,0.135,0.027,0.216v0.621
+    c0,0.055,0,0.081-0.027,0.108v0.648c0,1.62,0.297,3.24,2.025,3.24h0.271l0.648-0.216c0,0,0.026,0,0.054-0.026L346.335,384.854z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"T"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M359.568,373.564c0-2.242,0.027-2.512,0.108-3.079c0.162-0.081,0.891-0.027,1.107-0.027
+    c-0.081,1.161-0.136,2.269-0.027,3.241c0.973,0.027,1.404,0.135,2.241,0.162c0.243,0.107,0.162,0.675-0.026,0.891
+    c-0.783-0.026-1.216-0.026-2.188-0.054c0,2.377-0.081,6.995,0.054,9.372c0.081,2.484,2.053,0.783,1.972,0.702l0.513,0.486
+    c0.433,0.567-2.565,1.917-3.295,0.459c-0.513-1.539-0.297-1.485-0.378-4.213c0-2.323,0.027-1.188-0.054-3.512L359.568,373.564z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"A"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M365.509,376.184c1.243-0.297,1.351-0.702,2.674-0.567c3.809,0.379,2.674,4.511,2.81,7.266
+    c-0.055,1.188-0.081,1.863-0.108,2.053c0,0.162,0,0.324,0.027,0.513l-0.055,0.757c-0.216,0.107-0.864,0.135-1.107,0.026
+    c-0.999,0-3.511,0.676-4.159-1.026c-0.594-1.539-0.647-4.456,0.676-5.536c1.107-0.892,1.998-0.486,3.483-0.243
+    c0-0.54,0.162,0.405,0.081-0.162c-0.135-1.323-0.162-2.674-1.647-2.593s-1.27,0.162-2.376,0.54
+    C365.78,377.21,365.158,376.373,365.509,376.184z M369.723,382.99c0-0.352,0.026-2.134,0.026-2.485
+    c-1.107-0.162-1.485-0.432-2.538-0.162c-0.919,0.298-1.188,2.215-0.757,4.24c0.298,1.216,1.837,0.702,2.863,0.702
+    c0.081,0,0.162-0.026,0.243-0.026c0-0.648,0.135-1.351,0.162-1.972V382.99z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"G"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M442.263,388.176c0.027,0.485,0.055,0.864,0.081,1.161c0.108,0.621,0.729,0.783,1.242,0.783
+    c0.514,0,1-0.271,1.216-0.892c0.351-0.864,0.54-1.755,0.459-2.619c0-0.648-0.027-0.541-0.027-1.188
+    c-0.891,0.135-1.782,0.107-2.322-0.081c-0.54-0.217-1.216-0.54-1.432-0.945c-0.567-0.945-0.81-1.404-0.729-2.458
+    c-0.026-2.484-0.107-6.022,2.377-6.293c0.864-0.081,2.62-0.378,3.133,0.135c0.136,0.136,0.027,3.025,0.162,4.214
+    c0.055,0.459,0.055,0.864,0.027,1.188s-0.054,0.647-0.081,0.945c0,0.297,0,0.81-0.027,1.593v1.054c0,0.918,0.055,1.054,0.055,1.999
+    c0,1.161,0.081,2.646-1.026,3.537c-0.621,0.46-1.054,0.703-1.837,0.703c-0.729,0-1.08-0.027-1.539-0.433
+    c-0.46-0.351-0.783-1.08-0.811-2.377C441.264,387.905,441.966,387.852,442.263,388.176z M441.723,379.884
+    c-0.081,1.161-0.027,0.838-0.027,1.999c0.027,0.351,0.108,0.756,0.271,1.242c0.162,0.459,0.352,0.783,0.567,0.918
+    c0.729,0.433,1.053,0.378,2.7,0.271c-0.081-0.892,0-1.918,0-3.431c0-1.539-0.054-3.078-0.026-4.051
+    c-0.027-0.108-0.676-0.108-0.757-0.108c-0.864-0.026-1.269,0-1.782,0.433c-0.459,0.405-0.811,1.161-0.945,2.565V379.884z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/defs&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Y ahora todo el código correspondiente a la dirección de correo electrónico.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 2 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#O&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 3 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M351.708,386.149c0,0.055-0.864,0.108-0.945,0.136c-0.081,0.026-0.135-0.189-0.162-0.271</span>
-<span class="lineno"> 4 </span><span class="s">    c-0.081-0.297-0.054-0.621-0.054-0.918v-1.675c0.027-0.918,0.027-1.539,0-1.836c0-0.622,0.027-1.188,0-2.404</span>
-<span class="lineno"> 5 </span><span class="s">    c0-1.107,0.081-2.403,0.081-3.511c0-0.189,0.918-0.162,1.216-0.027v0.648c0.242-0.352,0.566-0.433,0.972-0.648</span>
-<span class="lineno"> 6 </span><span class="s">    c0.189-0.107,0.567-0.188,1.08-0.27c0.541-0.081,0.945-0.055,1.188,0.054c0.757,0.324,1.188,1.188,1.351,1.972</span>
-<span class="lineno"> 7 </span><span class="s">    c0.486,2.134,0.297,3.754,0.297,5.915c0,1.053,0.136,1.593,0,2.781c-0.297-0.054-1.08,0.297-1.08-0.108v-0.161</span>
-<span class="lineno"> 8 </span><span class="s">    c0-0.027,0.027-0.081,0.027-0.108c0.135-1.513-0.027-2.215-0.027-3.592v-0.54c0-0.136-0.027-0.648-0.054-1.54</span>
-<span class="lineno"> 9 </span><span class="s">    c-0.027-0.892-0.081-1.566-0.162-1.998c-0.108-0.864-0.405-1.594-1.161-1.594c-0.676,0-1.107,0.216-1.891,0.729</span>
-<span class="lineno">10 </span><span class="s">    c-0.378,0.242-0.567,0.675-0.595,1.35c-0.026,0.676-0.026,1.864-0.054,3.565s-0.027,2.728-0.054,3.052</span>
-<span class="lineno">11 </span><span class="s">    C351.682,385.394,351.898,386.123,351.708,386.149z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#T&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">13 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#A&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">14 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(39.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">15 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#T&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(22.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">16 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#O&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(44.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">17 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M396.324,368.027c0.945-0.081,2.565-0.027,3.376,0.189c0.054,0.324,0.242,0.918-0.108,0.837</span>
-<span class="lineno">18 </span><span class="s">    c-0.514-0.216-2.215-0.216-2.512-0.081c-0.027,0-0.027,0-0.027,0.027c0.297,4.267-0.107,8.696,0.189,13.288</span>
-<span class="lineno">19 </span><span class="s">    c0.081,1.134-0.352,4.402,0.188,4.618c0.243,0.107,0.864,0.243,1.945,0c0.324,0.162,0.243,0.837,0.188,0.837</span>
-<span class="lineno">20 </span><span class="s">    c-3.754,0.567-3.457,0.297-3.511,0.027c-0.216-0.864-0.081-4.214-0.081-5.348c-0.081-4.673-0.189-9.237-0.216-13.909</span>
-<span class="lineno">21 </span><span class="s">    C395.838,368.189,396.081,368,396.324,368.027z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">22 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#A&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(36.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">23 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#T&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(50.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">24 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M415.066,368.271c0.838-0.243,1.405-0.081,2.242-0.216c0.216-0.189,0.783-0.136,0.973,0.054</span>
-<span class="lineno">25 </span><span class="s">    c0.216,0.189,0.242,0.459,0.107,0.675c-0.188,2.81,0.027,5.699,0.243,8.508c0.216,2.593,0.081,6.428,0.216,9.615</span>
-<span class="lineno">26 </span><span class="s">    c0.433,1.485,0.217,0.594-0.647,0.891c-0.757,0-2.998,0.055-2.998-0.135c0-0.216-0.271-0.567,0.107-0.811</span>
-<span class="lineno">27 </span><span class="s">    c0.676-0.404,1.404,0.136,2.161,0c0.081-2.809,0.026-6.562-0.189-9.507c0.081-2.728-0.324-5.671-0.243-8.399</span>
-<span class="lineno">28 </span><span class="s">    c-0.647,0.027-1.026-0.026-1.674,0.162C415.12,369.188,414.877,368.676,415.066,368.271z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">29 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M423.088,376.562c0,2.215,0.27,3.431,0.135,5.727c0.054,0.621,0.081,1.161,0.107,1.593</span>
-<span class="lineno">30 </span><span class="s">    c0.027,0.433,0.055,0.973,0.027,1.647c0,1.297,0.054,1.945-0.081,3.214c0,0.783-0.621,3.431-3.619,2.62</span>
-<span class="lineno">31 </span><span class="s">    c-0.188,0.271,0.135-0.621,0.054-0.837c1.459,0.594,2.458-0.892,2.458-1.729c0.081-0.621,0.108-1.161,0.081-1.594v-1.647</span>
-<span class="lineno">32 </span><span class="s">    c0-0.675,0-1.216-0.027-1.62c-0.026-0.433-0.054-0.973-0.107-1.594c0.216-2.242-0.216-3.728,0-6.32</span>
-<span class="lineno">33 </span><span class="s">    c0.188-0.188,0.811-0.054,1.053,0.136c0.027,0.054,0.027,0.081,0.027,0.081C423.168,376.4,423.115,376.508,423.088,376.562z</span>
-<span class="lineno">34 </span><span class="s">     M421.926,373.051c-0.026-0.135,0-0.297,0.081-0.459c0.027-0.027,0.055-0.081,0.081-0.108c0.189-0.135,0.378,0.027,0.595,0.027</span>
-<span class="lineno">35 </span><span class="s">    c0.702,0,0.81,0.918,0.513,1.377c-0.188,0.217-0.297,0.162-0.594,0.081c-0.352,0.081-0.567-0.026-0.648-0.27</span>
-<span class="lineno">36 </span><span class="s">    c-0.081-0.189-0.054-0.352-0.054-0.54C421.9,373.104,421.9,373.078,421.926,373.051z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">37 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#O&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(83.5)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">38 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M439.022,377.372c-0.729-0.648-1.485-1.08-2.484-0.675c-1.135,0.432-0.864,2.296-0.945,3.295</span>
-<span class="lineno">39 </span><span class="s">    c-0.081,1.026,0.054,0.648,0.054,1.513c0.027,1.053-0.162,2.133-0.026,3.214c0,0.297-0.108,1.404-0.027,1.674</span>
-<span class="lineno">40 </span><span class="s">    c0,0.081-0.271,0.108-0.567,0.108h-0.432c-0.136,0-0.216,0-0.243-0.027c0.081-1.27,0.107-3.483,0.027-4.942</span>
-<span class="lineno">41 </span><span class="s">    c-0.081-1.107,0-2.241-0.027-3.511c-0.027-0.108-0.054-0.189-0.054-0.216c0,0,0.188-1.297-0.729-1.513</span>
-<span class="lineno">42 </span><span class="s">    c-0.189-0.135,0.216-0.514,0.513-0.756c0.405,0,1.188,0.566,1.135,0.891c0.54-0.432,1.404-0.891,2.7-0.756</span>
-<span class="lineno">43 </span><span class="s">    c0.757,0.081,0.838,0.486,1.54,0.702C439.535,376.616,439.239,377.291,439.022,377.372z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">44 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#G&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">45 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M454.956,381.505c-0.783,0.135-3.592,0.107-4.456,0.026h-0.054c-0.027,0.324,0,0.216-0.027,0.973</span>
-<span class="lineno">46 </span><span class="s">    c0,1.026,0.297,2.484,1.026,2.7c1.161,0.379,2.484-0.459,2.619-1.458c0-0.271,1-0.054,1.054,0.135</span>
-<span class="lineno">47 </span><span class="s">    c-0.351,1.675-3.024,3.35-4.753,2.106c-1.216-0.837-1.135-3.942-1.216-5.293c-0.081-1.297-0.027-3.295,0.756-4.43</span>
-<span class="lineno">48 </span><span class="s">    c0.486-0.702,0.676-0.648,1.621-0.945c0.405-0.135,0.945-0.107,1.351,0c2.16,0.081,2.269,4.187,2.188,5.563</span>
-<span class="lineno">49 </span><span class="s">    C455.037,381.126,454.956,381.505,454.956,381.505z M450.716,377.21c-0.351,0.892-0.513,2.134-0.405,3.241</span>
-<span class="lineno">50 </span><span class="s">    c1.054,0.243,2.296,0.271,3.674,0.108c0.323-1.513-0.081-5.564-2.647-4.079C451.04,376.643,450.851,376.886,450.716,377.21z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">51 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#A&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(92)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">52 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#T&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(106)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">53 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#G&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(30)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">54 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M480.504,375.914c0.351,0.135-0.108,0.675,0.026,3.052c0,2.053-0.188,2.458,0.162,4.537</span>
-<span class="lineno">55 </span><span class="s">    c0.297,1.729,2.269,3.106,3.35,1.107c0.242-0.432,0.188-2.322,0.188-4.213c0.027-1.647,0.054-2.755,0.054-4.402</span>
-<span class="lineno">56 </span><span class="s">    c0-0.189,0.838-0.189,1.243-0.027c0,1.647-0.055,2.728-0.055,4.402c0,1.566,0.405,3.187-0.459,4.699</span>
-<span class="lineno">57 </span><span class="s">    c-1.296,2.323-4.618,1.513-5.186-0.702c-0.594-2.322-0.405-3.079-0.324-5.429c0-0.729,0.136-2.188,0-2.862</span>
-<span class="lineno">58 </span><span class="s">    C479.423,375.752,480.287,375.833,480.504,375.914z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">59 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M487.985,386.258c-0.513-0.216-0.647-0.729-0.081-1.296c0.027-0.027,0.081-0.055,0.136-0.055</span>
-<span class="lineno">60 </span><span class="s">    c0.351-0.026,0.566,0.027,0.702,0.136c0.324,0.242,0.324,0.27,0.324,0.566C488.93,386.555,488.498,386.501,487.985,386.258z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">61 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#C&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(158)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">62 </span>    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#O&quot;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&quot;translate(158)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">63 </span>    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M509.833,377.075c-0.026,0.405-0.054,0.648-0.026,0.675c-0.055,1.323-0.081,2.215-0.081,2.674</span>
-<span class="lineno">64 </span><span class="s">    c-0.027,3.133-0.055,5.051-0.055,5.726c0,0.189-0.999,0.298-1.188,0.027c0-0.675,0.027-2.593,0.081-5.698</span>
-<span class="lineno">65 </span><span class="s">    c0-0.892-0.081-1.837-0.081-2.701c0-0.271,0.055-1.485-0.026-2.646c0.135-0.136,1.161-0.108,1.323,0.188</span>
-<span class="lineno">66 </span><span class="s">    c-0.081,0.297,0.054,0.595,0.054,0.838c1.161-0.919,2.566-1.324,3.35-0.136c0,0.055,0.026,0.108,0.054,0.189l0.892-0.514</span>
-<span class="lineno">67 </span><span class="s">    c0.54-0.216,0.351-0.242,0.944-0.378c1.837-0.297,2.188,2.106,2.053,3.862c-0.026,0.324-0.054,1.404-0.081,3.241</span>
-<span class="lineno">68 </span><span class="s">    c0,1.81,0.027,3.052,0.055,3.727c-0.055,0.162-0.54,0.081-0.973,0.136c-0.243,0.026-0.297-0.271-0.216-1.459</span>
-<span class="lineno">69 </span><span class="s">    c0.027-0.621,0.054-1.566,0.027-2.836v-3.024c0.135-2.053-0.243-2.944-1.351-2.323c-0.54,0.298-0.648,0.324-1.081,0.757</span>
-<span class="lineno">70 </span><span class="s">    c0.027,1.026,0.055,2.377,0.027,4.078v2.781c0,0.324,0.027,0.676,0.108,1.621c0.026,0.054,0.026,0.135,0.026,0.27v0.108</span>
-<span class="lineno">71 </span><span class="s">    c-0.243,0-1.404,0-1.296-0.135c0-0.757,0-2.025,0.027-3.781c0.026-1.782,0.026-3.079,0-3.916c0.107-1.972-0.838-2.485-1.675-1.837</span>
-<span class="lineno">72 </span><span class="s">    C510.428,376.724,510.13,376.886,509.833,377.075z&quot;</span><span class="p">/&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="code"><pre><span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#O"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M351.708,386.149c0,0.055-0.864,0.108-0.945,0.136c-0.081,0.026-0.135-0.189-0.162-0.271
+    c-0.081-0.297-0.054-0.621-0.054-0.918v-1.675c0.027-0.918,0.027-1.539,0-1.836c0-0.622,0.027-1.188,0-2.404
+    c0-1.107,0.081-2.403,0.081-3.511c0-0.189,0.918-0.162,1.216-0.027v0.648c0.242-0.352,0.566-0.433,0.972-0.648
+    c0.189-0.107,0.567-0.188,1.08-0.27c0.541-0.081,0.945-0.055,1.188,0.054c0.757,0.324,1.188,1.188,1.351,1.972
+    c0.486,2.134,0.297,3.754,0.297,5.915c0,1.053,0.136,1.593,0,2.781c-0.297-0.054-1.08,0.297-1.08-0.108v-0.161
+    c0-0.027,0.027-0.081,0.027-0.108c0.135-1.513-0.027-2.215-0.027-3.592v-0.54c0-0.136-0.027-0.648-0.054-1.54
+    c-0.027-0.892-0.081-1.566-0.162-1.998c-0.108-0.864-0.405-1.594-1.161-1.594c-0.676,0-1.107,0.216-1.891,0.729
+    c-0.378,0.242-0.567,0.675-0.595,1.35c-0.026,0.676-0.026,1.864-0.054,3.565s-0.027,2.728-0.054,3.052
+    C351.682,385.394,351.898,386.123,351.708,386.149z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#T"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#A"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span> <span class="na">transform=</span><span class="s">"translate(39.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#T"</span> <span class="na">transform=</span><span class="s">"translate(22.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#O"</span> <span class="na">transform=</span><span class="s">"translate(44.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M396.324,368.027c0.945-0.081,2.565-0.027,3.376,0.189c0.054,0.324,0.242,0.918-0.108,0.837
+    c-0.514-0.216-2.215-0.216-2.512-0.081c-0.027,0-0.027,0-0.027,0.027c0.297,4.267-0.107,8.696,0.189,13.288
+    c0.081,1.134-0.352,4.402,0.188,4.618c0.243,0.107,0.864,0.243,1.945,0c0.324,0.162,0.243,0.837,0.188,0.837
+    c-3.754,0.567-3.457,0.297-3.511,0.027c-0.216-0.864-0.081-4.214-0.081-5.348c-0.081-4.673-0.189-9.237-0.216-13.909
+    C395.838,368.189,396.081,368,396.324,368.027z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#A"</span> <span class="na">transform=</span><span class="s">"translate(36.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#T"</span> <span class="na">transform=</span><span class="s">"translate(50.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M415.066,368.271c0.838-0.243,1.405-0.081,2.242-0.216c0.216-0.189,0.783-0.136,0.973,0.054
+    c0.216,0.189,0.242,0.459,0.107,0.675c-0.188,2.81,0.027,5.699,0.243,8.508c0.216,2.593,0.081,6.428,0.216,9.615
+    c0.433,1.485,0.217,0.594-0.647,0.891c-0.757,0-2.998,0.055-2.998-0.135c0-0.216-0.271-0.567,0.107-0.811
+    c0.676-0.404,1.404,0.136,2.161,0c0.081-2.809,0.026-6.562-0.189-9.507c0.081-2.728-0.324-5.671-0.243-8.399
+    c-0.647,0.027-1.026-0.026-1.674,0.162C415.12,369.188,414.877,368.676,415.066,368.271z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M423.088,376.562c0,2.215,0.27,3.431,0.135,5.727c0.054,0.621,0.081,1.161,0.107,1.593
+    c0.027,0.433,0.055,0.973,0.027,1.647c0,1.297,0.054,1.945-0.081,3.214c0,0.783-0.621,3.431-3.619,2.62
+    c-0.188,0.271,0.135-0.621,0.054-0.837c1.459,0.594,2.458-0.892,2.458-1.729c0.081-0.621,0.108-1.161,0.081-1.594v-1.647
+    c0-0.675,0-1.216-0.027-1.62c-0.026-0.433-0.054-0.973-0.107-1.594c0.216-2.242-0.216-3.728,0-6.32
+    c0.188-0.188,0.811-0.054,1.053,0.136c0.027,0.054,0.027,0.081,0.027,0.081C423.168,376.4,423.115,376.508,423.088,376.562z
+     M421.926,373.051c-0.026-0.135,0-0.297,0.081-0.459c0.027-0.027,0.055-0.081,0.081-0.108c0.189-0.135,0.378,0.027,0.595,0.027
+    c0.702,0,0.81,0.918,0.513,1.377c-0.188,0.217-0.297,0.162-0.594,0.081c-0.352,0.081-0.567-0.026-0.648-0.27
+    c-0.081-0.189-0.054-0.352-0.054-0.54C421.9,373.104,421.9,373.078,421.926,373.051z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#O"</span> <span class="na">transform=</span><span class="s">"translate(83.5)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M439.022,377.372c-0.729-0.648-1.485-1.08-2.484-0.675c-1.135,0.432-0.864,2.296-0.945,3.295
+    c-0.081,1.026,0.054,0.648,0.054,1.513c0.027,1.053-0.162,2.133-0.026,3.214c0,0.297-0.108,1.404-0.027,1.674
+    c0,0.081-0.271,0.108-0.567,0.108h-0.432c-0.136,0-0.216,0-0.243-0.027c0.081-1.27,0.107-3.483,0.027-4.942
+    c-0.081-1.107,0-2.241-0.027-3.511c-0.027-0.108-0.054-0.189-0.054-0.216c0,0,0.188-1.297-0.729-1.513
+    c-0.189-0.135,0.216-0.514,0.513-0.756c0.405,0,1.188,0.566,1.135,0.891c0.54-0.432,1.404-0.891,2.7-0.756
+    c0.757,0.081,0.838,0.486,1.54,0.702C439.535,376.616,439.239,377.291,439.022,377.372z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#G"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M454.956,381.505c-0.783,0.135-3.592,0.107-4.456,0.026h-0.054c-0.027,0.324,0,0.216-0.027,0.973
+    c0,1.026,0.297,2.484,1.026,2.7c1.161,0.379,2.484-0.459,2.619-1.458c0-0.271,1-0.054,1.054,0.135
+    c-0.351,1.675-3.024,3.35-4.753,2.106c-1.216-0.837-1.135-3.942-1.216-5.293c-0.081-1.297-0.027-3.295,0.756-4.43
+    c0.486-0.702,0.676-0.648,1.621-0.945c0.405-0.135,0.945-0.107,1.351,0c2.16,0.081,2.269,4.187,2.188,5.563
+    C455.037,381.126,454.956,381.505,454.956,381.505z M450.716,377.21c-0.351,0.892-0.513,2.134-0.405,3.241
+    c1.054,0.243,2.296,0.271,3.674,0.108c0.323-1.513-0.081-5.564-2.647-4.079C451.04,376.643,450.851,376.886,450.716,377.21z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#A"</span> <span class="na">transform=</span><span class="s">"translate(92)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#T"</span> <span class="na">transform=</span><span class="s">"translate(106)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#G"</span> <span class="na">transform=</span><span class="s">"translate(30)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M480.504,375.914c0.351,0.135-0.108,0.675,0.026,3.052c0,2.053-0.188,2.458,0.162,4.537
+    c0.297,1.729,2.269,3.106,3.35,1.107c0.242-0.432,0.188-2.322,0.188-4.213c0.027-1.647,0.054-2.755,0.054-4.402
+    c0-0.189,0.838-0.189,1.243-0.027c0,1.647-0.055,2.728-0.055,4.402c0,1.566,0.405,3.187-0.459,4.699
+    c-1.296,2.323-4.618,1.513-5.186-0.702c-0.594-2.322-0.405-3.079-0.324-5.429c0-0.729,0.136-2.188,0-2.862
+    C479.423,375.752,480.287,375.833,480.504,375.914z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M487.985,386.258c-0.513-0.216-0.647-0.729-0.081-1.296c0.027-0.027,0.081-0.055,0.136-0.055
+    c0.351-0.026,0.566,0.027,0.702,0.136c0.324,0.242,0.324,0.27,0.324,0.566C488.93,386.555,488.498,386.501,487.985,386.258z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#C"</span> <span class="na">transform=</span><span class="s">"translate(158)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#O"</span> <span class="na">transform=</span><span class="s">"translate(158)"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M509.833,377.075c-0.026,0.405-0.054,0.648-0.026,0.675c-0.055,1.323-0.081,2.215-0.081,2.674
+    c-0.027,3.133-0.055,5.051-0.055,5.726c0,0.189-0.999,0.298-1.188,0.027c0-0.675,0.027-2.593,0.081-5.698
+    c0-0.892-0.081-1.837-0.081-2.701c0-0.271,0.055-1.485-0.026-2.646c0.135-0.136,1.161-0.108,1.323,0.188
+    c-0.081,0.297,0.054,0.595,0.054,0.838c1.161-0.919,2.566-1.324,3.35-0.136c0,0.055,0.026,0.108,0.054,0.189l0.892-0.514
+    c0.54-0.216,0.351-0.242,0.944-0.378c1.837-0.297,2.188,2.106,2.053,3.862c-0.026,0.324-0.054,1.404-0.081,3.241
+    c0,1.81,0.027,3.052,0.055,3.727c-0.055,0.162-0.54,0.081-0.973,0.136c-0.243,0.026-0.297-0.271-0.216-1.459
+    c0.027-0.621,0.054-1.566,0.027-2.836v-3.024c0.135-2.053-0.243-2.944-1.351-2.323c-0.54,0.298-0.648,0.324-1.081,0.757
+    c0.027,1.026,0.055,2.377,0.027,4.078v2.781c0,0.324,0.027,0.676,0.108,1.621c0.026,0.054,0.026,0.135,0.026,0.27v0.108
+    c-0.243,0-1.404,0-1.296-0.135c0-0.757,0-2.025,0.027-3.781c0.026-1.782,0.026-3.079,0-3.916c0.107-1.972-0.838-2.485-1.675-1.837
+    C510.428,376.724,510.13,376.886,509.833,377.075z"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><strong>Con estos pasos hemos conseguido reducir nuestro SVG de 19KB a 12KB,</strong> quizás no sea mucho pero si optimizamos todos nuestros SVG <strong>la reducción total seguro que es una cantidad poco despreciable</strong>.</p>
 
@@ -439,38 +749,36 @@ El segundo y tercer<code>use</code> corresponde a la segunda letra C, le añadim
 
 <p><strong>ACTUALIZACIÓN 29.11.2013</strong></p>
 
-<p>Si queremos optimizar todavía mas nuestro SVG podemos seguir los pasos del post: <a href="http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/" target="_blank">crear SVG con Adobe Illustrator y Sublime Text</a>, la idea es ayudarnos de Illustrator y el panel de información para conseguir sustituir los <code>path</code> por formas básicas como <code>rect</code>, <code>circle</code> y así reducir el código sin perder precisión.</p>
-
+<p>Si queremos optimizar todavía mas nuestro SVG podemos seguir los pasos del post: <a href="http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/" target="_blank">crear SVG con Adobe Illustrator y Sublime Text</a>, la idea es ayudarnos de Illustrator y el panel de información para conseguir sustituir los <code class="highlighter-rouge">path</code> por formas básicas como <code class="highlighter-rouge">rect</code>, <code class="highlighter-rouge">circle</code> y así reducir el código sin perder precisión.</p>
 
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/inspiracion-diseno-web-xv/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/inspiracion-diseno-grafico-xiv/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/inspiracion-diseno-web-xv/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/inspiracion-diseno-grafico-xiv/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -478,7 +786,6 @@ El segundo y tercer<code>use</code> corresponde a la segunda letra C, le añadim
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

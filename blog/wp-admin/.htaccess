@@ -1,8 +1,0 @@
-ErrorDocument 401 "Unauthorized Access"
-ErrorDocument 403 "Forbidden"
-<FilesMatch "wp-login.php">
-AuthName "Solo autorizados"
-AuthType Basic
-AuthUserFile /home/blog/.wpadmin
-require valid-user
-</FilesMatch>

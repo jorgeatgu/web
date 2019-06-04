@@ -6,62 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Gradients y filters a través de un sprite con SVG</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/gradients-filters-sprite-svg-soporte/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Gradients y filters a través de un sprite con SVG</h1>
-          <p class="articulo-fecha">
-          <time datetime="2014-10-24 00:00:00 +0200">
-              El
-              24 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Gradients y filters a través de un sprite con SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-10-24 00:00:00 +0200">
+                El
+                24 de
+                
                 octubre
-
+                
                 de
                 2014
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#sprites">Sprites</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Las conversaciones con <a href="https://twitter.com/elrumordelaluz/" target="_blank">Lionel</a> a través de twitter suelen ser <a href="http://jorgeatgu.com/blog/animando-svg-con-css3-en-firefox/" target="_blank">bastante fructiferas</a> y dan lugar a pequeñas investigaciones para ver los problemas que nos vamos encontrando con <strong>SVG</strong> y el diferente soporte que le dan los navegadores.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#sprites">Sprites</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Las conversaciones con <a href="https://twitter.com/elrumordelaluz/" target="_blank">Lionel</a> a través de twitter suelen ser <a href="http://jorgeatgu.com/blog/animando-svg-con-css3-en-firefox/" target="_blank">bastante fructiferas</a> y dan lugar a pequeñas investigaciones para ver los problemas que nos vamos encontrando con <strong>SVG</strong> y el diferente soporte que le dan los navegadores.</p>
 
 <p>Hace poco publiqué un artículo en <a href="http://octuweb.com" target="_blank">octuweb</a> donde hablaba sobre como utilizar los <a href="http://octuweb.com/sprites-con-svg" target="_blank">sprites</a> a través de <strong>SVG</strong>. En el artículo ya advertía que si el sprite lleva un filtro este no se va a mostrar. Si es un degradado solo va a mostrar la forma o figura que lleve el degradado pero los colores pasarán a ser negros. Esto último como vamos a ver a lo largo del post no pasa en todos los navegadores.</p>
 
@@ -97,11 +94,11 @@
 
 <p>Bueno voy a llamarlo solución o apaño, vaya por delante que no me termina de convencer.</p>
 
-<p>Lo que podemos hacer es incluir el archivo de <code>sprite-images.svg</code> dentro del HTML, es decir inline. Y luego la llamada la hacemos igual pero sin la ruta del archivo. El código quedaría de la siguiente manera.</p>
+<p>Lo que podemos hacer es incluir el archivo de <code class="highlighter-rouge">sprite-images.svg</code> dentro del HTML, es decir inline. Y luego la llamada la hacemos igual pero sin la ruta del archivo. El código quedaría de la siguiente manera.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 595.3 299&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;recuadro&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&quot;#turbulence&quot;</span><span class="p">/&gt;</span>
-<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">viewBox=</span><span class="s">"0 0 595.3 299"</span> <span class="na">class=</span><span class="s">"recuadro"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#turbulence"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre></figure>
 
 <h3 id="demo-svg-sprites">DEMO SVG SPRITES</h3>
 
@@ -120,36 +117,34 @@
 </button></p>
 
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/skate-d3js/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/opciones-ocultas-exportar-svg-sketch/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/skate-d3js/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/opciones-ocultas-exportar-svg-sketch/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -157,7 +152,6 @@
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

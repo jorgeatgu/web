@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Jorge Aznar · { civic/data/designer } · Zaragoza.</title>
+    <meta name="keywords" content="data, css, atomic-css, web, design, dataviz, open-data">
+    <meta name="description" content="data/designer">
+    <meta name="author" content="Jorge Aznar">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="humans.txt"/>
+    <script src="js/d3.min4.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body class="custom-txt-c font-system">
+    <header class="header">
+        <nav class="header-nav">
+            <div class="header-elements">
+                <a class="header-links header-links-bold" href="http://jorgeatgu.com/">WEB</a>
+                <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog/">BLOG</a>
+                <a class="header-links header-links-bold" href="http://jorgeatgu.com/mapas.html">MAPAS</a>
+            </div>
+            <div class="header-elements">
+                <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+                <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+                <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+                <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="renta-media">
+
+            <article class="elecciones-map">
+                <div id="map"></div>
+
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-email">contacto@jorgeatgu.com</p>
+            <a class="footer-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <strong class="footer-dots">·</strong>
+            <a class="footer-links" href="http://twitter.com/jorgeatgu">Twitter</a> <strong class="footer-dots">·</strong>
+            <a class="footer-links" href="https://jorgeatgu.carto.com/me">Carto</a> <strong class="footer-dots">·</strong>
+            <a class="footer-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+            <p class="footer-copyright">© 2012 - 2019</p>
+        </div>
+    </footer>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.0/mapbox-gl.js'></script>
+    <script src="js/elecciones.js"></script>
+
+</html>

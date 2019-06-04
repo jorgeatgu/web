@@ -6,66 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Patterns en SVG</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/patterns-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Patterns en SVG</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-07-12 00:00:00 +0200">
-              El
-              12 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Patterns en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-07-12 00:00:00 +0200">
+                El
+                12 de
+                
                 julio
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Hoy vamos a ver los <em>patterns</em> o patrones en <strong>SVG</strong>. Con los <em>patterns</em> conseguimos repetir una imagen, objeto, recuadro a lo largo de nuestro <strong>SVG</strong> sin tener que estar repitiendo continuamente el mismo código.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Hoy vamos a ver los <em>patterns</em> o patrones en <strong>SVG</strong>. Con los <em>patterns</em> conseguimos repetir una imagen, objeto, recuadro a lo largo de nuestro <strong>SVG</strong> sin tener que estar repitiendo continuamente el mismo código.</p>
 
 <!--more-->
 
-<p>Los <em>patterns</em> siempre deberán ir dentro de la etiqueta <code>defs</code>, y se declaran con la etiqueta <code>pattern</code> dentro de esta etiqueta incluiremos los objetos que vayamos a utilizar en nuestro <em>pattern</em>.</p>
+<p>Los <em>patterns</em> siempre deberán ir dentro de la etiqueta <code class="highlighter-rouge">defs</code>, y se declaran con la etiqueta <code class="highlighter-rouge">pattern</code> dentro de esta etiqueta incluiremos los objetos que vayamos a utilizar en nuestro <em>pattern</em>.</p>
 
 <p>Para los ejemplos de los <em>patterns</em> voy a utilizar los de <a href="http://philbit.com/svgpatterns/" target="_blank">Philip Rogers</a>, que a su vez se inspiro en los patterns que creo <a href="http://lea.verou.me/css3patterns/" target="_blank">Lea Verou</a> solamente con CSS.</p>
 
@@ -73,25 +70,40 @@
 
 <p><strong>EJEMPLOS</strong></p>
 
-<p>En los ejemplos vamos a ver como añadir el <strong>SVG</strong> a través de la etiqueta <code>object</code> <code>img</code> <code>inline</code> y con <code>background-image</code>. Cada uno va dentro de una etiqueta <code>article</code> para darle a todos la misma medida aunque como observareis no todos respetan el tamaño, tan solo he tenido que darle estilos a la etiqueta <code>img</code> ya que el <code>height</code> se desboca, tengo que investigar cual es el motivo.</p>
+<p>En los ejemplos vamos a ver como añadir el <strong>SVG</strong> a través de la etiqueta <code class="highlighter-rouge">object</code> <code class="highlighter-rouge">img</code> <code class="highlighter-rouge">inline</code> y con <code class="highlighter-rouge">background-image</code>. Cada uno va dentro de una etiqueta <code class="highlighter-rouge">article</code> para darle a todos la misma medida aunque como observareis no todos respetan el tamaño, tan solo he tenido que darle estilos a la etiqueta <code class="highlighter-rouge">img</code> ya que el <code class="highlighter-rouge">height</code> se desboca, tengo que investigar cual es el motivo.</p>
 
 <h3 id="horizontal-stripes">Horizontal Stripes</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>        <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;30&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;30&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>          <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;30&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;30&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#00a9f1&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>          <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;30&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;18&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#26baf4&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">11 </span>      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">12 </span>
-<span class="lineno">13 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">14 </span>
-<span class="lineno">15 </span>  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;defs&gt;</span>
+        <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"30"</span> <span class="na">height=</span><span class="s">"30"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'30'</span> <span class="na">height=</span><span class="s">'30'</span> <span class="na">fill=</span><span class="s">'#00a9f1'</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'30'</span> <span class="na">height=</span><span class="s">'18'</span> <span class="na">fill=</span><span class="s">'#26baf4'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/pattern&gt;</span>
+      <span class="nt">&lt;/defs&gt;</span>
+
+      <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/horizontal-stripes.html">VER EJEMPLO!</a>
@@ -99,24 +111,42 @@
 
 <h3 id="green-stripes">Green Stripes</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>        <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;70&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;70&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;70&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;70&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#bbd817&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>        <span class="p">&lt;</span><span class="nt">g</span> <span class="na">transform</span><span class="o">=</span><span class="s">&#39;rotate(45)&#39;</span><span class="p">&gt;</span>
-<span class="lineno">10 </span>          <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;99&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;25&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#a9ce00&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">11 </span>          <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;-50&#39;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;99&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;25&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#a9ce00&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>        <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno">13 </span>        <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">14 </span>      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>
-<span class="lineno">16 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">17 </span>
-<span class="lineno">18 </span>  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;defs&gt;</span>
+        <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"70"</span> <span class="na">height=</span><span class="s">"70"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'70'</span> <span class="na">height=</span><span class="s">'70'</span> <span class="na">fill=</span><span class="s">'#bbd817'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;g</span> <span class="na">transform=</span><span class="s">'rotate(45)'</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'99'</span> <span class="na">height=</span><span class="s">'25'</span> <span class="na">fill=</span><span class="s">'#a9ce00'</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">y=</span><span class="s">'-50'</span> <span class="na">width=</span><span class="s">'99'</span> <span class="na">height=</span><span class="s">'25'</span> <span class="na">fill=</span><span class="s">'#a9ce00'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/g&gt;</span>
+        <span class="nt">&lt;/pattern&gt;</span>
+      <span class="nt">&lt;/defs&gt;</span>
+
+      <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/green-stripes.html">VER EJEMPLO!</a>
@@ -124,23 +154,40 @@
 
 <h3 id="honeycomb">Honeycomb</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>         <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;56&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;70&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;70&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#bbd817&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;56&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;100&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#f8d203&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#39;M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;none&#39;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#39;#fff629&#39;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#39;2&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">11 </span>        <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#39;M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;none&#39;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#39;#ffe503&#39;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#39;2&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>        <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">13 </span>      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">14 </span>
-<span class="lineno">15 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">16 </span>
-<span class="lineno">17 </span>  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;defs&gt;</span>
+         <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"56"</span> <span class="na">height=</span><span class="s">"100"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'70'</span> <span class="na">height=</span><span class="s">'70'</span> <span class="na">fill=</span><span class="s">'#bbd817'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'56'</span> <span class="na">height=</span><span class="s">'100'</span> <span class="na">fill=</span><span class="s">'#f8d203'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">'M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100'</span> <span class="na">fill=</span><span class="s">'none'</span> <span class="na">stroke=</span><span class="s">'#fff629'</span> <span class="na">stroke-width=</span><span class="s">'2'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">'M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34'</span> <span class="na">fill=</span><span class="s">'none'</span> <span class="na">stroke=</span><span class="s">'#ffe503'</span> <span class="na">stroke-width=</span><span class="s">'2'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/pattern&gt;</span>
+      <span class="nt">&lt;/defs&gt;</span>
+
+      <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/honeycomb.html">VER EJEMPLO!</a>
@@ -148,30 +195,52 @@
 
 <h3 id="chevrons">Chevrons</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>  <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>    <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;60&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;30&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;r&#39;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;30&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;15&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#bb085f&#39;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#39;2.5&#39;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#39;#7a054d&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>      <span class="p">&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;p&#39;</span><span class="p">&gt;</span>
-<span class="lineno">10 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#r&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">11 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;15&#39;</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#r&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;30&#39;</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#r&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">13 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;45&#39;</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#r&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">14 </span>      <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#p&#39;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&#39;translate(0 -25) skewY(40)&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">16 </span>      <span class="p">&lt;</span><span class="nt">use</span> <span class="na">xlink:href</span><span class="o">=</span><span class="s">&#39;#p&#39;</span> <span class="na">transform</span><span class="o">=</span><span class="s">&#39;translate(30 0) skewY(-40)&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">17 </span>    <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">18 </span>  <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">19 </span>
-<span class="lineno">20 </span>  <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">21 </span>
-<span class="lineno">22 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
 
-<p>Este patrón no se puede añadir a través de las etiquetas <code>object</code>, <code>img</code> ni con <code>background</code> ya que al usar etiquetas <code>use</code> dentro de <code>pattern</code> el <strong>SVG</strong> da error.</p>
+  <span class="nt">&lt;defs&gt;</span>
+    <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"60"</span> <span class="na">height=</span><span class="s">"30"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">'r'</span> <span class="na">width=</span><span class="s">'30'</span> <span class="na">height=</span><span class="s">'15'</span> <span class="na">fill=</span><span class="s">'#bb085f'</span> <span class="na">stroke-width=</span><span class="s">'2.5'</span> <span class="na">stroke=</span><span class="s">'#7a054d'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">'p'</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">'#r'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">y=</span><span class="s">'15'</span> <span class="na">xlink:href=</span><span class="s">'#r'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">y=</span><span class="s">'30'</span> <span class="na">xlink:href=</span><span class="s">'#r'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">y=</span><span class="s">'45'</span> <span class="na">xlink:href=</span><span class="s">'#r'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/g&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">'#p'</span> <span class="na">transform=</span><span class="s">'translate(0 -25) skewY(40)'</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">'#p'</span> <span class="na">transform=</span><span class="s">'translate(30 0) skewY(-40)'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/pattern&gt;</span>
+  <span class="nt">&lt;/defs&gt;</span>
+
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Este patrón no se puede añadir a través de las etiquetas <code class="highlighter-rouge">object</code>, <code class="highlighter-rouge">img</code> ni con <code class="highlighter-rouge">background</code> ya que al usar etiquetas <code class="highlighter-rouge">use</code> dentro de <code class="highlighter-rouge">pattern</code> el <strong>SVG</strong> da error.</p>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/chevrons.html">VER EJEMPLO!</a>
@@ -179,24 +248,42 @@
 
 <h3 id="carbon-fiber">Carbon Fiber</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>  <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>    <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;15&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;15&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;50&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;50&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#282828&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>        <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#39;3&#39;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#39;4.3&#39;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#39;1.8&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#393939&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#39;3&#39;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#39;3&#39;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#39;1.8&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">11 </span>        <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#39;10.5&#39;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#39;12.5&#39;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#39;1.8&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#393939&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>        <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">&#39;10.5&#39;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&#39;11.3&#39;</span> <span class="na">r</span><span class="o">=</span><span class="s">&#39;1.8&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">13 </span>    <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">14 </span>  <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>
-<span class="lineno">16 </span>  <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">17 </span>
-<span class="lineno">18 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;defs&gt;</span>
+    <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"15"</span> <span class="na">height=</span><span class="s">"15"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'50'</span> <span class="na">height=</span><span class="s">'50'</span> <span class="na">fill=</span><span class="s">'#282828'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">'3'</span> <span class="na">cy=</span><span class="s">'4.3'</span> <span class="na">r=</span><span class="s">'1.8'</span> <span class="na">fill=</span><span class="s">'#393939'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">'3'</span> <span class="na">cy=</span><span class="s">'3'</span> <span class="na">r=</span><span class="s">'1.8'</span> <span class="na">fill=</span><span class="s">'black'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">'10.5'</span> <span class="na">cy=</span><span class="s">'12.5'</span> <span class="na">r=</span><span class="s">'1.8'</span> <span class="na">fill=</span><span class="s">'#393939'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">'10.5'</span> <span class="na">cy=</span><span class="s">'11.3'</span> <span class="na">r=</span><span class="s">'1.8'</span> <span class="na">fill=</span><span class="s">'black'</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/pattern&gt;</span>
+  <span class="nt">&lt;/defs&gt;</span>
+
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/carbon-fiber.html">VER EJEMPLO!</a>
@@ -204,22 +291,38 @@
 
 <h3 id="thin-stripes">Thin Stripes</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>        <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;5&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;5&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>          <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;5&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;5&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#9e9e9e&#39;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span>          <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">&#39;M0 5L5 0ZM6 4L4 6ZM-1 1L1 -1Z&#39;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#39;#888&#39;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#39;1&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">11 </span>      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">12 </span>
-<span class="lineno">13 </span>
-<span class="lineno">14 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">15 </span>
-<span class="lineno">16 </span>  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;defs&gt;</span>
+        <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"5"</span> <span class="na">height=</span><span class="s">"5"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'5'</span> <span class="na">height=</span><span class="s">'5'</span> <span class="na">fill=</span><span class="s">'#9e9e9e'</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;path</span> <span class="na">d=</span><span class="s">'M0 5L5 0ZM6 4L4 6ZM-1 1L1 -1Z'</span> <span class="na">stroke=</span><span class="s">'#888'</span> <span class="na">stroke-width=</span><span class="s">'1'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/pattern&gt;</span>
+      <span class="nt">&lt;/defs&gt;</span>
+
+
+      <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/thin-stripes.html">VER EJEMPLO!</a>
@@ -227,25 +330,44 @@
 
 <h3 id="speclked-noise">Speclked Noise</h3>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#39;http://www.w3.org/2000/svg&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 2 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 100% 100%&quot;</span>
-<span class="lineno"> 3 </span>   <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 100% 100%&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>
-<span class="lineno"> 5 </span>      <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>        <span class="p">&lt;</span><span class="nt">pattern</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textura&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;300&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;300&quot;</span>
-<span class="lineno"> 7 </span>        <span class="na">patternUnits</span><span class="o">=</span><span class="s">&quot;userSpaceOnUse&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>        <span class="p">&lt;</span><span class="nt">filter</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;n&#39;</span> <span class="na">x</span><span class="o">=</span><span class="s">&#39;0&#39;</span> <span class="na">y</span><span class="o">=</span><span class="s">&#39;0&#39;</span><span class="p">&gt;</span>
-<span class="lineno"> 9 </span>        <span class="p">&lt;</span><span class="nt">feTurbulence</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;fractalNoise&#39;</span> <span class="na">baseFrequency</span><span class="o">=</span><span class="s">&#39;0.7&#39;</span> <span class="na">numOctaves</span><span class="o">=</span><span class="s">&#39;10&#39;</span> <span class="na">stitchTiles</span><span class="o">=</span><span class="s">&#39;stitch&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;/</span><span class="nt">filter</span><span class="p">&gt;</span>
-<span class="lineno">11 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;300&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;300&#39;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#39;#000&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">width</span><span class="o">=</span><span class="s">&#39;300&#39;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#39;300&#39;</span> <span class="na">filter</span><span class="o">=</span><span class="s">&quot;url(#n)&quot;</span> <span class="na">opacity</span><span class="o">=</span><span class="s">&#39;0.4&#39;</span><span class="p">/&gt;</span>
-<span class="lineno">13 </span>        <span class="p">&lt;/</span><span class="nt">pattern</span><span class="p">&gt;</span>
-<span class="lineno">14 </span>      <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno">15 </span>
-<span class="lineno">16 </span>
-<span class="lineno">17 </span>      <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;100%&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;url(#textura)&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">18 </span>
-<span class="lineno">19 </span>  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+   <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+   <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;defs&gt;</span>
+        <span class="nt">&lt;pattern</span> <span class="na">id=</span><span class="s">"textura"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="na">height=</span><span class="s">"300"</span>
+        <span class="na">patternUnits=</span><span class="s">"userSpaceOnUse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;filter</span> <span class="na">id=</span><span class="s">'n'</span> <span class="na">x=</span><span class="s">'0'</span> <span class="na">y=</span><span class="s">'0'</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;feTurbulence</span> <span class="na">type=</span><span class="s">'fractalNoise'</span> <span class="na">baseFrequency=</span><span class="s">'0.7'</span> <span class="na">numOctaves=</span><span class="s">'10'</span> <span class="na">stitchTiles=</span><span class="s">'stitch'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/filter&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'300'</span> <span class="na">height=</span><span class="s">'300'</span> <span class="na">fill=</span><span class="s">'#000'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">'300'</span> <span class="na">height=</span><span class="s">'300'</span> <span class="na">filter=</span><span class="s">"url(#n)"</span> <span class="na">opacity=</span><span class="s">'0.4'</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/pattern&gt;</span>
+      <span class="nt">&lt;/defs&gt;</span>
+
+
+      <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">fill=</span><span class="s">"url(#textura)"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p><button class="boton-centrar">
   <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/patterns/speckled-noise.html">VER EJEMPLO!</a>
@@ -257,36 +379,34 @@
   <a target="_blank" class="btn" href="http://jorgeatgu.com/doc/patterns.zip">DESCARGAR!</a>
 </button></p>
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/inspiracion-diseno-web-xiv/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/cards-and-films-por-jesus-prudencio/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/inspiracion-diseno-web-xiv/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/cards-and-films-por-jesus-prudencio/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -294,7 +414,6 @@
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>

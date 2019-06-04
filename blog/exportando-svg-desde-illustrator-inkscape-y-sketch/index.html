@@ -6,66 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Exportar SVG desde Illustrator, Inkscape y Sketch</title>
     <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
-    <meta name="generator" content="Jekyll v3.5.2">
+    <meta name="generator" content="Jekyll v3.8.5">
     <link rel="stylesheet" href="/blog/css/styles.css">
     <link rel="canonical" href="http://jorgeatgu.com/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
 </head>
 
 
 <body>
-    <section class="container-boira">
-        <header class="header">
-    <nav class="header-nav  post-contenido va-m">
-        <ul class="menu-principal va-m">
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/index">Web</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://jorgeatgu.com/blog">Blog</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="/blog/archivo/">Categorias</a>
-            </li>
-            <li class="menu-principal-li va-m">
-                <a class="va-m" href="http://feedpress.me/scalable">RSS</a>
-            </li>
-        </ul>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
     </nav>
 </header>
 
+    <section class="container-boira">
 
         <article>
-                <main>
-      <article class="categoria-titulo">
-  	    <h1>Exportar SVG desde Illustrator, Inkscape y Sketch</h1>
-          <p class="articulo-fecha">
-          <time datetime="2013-12-26 00:00:00 +0100">
-              El
-              26 de
-
+            <main>
+    <article class="categoria-titulo">
+        <h1>Exportar SVG desde Illustrator, Inkscape y Sketch</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-26 00:00:00 +0100">
+                El
+                26 de
+                
                 diciembre
-
+                
                 de
                 2013
             </time>
         </p>
-  	    <span class="archivado">Archivado en:
-
-  	    <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#inkscape">Inkscape</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#sketch">Sketch</a>
-
-  	    <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
-
-          </span>
-  	    <!-- Categorías:  -->
-
-      </article>
-
-      <article class="post-contenido">
-  	    <p>Hasta ahora solo había hablado sobre como exportar SVG desde Adobe Illustrator(<a href="http://jorgeatgu.com/blog/exportar-svg/" target="_blank">aquí</a>),(<a href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/" target="_blank">aquí</a>) y (<a href="http://jorgeatgu.com/blog/mi-experiencia-con-svg/" target="_blank">aquí</a>). Hoy voy a hacer una pequeña comparación en la que vamos a ver que código genera Illustrator, Inkscape y Sketch a la hora de exportar en formato SVG, antes de nada <strong>recordar que solamente Inkscape es gratuito</strong>.</p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#inkscape">Inkscape</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#sketch">Sketch</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Hasta ahora solo había hablado sobre como exportar SVG desde Adobe Illustrator(<a href="http://jorgeatgu.com/blog/exportar-svg/" target="_blank">aquí</a>),(<a href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/" target="_blank">aquí</a>) y (<a href="http://jorgeatgu.com/blog/mi-experiencia-con-svg/" target="_blank">aquí</a>). Hoy voy a hacer una pequeña comparación en la que vamos a ver que código genera Illustrator, Inkscape y Sketch a la hora de exportar en formato SVG, antes de nada <strong>recordar que solamente Inkscape es gratuito</strong>.</p>
 
 <!--more-->
 
@@ -78,20 +75,32 @@
 <p><img src="http://jorgeatgu.com/blog/img/2013/12/illustrator.png" alt="svg illustrator" /></p>
 
 <p>Aquí podemos ver el código que ha generado a la hora de exportar.
-En la etiqueta de apertura nos sobra el <code>id=""</code>, el atributo <code>xml:space=</code> y <code>enable-background</code>. Ha respetado el círculo, pentágono y cuadrado pero a la hora de exportar el cuadrado con bordes redondeados ha generado un <code>path</code> cuando lo ideal hubiera sido añadir al cuadrado el atributo <code>rx=""</code> que es con el que conseguimos redondear las esquinas. También añade <code>stroke-miterlimit</code>, podemos prescindir de este atributo sin ningún problema.</p>
+En la etiqueta de apertura nos sobra el <code class="highlighter-rouge">id=""</code>, el atributo <code class="highlighter-rouge">xml:space=</code> y <code class="highlighter-rouge">enable-background</code>. Ha respetado el círculo, pentágono y cuadrado pero a la hora de exportar el cuadrado con bordes redondeados ha generado un <code class="highlighter-rouge">path</code> cuando lo ideal hubiera sido añadir al cuadrado el atributo <code class="highlighter-rouge">rx=""</code> que es con el que conseguimos redondear las esquinas. También añade <code class="highlighter-rouge">stroke-miterlimit</code>, podemos prescindir de este atributo sin ningún problema.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="lineno"> 2 </span><span class="c">&lt;!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;</span>
-<span class="lineno"> 3 </span><span class="cp">&lt;!DOCTYPE svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot; &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;&gt;</span>
-<span class="lineno"> 4 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Capa_1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0px&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0px&quot;</span>
-<span class="lineno"> 5 </span>	 <span class="na">width</span><span class="o">=</span><span class="s">&quot;960px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;560px&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 960 560&quot;</span> <span class="na">enable-background</span><span class="o">=</span><span class="s">&quot;new 0 0 960 560&quot;</span> <span class="na">xml:space</span><span class="o">=</span><span class="s">&quot;preserve&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span><span class="p">&lt;</span><span class="nt">rect</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;99.5&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;100.5&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FF0000&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000000&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;200&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 7 </span><span class="p">&lt;</span><span class="nt">path</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FF0000&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000000&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">d</span><span class="o">=</span><span class="s">&quot;M526.5,297.8c0,2.6-2.1,4.7-4.7,4.7H331.2c-2.6,0-4.7-2.1-4.7-4.7</span>
-<span class="lineno"> 8 </span><span class="s">	V107.2c0-2.6,2.1-4.7,4.7-4.7h190.6c2.6,0,4.7,2.1,4.7,4.7V297.8z&quot;</span><span class="p">/&gt;</span>
-<span class="lineno"> 9 </span><span class="p">&lt;</span><span class="nt">circle</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FF0000&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000000&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;661.1&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;204.8&quot;</span> <span class="na">r</span><span class="o">=</span><span class="s">&quot;100&quot;</span><span class="p">/&gt;</span>
-<span class="lineno">10 </span><span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#FF0000&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#000000&quot;</span> <span class="na">stroke-miterlimit</span><span class="o">=</span><span class="s">&quot;10&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;132.6,525.5 94.4,408.1 194.4,335.6 294.4,408.1</span>
-<span class="lineno">11 </span><span class="s">	256.2,525.5 &quot;</span><span class="p">/&gt;</span>
-<span class="lineno">12 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;</span>
+<span class="cp">&lt;!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"&gt;</span>
+<span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">id=</span><span class="s">"Capa_1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+	 <span class="na">width=</span><span class="s">"960px"</span> <span class="na">height=</span><span class="s">"560px"</span> <span class="na">viewBox=</span><span class="s">"0 0 960 560"</span> <span class="na">enable-background=</span><span class="s">"new 0 0 960 560"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"99.5"</span> <span class="na">y=</span><span class="s">"100.5"</span> <span class="na">fill=</span><span class="s">"#FF0000"</span> <span class="na">stroke=</span><span class="s">"#000000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FF0000"</span> <span class="na">stroke=</span><span class="s">"#000000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">d=</span><span class="s">"M526.5,297.8c0,2.6-2.1,4.7-4.7,4.7H331.2c-2.6,0-4.7-2.1-4.7-4.7
+	V107.2c0-2.6,2.1-4.7,4.7-4.7h190.6c2.6,0,4.7,2.1,4.7,4.7V297.8z"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#FF0000"</span> <span class="na">stroke=</span><span class="s">"#000000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">cx=</span><span class="s">"661.1"</span> <span class="na">cy=</span><span class="s">"204.8"</span> <span class="na">r=</span><span class="s">"100"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#FF0000"</span> <span class="na">stroke=</span><span class="s">"#000000"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">points=</span><span class="s">"132.6,525.5 94.4,408.1 194.4,335.6 294.4,408.1
+	256.2,525.5 "</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="inkscape">Inkscape</h2>
 
@@ -99,135 +108,253 @@ En la etiqueta de apertura nos sobra el <code>id=""</code>, el atributo <code>xm
 
 <p><img src="http://jorgeatgu.com/blog/img/2013/12/inkscape-800x558.png" alt="inkscape svg" /></p>
 
-<p>El código que genera para mi es un caos. La etiqueta de apertura SVG lleva muchísimos atributos que no nos sirven para nada, omite la etiqueta <code>viewBox</code> lo cual nos puede crear problemas a la hora de insertar <strong>SVG **en el **HMTL</strong>. Crea una etiqueta <code>defs</code> a la que no le encuentro ningún tipo de sentido. Los atributos de las formas los da a través de estilos CSS cuando se puede utilizar <code>fill</code> para el color y <code>stroke-width</code> para el grosor. El círculo y el pentágono en lugar de crearlos con etiquetas <code>circle</code> y <code>polygon</code> se crean con la etiqueta <code>path</code> lo cual genera mas código. En cambio el rectángulo redondeado se crea a la perfección, cosa que no es capaz de hacer Illustrator.</p>
+<p>El código que genera para mi es un caos. La etiqueta de apertura SVG lleva muchísimos atributos que no nos sirven para nada, omite la etiqueta <code class="highlighter-rouge">viewBox</code> lo cual nos puede crear problemas a la hora de insertar <strong>SVG **en el **HMTL</strong>. Crea una etiqueta <code class="highlighter-rouge">defs</code> a la que no le encuentro ningún tipo de sentido. Los atributos de las formas los da a través de estilos CSS cuando se puede utilizar <code class="highlighter-rouge">fill</code> para el color y <code class="highlighter-rouge">stroke-width</code> para el grosor. El círculo y el pentágono en lugar de crearlos con etiquetas <code class="highlighter-rouge">circle</code> y <code class="highlighter-rouge">polygon</code> se crean con la etiqueta <code class="highlighter-rouge">path</code> lo cual genera mas código. En cambio el rectángulo redondeado se crea a la perfección, cosa que no es capaz de hacer Illustrator.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno">  1 </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
-<span class="lineno">  2 </span><span class="c">&lt;!-- Created with Inkscape (http://www.inkscape.org/) --&gt;</span>
-<span class="lineno">  3 </span>
-<span class="lineno">  4 </span><span class="p">&lt;</span><span class="nt">svg</span>
-<span class="lineno">  5 </span>   <span class="na">xmlns:dc</span><span class="o">=</span><span class="s">&quot;http://purl.org/dc/elements/1.1/&quot;</span>
-<span class="lineno">  6 </span>   <span class="na">xmlns:cc</span><span class="o">=</span><span class="s">&quot;http://creativecommons.org/ns#&quot;</span>
-<span class="lineno">  7 </span>   <span class="na">xmlns:rdf</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
-<span class="lineno">  8 </span>   <span class="na">xmlns:svg</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno">  9 </span>   <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span>
-<span class="lineno"> 10 </span>   <span class="na">xmlns:sodipodi</span><span class="o">=</span><span class="s">&quot;http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd&quot;</span>
-<span class="lineno"> 11 </span>   <span class="na">xmlns:inkscape</span><span class="o">=</span><span class="s">&quot;http://www.inkscape.org/namespaces/inkscape&quot;</span>
-<span class="lineno"> 12 </span>   <span class="na">width</span><span class="o">=</span><span class="s">&quot;210mm&quot;</span>
-<span class="lineno"> 13 </span>   <span class="na">height</span><span class="o">=</span><span class="s">&quot;297mm&quot;</span>
-<span class="lineno"> 14 </span>   <span class="na">id</span><span class="o">=</span><span class="s">&quot;svg2&quot;</span>
-<span class="lineno"> 15 </span>   <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span>
-<span class="lineno"> 16 </span>   <span class="na">inkscape:version</span><span class="o">=</span><span class="s">&quot;0.48.2 r9819&quot;</span>
-<span class="lineno"> 17 </span>   <span class="na">sodipodi:docname</span><span class="o">=</span><span class="s">&quot;plano.svg&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 18 </span>  <span class="p">&lt;</span><span class="nt">defs</span>
-<span class="lineno"> 19 </span>     <span class="na">id</span><span class="o">=</span><span class="s">&quot;defs4&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 20 </span>    <span class="p">&lt;</span><span class="nt">inkscape:perspective</span>
-<span class="lineno"> 21 </span>       <span class="na">sodipodi:type</span><span class="o">=</span><span class="s">&quot;inkscape:persp3d&quot;</span>
-<span class="lineno"> 22 </span>       <span class="na">inkscape:vp_x</span><span class="o">=</span><span class="s">&quot;0 : 526.18109 : 1&quot;</span>
-<span class="lineno"> 23 </span>       <span class="na">inkscape:vp_y</span><span class="o">=</span><span class="s">&quot;0 : 1000 : 0&quot;</span>
-<span class="lineno"> 24 </span>       <span class="na">inkscape:vp_z</span><span class="o">=</span><span class="s">&quot;744.09448 : 526.18109 : 1&quot;</span>
-<span class="lineno"> 25 </span>       <span class="na">inkscape:persp3d-origin</span><span class="o">=</span><span class="s">&quot;372.04724 : 350.78739 : 1&quot;</span>
-<span class="lineno"> 26 </span>       <span class="na">id</span><span class="o">=</span><span class="s">&quot;perspective2987&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 27 </span>  <span class="p">&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 28 </span>  <span class="p">&lt;</span><span class="nt">sodipodi:namedview</span>
-<span class="lineno"> 29 </span>     <span class="na">id</span><span class="o">=</span><span class="s">&quot;base&quot;</span>
-<span class="lineno"> 30 </span>     <span class="na">pagecolor</span><span class="o">=</span><span class="s">&quot;#ffffff&quot;</span>
-<span class="lineno"> 31 </span>     <span class="na">bordercolor</span><span class="o">=</span><span class="s">&quot;#666666&quot;</span>
-<span class="lineno"> 32 </span>     <span class="na">borderopacity</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span>
-<span class="lineno"> 33 </span>     <span class="na">inkscape:pageopacity</span><span class="o">=</span><span class="s">&quot;0.0&quot;</span>
-<span class="lineno"> 34 </span>     <span class="na">inkscape:pageshadow</span><span class="o">=</span><span class="s">&quot;2&quot;</span>
-<span class="lineno"> 35 </span>     <span class="na">inkscape:zoom</span><span class="o">=</span><span class="s">&quot;2.7161909&quot;</span>
-<span class="lineno"> 36 </span>     <span class="na">inkscape:cx</span><span class="o">=</span><span class="s">&quot;392.75591&quot;</span>
-<span class="lineno"> 37 </span>     <span class="na">inkscape:cy</span><span class="o">=</span><span class="s">&quot;743.92974&quot;</span>
-<span class="lineno"> 38 </span>     <span class="na">inkscape:document-units</span><span class="o">=</span><span class="s">&quot;px&quot;</span>
-<span class="lineno"> 39 </span>     <span class="na">inkscape:current-layer</span><span class="o">=</span><span class="s">&quot;layer1&quot;</span>
-<span class="lineno"> 40 </span>     <span class="na">showgrid</span><span class="o">=</span><span class="s">&quot;false&quot;</span>
-<span class="lineno"> 41 </span>     <span class="na">inkscape:window-width</span><span class="o">=</span><span class="s">&quot;1920&quot;</span>
-<span class="lineno"> 42 </span>     <span class="na">inkscape:window-height</span><span class="o">=</span><span class="s">&quot;950&quot;</span>
-<span class="lineno"> 43 </span>     <span class="na">inkscape:window-x</span><span class="o">=</span><span class="s">&quot;1680&quot;</span>
-<span class="lineno"> 44 </span>     <span class="na">inkscape:window-y</span><span class="o">=</span><span class="s">&quot;22&quot;</span>
-<span class="lineno"> 45 </span>     <span class="na">inkscape:window-maximized</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 46 </span>  <span class="p">&lt;</span><span class="nt">metadata</span>
-<span class="lineno"> 47 </span>     <span class="na">id</span><span class="o">=</span><span class="s">&quot;metadata7&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 48 </span>    <span class="p">&lt;</span><span class="nt">rdf:RDF</span><span class="p">&gt;</span>
-<span class="lineno"> 49 </span>      <span class="p">&lt;</span><span class="nt">cc:Work</span>
-<span class="lineno"> 50 </span>         <span class="na">rdf:about</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 51 </span>        <span class="p">&lt;</span><span class="nt">dc:format</span><span class="p">&gt;</span>image/svg+xml<span class="p">&lt;/</span><span class="nt">dc:format</span><span class="p">&gt;</span>
-<span class="lineno"> 52 </span>        <span class="p">&lt;</span><span class="nt">dc:type</span>
-<span class="lineno"> 53 </span>           <span class="na">rdf:resource</span><span class="o">=</span><span class="s">&quot;http://purl.org/dc/dcmitype/StillImage&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 54 </span>        <span class="p">&lt;</span><span class="nt">dc:title</span><span class="p">&gt;&lt;/</span><span class="nt">dc:title</span><span class="p">&gt;</span>
-<span class="lineno"> 55 </span>      <span class="p">&lt;/</span><span class="nt">cc:Work</span><span class="p">&gt;</span>
-<span class="lineno"> 56 </span>    <span class="p">&lt;/</span><span class="nt">rdf:RDF</span><span class="p">&gt;</span>
-<span class="lineno"> 57 </span>  <span class="p">&lt;/</span><span class="nt">metadata</span><span class="p">&gt;</span>
-<span class="lineno"> 58 </span>  <span class="p">&lt;</span><span class="nt">g</span>
-<span class="lineno"> 59 </span>     <span class="na">inkscape:label</span><span class="o">=</span><span class="s">&quot;Capa 1&quot;</span>
-<span class="lineno"> 60 </span>     <span class="na">inkscape:groupmode</span><span class="o">=</span><span class="s">&quot;layer&quot;</span>
-<span class="lineno"> 61 </span>     <span class="na">id</span><span class="o">=</span><span class="s">&quot;layer1&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 62 </span>    <span class="p">&lt;</span><span class="nt">rect</span>
-<span class="lineno"> 63 </span>       <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:0.83983207px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;</span>
-<span class="lineno"> 64 </span>       <span class="na">id</span><span class="o">=</span><span class="s">&quot;rect2985&quot;</span>
-<span class="lineno"> 65 </span>       <span class="na">width</span><span class="o">=</span><span class="s">&quot;199.16017&quot;</span>
-<span class="lineno"> 66 </span>       <span class="na">height</span><span class="o">=</span><span class="s">&quot;199.16017&quot;</span>
-<span class="lineno"> 67 </span>       <span class="na">x</span><span class="o">=</span><span class="s">&quot;85.634201&quot;</span>
-<span class="lineno"> 68 </span>       <span class="na">y</span><span class="o">=</span><span class="s">&quot;167.56781&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 69 </span>    <span class="p">&lt;</span><span class="nt">path</span>
-<span class="lineno"> 70 </span>       <span class="na">sodipodi:type</span><span class="o">=</span><span class="s">&quot;arc&quot;</span>
-<span class="lineno"> 71 </span>       <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;</span>
-<span class="lineno"> 72 </span>       <span class="na">id</span><span class="o">=</span><span class="s">&quot;path3003&quot;</span>
-<span class="lineno"> 73 </span>       <span class="na">sodipodi:cx</span><span class="o">=</span><span class="s">&quot;487.14285&quot;</span>
-<span class="lineno"> 74 </span>       <span class="na">sodipodi:cy</span><span class="o">=</span><span class="s">&quot;296.64789&quot;</span>
-<span class="lineno"> 75 </span>       <span class="na">sodipodi:rx</span><span class="o">=</span><span class="s">&quot;130&quot;</span>
-<span class="lineno"> 76 </span>       <span class="na">sodipodi:ry</span><span class="o">=</span><span class="s">&quot;130&quot;</span>
-<span class="lineno"> 77 </span>       <span class="na">d</span><span class="o">=</span><span class="s">&quot;m 617.14285,296.64789 a 130,130 0 1 1 -260,0 130,130 0 1 1 260,0 z&quot;</span>
-<span class="lineno"> 78 </span>       <span class="na">transform</span><span class="o">=</span><span class="s">&quot;matrix(0.76628352,0,0,0.76628352,114.78188,36.974356)&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 79 </span>    <span class="p">&lt;</span><span class="nt">path</span>
-<span class="lineno"> 80 </span>       <span class="na">sodipodi:type</span><span class="o">=</span><span class="s">&quot;star&quot;</span>
-<span class="lineno"> 81 </span>       <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:#ffff00;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;</span>
-<span class="lineno"> 82 </span>       <span class="na">id</span><span class="o">=</span><span class="s">&quot;path3007&quot;</span>
-<span class="lineno"> 83 </span>       <span class="na">sodipodi:sides</span><span class="o">=</span><span class="s">&quot;5&quot;</span>
-<span class="lineno"> 84 </span>       <span class="na">sodipodi:cx</span><span class="o">=</span><span class="s">&quot;160&quot;</span>
-<span class="lineno"> 85 </span>       <span class="na">sodipodi:cy</span><span class="o">=</span><span class="s">&quot;535.21936&quot;</span>
-<span class="lineno"> 86 </span>       <span class="na">sodipodi:r1</span><span class="o">=</span><span class="s">&quot;151.42857&quot;</span>
-<span class="lineno"> 87 </span>       <span class="na">sodipodi:r2</span><span class="o">=</span><span class="s">&quot;122.50829&quot;</span>
-<span class="lineno"> 88 </span>       <span class="na">sodipodi:arg1</span><span class="o">=</span><span class="s">&quot;-1.5707963&quot;</span>
-<span class="lineno"> 89 </span>       <span class="na">sodipodi:arg2</span><span class="o">=</span><span class="s">&quot;-0.9424778&quot;</span>
-<span class="lineno"> 90 </span>       <span class="na">inkscape:flatsided</span><span class="o">=</span><span class="s">&quot;true&quot;</span>
-<span class="lineno"> 91 </span>       <span class="na">inkscape:rounded</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
-<span class="lineno"> 92 </span>       <span class="na">inkscape:randomized</span><span class="o">=</span><span class="s">&quot;0&quot;</span>
-<span class="lineno"> 93 </span>       <span class="na">d</span><span class="o">=</span><span class="s">&quot;m 160,383.79079 144.01713,104.63457 -55.00965,169.30229 -178.014966,0 -55.009644,-169.3023 z&quot;</span>
-<span class="lineno"> 94 </span>       <span class="na">inkscape:transform-center-y</span><span class="o">=</span><span class="s">&quot;-10.00583&quot;</span>
-<span class="lineno"> 95 </span>       <span class="na">transform</span><span class="o">=</span><span class="s">&quot;matrix(0.69195948,0,0,0.69195948,124.76935,211.33222)&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno"> 96 </span>    <span class="p">&lt;</span><span class="nt">rect</span>
-<span class="lineno"> 97 </span>       <span class="na">style</span><span class="o">=</span><span class="s">&quot;fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1&quot;</span>
-<span class="lineno"> 98 </span>       <span class="na">id</span><span class="o">=</span><span class="s">&quot;rect3009&quot;</span>
-<span class="lineno"> 99 </span>       <span class="na">width</span><span class="o">=</span><span class="s">&quot;200&quot;</span>
-<span class="lineno">100 </span>       <span class="na">height</span><span class="o">=</span><span class="s">&quot;200&quot;</span>
-<span class="lineno">101 </span>       <span class="na">x</span><span class="o">=</span><span class="s">&quot;419.62878&quot;</span>
-<span class="lineno">102 </span>       <span class="na">y</span><span class="o">=</span><span class="s">&quot;472.9021&quot;</span>
-<span class="lineno">103 </span>       <span class="na">rx</span><span class="o">=</span><span class="s">&quot;8&quot;</span>
-<span class="lineno">104 </span>       <span class="na">ry</span><span class="o">=</span><span class="s">&quot;8&quot;</span> <span class="p">/&gt;</span>
-<span class="lineno">105 </span>  <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno">106 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="c">&lt;!-- Created with Inkscape (http://www.inkscape.org/) --&gt;</span>
+
+<span class="nt">&lt;svg</span>
+   <span class="na">xmlns:dc=</span><span class="s">"http://purl.org/dc/elements/1.1/"</span>
+   <span class="na">xmlns:cc=</span><span class="s">"http://creativecommons.org/ns#"</span>
+   <span class="na">xmlns:rdf=</span><span class="s">"http://www.w3.org/1999/02/22-rdf-syntax-ns#"</span>
+   <span class="na">xmlns:svg=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+   <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+   <span class="na">xmlns:sodipodi=</span><span class="s">"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"</span>
+   <span class="na">xmlns:inkscape=</span><span class="s">"http://www.inkscape.org/namespaces/inkscape"</span>
+   <span class="na">width=</span><span class="s">"210mm"</span>
+   <span class="na">height=</span><span class="s">"297mm"</span>
+   <span class="na">id=</span><span class="s">"svg2"</span>
+   <span class="na">version=</span><span class="s">"1.1"</span>
+   <span class="na">inkscape:version=</span><span class="s">"0.48.2 r9819"</span>
+   <span class="na">sodipodi:docname=</span><span class="s">"plano.svg"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;defs</span>
+     <span class="na">id=</span><span class="s">"defs4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;inkscape:perspective</span>
+       <span class="na">sodipodi:type=</span><span class="s">"inkscape:persp3d"</span>
+       <span class="na">inkscape:vp_x=</span><span class="s">"0 : 526.18109 : 1"</span>
+       <span class="na">inkscape:vp_y=</span><span class="s">"0 : 1000 : 0"</span>
+       <span class="na">inkscape:vp_z=</span><span class="s">"744.09448 : 526.18109 : 1"</span>
+       <span class="na">inkscape:persp3d-origin=</span><span class="s">"372.04724 : 350.78739 : 1"</span>
+       <span class="na">id=</span><span class="s">"perspective2987"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/defs&gt;</span>
+  <span class="nt">&lt;sodipodi:namedview</span>
+     <span class="na">id=</span><span class="s">"base"</span>
+     <span class="na">pagecolor=</span><span class="s">"#ffffff"</span>
+     <span class="na">bordercolor=</span><span class="s">"#666666"</span>
+     <span class="na">borderopacity=</span><span class="s">"1.0"</span>
+     <span class="na">inkscape:pageopacity=</span><span class="s">"0.0"</span>
+     <span class="na">inkscape:pageshadow=</span><span class="s">"2"</span>
+     <span class="na">inkscape:zoom=</span><span class="s">"2.7161909"</span>
+     <span class="na">inkscape:cx=</span><span class="s">"392.75591"</span>
+     <span class="na">inkscape:cy=</span><span class="s">"743.92974"</span>
+     <span class="na">inkscape:document-units=</span><span class="s">"px"</span>
+     <span class="na">inkscape:current-layer=</span><span class="s">"layer1"</span>
+     <span class="na">showgrid=</span><span class="s">"false"</span>
+     <span class="na">inkscape:window-width=</span><span class="s">"1920"</span>
+     <span class="na">inkscape:window-height=</span><span class="s">"950"</span>
+     <span class="na">inkscape:window-x=</span><span class="s">"1680"</span>
+     <span class="na">inkscape:window-y=</span><span class="s">"22"</span>
+     <span class="na">inkscape:window-maximized=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;metadata</span>
+     <span class="na">id=</span><span class="s">"metadata7"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rdf:RDF&gt;</span>
+      <span class="nt">&lt;cc:Work</span>
+         <span class="na">rdf:about=</span><span class="s">""</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;dc:format&gt;</span>image/svg+xml<span class="nt">&lt;/dc:format&gt;</span>
+        <span class="nt">&lt;dc:type</span>
+           <span class="na">rdf:resource=</span><span class="s">"http://purl.org/dc/dcmitype/StillImage"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;dc:title&gt;&lt;/dc:title&gt;</span>
+      <span class="nt">&lt;/cc:Work&gt;</span>
+    <span class="nt">&lt;/rdf:RDF&gt;</span>
+  <span class="nt">&lt;/metadata&gt;</span>
+  <span class="nt">&lt;g</span>
+     <span class="na">inkscape:label=</span><span class="s">"Capa 1"</span>
+     <span class="na">inkscape:groupmode=</span><span class="s">"layer"</span>
+     <span class="na">id=</span><span class="s">"layer1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rect</span>
+       <span class="na">style=</span><span class="s">"fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:0.83983207px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"</span>
+       <span class="na">id=</span><span class="s">"rect2985"</span>
+       <span class="na">width=</span><span class="s">"199.16017"</span>
+       <span class="na">height=</span><span class="s">"199.16017"</span>
+       <span class="na">x=</span><span class="s">"85.634201"</span>
+       <span class="na">y=</span><span class="s">"167.56781"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span>
+       <span class="na">sodipodi:type=</span><span class="s">"arc"</span>
+       <span class="na">style=</span><span class="s">"fill:#ff0000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"</span>
+       <span class="na">id=</span><span class="s">"path3003"</span>
+       <span class="na">sodipodi:cx=</span><span class="s">"487.14285"</span>
+       <span class="na">sodipodi:cy=</span><span class="s">"296.64789"</span>
+       <span class="na">sodipodi:rx=</span><span class="s">"130"</span>
+       <span class="na">sodipodi:ry=</span><span class="s">"130"</span>
+       <span class="na">d=</span><span class="s">"m 617.14285,296.64789 a 130,130 0 1 1 -260,0 130,130 0 1 1 260,0 z"</span>
+       <span class="na">transform=</span><span class="s">"matrix(0.76628352,0,0,0.76628352,114.78188,36.974356)"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span>
+       <span class="na">sodipodi:type=</span><span class="s">"star"</span>
+       <span class="na">style=</span><span class="s">"fill:#ffff00;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"</span>
+       <span class="na">id=</span><span class="s">"path3007"</span>
+       <span class="na">sodipodi:sides=</span><span class="s">"5"</span>
+       <span class="na">sodipodi:cx=</span><span class="s">"160"</span>
+       <span class="na">sodipodi:cy=</span><span class="s">"535.21936"</span>
+       <span class="na">sodipodi:r1=</span><span class="s">"151.42857"</span>
+       <span class="na">sodipodi:r2=</span><span class="s">"122.50829"</span>
+       <span class="na">sodipodi:arg1=</span><span class="s">"-1.5707963"</span>
+       <span class="na">sodipodi:arg2=</span><span class="s">"-0.9424778"</span>
+       <span class="na">inkscape:flatsided=</span><span class="s">"true"</span>
+       <span class="na">inkscape:rounded=</span><span class="s">"0"</span>
+       <span class="na">inkscape:randomized=</span><span class="s">"0"</span>
+       <span class="na">d=</span><span class="s">"m 160,383.79079 144.01713,104.63457 -55.00965,169.30229 -178.014966,0 -55.009644,-169.3023 z"</span>
+       <span class="na">inkscape:transform-center-y=</span><span class="s">"-10.00583"</span>
+       <span class="na">transform=</span><span class="s">"matrix(0.69195948,0,0,0.69195948,124.76935,211.33222)"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span>
+       <span class="na">style=</span><span class="s">"fill:#0000ff;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"</span>
+       <span class="na">id=</span><span class="s">"rect3009"</span>
+       <span class="na">width=</span><span class="s">"200"</span>
+       <span class="na">height=</span><span class="s">"200"</span>
+       <span class="na">x=</span><span class="s">"419.62878"</span>
+       <span class="na">y=</span><span class="s">"472.9021"</span>
+       <span class="na">rx=</span><span class="s">"8"</span>
+       <span class="na">ry=</span><span class="s">"8"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <h2 id="sketch">Sketch</h2>
 
-<p>Aquí podemos ver el menú para exportar <strong>SVG **desde **Sketch</strong>, desde el menú podemos modificar el <code>width</code> y <code>height</code> del documento y excluir objetos. Nada más.</p>
+<p>Aquí podemos ver el menú para exportar <strong>SVG **desde **Sketch</strong>, desde el menú podemos modificar el <code class="highlighter-rouge">width</code> y <code class="highlighter-rouge">height</code> del documento y excluir objetos. Nada más.</p>
 
 <p><img src="http://jorgeatgu.com/blog/img/2013/12/sketch-800x524.png" alt="sketch svg" /></p>
 
-<p>Con Sketch la etiqueta de apertura de **SVG **es casi perfecta, solamente sobra <code>xmlns:sketch="http://www.bohemiancoding.com/sketch/ns</code>, publicidad y tal. Nos crea las etiquetas <code>title</code> y <code>description</code> que nos ahorra trabajo a la hora de titular y añadir una descripción del archivo. Crea también una etiqueta <code>defs</code> sin contenido, en este caso no vamos a utilizar. A la hora de exportar las formas sin duda alguna es el mejor ya que no utiliza <code>path</code> para sustituir a las etiquetas originales. Lo peor sin duda es que añade <code>sketch:type="MSShapeGroup"</code> y que utiliza hasta cinco decimales en las coordenadas y esto hará que nuestro archivo aumente considerablemente de tamaño.</p>
+<p>Con Sketch la etiqueta de apertura de **SVG **es casi perfecta, solamente sobra <code class="highlighter-rouge">xmlns:sketch="http://www.bohemiancoding.com/sketch/ns</code>, publicidad y tal. Nos crea las etiquetas <code class="highlighter-rouge">title</code> y <code class="highlighter-rouge">description</code> que nos ahorra trabajo a la hora de titular y añadir una descripción del archivo. Crea también una etiqueta <code class="highlighter-rouge">defs</code> sin contenido, en este caso no vamos a utilizar. A la hora de exportar las formas sin duda alguna es el mejor ya que no utiliza <code class="highlighter-rouge">path</code> para sustituir a las etiquetas originales. Lo peor sin duda es que añade <code class="highlighter-rouge">sketch:type="MSShapeGroup"</code> y que utiliza hasta cinco decimales en las coordenadas y esto hará que nuestro archivo aumente considerablemente de tamaño.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="lineno"> 1 </span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
-<span class="lineno"> 2 </span><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;1075px&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;238px&quot;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&quot;0 0 1075 238&quot;</span> <span class="na">version</span><span class="o">=</span><span class="s">&quot;1.1&quot;</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="na">xmlns:xlink</span><span class="o">=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span> <span class="na">xmlns:sketch</span><span class="o">=</span><span class="s">&quot;http://www.bohemiancoding.com/sketch/ns&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 3 </span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Slice 1<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="lineno"> 4 </span>    <span class="p">&lt;</span><span class="nt">description</span><span class="p">&gt;</span>Created with Sketch (http://www.bohemiancoding.com/sketch)<span class="p">&lt;/</span><span class="nt">description</span><span class="p">&gt;</span>
-<span class="lineno"> 5 </span>    <span class="p">&lt;</span><span class="nt">defs</span><span class="p">&gt;&lt;/</span><span class="nt">defs</span><span class="p">&gt;</span>
-<span class="lineno"> 6 </span>    <span class="p">&lt;</span><span class="nt">g</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Page-1&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&quot;1&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">fill-rule</span><span class="o">=</span><span class="s">&quot;evenodd&quot;</span> <span class="na">sketch:type</span><span class="o">=</span><span class="s">&quot;MSPage&quot;</span><span class="p">&gt;</span>
-<span class="lineno"> 7 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Rectangle-1&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#979797&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#D0011B&quot;</span> <span class="na">sketch:type</span><span class="o">=</span><span class="s">&quot;MSShapeGroup&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;222&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;222&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
-<span class="lineno"> 8 </span>        <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Oval-1&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#979797&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#D0011B&quot;</span> <span class="na">sketch:type</span><span class="o">=</span><span class="s">&quot;MSShapeGroup&quot;</span> <span class="na">cx</span><span class="o">=</span><span class="s">&quot;407&quot;</span> <span class="na">cy</span><span class="o">=</span><span class="s">&quot;123&quot;</span> <span class="na">r</span><span class="o">=</span><span class="s">&quot;109&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
-<span class="lineno"> 9 </span>        <span class="p">&lt;</span><span class="nt">rect</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Rectangle-2&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#979797&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#D0011B&quot;</span> <span class="na">sketch:type</span><span class="o">=</span><span class="s">&quot;MSShapeGroup&quot;</span> <span class="na">x</span><span class="o">=</span><span class="s">&quot;552&quot;</span> <span class="na">y</span><span class="o">=</span><span class="s">&quot;6&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;232&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;232&quot;</span> <span class="na">rx</span><span class="o">=</span><span class="s">&quot;8&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">rect</span><span class="p">&gt;</span>
-<span class="lineno">10 </span>        <span class="p">&lt;</span><span class="nt">polygon</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;Polygon-1&quot;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&quot;#979797&quot;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&quot;#D0011B&quot;</span> <span class="na">sketch:type</span><span class="o">=</span><span class="s">&quot;MSShapeGroup&quot;</span> <span class="na">points</span><span class="o">=</span><span class="s">&quot;965.5 13 1074.39597 92.1175541 1032.80141 220.132446 898.198589 220.132446 856.604029 92.1175541 &quot;</span><span class="p">&gt;&lt;/</span><span class="nt">polygon</span><span class="p">&gt;</span>
-<span class="lineno">11 </span>    <span class="p">&lt;/</span><span class="nt">g</span><span class="p">&gt;</span>
-<span class="lineno">12 </span><span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;</span>
+<span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"1075px"</span> <span class="na">height=</span><span class="s">"238px"</span> <span class="na">viewBox=</span><span class="s">"0 0 1075 238"</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">xmlns:sketch=</span><span class="s">"http://www.bohemiancoding.com/sketch/ns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Slice 1<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;description&gt;</span>Created with Sketch (http://www.bohemiancoding.com/sketch)<span class="nt">&lt;/description&gt;</span>
+    <span class="nt">&lt;defs&gt;&lt;/defs&gt;</span>
+    <span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"Page-1"</span> <span class="na">stroke=</span><span class="s">"none"</span> <span class="na">stroke-width=</span><span class="s">"1"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">fill-rule=</span><span class="s">"evenodd"</span> <span class="na">sketch:type=</span><span class="s">"MSPage"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"Rectangle-1"</span> <span class="na">stroke=</span><span class="s">"#979797"</span> <span class="na">fill=</span><span class="s">"#D0011B"</span> <span class="na">sketch:type=</span><span class="s">"MSShapeGroup"</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"222"</span> <span class="na">height=</span><span class="s">"222"</span><span class="nt">&gt;&lt;/rect&gt;</span>
+        <span class="nt">&lt;circle</span> <span class="na">id=</span><span class="s">"Oval-1"</span> <span class="na">stroke=</span><span class="s">"#979797"</span> <span class="na">fill=</span><span class="s">"#D0011B"</span> <span class="na">sketch:type=</span><span class="s">"MSShapeGroup"</span> <span class="na">cx=</span><span class="s">"407"</span> <span class="na">cy=</span><span class="s">"123"</span> <span class="na">r=</span><span class="s">"109"</span><span class="nt">&gt;&lt;/circle&gt;</span>
+        <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"Rectangle-2"</span> <span class="na">stroke=</span><span class="s">"#979797"</span> <span class="na">fill=</span><span class="s">"#D0011B"</span> <span class="na">sketch:type=</span><span class="s">"MSShapeGroup"</span> <span class="na">x=</span><span class="s">"552"</span> <span class="na">y=</span><span class="s">"6"</span> <span class="na">width=</span><span class="s">"232"</span> <span class="na">height=</span><span class="s">"232"</span> <span class="na">rx=</span><span class="s">"8"</span><span class="nt">&gt;&lt;/rect&gt;</span>
+        <span class="nt">&lt;polygon</span> <span class="na">id=</span><span class="s">"Polygon-1"</span> <span class="na">stroke=</span><span class="s">"#979797"</span> <span class="na">fill=</span><span class="s">"#D0011B"</span> <span class="na">sketch:type=</span><span class="s">"MSShapeGroup"</span> <span class="na">points=</span><span class="s">"965.5 13 1074.39597 92.1175541 1032.80141 220.132446 898.198589 220.132446 856.604029 92.1175541 "</span><span class="nt">&gt;&lt;/polygon&gt;</span>
+    <span class="nt">&lt;/g&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>Enlaces de interés:</p>
 
@@ -235,36 +362,34 @@ En la etiqueta de apertura nos sobra el <code>id=""</code>, el atributo <code>xm
 <a href="http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/" target="_blank">Crear SVG con Illustrator y Sublime Text</a></p>
 
 
-
         <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
-        <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
         </a>
-      </article>
-    </main>
-
-    <article class="paginacion post-contenido">
-
-            <a class="btn-posterior" href="/blog/atributos-viewbox-y-preserveaspectratio-en-svg/">Artículo posterior</a>
-
-
-            <a class="btn-anterior" href="/blog/svgeneration-texturas-gratuitas-en-formato-svg/">Artículo anterior</a>
-
     </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/atributos-viewbox-y-preserveaspectratio-en-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/svgeneration-texturas-gratuitas-en-formato-svg/">Artículo anterior</a>
+    
+</article>
 
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
 
-    <article id="disqus_thread"></article>
-
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-       })();
-   </script>
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 
 
         </article>
@@ -272,7 +397,6 @@ En la etiqueta de apertura nos sobra el <code>id=""</code>, el atributo <code>xm
     <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
     <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
   </footer>
-
 
     </section>
 </body>
