@@ -1,5 +1,5 @@
 .bio {
-    margin: 10vh auto 0;
+    margin: 0 auto;
     max-width: 90vw;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .bio-element-title {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     margin: 1rem 0;
     font-weight: bold;
     font-family: var(--rubik);
@@ -24,7 +24,7 @@
 .bio-element-text {
     font-size: 1rem;
     font-family: var(--plex);
-    margin: 0 0 2rem;
+    margin: 0 0 1rem;
     max-width: 35rem;
     width: 100%;
     .trough {
@@ -81,7 +81,6 @@
         width: 100%;
         padding: 2rem 0;
     }
-
 
 }
 
