@@ -13,7 +13,7 @@
 .footer-links,
 .footer-copyright {
     font-size: 1rem;
-    font-family: var(--rubik);
+    font-family: var(--plex);
     text-decoration: none;
     display: block;
     color: var(--blanco);

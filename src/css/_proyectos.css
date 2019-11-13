@@ -1,72 +1,24 @@
-main {
-    background-color: rgba(51, 114, 148, .2);
-}
-
 .proyectos {
     max-width: 90%;
     display: grid;
     margin: 2rem auto;
     margin-top: 0;
     grid-template-columns: 1fr;
-    grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
     justify-items: stretch;
     align-items: stretch;
 }
 
-.proyectos-element {
-    width: 100%;
-    display: inline-block;
-    text-decoration: none;
-    transition: all .3s ease-in;
-    position: relative;
-
-    &:hover {
-        transform: translateY(-.25rem);
-        opacity: .9;
-    }
-}
-
-.proyectos-element-img {
-    width: 100%;
-    border-radius: .5rem;
-    object-fit: cover;
-    max-height: 200px;
-}
 
 .proyectos-element-title {
-    font-size: 1.25rem;
-    font-family: var(--rubik);
-    color: var(--negro);
-    font-weight: bold;
-    letter-spacing: 1px;
-    display: block;
-    margin: 0;
-    padding-bottom: .25rem;
-}
-
-.proyectos-element-text {
     font-size: 1rem;
     font-family: var(--plex);
     color: var(--negro);
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 100%;
-}
-
-.proyectos-element-subtitle {
-    font-size: .75rem;
-    font-family: var(--rubik);
-    color: var(--negro);
-    padding: .5rem;
-    background-color: rgba(241, 240, 240, .8);
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.line-through {
-    text-decoration: line-through;
+    display: block;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: .25rem;
 }
 
 @media only screen and (min-width: 48em) {
@@ -81,7 +33,7 @@ main {
 @media only screen and (min-width: 64em) {
 
     .proyectos {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         max-width: 58rem;
     }
 }

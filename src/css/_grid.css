@@ -12,6 +12,7 @@
     font-size: 1.75rem;
     margin: 1rem 0;
     font-weight: bold;
+    letter-spacing: 1px;
     font-family: var(--rubik);
 }
 
