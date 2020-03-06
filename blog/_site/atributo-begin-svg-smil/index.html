@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animando SVG con SMIL &#8211; atributo begin</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/atributo-begin-svg-smil/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animando SVG con SMIL &#8211; atributo begin</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-09 00:00:00 +0100">
+                El
+                9 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Con el atributo <code class="highlighter-rouge">begin</code> vamos a definir el comienzo de una animación con <strong>SMIL</strong> en <strong>SVG</strong>.</p>
+
+<!--more-->
+
+<p>Para definir el tiempo podemos utilizar las siguientes unidades:</p>
+
+<ol>
+  <li><strong>h</strong> Horas <br /></li>
+  <li><strong>min</strong> Minutos <br /></li>
+  <li><strong>s</strong> Segundos <br /></li>
+  <li><strong>ms</strong> Milisegundos <br /></li>
+</ol>
+
+<p>La lista de elementos donde vamos a utilizar el atributo <code class="highlighter-rouge">begin</code> son las siguientes:</p>
+
+<ol>
+  <li>animate <br /></li>
+  <li>animatecolor <br /></li>
+  <li>animatemotion <br /></li>
+  <li>animatetransform <br /></li>
+  <li>mpath <br /></li>
+  <li>set <br /></li>
+</ol>
+
+<p>A continuación vamos a ver los diferentes valores que podemos utilizar en el atributo <code class="highlighter-rouge">begin</code></p>
+
+<h3 id="offset">Offset</h3>
+
+<p>El atributo <code class="highlighter-rouge">begin</code> es definido con el valor de la unidad de tiempo que nosotros especifiquemos, como hemos visto anteriormente la unidad puede estar en milisegundos, segundos, minutos o horas. El valor podrá ser negativo.</p>
+
+<p>En el ejemplo que vamos a ver a continuación la animación comienza al segundo de cargar <code class="highlighter-rouge">begin="1s"</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span>
+<span class="na">id=</span><span class="s">"cerrar"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span>
+<span class="na">type=</span><span class="s">"translate"</span>
+<span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1000"</span>
+<span class="na">dur=</span><span class="s">"5s"</span>
+<span class="na">repeatDur=</span><span class="s">"1"</span>
+<span class="na">begin=</span><span class="s">"1s"</span>
+<span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/begin/offset.html">VER EJEMPLO!</a>
+</button></p>
+
+<h3 id="syncbase">Syncbase</h3>
+
+<p>La animación comenzara con el inicio o final de otra animación, la cual deberá tener obligatoriamente un <code class="highlighter-rouge">ID</code> para así poder referenciarla. En primer lugar irá el id de la animación y a continuación <code class="highlighter-rouge">.end</code> o .<code class="highlighter-rouge">begin</code>. Utilizaremos <code class="highlighter-rouge">.end</code> cuando queramos que nuestra animación comience cuando termine la animación referenciada, o <code class="highlighter-rouge">.begin</code> cuando queramos que nuestra animación comience a la vez que la animación referenciada.
+También podemos añadir tiempo extra al inicio de la animación, simplemente tenemos que hacerlo con el símbolo + acompañado del tiempo, por ejemplo <code class="highlighter-rouge">begin="cerrar.end+5s"</code>. La animación comenzara 5 segundos después del fin de la animación con el nombre <em>cerrar</em>.</p>
+
+<p>En el ejemplo que vamos a ver a continuación la segunda parte de la animación comenzara cuando la animación con el <code class="highlighter-rouge">ID="cerrar"</code> termine.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span> <span class="na">id=</span><span class="s">"tapa"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span>
+<span class="na">type=</span><span class="s">"translate"</span>
+<span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1000"</span>
+<span class="na">dur=</span><span class="s">"5s"</span>
+<span class="na">repeatDur=</span><span class="s">"1"</span>
+<span class="na">begin=</span><span class="s">"cerrar.end"</span>
+<span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/begin/syncbase.html">VER EJEMPLO!</a>
+</button></p>
+
+<h3 id="event">Event</h3>
+
+<p>El comienzo de la animación estará definido por un evento.
+Los eventos que podemos emplear son los siguientes: <em>focusin, focusout, activate, click, mousedown, mouseup, mouseover, mousemove, mouseout, DOMSubtreeModified, DOMNodeInserted, DOMNodeRemoved, DOMNodeRemovedFromDocument, DOMNodeInsertedIntoDocument, DOMAttrModified, DOMCharacterDataModified, SVGLoad, SVGUnload, SVGAbort, SVGError, SVGResize, SVGScroll, SVGZoom, beginEvent, endEvent and repeatEvent.</em></p>
+
+<p>En el ejemplo que vamos a ver a continuación la animación comenzara con el evento <em>mouseover</em>, es decir, cuando el ratón pase por encima del sobre.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span> <span class="na">id=</span><span class="s">"cerrar"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span>
+<span class="na">type=</span><span class="s">"translate"</span>
+<span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1000"</span>
+<span class="na">dur=</span><span class="s">"5s"</span>
+<span class="na">repeatDur=</span><span class="s">"1"</span>
+<span class="na">begin=</span><span class="s">"mouseover"</span>
+<span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/begin/event.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>En este SVG que está disponible en CodePen la aplicación de los filtros a la imagen comienzan con el evento <code class="highlighter-rouge">.click</code></p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="jyibl" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<h3 id="repeat">Repeat</h3>
+
+<p>En el ejemplo que vamos a ver a continuación la animación se repite cuando la última animación llega a su fin, como se puede ver en el ejemplo los valores están separados por punto y coma <code class="highlighter-rouge">begin="1s;barra.end" </code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span> <span class="na">id=</span><span class="s">"cerrar"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span>
+<span class="na">type=</span><span class="s">"translate"</span>
+<span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1000"</span>
+<span class="na">dur=</span><span class="s">"5s"</span>
+<span class="na">repeatDur=</span><span class="s">"1"</span>
+<span class="na">begin=</span><span class="s">"1s;barra.end"</span>
+<span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/begin/repeat.html">VER EJEMPLO!</a>
+</button></p>
+
+<h3 id="accesskey">AccessKey</h3>
+
+<p>La animación comenzara cuando el usuario presione la tecla que indiquemos, lo haremos de la siguiente forma <code class="highlighter-rouge">begin="accessKey(h)" </code>, entre paréntesis ira la letra. <strong>Solo funciona en Firefox.</strong></p>
+
+<p>En el ejemplo que vamos a ver a continuación la animación comienza cuando el usuario presione la tecla h.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span> <span class="na">id=</span><span class="s">"cerrar"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span>
+<span class="na">type=</span><span class="s">"translate"</span>
+<span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1000"</span>
+<span class="na">dur=</span><span class="s">"5s"</span>
+<span class="na">repeatDur=</span><span class="s">"1"</span>
+<span class="na">begin=</span><span class="s">"accessKey(h)"</span>
+<span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/begin/accesskey.html">VER EJEMPLO!</a>
+</button></p>
+
+<h3 id="wallclock">wallclock</h3>
+
+<p>La animación comenzara con el valor de un reloj de tiempo real. La sintaxis de tiempo se basa en la sintaxis definida en <a href="http://www.iso.org/iso/catalogue_detail?csnumber=40874" target="_blank">ISO8601</a>.</p>
+
+<h3 id="indefinite">indefinite</h3>
+
+<p>El comienzo de la animación estará determinado por un “beginElement()”</p>
+
+<p>Mas información en la <a href="http://www.w3.org/TR/SVG/animate.html#BeginAttribute" target="_blank">especificación de SVG en W3C</a>.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/svgeezy-plugin-javascript-para-sustituir-svg-por-png/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/solucion-para-el-problema-del-height-en-svg/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

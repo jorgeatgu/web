@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guía sobre Jekyll - configuración</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Guía sobre Jekyll - configuración</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-10-10 00:00:00 +0200">
+                El
+                10 de
+                
+                octubre
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#jekyll">Jekyll</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>El otro día vimos el primer post de la guía sobre <strong>Jekyll</strong>. En el vimos como <a href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll/" target="_blank">instalar todo lo necesario para empezar a trabajar con Jekyll</a>.</p>
+
+<p>Nos quedamos con la estructura que viene por defecto al instalar <strong>Jekyll</strong>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/10/guia-jekyll-estructura-ampliada.png" alt="Estructura de Jekyll" /></p>
+
+<p>Ahora vamos a ver las diferentes carpetas y archivos que vienen en la instalación.</p>
+
+<h2 id="_includes">_includes</h2>
+
+<p>Aquí irán nuestras porciones de código que se suelen repetir en nuestras páginas, los cuales vamos a ir añadiendo con <strong>includes</strong> en nuestros layouts. Por defecto <strong>Jekyll</strong> nos crea <code class="highlighter-rouge">footer.html head.html header.html</code> ya será cuestión de cada uno ir creando nuestros propios <strong>includes</strong> con nuestro propio código.</p>
+
+<p>Como ejemplo os dejo el que utilizo para mi header.html`</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"proxima-nova"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"menu-principal"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://jorgeatgu.com/index"</span><span class="nt">&gt;</span>INICIO<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://jorgeatgu.com/trabajos"</span><span class="nt">&gt;</span>TRABAJOS<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://jorgeatgu.com/contacto"</span><span class="nt">&gt;</span>CONTACTO<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"http://jorgeatgu.com/blog/"</span><span class="nt">&gt;</span>BLOG<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"social-header"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"https://twitter.com/jorgeATGU"</span> <span class="na">title=</span><span class="s">"Twitter"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/img/social-sprite.svg#twitter"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/svg&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"http://codepen.io/jorgeatgu"</span> <span class="na">title=</span><span class="s">"codepen"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/img/social-sprite.svg#codepen"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/svg&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+                 <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"https://github.com/jorgeatgu"</span> <span class="na">title=</span><span class="s">"GitHub"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/img/social-sprite.svg#github"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/svg&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"http://be.net/jorgeatgu"</span> <span class="na">title=</span><span class="s">"behance"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"/img/social-sprite.svg#behance"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/svg&gt;</span>
+                <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/header&gt;</span></code></pre></figure>
+
+<h2 id="_layouts">_layouts</h2>
+
+<p>Lo que vienen a ser las plantillas. Por defecto <strong>Jekyll</strong> crea <code class="highlighter-rouge">default.html page.html post.html</code> al igual que con los <strong>includes</strong> aquí podemos crear tantas plantillas como queramos para facilitarnos el trabajo. Para llamar a un <strong>layout</strong> deberemos incluir lo siguiente en la <strong>cabecera de nuestro HTML</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: default
+---</code></pre></figure>
+
+<p>Por ejemplo mi <strong>layout</strong> default tiene la siguiente estructura.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+{% include head.html %}
+
+  <span class="nt">&lt;body&gt;</span>
+
+    {% include header.html %}
+
+    <span class="nt">&lt;article</span> <span class="nt">&gt;</span>
+        {{ content }}
+    <span class="nt">&lt;/article&gt;</span>
+
+    {% include footer.html %}
+
+  <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Como veis aquí ya hago uso de los <strong>includes</strong> que he mencionado anteriormente. Y con muy pocas líneas ya tengo montada la estructura de la página.</p>
+
+<p>Luego a mi <strong>layout</strong> de <code class="highlighter-rouge">post.html</code> le incluyo la parte de la paginación, la fecha, autor del post y los comentarios de disqus. En este <strong>layout</strong> hago una llamada al <strong>layout</strong> default y por mi parte ya solo falta escribir el contenido de un post y que <strong>Jekyll</strong> compile todo para convertirlo en una página como esta que estáis leyendo ahora mismo.</p>
+
+<h2 id="_posts">_posts</h2>
+
+<p>No tiene mayor misterio que guardar aquí los artículos que vamos escribiendo. Lo único es que hay que ser muy estricto con el nombre del archivo. Este siempre va a empezar con la fecha en este orden <strong>AÑO-MES-DIA-nombre-del-articulo.md</strong> así este artículo tiene este nombre <strong>2014-10-10-una-guia-sobre-jekyll-configuracion.md</strong></p>
+
+<h2 id="_sass">_sass</h2>
+
+<p>Esta carpeta tampoco tiene mayor misterio. Aquí vamos a incluir nuestros archivos <code class="highlighter-rouge">.scss</code> y Jekyll se encargará de compilarlos y mandarlos a la carpeta CSS de nuestro _site. En <strong>GitHub</strong> podemos ver un <a href="https://github.com/jekyll/jekyll-sass-converter/tree/master/example" target="_blank">ejemplo sobre Jekyll y SASS</a></p>
+
+<h2 id="creando-carpetas">Creando carpetas</h2>
+
+<p>Vamos a crear unas cuantas carpetas que desde mi punto de vista son útiles y necesarias.</p>
+
+<h3 id="_drafts">_drafts</h3>
+
+<p>Como su nombre indica aquí irán nuestros drafts o borradores de artículos que por el motivo que sea todavía no están listos para publicar. Está carpeta no se compila por Jekyll <strong>a no ser que nosotros se lo digamos a través de un comando</strong>. Y este comando solo mostrará el borrador en local.</p>
+
+<h3 id="_assets-_img-_js">_assets _img _js</h3>
+
+<p>Aquí ya que impere el orden o el caos que cada uno lleva en sus proyectos. Si somos ordenados nos creamos una carpeta donde dentro irán los scripts de Javascript, otra para las imágenes y también incluimos la de CSS. Si lo que nos gusta es el caos y la destrucción pues las creamos por separado sin problemas.</p>
+
+<h3 id="_plugins">_plugins</h3>
+
+<p>Aquí es donde van nuestros <a href="http://jekyllrb.com/docs/plugins/" target="_blank">plugins de Jekyll</a>. Esta carpeta se tiene que llamar así, si le cambiamos el nombre no funcionará ningún plugin. Todavía es pronto para hablar de plugins así que lo vamos a dejar para el final ya que tampoco encierra ningún misterio y por ahora no son vitales para el desarrollo de nuestro sitio.</p>
+
+<h2 id="lanzando-el-servidor-con-jekyll">Lanzando el servidor con Jekyll</h2>
+
+<p>En nuestra carpeta de <strong>Jekyll</strong> vemos un <code class="highlighter-rouge">index.html</code>. Como su nombre indica y como todos sabemos es la página principal. Por defecto nos viene con una configuración que recomiendo que todavía no borréis para así poder ver en funcionamiento <strong>Jekyll</strong>.</p>
+
+<h3 id="server">Server</h3>
+
+<p>Para poder ver nuestros cambios y progresos que vamos haciendo en Jekyll tenemos un comando desde el Terminal que nos lanza un server en local.</p>
+
+<p>Lo primero es abrir el Terminal y posicionarnos en la carpeta de nuestro proyecto, en este caso vamos a Dropbox y a la carpeta proyecto-jekyll</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>dropbox/proyecto-jekyll</code></pre></figure>
+
+<p>Ahora vamos a lanzar el server desde el Terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>jekyll serve <span class="nt">-w</span></code></pre></figure>
+
+<p>Nos saldrá el siguiente mensaje</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">proyecto-jekyll <span class="nv">$ </span><span class="nb">sudo </span>jekyll serve <span class="nt">-w</span>
+Configuration file: /Users/jorgeat/Dropbox/proyecto-jekyll/_config.yml
+            Source: /Users/jorgeat/Dropbox/proyecto-jekyll
+       Destination: /Users/jorgeat/Dropbox/proyecto-jekyll/_site
+      Generating...
+                    <span class="k">done</span><span class="nb">.</span>
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/Users/jorgeat/Dropbox/proyecto-jekyll'</span>
+Configuration file: /Users/jorgeat/Dropbox/proyecto-jekyll/_config.yml
+    Server address: http://0.0.0.0:4000/
+  Server running... press ctrl-c to stop.</code></pre></figure>
+
+<p>Ahora copiamos y pegamos en nuestro navegador la dirección de <strong>server address:</strong> http://0.0.0.0:4000/ y veremos lo siguiente</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/10/index-jekyll-serve.png" alt="Index de Jekyll" /></p>
+
+<p>Está es la configuración por defecto del <code class="highlighter-rouge">index.html</code> que trae <strong>Jekyll</strong>.</p>
+
+<h3 id="_site">_site</h3>
+
+<p>Lanzar el servidor hace que <strong>Jekyll</strong> compile todo y nos cree una carpeta llamada _site donde nuestro sitio ya está todo montado y listo para subir a nuestro servidor.</p>
+
+<p>Cada post irá en una carpeta individual con el nombre del post y dentro de ella un <code class="highlighter-rouge">index.html</code>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/10/jekyll-site.png" alt="Nueva carpeta _site" /></p>
+
+<p>Podemos compilar todo sin necesidad de lanzar el servidor local, lo vamos a hacer con este comando a través del Terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>jekyll build</code></pre></figure>
+
+<p>Para lanzar el servidor en local y poder ver nuestros drafts o borradores lo haremos con el siguiente comando</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>jekyll serve <span class="nt">--drafts</span></code></pre></figure>
+
+<p>Y así podemos ver como va quedando nuestro artículo en el servidor local. Como ya he dicho anteriormente esto no va a la carpeta de _site hasta que nosotros no guardemos el artículo en la carpeta de _posts.</p>
+
+<p>En la documentación de Jekyll nos <a href="http://jekyllrb.com/docs/usage/" target="_blank">enseñan más comando básicos</a>.</p>
+
+<p>Y por último nos queda el archivo de configuración <code class="highlighter-rouge">_config.yml</code> pero eso será en el próximo post ya que este archivo da mucho de si.</p>
+
+<p>Como ya dije en el primer post yo solo conocía YAML y LIQUID de pasada, conforme iba construyendo mi tema de <strong>Jekyll</strong> iba leyendome la documentación que hay sobre ellos. Así que le podéis pegar un repaso a la documentación de <a href="http://www.yaml.org/" target="_blank">YAML</a> y de <a href="http://docs.shopify.com/themes/liquid-documentation/basics" target="_blank">LIQUID</a>. También a la de <a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll</a>.</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll/"> PRIMERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/"> TERCERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/"> CUARTA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-post/"> QUINTA PARTE DE LA GUÍA</a>
+</button></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/una-guia-sobre-jekyll-configuracion-yaml/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/nuevo-feed/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

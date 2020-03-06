@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mi experiencia con SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/mi-experiencia-con-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Mi experiencia con SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-04-11 00:00:00 +0200">
+                El
+                11 de
+                
+                abril
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>La primera vez que oí hablar de <strong>SVG</strong> todavía estudiaba <strong>Artes Gráficas</strong> y de eso ya hace un tiempo, por aquel entonces la verdad es que no le preste mucha atención ya que en ese momento no le encontraba utilidad alguna, pero este interés cambio hace unos meses a raíz de un artículo que leí en sitepoint. Una vez renovado mi interés me puse a buscar información en castellano y no encontré mucha información mas allá de una <a href="http://www.desarrolloweb.com/manuales/29/" target="_blank">guía bastante antigua en desarrollo web</a> y un post bastante interesante en <a href="http://minid.net/2012/10/26/descubre-el-fabuloso-mundo-de-svg/" target="_blank">minid.net</a>, así que tras leer bastantes artículos en inglés y experimentar mucho mas con Adobe Illustrator aquí esta mi experiencia exportando <strong>SVG</strong>(con fuentes) para mi <a href="http://jorgeatgu.com" title="portfolio jorgeATGU">web</a>.</p>
+
+<!--more-->
+
+<h1 id="que-es-svg">¿QUE ES SVG?</h1>
+
+<p><strong>SVG</strong> es el acrónimo de <strong>Scalable Vector Graphics</strong>, un formato para crear archivos vectoriales basado en <strong>XML</strong>, se convirtió en recomendación de la W3C en 2001.</p>
+
+<h2 id="png-vs-svg">PNG vs SVG</h2>
+
+<p>Que mejor que un ejemplo para ver las diferencias entre estos dos formatos.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/svg.html">Ejemplo PNG vs SVG</a>
+</button></p>
+
+<p>A simple vista quizás no se aprecien muchas diferencias pero si hacemos zoom en el navegador podemos observar como el <strong>SVG</strong> conserva la definición y el PNG la pierde. Otro dato a tener cuenta es el tamaño, y es que el <strong>SVG</strong> ocupa 4kb y el PNG 9kb, bastante diferencia ¿no? ahora imagínate la diferencia de tamaño y definición en archivos mas grandes.</p>
+
+<h2 id="soporte-de-svg-en-los-navegadores">Soporte de SVG en los navegadores</h2>
+
+<p>Como podemos observar en la imagen inferior el soporte básico de <strong>SVG</strong> en los navegadores es bastante amplio, tan solo IE8.0 y Android Browser 2.1, 2.2 y 2.3 carecen de el, pero para Android Browser podemos solventar el problema, aquí la solución <a href="http://kristerkari.github.io/adventures-in-webkit-land/blog/2013/03/08/dealing-with-svg-images-in-mobile-browsers/" target="_blank">artículo de adventures in web-kit land</a>.</p>
+
+<p><a href="http://jorgeatgu.com/blog/img/2013/04/Captura-de-pantalla-2013-04-10-a-las-18.29.58.png"><img class="alignnone size-full wp-image-95" alt="SVG caniuse" src="http://jorgeatgu.com/blog/img/2013/04/Captura-de-pantalla-2013-04-10-a-las-18.29.58.png" width="725" height="398" /></a></p>
+
+<p>Podemos ver el resto de especificaciones de <strong>SVG</strong> soportadas por los diferentes navegadores en <a href="http://caniuse.com/#cats=SVG" target="_blank">caniuse</a>.</p>
+
+<h2 id="generando-un-svg">Generando un SVG</h2>
+
+<p>A la hora de generar un <strong>SVG</strong> tenemos dos opciones, la primera a partir de código con <strong>Sublime Text 2</strong>(también con TextEdit o Notepad) y la segunda a partir de programas de edición de gráficos vectoriales como <strong>Inskscape</strong>(gratuito) o <strong>Adobe Illustrator</strong>(de pago).</p>
+
+<h3 id="svg-generado-con-código">SVG generado con código</h3>
+
+<p>Vamos a generar un <strong>SVG</strong> bastante sencillo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"400"</span> <span class="na">cy=</span><span class="s">"80"</span> <span class="na">r=</span><span class="s">"70"</span> <span class="na">stroke=</span><span class="s">"green"</span>
+  <span class="na">stroke-width=</span><span class="s">"5"</span> <span class="na">fill=</span><span class="s">"yellow"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Este es el resultado.
+<img src="http://jorgeatgu.com/blog/img/2013/04/SVG.png" alt="SVG" /></p>
+
+<h3 id="svg-generado-con-adobe-illustrator">SVG generado con Adobe Illustrator</h3>
+
+<p>Antes de nada un pequeño recordatorio que para mí es una práctica habitual al trabajar con Adobe Illustrator y con cualquier programa, la cuál consiste en tener cada elemento de nuestro archivo en una capa diferente y esta a su vez cada capa renombrada, es decir, no dejarla con el nombre por defecto que nos proporciona Adobe Illustrator como “capa 1″ y llamar a cada capa por su nombre “circulo” “letras” este método nos ahorrara en el futuro bastantes quebraderos de cabeza sobre todo si queremos tocar el código del <strong>SVG</strong> o animarlo.</p>
+
+<p>Vamos a empezar a generar nuestro <strong>SVG</strong> con Adobe Illustrator el cual va a ir con una fuente que no es habitual. Podemos crear un archivo sencillo con círculos y una frase cualquiera o podemos aprovechar algún trabajo que ya tengamos hecho en Illustrator.</p>
+
+<p>A la hora de exportar el <strong>SVG</strong> con texto tenemos dos opciones, una de ellas es pasar el texto a contornos y despreocuparnos por completo de las fuentes, simplemente nos ponemos encima del texto, botón derecho y crear contornos.</p>
+
+<p>La otra opción es respetar la fuente y no contornear, insertar el <strong>SVG</strong> con la etiqueta svg y añadir la propiedad @font-face al <strong>CSS</strong>.</p>
+
+<p>Una vez tengamos preparado nuestro <strong>SVG</strong> nos disponemos a guardar, podemos elegir entre <strong>SVG</strong> y <strong>SVGZ</strong>, este último es un <strong>SVG</strong> ya comprimido, en este caso nos decantaremos por el <strong>SVG</strong>, una vez seleccionado le damos a guardar y nos saltara este menú.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/04/menu-svg.png" alt="menu svg" /></p>
+
+<p>Si ponemos el ratón encima de las diferentes opciones no saldrá una cuadro de dialogo explicándonos las diferentes opciones. En este <a href="http://help.adobe.com/es_ES/illustrator/cs/using/WS714a382cdf7d304e7e07d0100196cbc5f-6561a.html#WS714a382cdf7d304e7e07d0100196cbc5f-655ba" target="_blank">enlace </a>Adobe nos explica cada una de las propiedades que disponemos a la hora de guardar como <strong>SVG</strong>.</p>
+
+<p>En la parte inferior del recuadro tenemos la opción de ver el código que genera el <strong>SVG</strong>, si pinchamos nos saltara nuestro editor de texto, en mi caso TextEdit, y allí podremos ver el código que genera el SVG.</p>
+
+<p>Una vez guardado el <strong>SVG</strong> lo abrimos con Sublime y podemos observar todo el código que ha generado el <strong>SVG</strong>, aquí solamente copio el código que se refiere a la capa de texto.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"texto"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;text</span> <span class="na">transform=</span><span class="s">"matrix(1 0 0 1 387.4912 209.998)"</span> <span class="na">fill=</span><span class="s">"#211C40"</span>
+<span class="na">font-family=</span><span class="s">"'SlugSingle'"</span> <span class="na">font-size=</span><span class="s">"72.1469"</span> <span class="na">letter-spacing=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+JORGE ATGU
+<span class="nt">&lt;/text&gt;</span>
+<span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo importante de este código en este caso en concreto es el font-family=”‘SlugSingle’”.</p>
+
+<p>Ahora vamos a crear el kit de la fuente, para eso utilizamos el web font generator de <a href="http://www.fontsquirrel.com/tools/webfont-generator" target="_blank">font-squirrel</a> simplemente subimos la fuente le damos a generar nuestro kit y una vez generado los descargamos.</p>
+
+<p>Una vez descomprimido el kit lo que haremos sera copiar los diferentes archivos de fuentes a nuestra carpeta de fuentes, lo siguiente sera copiar el código que ha generado el kit en nuestro archivo <strong>CSS</strong>, para ello utilizamos la propiedad @font-face, mucho cuidado ya que es posible que al generar el kit la fuente lleve un nombre diferente, así que hay que asegurarse que la propiedad font-family en el <strong>SVG</strong> y en el @font-face tengan el mismo nombre, en este caso ‘SlugSingle’.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="k">@font-face</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span><span class="s2">'SlugSingle'</span><span class="p">;</span>
+    <span class="nl">src</span><span class="p">:</span> <span class="sx">url('../font/slug-single-webfont.eot')</span><span class="p">;</span>
+    <span class="nl">src</span><span class="p">:</span> <span class="sx">url('../font/slug-single-webfont.eot?#iefix')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'embedded-opentype'</span><span class="p">),</span>
+         <span class="sx">url('../font/slug-single-webfont.woff')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'woff'</span><span class="p">),</span>
+         <span class="sx">url('../font/slug-single-webfont.ttf')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'truetype'</span><span class="p">),</span>
+         <span class="sx">url('../font/slug-single-webfont.svg#SlugSingle')</span> <span class="n">format</span><span class="p">(</span><span class="s2">'svg'</span><span class="p">);</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+    <span class="nl">font-style</span><span class="p">:</span> <span class="nb">normal</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo siguiente que haremos sera insertar nuestro <strong>SVG</strong> en el <strong>HTML</strong>, para esto tenemos diferentes opciones.</p>
+
+<p>Con la etiqueta object.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;object</span> <span class="na">type=</span><span class="s">"image/svg+xml"</span> <span class="na">data=</span><span class="s">"tuarchivo.svg"</span><span class="nt">&gt;&lt;/object&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Con la etiqueta img.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"tuarchivo.svg"</span> <span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Con la etiqueta svg.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>En el caso de que nuestro <strong>SVG</strong> lleve fuentes sin contornear no nos quedara otra que insertarlo con la etiqueta svg, pero si hemos decidido contornear las fuentes podemos elegir cualquier etiqueta ya que no tendremos que preocuparnos por subir la fuente ni añadir a nuestro <strong>CSS</strong> la etiqueta @font-face.</p>
+
+<p>Si quieres saber mas sobre las etiquetas disponibles a la hora de insertar un <strong>SVG</strong> en <strong>HTML</strong> en <a href="http://www.sitepoint.com/add-svg-to-web-page/" target="_blank">sitepoint</a> nos explican los pros y contras de cada una de ellas.</p>
+
+<p>El siguiente post tratara sobre como animar un <strong>SVG</strong> con <strong>CSS</strong>.</p>
+
+<p>Enlaces de interés:</p>
+
+<p><a href="http://www.html5rocks.com/en/tutorials/svg/mobile_fundamentals/?redirect_from_locale=es" target="_blank">Splash Vector Graphics on your Responsive Site</a><br />
+<a href="http://demosthenes.info/blog/675/Create-Adaptive-SVG-Illustrations-With-CSS" target="_blank">Create Adaptive SVG Illustrations With CSS</a><br />
+<a href="http://blog.cloudfour.com/media-queries-in-svg-images/" target="_blank">Media Queries in SVG images</a><br />
+<a href="http://www.hongkiat.com/blog/scalable-vector-graphic-css-styling/" target="_blank">Styling Scalable Vector Graphic (SVG) With CSS</a><br /></p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/tutorial-animando-un-svg-a-traves-de-css/">Artículo posterior</a>
+    
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Imágenes responsive y WebP</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/responsive-webp-gulp/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Imágenes responsive y WebP</h1>
+        <p class="articulo-fecha">
+            <time datetime="2017-07-27 00:00:00 +0200">
+                El
+                27 de
+                
+                julio
+                
+                de
+                2017
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#responsive">Responsive</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#gulp">Gulp</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>En este artículo vamos a ver como automatizar con Gulp el proceso de
+generar imágenes para diferentes dispositivos. Y también vamos a
+prepararlas en formato WebP.</p>
+
+<!--more-->
+
+<p>Antes de empezar con todo el proceso os recomiendo leer estos artículos
+para entender todo el proceso correspondiente a WebP, srcset y demás
+<a href="http://trip2themoon.com/guia-imagenes-responsive/">Imágenes
+responsive</a>,
+<a href="http://trip2themoon.com/imagenes-webp/">WebP</a> y <a href="https://escss.blogspot.com/2014/10/responsive-images-picture-srcset.html">Guía responsive
+image</a>.
+Gracias <a href="http://twitter.com/flodar">Felix!</a> y
+<a href="http://twitter.com/kseso">Kseso</a>.</p>
+
+<p>Una aclaración, el formato WebP solo esta soportado en los navegadores
+que usan Blink, es decir, Chrome y Opera. El soporte en Firefox está
+todavía en pruebas y en Safari solo estuvo operativo en una beta, a la
+siguiente lo quitaron. WebP es una gran oportunidad para acelerar la
+carga y disminuir el tamaño de la web. Podemos seguir minificando CSS,
+JS y usar SVG para iconos, pero la web aumenta con imágenes sin
+optimizar y con tamaños superiores a los mostrados en la web, ejemplo,
+JPG 4000 x 2000 y limitamos su vista a través de <strong>CSS</strong> a 600 x 300,
+perfecto.</p>
+
+<h3 id="gulp-responsive">Gulp responsive</h3>
+
+<p>Crear una imagen para diferentes tamaños es infame. Yo antes utilizaba
+<a href="http://www.responsivebreakpoints.com">responsivebreakpoints</a> hasta que
+el otro día descubrí este paquete de <strong>NPM</strong> que hace parte del trabajo
+sucio.</p>
+
+<p>Lo primero que vamos a hacer es instalar <a href="https://github.com/mahnunchik/gulp-responsive">Gulp
+responsive</a> a través de
+<strong>NPM</strong>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i gulp-responsive --save-dev
+</code></pre></div></div>
+
+<p>Ahora vamos a configurar la tarea en el <strong>Gulpfile</strong>. Los comentarios en
+el código.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp.task('imgrwd', function () {
+    //Le pasamos ruta donde están nuestras imágenes
+  return gulp.src('src/img/*.{png,jpg}')
+    .pipe(responsive({
+      '*.png': [{
+        //Le indicamos el tamaño al que queremos la imagen
+        width: 300,
+        rename: {
+            //Le añadimos un subfijo para diferenciarla
+          suffix: '-300px',
+          extname: '.jpg',
+        },
+      //Elegimos el formato
+        format: 'jpeg',
+      }, {
+        width: 600,
+        rename: {
+          suffix: '-600px',
+          extname: '.jpg',
+        },
+      }, {
+        width: 1200,
+        rename: {
+          suffix: '-1200px',
+          extname: '.jpg',
+        }
+      }],
+    }, {
+      quality: 75,
+      progressive: true,
+      withMetadata: false,
+      errorOnEnlargement: false,
+    }))
+    //La ruta donde va a dejar las imágenes con los diferentes tamaños
+    .pipe(gulp.dest('img'));
+});
+</code></pre></div></div>
+
+<p>Lanzamos la tarea y ya tenemos las imágenes en diferentes tamaños para
+todos los dispositivos.</p>
+
+<h3 id="webp">WebP</h3>
+
+<p>Una vez que tenemos las imágenes en diferentes tamaños vamos a
+convertirlas a <strong>WebP</strong>.</p>
+
+<p>Para convertirlas vamos a usar otro paquete de <strong>NPM</strong>. Vamos a
+instalarlo.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i gulp-webp --save-dev
+</code></pre></div></div>
+
+<p>Ahora vamos a configurar la tarea en el <strong>Gulpfile</strong>. Los comentarios en
+el código.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gulp.task('webp', () =&gt;
+    //Le pasamos la ruta donde hemos dejado nuestras imágenes optimizadas
+    gulp.src('img/*.jpg')
+        .pipe(webp())
+        //Y que las cree en la misma carpeta pero esta vez en formato WebP
+        .pipe(gulp.dest('img'))
+);
+</code></pre></div></div>
+
+<h3 id="picture">Picture</h3>
+
+<p>Ahora viene lo feo, vamos a incluir toda la parafernalia para cargar
+todas las imágenes en el <strong>HTML</strong>. Para ello nos vamos a valer de la
+etiqueta <code class="highlighter-rouge">&lt;picture&gt;</code> y <code class="highlighter-rouge">&lt;source&gt;</code>. Como incluir esto cada vez que
+tenemos una imagen es simplemente un infierno, lo vamos a simplicar, he
+creado un snipptet con toda la estructura, así solamente vamos a tener
+que escribir el nombre de la foto, nada más. El snippet es para Sublime
+Text.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;snippet&gt;
+    &lt;content&gt;&lt;![CDATA[&lt;picture&gt;
+            &lt;source sizes="(max-width: 1366px) 100vw, 1366px" type="image/webp" srcset="
+                    img/$1-300px.webp 320w,
+                    img/$1-600px.webp 739w,
+                    img/$1-1200px.webp 1110w" /&gt;
+            &lt;img sizes="(max-width: 1366px) 100vw, 1366px" class="zaragoza-img" srcset="
+            img/$1-300px.jpg 320w,
+            img/$1-600px.jpg 739w,
+            img/$1-1200px.jpg 1110w" src="$1.jpg" alt="Aquí va un texto lo suficientemente descriptivo"&gt;
+        &lt;/picture&gt;]]&gt;
+&lt;/content&gt;
+    &lt;description&gt;Incluyendo toda la movida para las imágenes responsive&lt;/description&gt;
+    &lt;tabTrigger&gt;responsiveWebp&lt;/tabTrigger&gt;
+    &lt;scope&gt;text.html&lt;/scope&gt;
+&lt;/snippet&gt;
+</code></pre></div></div>
+
+<h3 id="demo">Demo</h3>
+
+<p>Vamos a ver el resultado en una demo. Son dos webs que son casi iguales,
+la única diferencia es que una tiene las imágenes sin optimizar, las
+fotografías están tal cual las tome en su día, la otra web tiene las
+fotos en diferentes tamaños y en formato WebP.</p>
+
+<p>La prueba la he hecho con Chrome.</p>
+
+<p>Aquí el tiempo de carga de la web con las imágenes optimizadas,
+<strong>586ms</strong>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2017/07/optimizando-a-fuego-1200px.jpg" alt="Aquí va un texto lo suficientemente
+descriptivo" /></p>
+
+<p>Aquí el tiempo de carga de la web con las imágenes tal cual, <strong>7.5s</strong></p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2017/07/optimizar-claro-que-si-guapi-1200px.jpg" alt="Aquí va un texto lo suficientemente
+descriptivo" /></p>
+
+<p>El tiempo de carga habla por si solo.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/css-grid-layout-supports/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/iniciando-proyectos-con-base-usabilidad/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

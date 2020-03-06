@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mis notas sobre SVG (III) &#8211; Escalar objetos desde el centro</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-iii-escalar-objetos-desde-el-centro/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Mis notas sobre SVG (III) &#8211; Escalar objetos desde el centro</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-12 00:00:00 +0100">
+                El
+                12 de
+                
+                noviembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#tutorial">tutorial</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Mientras trabaja en reproducir con SVG la animación que tiene iOS7 me encontré con el problema de que al utilizar <code class="highlighter-rouge">animateTransform attributeName="scale"</code> los objetos a los que aplicaba esta animación se escalaban desde las coordenadas <code class="highlighter-rouge">x=0</code> e <code class="highlighter-rouge">y=0</code> por un lado conseguía el efecto de escalar pero no desde el punto que deseaba.</p>
+
+<!--more-->
+
+<p><strong>EJEMPLO</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span> <span class="na">width=</span><span class="s">"1280px"</span> <span class="na">height=</span><span class="s">"800px"</span> <span class="na">viewBox=</span><span class="s">"0 0 1280 800"</span><span class="nt">&gt;</span>
+
+
+<span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"mensajes"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;linearGradient</span> <span class="na">id=</span><span class="s">"SVGID_61_"</span> <span class="na">gradientUnits=</span><span class="s">"userSpaceOnUse"</span> <span class="na">x1=</span><span class="s">"510.1909"</span> <span class="na">y1=</span><span class="s">"161.0786"</span> <span class="na">x2=</span><span class="s">"510.1909"</span> <span class="na">y2=</span><span class="s">"214.9416"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;stop</span> <span class="na">offset=</span><span class="s">"0"</span> <span class="na">style=</span><span class="s">"stop-color:#8EFF76"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;stop</span> <span class="na">offset=</span><span class="s">"0.5284"</span> <span class="na">style=</span><span class="s">"stop-color:#45E740"</span><span class="nt">/&gt;</span>
+                        <span class="nt">&lt;stop</span> <span class="na">offset=</span><span class="s">"0.9455"</span> <span class="na">style=</span><span class="s">"stop-color:#09D413"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/linearGradient&gt;</span>
+            <span class="nt">&lt;g&gt;</span>
+            <span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">attributeType=</span><span class="s">"XML"</span>
+                    <span class="na">type=</span><span class="s">"scale"</span> <span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1"</span> <span class="na">dur=</span><span class="s">"2s"</span>
+                    <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"483"</span> <span class="na">y=</span><span class="s">"160"</span> <span class="na">width=</span><span class="s">"56"</span> <span class="na">height=</span><span class="s">"56"</span> <span class="na">fill=</span><span class="s">"url(#SVGID_61_)"</span> <span class="na">rx=</span><span class="s">"13"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M510.4,169.8c-11.3,0-20.5,7.6-20.5,17c0,6.3,4.1,11.8,10.2,14.7c-0.2,0.7-0.7,2.6-2.7,4.4 c0,0,4.8,0,6.6-3c2,0.5,4.1,0.8,6.3,0.8c11.3,0,20.5-7.6,20.5-17C530.9,177.4,521.8,169.8,510.4,169.8z"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/g&gt;</span>
+    <span class="nt">&lt;/g&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/scale/scale.html">VER EJEMPLO!</a>
+</button></p>
+
+<p><strong>Solución</strong></p>
+
+<p>Al final encontré dos métodos alternativo en el grupo de SVG-Developers de Yahoo en un <strong>mensaje de Mathias Fatene del **año 2003</strong>!!!!!**</p>
+
+<p>El primer metodo consiste en añadir a <code class="highlighter-rouge">scale</code> dos <code class="highlighter-rouge">animate</code>, el primero a la coordenada <code class="highlighter-rouge">X</code> y el segundo a la coordenada <code class="highlighter-rouge">Y</code>, con esto corregimos que scale empieze desde (0,0) y le podemos añadir la coordenada que nosotros queramos.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">width=</span><span class="s">"640"</span> <span class="na">height=</span><span class="s">"480"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"Container"</span> <span class="na">x=</span><span class="s">"37.5"</span> <span class="na">y=</span><span class="s">"42.5"</span> <span class="na">width=</span><span class="s">"90"</span> <span class="na">height=</span><span class="s">"70"</span>
+<span class="na">fill=</span><span class="s">"rgb(0,204,153)"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"60"</span> <span class="na">y=</span><span class="s">"60"</span> <span class="na">width=</span><span class="s">"45"</span> <span class="na">height=</span><span class="s">"35"</span> <span class="na">fill=</span><span class="s">"rgb(231,15,15)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">dur=</span><span class="s">"1"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">type=</span><span class="s">"scale"</span>
+<span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">from=</span><span class="s">"1,1"</span> <span class="na">to=</span><span class="s">"2,2"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"x"</span> <span class="na">from=</span><span class="s">"60"</span>
+<span class="na">to=</span><span class="s">"18.75"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"y"</span> <span class="na">from=</span><span class="s">"60"</span>
+<span class="na">to=</span><span class="s">"21.25"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/rect&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/scale/solucion1.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Como podemos ver en el ejemplo ya hemos corregido las coordenadas de inicio de <code class="highlighter-rouge">scale</code> pero la animación no queda del todo fina, así que vamos con el otro método que a mi personalmente es el que mas me ha gustado y el que al final he utilizado.</p>
+
+<p>La segunda solución consiste en sustituir <code class="highlighter-rouge">scale</code> por cuatro <code class="highlighter-rouge">animate</code>, dos irán a las coordenadas <code class="highlighter-rouge">X</code> e <code class="highlighter-rouge">Y</code> y los otros dos a <code class="highlighter-rouge">width</code> y <code class="highlighter-rouge">height</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">width=</span><span class="s">"640"</span> <span class="na">height=</span><span class="s">"480"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"Container"</span> <span class="na">x=</span><span class="s">"37.5"</span> <span class="na">y=</span><span class="s">"42.5"</span> <span class="na">width=</span><span class="s">"90"</span> <span class="na">height=</span><span class="s">"70"</span>
+<span class="na">fill=</span><span class="s">"rgb(0,204,153)"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"60"</span> <span class="na">y=</span><span class="s">"60"</span> <span class="na">width=</span><span class="s">"45"</span> <span class="na">height=</span><span class="s">"35"</span> <span class="na">fill=</span><span class="s">"rgb(231,15,15)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"x"</span> <span class="na">from=</span><span class="s">"60"</span> <span class="na">to=</span><span class="s">"37.5"</span>
+<span class="na">calcMode=</span><span class="s">"linear"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"y"</span> <span class="na">from=</span><span class="s">"60"</span> <span class="na">to=</span><span class="s">"42.5"</span>
+<span class="na">calcMode=</span><span class="s">"linear"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"width"</span> <span class="na">from=</span><span class="s">"45"</span> <span class="na">to=</span><span class="s">"90"</span>
+<span class="na">calcMode=</span><span class="s">"linear"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">dur=</span><span class="s">"1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="na">attributeName=</span><span class="s">"height"</span> <span class="na">from=</span><span class="s">"35"</span> <span class="na">to=</span><span class="s">"70"</span>
+<span class="na">calcMode=</span><span class="s">"linear"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/rect&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/scale/solucion2.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Como podemos apreciar la animación queda mucho mejor utilizando este segundo método.</p>
+
+<p><a href="http://groups.yahoo.com/neo/groups/svg-developers/conversations/topics/35863" target="_blank">Post original de SVG-developers</a></p>
+
+<p><a href="http://cdpn.io/pvzlj" target="_blank">Aquí la animación SMIL SVG donde aplique el método</a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/animation-smil-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/crear-svg-con-adobe-illustrator-y-sublime-text/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

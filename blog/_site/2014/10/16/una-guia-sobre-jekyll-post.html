@@ -1,0 +1,224 @@
+<p>— title: Una guía sobre Jekyll - configurando los post
+author: Jorge Aznar
+layout: post
+permalink: /una-guia-sobre-jekyll-configuracion-post/
+comments: true
+tags:</p>
+<ul>
+  <li>Diseño Web</li>
+  <li>
+    <h2 id="jekyll">Jekyll</h2>
+  </li>
+</ul>
+
+<p>En este post vamos a ver el código que necesitamos para configurar los <strong>layouts de default y post</strong> que vimos en la <a href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion/" target="_blank">segunda parte de la guía</a>.</p>
+
+<p>Para ello voy a utilizar el código <strong>HTML</strong> que viene por defecto con la instalación de <strong>Jekyll</strong>.</p>
+
+<h2 id="default">Default</h2>
+
+<p>Bueno lo primero vamos con el <strong>layout de default</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+
+  {% include head.html %}
+
+  <span class="nt">&lt;body&gt;</span>
+
+    {% include header.html %}
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page-content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="nt">&gt;</span>
+        {{ content }}
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    {% include footer.html %}
+
+  <span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo más importante es la variable <code class="highlighter-rouge">{{ content }}</code> con esta variable vamos a incluir todo el contenido que tenemos alojado en los post.</p>
+
+<p>Los includes de <code class="highlighter-rouge">header.html head.html footer.html</code> como vimos anteriormente los utilizamos para incluir porciones de código que se van a ir repitiendo constantemente a lo largo de nuestro tema.</p>
+
+<h2 id="post">post</h2>
+
+<p>Ahora vamos a ver todo lo que incluye nuestro <strong>layout post</strong>. Hay que tener en cuenta que este layout implementa a través del <strong>front matter</strong> el <strong>layout default</strong>. Así que todo lo que viene en el layout default es utilizado por el layout post. A continuación el <strong>front matter</strong> de post.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>---
+layout:default
+---</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A continuación el layout de post que viene por defecto con <strong>Jekyll</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"post-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"post-title"</span><span class="nt">&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"post-meta"</span><span class="nt">&gt;</span>{{  page.date | date: }} {% if page.author %} • {{ page.author }} {% endif %} {% if page.meta %} • {{ page.meta }}{% endif %}<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+
+  <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"post-content"</span><span class="nt">&gt;</span>
+     {{ content }}
+  <span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Con <code class="highlighter-rouge">{{ page.title }}</code> obtenemos el nombre que tenga la página, esto se lo daremos en el <strong>front matter</strong>.</p>
+
+<h3 id="fecha-y-autor">Fecha y autor</h3>
+
+<p>Lo siguiente es la manera de obtener la fecha y autor. A mi este método que trae por defecto <strong>Jekyll</strong> no me gusta así que os voy a mostrar el que utilizo en el blog.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="code"><pre>        Por {{ page.author }} el
+          {{  page.date | date: '%-d' }} de
+            {% assign m = page.date | date: '%-m' %}
+            {% case m %}
+              {% when '1' %}enero
+                {% when '2' %}febrero
+                {% when '3' %}marzo
+                {% when '4' %}abril
+                {% when '5' %}mayo
+                {% when '6' %}junio
+                {% when '7' %}julio
+                {% when '8' %}agosto
+                {% when '9' %}septiembre
+                {% when '10' %}octubre
+                {% when '11' %}noviembre
+                {% when '12' %}diciembre
+            {% endcase %}
+            de
+            {{  page.date | date: '%Y' }}</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo primero que vemos es <code class="highlighter-rouge">{{ page.author }}</code> con ella vamos a obtener el nombre del autor.</p>
+
+<p>Con la variable <code class="highlighter-rouge">{{  page.date | date: '%-d' }}</code> vamos a obtener el día en el que se publicó el artículo.</p>
+
+<p>Con la variable <code class="highlighter-rouge">{% assign m = page.date | date: '%-m' %}</code> vamos a obtener el mes en el que se publicó el artículo. Por defecto <strong>Jekyll</strong> viene con los meses en inglés así que vamos a utilizar un <code class="highlighter-rouge">case</code> para cambiar el nombre de los meses.</p>
+
+<p>Abrimos el <code class="highlighter-rouge">case</code> y le añadimos el valor <code class="highlighter-rouge">m</code> que es el que representa a los meses.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>{% case m %}</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo siguiente es utilizar <code class="highlighter-rouge">when</code> y la posición del mes. Así el valor 1 corresponde a enero.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>{% when '1' %}enero</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Así que con este trozo de código le decimos que en caso de que sea <code class="highlighter-rouge">m</code> sustituya los valores por los nombres en castellano de los meses. Recordad que los nombres de los meses van en minúscula.</p>
+
+<p>Por último con la variable <code class="highlighter-rouge">{{  page.date | date: '%Y' }}</code> vamos a obtener el año en el que se publicó el artículo.</p>
+
+<p>Así que todo este código al final da como resultado lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre>Por  el
+          16 de
+            
+            octubre
+                
+            de
+            2014</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="artículo-anterior-y-posterior">Artículo anterior y posterior</h3>
+
+<p>Ahora vamos a añadir un par de botones para facilitar la navegación entre artículos.</p>
+
+<p>Con el siguiente código le vamos a decir con un <code class="highlighter-rouge">if</code> que nos añada un enlace y que la url sea la siguiente al artículo donde estamos. El orden será por fecha.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if page.next %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{  site.baseurl }}{{  page.next.url }}"</span><span class="nt">&gt;</span>Artículo posterior<span class="nt">&lt;/a&gt;</span>
+{% endif %}</code></pre></figure>
+
+<p>Para obtener el artículo anterior lo haremos con el siguiente código que en este caso obtendrá la url del artículo anterior.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">{% if page.previous %}
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{  site.baseurl }}{{  page.previous.url }}"</span><span class="nt">&gt;</span>Artículo anterior<span class="nt">&lt;/a&gt;</span>
+{% endif %}</code></pre></figure>
+
+<p>Ahora solo hace aplicarle unos estilos a través de <strong>CSS</strong> y ya tenemos un par de botones que irán de artículo en artículo.</p>
+
+<h3 id="comentarios">Comentarios</h3>
+
+<p>Y ya para acabar con el layout de post vamos a incluir los comentarios. Como ya dije anteriormente yo utilizó los comentarios de <a href="http://disqus.com" target="_blank">Disqus</a>.</p>
+
+<p>No tiene mayor complicación que añadir un <code class="highlighter-rouge">if</code> con page.comments y dentro de el incluir el código que nos proporciona Disqus.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"></code></pre></figure>
+
+<p>Y todo esto da como resultado está página que ahora mismo estáis leyendo.</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll/"> PRIMERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/"> TERCERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/"> CUARTA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-post/"> QUINTA PARTE DE LA GUÍA</a>
+</button></p>

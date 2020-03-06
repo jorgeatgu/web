@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animaciones SVG con value</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/repetir-animaciones-svg-con-value/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animaciones SVG con value</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-18 00:00:00 +0100">
+                El
+                18 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Por norma general cuando utilizo <code class="highlighter-rouge">animate animateTransform="translate"</code> suelo emplear <code class="highlighter-rouge">from=""</code> y <code class="highlighter-rouge">to=""</code>, pero a la hora de que la animación se repita constantemente he encontrado un método que utiliza menos código y con el que la repetición de la animación no queda tan falsa, simplemente utilizo <code class="highlighter-rouge">value=""</code> en lugar de <code class="highlighter-rouge">from=""</code> y <code class="highlighter-rouge">to=""</code>.</p>
+
+<!--more-->
+
+<p>Como siempre las cosas se ven y explican mejor con un ejemplo práctico. Para este ejemplo he cogido una parte de una animación que hice en su día y que se llama City &#038; Clock, <a href="http://codepen.io/jorgeatgu/pen/qvzLm" target="_blank">esta disponible en CodePen</a>.</p>
+
+<p>En este ejemplo lo que buscamos es que las dos nubes recorran el escenario <em>ad infinitum</em>, para ello podemos utilizar <code class="highlighter-rouge">from=""</code> y <code class="highlighter-rouge">to=""</code>, le indicamos con una primera animación que vaya desde la coordenada <code class="highlighter-rouge">from="1"</code> hasta <code class="highlighter-rouge">to="200"</code> y justo cuando esta termine que se inicie otra animación que vaya desde <code class="highlighter-rouge">from="200"</code> hasta <code class="highlighter-rouge">to="-50"</code>, el código quedaría de la siguiente manera.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">from=</span><span class="s">"1"</span> <span class="na">to=</span><span class="s">"200"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"10s"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">from=</span><span class="s">"200"</span> <span class="na">to=</span><span class="s">"-50"</span> <span class="na">begin=</span><span class="s">"10s"</span> <span class="na">dur=</span><span class="s">"10s"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">from=</span><span class="s">"-50"</span> <span class="na">to=</span><span class="s">"200"</span> <span class="na">begin=</span><span class="s">"20s"</span> <span class="na">dur=</span><span class="s">"10s"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">from=</span><span class="s">"200"</span> <span class="na">to=</span><span class="s">"-50"</span> <span class="na">begin=</span><span class="s">"30s"</span> <span class="na">dur=</span><span class="s">"54s"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"unanube"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M782.4,209.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C800.8,187.3,791,211.9,782.4,209.7z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"segundanube"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M952.4,288.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C970.8,266.3,961,290.9,952.4,288.7z"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/value/sinvalue.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Pero estos cuatro <code class="highlighter-rouge">animateTransform</code> que utilizamos para llevar a cabo la animación los podemos simplificar en uno solo, para ello utilizamos <code class="highlighter-rouge">value=""</code>, dentro del atributo indicamos las coordenadas, primero la coordenada <code class="highlighter-rouge">x</code> y en segunda posición la coordenada <code class="highlighter-rouge">y</code>, se añade un punto y coma para separar las coordenadas y el código quedara de la siguiente manera <code class="highlighter-rouge">values="0 0; 200 0; -50 0; 200 0; -50 0"</code>, la animación comienza en 0, avanza hasta 200, retrocede hasta -50, avanza hasta 200 y por último vuelve a retroceder hasta -50.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;animateTransform</span>
+    <span class="na">attributeName=</span><span class="s">"transform"</span>
+    <span class="na">type=</span><span class="s">"translate"</span>
+    <span class="na">values=</span><span class="s">"0 0; 200 0; -50 0; 200 0; -50 0"</span>
+    <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"40s"</span>
+    <span class="na">repeatcount=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"unanube"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M782.4,209.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C800.8,187.3,791,211.9,782.4,209.7z"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"segundanube"</span> <span class="na">fill=</span><span class="s">"#FFFFFF"</span> <span class="na">d=</span><span class="s">"M952.4,288.7c-5.1,0-56.7,1.1-57.8,0c-30.9-13.2-7.5-39.9,6.4-35c3.5-22.1,27.5-13.8,29.3-2.6 c14.4-8.9,25,10.4,19.3,15.4C970.8,266.3,961,290.9,952.4,288.7z"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/value/convalue.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Mucho mejor ¿no? además si queremos que esta animación sea infinita simplemente añadimos un <code class="highlighter-rouge">repeatCount="indefinite"</code> y las nubes estarán moviéndose hasta el infinito y mas allá.</p>
+
+<p>También podemos dotar a la animación de mas velocidad con <a href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-iv-calcmode-keytimes-y-keysplines/" target="_blank">calcMode, keySpline y keyTimes</a>.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/svg-firefox-error-id-utilizan-numeros/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/fake-smile-animaciones-smil-svg-en-internet-explorer/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

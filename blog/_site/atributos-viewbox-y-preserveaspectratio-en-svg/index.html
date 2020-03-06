@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Atributos viewBox y preserveAspectRatio en SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/atributos-viewbox-y-preserveaspectratio-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Atributos viewBox y preserveAspectRatio en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-27 00:00:00 +0100">
+                El
+                27 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Con el atributo <code class="highlighter-rouge">viewBox</code> definimos el área que queremos que sea visible dentro de un SVG.</p>
+
+<!--more-->
+
+<p>El atributo se define con cuatro valores, primero las coordenadas <code class="highlighter-rouge">min-x</code> y <code class="highlighter-rouge">min-</code>, y luego la anchura y altura con <code class="highlighter-rouge">width</code> y <code class="highlighter-rouge">height</code>. Los valores estarán separados por espacios en blanco o comas. Ni <code class="highlighter-rouge">width</code> ni <code class="highlighter-rouge">height</code> admiten valores negativos.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre>viewBox="0 0 400 400"</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Vamos a ver dos ejemplos.</p>
+
+<p>En el primero tenemos un <code class="highlighter-rouge">viewBox="0 0 400 400</code> y el documento tiene ` width=”400” height=”400”` por lo tanto los valores coinciden y no vemos ningún efecto en las líneas que hemos trazado.</p>
+
+<p>En el segundo tenemos un <code class="highlighter-rouge">viewBox="0 0 200 200</code> y el documento tiene ` width=”400” height=”400”<code class="highlighter-rouge">, en este caso los valores no coinciden, el </code>viewBox` es la mitad y esto produce un efecto de ampliación, todas las medidas se multiplican por dos y la consecuencia es que varías líneas desaparecen del campo de visión.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/viewbox/viewbox.html">VER EJEMPLO!</a>
+</button></p>
+
+<p><a href="http://tutorials.jenkov.com/svg/svg-viewport-view-box.html" target="_blank">Otra forma de explicarlo</a> es que las dos primeras coordenadas en el viewBox definen las coordenadas de la esquina superior izquierda, y los dos últimos coordenadas definen las coordenadas de la esquina inferior derecha.</p>
+
+<h2 id="preserveaspectratio">preserveAspectRatio</h2>
+
+<p>Antes de nada hay que tener claro que el atributo <code class="highlighter-rouge">preserveAspectRatio</code> no se tendrá en cuenta si antes no hemos definido el atributo <code class="highlighter-rouge">viewBox</code>.</p>
+
+<p>Cuando las medidas del atributo <code class="highlighter-rouge">viewBox</code> no coinciden con las del documento podemos especificar a través de <code class="highlighter-rouge">preserveAspectRatio</code> como va a encajar en el documento.</p>
+
+<p>El atributo <code class="highlighter-rouge">preserveAspectRatio</code> consta de dos valores separados por un espacio. El primero esta compuesto por dos partes que indicarán como vamos a alinear el objeto en el documento, la primera para la coordenada X y la segunda para la coordenada Y.</p>
+
+<p>xMin Alinea la coordenada X con la esquina superior izquierda.
+xMid Alinea la coordenada X con el centro.
+xMax Alinea la coordenada X con la esquina inferior izquierda.</p>
+
+<p>YMin Alinea la coordenada Y con la esquina superior izquierda.
+YMid Alinea la coordenada Y con el centro.
+YMin Alinea la coordenada Y con la esquina inferior izquierda.</p>
+
+<p>El segundo valor tiene dos opciones, una es <code class="highlighter-rouge">meet</code> con ella el objeto encajara dentro de las medidas y la otra es <code class="highlighter-rouge">slice</code> si el objeto es mayor que las medidas este se saldrá del cuadro.</p>
+
+<p>Para que esto quede más claro vamos a ver el ejemplo que tenemos disponible en la <a href="http://www.w3.org/TR/SVG11/coords.html#PreserveAspectRatioAttribute" target="_blank">W3C</a>.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://www.w3.org/TR/SVG11/images/coords/PreserveAspectRatio.svg">VER EJEMPLO!</a>
+&lt;/div&gt;</button></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/atributo-viewbox-sin-declarar-en-firefox/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/exportando-svg-desde-illustrator-inkscape-y-sketch/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

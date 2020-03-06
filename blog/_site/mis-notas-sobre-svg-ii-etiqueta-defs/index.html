@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mis notas sobre SVG (II) &#8211; Etiqueta defs</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-ii-etiqueta-defs/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Mis notas sobre SVG (II) &#8211; Etiqueta defs</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-05 00:00:00 +0100">
+                El
+                5 de
+                
+                noviembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-gráfico">Diseño Gráfico</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>La etiqueta <defs> se emplea para alojar elementos gráficos que van a ser empleados repetidamente a lo largo de un SVG. **Su uso no es obligatorio pero la W3C la recomienda para hacer mas accesible y legible nuestro código**.</defs></p>
+
+<!--more-->
+
+<p>Los elementos que podemos incluir dentro de la etiqueta <defs> son los siguientes:</defs></p>
+
+<h3 id="animaciones">Animaciones</h3>
+
+<p><code class="highlighter-rouge">animate</code> <code class="highlighter-rouge">animatecolor</code> <code class="highlighter-rouge">animatemotion</code> <code class="highlighter-rouge">animatetransform</code> <code class="highlighter-rouge">set</code></p>
+
+<h3 id="descripciones">Descripciones</h3>
+
+<p><code class="highlighter-rouge">desc</code> <code class="highlighter-rouge">metadata</code> <code class="highlighter-rouge">title</code></p>
+
+<h3 id="formas-básicas">Formas básicas</h3>
+
+<p><code class="highlighter-rouge">circle</code> <code class="highlighter-rouge">ellipse</code> <code class="highlighter-rouge">line</code> <code class="highlighter-rouge">path</code> <code class="highlighter-rouge">polygon</code> <code class="highlighter-rouge">polyline</code> <code class="highlighter-rouge">rect</code></p>
+
+<h3 id="estructurales">Estructurales</h3>
+
+<p><code class="highlighter-rouge">defs</code> <code class="highlighter-rouge">g</code> <code class="highlighter-rouge">svg</code> <code class="highlighter-rouge">symbol</code> <code class="highlighter-rouge">use</code></p>
+
+<h3 id="degradados">Degradados</h3>
+
+<p><code class="highlighter-rouge">lineargradient</code> <code class="highlighter-rouge">radialgradient</code></p>
+
+<h3 id="mas-etiquetas">Mas etiquetas</h3>
+
+<p><code class="highlighter-rouge">a</code> <code class="highlighter-rouge">altglyphdef</code> <code class="highlighter-rouge">clippath</code> <code class="highlighter-rouge">color-profile</code> <code class="highlighter-rouge">cursor</code> <code class="highlighter-rouge">filter</code> <code class="highlighter-rouge">font</code> <code class="highlighter-rouge">font-face</code> <code class="highlighter-rouge">foreignobject</code> <code class="highlighter-rouge">image</code> <code class="highlighter-rouge">marker</code> <code class="highlighter-rouge">mask</code> <code class="highlighter-rouge">pattern</code> <code class="highlighter-rouge">script</code> <code class="highlighter-rouge">style</code> <code class="highlighter-rouge">switch</code> <code class="highlighter-rouge">text</code> <code class="highlighter-rouge">view</code></p>
+
+<p>Cualquiera de estos elementos que sea incluído dentro de <code class="highlighter-rouge">defs</code> no sera visible a la hora de reproducir el SVG, <strong>para que estos elementos sean visibles tendremos que invocarlos a través de la etiqueta <code class="highlighter-rouge">use</code>.</strong></p>
+
+<p><strong>EJEMPLO</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+      <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+      <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+      <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;defs&gt;</span>
+          <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"ejemplo"</span> <span class="na">x=</span><span class="s">"200"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"80"</span> <span class="na">height=</span><span class="s">"80"</span>
+          <span class="na">fill=</span><span class="s">"black"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/defs&gt;</span>
+
+        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#ejemplo"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#ejemplo"</span> <span class="na">transform=</span><span class="s">"translate(100,50)"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#ejemplo"</span> <span class="na">transform=</span><span class="s">"translate(230,30)"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/defs/defs.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>En este ejemplo simplemente incluimos un rectángulo dentro de la etiqueta defs con un <code class="highlighter-rouge">id="ejemplo"</code> y para que sea visible como hemos dicho anteriormente lo invocamos a través de la etiqueta <code class="highlighter-rouge">use</code>, si queremos mover el rectángulo a lo largo del documento lo haremos añadiendo al código lo siguiente <code class="highlighter-rouge">transform="translate(100,50)"</code> el primer valor que es 100 corresponde a la coordenada <code class="highlighter-rouge">x</code> y el segundo que es 50 corresponde a la coordenada <code class="highlighter-rouge">y</code>.</p>
+
+<p>Como hemos dicho anteriormente utilizar la etiqueta <code class="highlighter-rouge">defs</code> es tan solo una recomendación, se puede trabajar sin ella, en el siguiente ejemplo lo podemos ver.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">'http://www.w3.org/2000/svg'</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+      <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+      <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span> <span class="na">viewBox=</span><span class="s">"0 0 100% 100%"</span>
+      <span class="na">enable-background=</span><span class="s">"new 0 0 100% 100%"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"ejemplo"</span> <span class="na">x=</span><span class="s">"200"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"80"</span> <span class="na">height=</span><span class="s">"80"</span> <span class="na">fill=</span><span class="s">"black"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#ejemplo"</span> <span class="na">transform=</span><span class="s">"translate(100,50)"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#ejemplo"</span> <span class="na">transform=</span><span class="s">"translate(230,30)"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/defs/defs2.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Como podemos observar el resultado es el mismo pero el caos se puede apoderar del código si el documento es bastante extenso, <strong>así que aunque podamos vivir sin ella lo recomendable es usarla.</strong></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/crear-svg-con-adobe-illustrator-y-sublime-text/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/inspiracion-diseno-web-xvi/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

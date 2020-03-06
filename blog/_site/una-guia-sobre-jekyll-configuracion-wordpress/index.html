@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Una guía sobre Jekyll - Wordpress</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Una guía sobre Jekyll - Wordpress</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-10-14 00:00:00 +0200">
+                El
+                14 de
+                
+                octubre
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#jekyll">Jekyll</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Ahora que ya estamos más familiarizados con <strong>Jekyll</strong> vamos a ver como exportar todo nuestro contenido que anteriormente estaba disponible en Wordpress.</p>
+
+<p>Voy a hablar sobre Wordpress ya que era el CMS que utilizaba anteriormente para publicar en mi blog. Si utilizáis otro podéis consultar la documentación de Jekyll donde explican como <a href="http://import.jekyllrb.com/" target="_blank">migrar a Jekyll</a> desde diferentes plataformas de <em>blogging</em>.</p>
+
+<p>El proceso esta bastante simplificado gracias a un plugin de Wordpress.</p>
+
+<p>Lo primero es ir al <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter" target="_blank">repositorio de GitHub</a> donde esta alojado el plugin. Vamos a pinchar en el botón de <strong>DOWNLOAD ZIP</strong>. Muy importante, una vez descargado no lo vamos a descomprimir, lo vamos a dejar tal cual esta. Ahora vamos a Wordpress, y en la sección de plugins vamos a subir el archivo que nos hemos descargado. Una vez subido vamos a la sección de herramientas y nos debería de salir el plugin bajo el nombre <em>Export to Jekyll</em>, pinchamos y nos descargará un <strong>.XML</strong> con toda la información de nuestro blog.</p>
+
+<p>Una vez que lo hemos descomprimido podemos ver que el resultado de la exportación, en mi caso voy a poner la cabecera que ha generado el plugin en uno de mis post.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">---
+title: Mi experiencia con SVG
+author: Jorge Aznar
+layout: post
+permalink: /mi-experiencia-con-svg/
+dsq_thread_id:
+  - 2098952997
+tags:
+  - CSS3
+  - SVG
+---</code></pre></figure>
+
+<p>El plugin como podéis ver exporta titulos, autores y categorías.</p>
+
+<p>En el tema del permalink no me voy a meter mucho, cada uno tiene su gusto a la hora de dar nombre a las urls, yo solo utilizó la dirección del post así que lo deje tal cual. Si alguien está interesado en la <a href="http://jekyllrb.com/docs/permalinks/" target="_blank">documentación oficial nos explican cada método</a> que tenemos disponible.</p>
+
+<p>Si utilizáis <a href="https://disqus.com/" target="_blank">disqus</a> para los comentarios solamente tendréis que añadir al footer el código por defecto de disqus y todos los comentarios de vuestros post estarán disponibles.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="cm">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
+        <span class="kd">var</span> <span class="nx">disqus_shortname</span> <span class="o">=</span> <span class="s1">'aqui-va-vuestro-usuario-de-disqus'</span><span class="p">;</span> <span class="c1">// required: replace example with your forum shortname</span>
+
+        <span class="cm">/* * * DON'T EDIT BELOW THIS LINE * * */</span>
+        <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">dsq</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'text/javascript'</span><span class="p">;</span> <span class="nx">dsq</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+           <span class="nx">dsq</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">'http://'</span> <span class="o">+</span> <span class="nx">disqus_shortname</span> <span class="o">+</span> <span class="s1">'.disqus.com/embed.js'</span><span class="p">;</span>
+           <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'body'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">dsq</span><span class="p">);</span>
+       <span class="p">})();</span>
+   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+<p>Si queréis que los comentarios estén disponibles en local deberéis de añadir la siguiente línea después de la variable <code class="highlighter-rouge">disqus_shortname</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">disqus_developer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span></code></pre></figure>
+
+<p>Aunque el plugin consigue exportar bastante bien los post a <strong>Markdown</strong> no está de menos echarle un vistazo. En mi caso alguna negritas se habían perdido al dejar un espacio entre la palabra en negrita y los asteriscos. Para incluir las imágenes el plugin utiliza etiquetas <strong>HTML</strong> en lugar de la sintaxis de <strong>Markdown</strong>. Esto ya a gusto de cada uno si decide cambiar todo. Alguna ruta de imagen se había perdido por el camino pero esto ya es más culpa de utilizar <em>shortcodes</em> en <strong>Wordpress</strong> que del propio plugin.</p>
+
+<p>Este plugin no nos va a descargar las imágenes que hemos utilizado en Wordpress. Esto por desgracia lo vamos a tener que hacer a mano, estuve buscando otras maneras de hacerlo pero no encontré absolutamente nada. <strong>Quizás este método no le funcione a todo el mundo</strong>. Yo accedí a través de la web al panel de control de mi hosting, luego al ftp web y una vez dentro de la ruta donde se alojan las imágenes, la cual suele ser <code class="highlighter-rouge">wp-contet/uploads/</code> en mi caso tenía dos carpetas, una del año 2013 y otra del año 2014 y dentro de ellas varias subcarpetas con cada mes del año. Yo comprimi cada carpeta por separado y una vez comprimidas las descargue, depende del peso esto puede llevar bastante tiempo. Una vez que hemos hecho esto con cada carpeta de imágenes ahora simplemente las vamos a colocar en nuestra carpeta de imágenes de <strong>Jekyll</strong>.</p>
+
+<p>Y ahora muy importante, vamos a cambiar la ruta de las imágenes en todos los post donde tenemos imágenes. Esta tarea la podemos hacer rápidamente desde <strong>Sublime Text</strong>. Nos vamos a <em>Find in Files</em> en <em>Find</em> colocamos la ruta que queremos sustituir, en <em>Where</em> la carpeta donde están los post que queremos que cambiar y en <em>Replace</em> la nueva ruta, le damos a replace y asunto finiquitado.</p>
+
+<p><a href="https://twitter.com/SapphireGD" target="_blank">Gracias a Laura por el tip</a> de comprimir y descargar todas las imágenes desde el ftp web.</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll/"> PRIMERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/"> TERCERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/"> CUARTA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-post/"> QUINTA PARTE DE LA GUÍA</a>
+</button></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/2014/10/16/una-guia-sobre-jekyll-post.html">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/una-guia-sobre-jekyll-configuracion-yaml/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

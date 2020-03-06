@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animaciones SVG con animateMotion</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/animaciones-con-animatemotion-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animaciones SVG con animateMotion</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-02-21 00:00:00 +0100">
+                El
+                21 de
+                
+                febrero
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Vamos a ver <code class="highlighter-rouge">animateMotion</code>, y es que no solo de <code class="highlighter-rouge">animate</code> viven las animaciones SVG a través de SMIL.</p>
+
+<!--more-->
+
+<p>Con <code class="highlighter-rouge">animateMotion</code> tenemos varias opciones para animar el elemento, podemos pasar los valores o rutas a través de los ya conocidos <code class="highlighter-rouge">from</code> y <code class="highlighter-rouge">to</code>, <code class="highlighter-rouge">values</code> y también los no tan conocidos <code class="highlighter-rouge">path</code> y <code class="highlighter-rouge">mpath</code>. A continuación vamos a ver cada uno de los metodos.</p>
+
+<h2 id="from-y-to">FROM y TO</h2>
+
+<p>Simplemente le tenemos que pasar dos valores, el primero es para la coordenada <code class="highlighter-rouge">x</code> y el segundo para la coordenada <code class="highlighter-rouge">y</code>.</p>
+
+<p>Vamos a ver un ejemplo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#F7931E"</span> <span class="na">r=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"3s"</span> <span class="na">from=</span><span class="s">"500,0"</span> <span class="na">to=</span><span class="s">"400,500"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/circle&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#F7931E"</span> <span class="na">r=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"3s"</span> <span class="na">from=</span><span class="s">"300,0"</span> <span class="na">to=</span><span class="s">"400,500"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/circle&gt;</span>
+  <span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#F7931E"</span> <span class="na">r=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"3s"</span> <span class="na">from=</span><span class="s">"100,0"</span> <span class="na">to=</span><span class="s">"400,500"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/circle&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animateMotion/fromyto.html">VER EJEMPLO!</a>
+</button></p>
+
+<h2 id="values">VALUES</h2>
+
+<p>A values también le tenemos que pasar dos valores, el primero es para la coordenada <code class="highlighter-rouge">x</code> y el segundo para la coordenada <code class="highlighter-rouge">y</code>, las parejas de coordeandas irán separadas una de otra por punto y coma.</p>
+
+<p>Vamos a ver un ejemplo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#F7931E"</span> <span class="na">r=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">values=</span><span class="s">"40,40; 100,200; 400,100; 40,40"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/circle&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animateMotion/values.html">VER EJEMPLO!</a>
+</button></p>
+
+<h2 id="path">PATH</h2>
+
+<p>Podemos hacer que los elementos se animen a través del atributo <code class="highlighter-rouge">path</code> siguiendo el trazado que le indicamos en el atributo. No viene mal recordar el <a href="http://jorgeatgu.com/blog/elemento-path-svg/" target="_blank">post sobre el elemento path</a>.</p>
+
+<p>Vamos a ver un ejemplo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;circle</span> <span class="na">fill=</span><span class="s">"#F7931E"</span> <span class="na">r=</span><span class="s">"8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">path=</span><span class="s">"M197,167.5c0,0,433-285.5,433,0"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/circle&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animateMotion/path.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Si queremos ganar tiempo podemos crear el trazado que queramos animar en Adobe Illustrator, una vez creado hay que convertirlo en contorno para que a la hora de exportar en SVG el trazado este en <code class="highlighter-rouge">d=""</code> y no en <code class="highlighter-rouge">points=""</code>.</p>
+
+<h2 id="mpath">MPATH</h2>
+
+<p>Con este método lo que hacemos es animar un elemento aprovechándonos de un trazado que ya tenemos definido en el documento, simplemente lo invocamos a través de <code class="highlighter-rouge">xlink:href=</code>. No hay que olvidarse de que el elemento que invocamos tiene que estar referenciado con un <code class="highlighter-rouge">id=""</code>.</p>
+
+<p>Vamos a ver un ejemplo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"recorrido"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">d=</span><span class="s">"M197,167.5c0,0,433-285.5,433,0"</span><span class="nt">/&gt;</span>
+
+
+  <span class="nt">&lt;text</span> <span class="na">fill=</span><span class="s">"red"</span> <span class="na">font-size=</span><span class="s">"28"</span><span class="nt">&gt;</span>HOYGAN!
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;mpath</span> <span class="na">xlink:href=</span><span class="s">"#recorrido"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/animateMotion&gt;</span>
+  <span class="nt">&lt;/text&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animateMotion/mpath.html">VER EJEMPLO!</a>
+</button></p>
+
+<h3 id="atributo-rotate">Atributo ROTATE</h3>
+
+<p>Con este atributo vamos a lograr que el elemento que animamos tenga diferentes efectos, podemos pasarle tres valores, los cuales son auto, auto-reverse y un valor numérico. Para ver que se consigue con cada uno de ellos vamos a ver un ejemplo.</p>
+
+<p>El rectángulo azul tiene <code class="highlighter-rouge">rotate="auto"</code>.
+El rectángulo rojo tiene <code class="highlighter-rouge">rotate="auto-reverse"</code>.
+El rectángulo verde tiene <code class="highlighter-rouge">rotate="200"</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"70"</span> <span class="na">height=</span><span class="s">"20"</span> <span class="na">stroke=</span><span class="s">"#F7931E"</span> <span class="na">fill=</span><span class="s">"blue"</span> <span class="na">r=</span><span class="s">"8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">path=</span><span class="s">"M197,167.5c0,0,433-285.5,433,0"</span> <span class="na">rotate=</span><span class="s">"auto"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/rect&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"70"</span> <span class="na">height=</span><span class="s">"20"</span> <span class="na">stroke=</span><span class="s">"#F7931E"</span> <span class="na">fill=</span><span class="s">"red"</span> <span class="na">r=</span><span class="s">"8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">path=</span><span class="s">"M197,167.5c0,0,433-285.5,433,0"</span> <span class="na">rotate=</span><span class="s">"auto-reverse"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/rect&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"0"</span> <span class="na">width=</span><span class="s">"70"</span> <span class="na">height=</span><span class="s">"20"</span> <span class="na">stroke=</span><span class="s">"#F7931E"</span> <span class="na">fill=</span><span class="s">"green"</span> <span class="na">r=</span><span class="s">"8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animateMotion</span> <span class="na">dur=</span><span class="s">"10s"</span> <span class="na">path=</span><span class="s">"M197,167.5c0,0,433-285.5,433,0"</span> <span class="na">rotate=</span><span class="s">"200"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/rect&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animateMotion/rotate.html">VER EJEMPLO!</a>
+</button></p>
+
+<h2 id="calcmode-keysplines-y-keytimes">calcMode, keySplines y keyTimes</h2>
+
+<p>Estos tres atributos dan mucho de si, dan tanto que les dedique un post solamente a ellos. Así que mejor ir al post que copiar y pegar todo aquí.</p>
+
+<p>Solamente añadir que en <code class="highlighter-rouge">animateMotion</code> el calcMode por defecto es PACED.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/blog/mis-notas-sobre-svg-iv-calcmode-keytimes-y-keysplines/">IR AL POST</a>
+</button></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/el-texto-en-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/animaciones-svg-con-animate/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

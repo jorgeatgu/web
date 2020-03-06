@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>optimizando SVG desde Adobe Illustrator</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/optimizando-svg-desde-adobe-illustrator/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>optimizando SVG desde Adobe Illustrator</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-11-13 00:00:00 +0100">
+                El
+                13 de
+                
+                noviembre
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Adobe acaba de publicar la beta de <a href="https://github.com/davidderaedt/SVG-NOW" target="_blank">SVGNOW</a>, una extensión para optimizar los <strong>SVG</strong> directamente desde <strong>Adobe Illustrator</strong>.</p>
+
+<p>Recordad que en blog ya he tocado varias veces este tema:</p>
+
+<p><a href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/index.html" target="_blank">Optimizar SVG Illustrator</a></p>
+
+<p><a href="http://jorgeatgu.com/blog/optimizar-svg-con-svgo/index.html" target="_blank">Optimizar SVG con SVGO</a></p>
+
+<p><a href="http://jorgeatgu.com/blog/optimizar-svg-con-svgcleaner/index.html" target="_blank">Optimizar SVG con SVGCleaner</a></p>
+
+<p><a href="https://github.com/davidderaedt/SVG-NOW" target="_blank">SVGNOW</a> está disponible para descargar(para los usuarios de Creative Cloud) desde la página de <em>addons</em> de <a href="https://creative.adobe.com/addons/products/4272#.VGSW8VPF8Q4" target="_blank">Creative Cloud</a>. Una vez descargado hay que abrir Adobe Illustrator, vamos al menú ventana y nos aparecerá en la sección de extensiones.</p>
+
+<h2 id="opciones-disponibles">Opciones disponibles</h2>
+
+<p>Por ahora el <em>addon</em> solamente dispone de cuatro opciones, y una de ellas esta(y debería de estar siempre) capada, es la de mantener el archivo original. El resto de opciones son <em>outline fonts</em>, <em>convert style to attributes</em> y <em>convert path to data</em>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/11/svgnow-opciones.png" alt="Opciones SVGNOW" /></p>
+
+<h3 id="outline-fonts">Outline fonts</h3>
+
+<p>Con esta opción vamos a convertir en trazado todo el texto.</p>
+
+<h3 id="convert-style-to-attributes">Convert style to attributes</h3>
+
+<p>Esta opción inserta los atributos directamente en las etiquetas de nuestro <strong>SVG</strong>, esto es lo normal cuando exportamos desde <strong>Adobe Illustrator</strong>.</p>
+
+<p>Si dejamos esta opción sin seleccionar los estilos van a ser incluidos en una etiqueta <code class="highlighter-rouge">&lt;style type="text/css"&gt;</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 246 138.4"</span> <span class="na">style=</span><span class="s">"enable-background:new 0 0 246 138.4;"</span><span class="nt">&gt;&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span><span class="nc">.st0</span><span class="p">{</span><span class="py">fill</span><span class="p">:</span><span class="m">#D8D212</span><span class="p">;</span><span class="py">stroke</span><span class="p">:</span><span class="m">#E6007E</span><span class="p">;</span><span class="py">stroke-width</span><span class="p">:</span><span class="m">3</span><span class="p">;</span><span class="py">stroke-miterlimit</span><span class="p">:</span><span class="m">10</span><span class="p">;}</span> <span class="nc">.st1</span><span class="p">{</span><span class="py">fill</span><span class="p">:</span><span class="m">#E2DD1B</span><span class="p">;}</span><span class="nt">&lt;/style&gt;&lt;path</span> <span class="na">class=</span><span class="s">"st0"</span> <span class="na">d=</span><span class="s">"M94.3,90.5H45.4c-6.6,0-12-5.4-12-12V29.6c0-6.6,5.4-12,12-12h48.9c6.6,0,12,5.4,12,12v48.9 C106.3,85.1,100.9,90.5,94.3,90.5z"</span><span class="nt">/&gt;&lt;path</span> <span class="na">class=</span><span class="s">"st1"</span> <span class="na">d=</span><span class="s">"M136.3 31.3H218.8V113.8H136.3z"</span><span class="nt">/&gt;&lt;/svg&gt;</span></code></pre></figure>
+
+<p>A continuación el mismo código con la opción seleccionada</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 246 138.4"</span> <span class="na">enable-background=</span><span class="s">"new 0 0 246 138.4"</span><span class="nt">&gt;&lt;path</span> <span class="na">fill=</span><span class="s">"#D8D212"</span> <span class="na">stroke=</span><span class="s">"#E6007E"</span> <span class="na">stroke-width=</span><span class="s">"3"</span> <span class="na">stroke-miterlimit=</span><span class="s">"10"</span> <span class="na">d=</span><span class="s">"M94.3,90.5H45.4c-6.6,0-12-5.4-12-12V29.6 c0-6.6,5.4-12,12-12h48.9c6.6,0,12,5.4,12,12v48.9C106.3,85.1,100.9,90.5,94.3,90.5z"</span><span class="nt">/&gt;&lt;path</span> <span class="na">fill=</span><span class="s">"#E2DD1B"</span> <span class="na">d=</span><span class="s">"M136.3 31.3H218.8V113.8H136.3z"</span><span class="nt">/&gt;&lt;/svg&gt;</span></code></pre></figure>
+
+<h3 id="convert-path-to-data">Convert path to data</h3>
+
+<p>Con esta opción vamos a convertir todas las etiquetas que tiene nuestro <strong>SVG</strong> en <code class="highlighter-rouge">&lt;path&gt;</code>. A mi esta opción no me termina de convencer, es una opción que está disponible en <strong>SVG CLEANER</strong> y que <strong>yo personalmente</strong> no recomiendo.</p>
+
+<p>A los <strong>SVG</strong> exportados desde <strong>SVGNOW</strong> se le añade al nombre del archivo un <em>-opt</em>.</p>
+
+<p>Lo mejor de <strong>SVGNOW</strong> es que elimina las dos primeras líneas tan características de <strong>Adobe Illustrator</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="c">&lt;!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --&gt;</span></code></pre></figure>
+
+<p>También elimina varios atributos totalmente innecesarios que se añaden a la etiqueta principal de <strong>SVG</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">SIN SVGNOW
+<span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">id=</span><span class="s">"Capa_1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+	 <span class="na">viewBox=</span><span class="s">"0 0 246 138.4"</span> <span class="na">enable-background=</span><span class="s">"new 0 0 246 138.4"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+CON SVGNOW
+<span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 246 138.4"</span> <span class="na">enable-background=</span><span class="s">"new 0 0 246 138.4"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>Yo eliminaría <code class="highlighter-rouge">enable-background</code> y añadiría el <code class="highlighter-rouge">width</code> <code class="highlighter-rouge">height</code>.</p>
+
+<p>Por último aquí esta el repositorio de <a href="https://github.com/davidderaedt/SVG-NOW" target="_blank">SVGNOW en GitHub</a>.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/optimizando-svg-con-grunt/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/svg-fragments-identifiers/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

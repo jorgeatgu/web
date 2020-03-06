@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG CSS layout properties en WebKit Nightly</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/svg-css-layout-properties-en-webkit-nightly/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>SVG CSS layout properties en WebKit Nightly</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-08-22 00:00:00 +0200">
+                El
+                22 de
+                
+                agosto
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>La semana pasada se actualizó WebKit Nightly con una propiedad bastante interesante para modificar SVG a través de CSS.</p>
+
+<!--more-->
+
+<p>Lo primero es tener actualizado WebKit Nightly, lo podéis descargar desde este <a href="https://www.webkit.org/">enlace</a>.</p>
+
+<p>Ahora vamos a poder modificar a través de CSS los siguientes atributos de SVG como <strong>x, y, cx, cy, r, rx, ry, width y height.</strong></p>
+
+<p>En el ejemplo que vamos a ver a continuación tenemos cuatro rectángulos en un SVG</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"uno"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"75"</span> <span class="na">height=</span><span class="s">"75"</span> <span class="na">fill=</span><span class="s">"crimson"</span> <span class="na">stroke=</span><span class="s">"darkorange"</span> <span class="na">stroke-width=</span><span class="s">"5"</span> <span class="na">rx=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"dos"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"200"</span> <span class="na">width=</span><span class="s">"75"</span> <span class="na">height=</span><span class="s">"75"</span> <span class="na">fill=</span><span class="s">"crimson"</span> <span class="na">stroke=</span><span class="s">"darkorange"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"tres"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"300"</span> <span class="na">width=</span><span class="s">"75"</span> <span class="na">height=</span><span class="s">"75"</span> <span class="na">fill=</span><span class="s">"crimson"</span> <span class="na">stroke=</span><span class="s">"darkorange"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;rect</span> <span class="na">id=</span><span class="s">"cuatro"</span> <span class="na">x=</span><span class="s">"50"</span> <span class="na">y=</span><span class="s">"400"</span> <span class="na">width=</span><span class="s">"75"</span> <span class="na">height=</span><span class="s">"75"</span> <span class="na">fill=</span><span class="s">"crimson"</span> <span class="na">stroke=</span><span class="s">"darkorange"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A través de CSS vamos a modificar los bordes redondeados del primer rectángulo</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nf">#uno</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="py">rx</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Al segundo rectángulo le vamos a modificar el width y el height</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nf">#dos</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Al tercer rectángulo le vamos a modificar su posición en la coordenada vertical</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nf">#tres</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="py">y</span><span class="p">:</span> <span class="m">600px</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Al cuarto rectángulo le vamos a modificar su posición en la coordenada horizontal</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nf">#cuatro</span><span class="nd">:hover</span> <span class="p">{</span>
+    <span class="py">x</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Por último vamos a añadir la duración de la transición y su <em>timing</em></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nt">rect</span> <span class="p">{</span>
+  <span class="nl">transition-duration</span><span class="p">:</span> <span class="m">2s</span><span class="p">;</span>
+  <span class="nl">transition-timing-function</span><span class="p">:</span><span class="n">cubic-bezier</span><span class="p">(</span><span class="m">.17</span><span class="p">,</span><span class="m">.67</span><span class="p">,</span><span class="m">.83</span><span class="p">,</span><span class="m">.67</span><span class="p">);</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>A continuación os dejo un vídeo con todos los efectos del ejemplo</p>
+
+<iframe src="http://player.vimeo.com/video/104089554" width="500" height="451" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="http://vimeo.com/104089554">WebKit Layout Properties</a> from <a href="http://vimeo.com/jorgeatgu">Jorge Aznar</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<p>Por último os dejo la demo que publicó Adobe Web Platform en CodePen</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="DdLvi" data-user="adobe"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/mi-articulo-en-tras42-animaciones-nativas-en-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/svg-icons-social-media/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

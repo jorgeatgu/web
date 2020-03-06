@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fildrop nueva version de SVG Filters</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/fildrop-svg-filter-effects/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Fildrop nueva version de SVG Filters</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-12-01 00:00:00 +0100">
+                El
+                1 de
+                
+                diciembre
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#filters">Filters</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#gulp">Gulp</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Después de unas cuantas semanas trabajando en la nueva versión de <a href="http://jorgeatgu.github.io/svg-filters/">SVG-Filter</a> ya por fin esta disponible.</p>
+
+<!--more-->
+
+<p>Además de cambiar el nombre a Fildrop. En esta nueva version he añadido la posibilidad de modificar en tiempo real los valores de algunos filtros a través de diferentes sliders. Todos aquellos filtros en los que el botón tiene un icono con forma de rueda pueden ser modificados y ver los efectos al instante sobre la fotografía que hace de ejemplo o sobre la fotografía que hayas subido mediante la opción de drag&amp;drop.</p>
+
+<p>En esta version además de modificar los valores de los filtros también puedes copiar al portapapeles el código del filtro con los valores modificados. Así puedes llevartelo donde quieras.</p>
+
+<p>También puedes descargarte el CSS y SVG para poder usarlo donde quieras. Lo que tienes que hacer es añadir el archivo <code class="highlighter-rouge">filters.css</code> a tu proyecto</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"path/to/filter.css"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>También tienes que añadir el archivo <code class="highlighter-rouge">filters.svg</code>a tu proyecto dependiendo de su ubicación deberás modificar la ruta de los filtros en el CSS.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">.saturate {
+    -webkit-filter: url("tu/ruta/filters.svg##saturate");
+            filter: url("tu/ruta/filters.svg##saturate");
+}</code></pre></figure>
+
+<p>Otra opción es pegar directamente todo el código de <code class="highlighter-rouge">filters.svg</code> en tu HTML y así no tener que modificar el archivo CSS. Mucho cuidado que a Firefox este método no le gusta.</p>
+
+<p>Muchas gracias a <a href="https://twitter.com/elrumordelaluz">Lionel</a> y <a href="https://twitter.com/kseso">Kseso</a> por el feedback :)</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.github.io/svg-filters/">FILDROP!</a>
+</button></p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/exportar-svg-adobe-illustrator/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/configurando-gulp-postcss/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

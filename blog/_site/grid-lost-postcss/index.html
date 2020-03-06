@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Creando grids con postCSS</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/grid-lost-postcss/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Creando grids con postCSS</h1>
+        <p class="articulo-fecha">
+            <time datetime="2016-01-19 00:00:00 +0100">
+                El
+                19 de
+                
+                enero
+                
+                de
+                2016
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#grid">Grid</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#postcss">postCSS</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>En este artículo vamos a ver como crear grids con el plugin <a href="https://github.com/peterramsing/lost">Lost grid</a>. Tenemos todo un abanico de posibilidades, desde simples columnas, pasando por grid horizontales, grid verticales y con la opción de centrar y alinear.</p>
+
+<!--more-->
+
+<p>Vamos a instalar Lost Grid a través de NPM</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">install </span>lost <span class="nt">--save-dev</span></code></pre></figure>
+
+<p>Ahora vamos a añadirlo a nuestro <code class="highlighter-rouge">gulpfile.js</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">lost</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lost'</span><span class="p">);</span></code></pre></figure>
+
+<p>Y también en nuestro <code class="highlighter-rouge">gulpfile.js</code> lo añadiremos a nuestra tarea de <strong>postCSS</strong></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="nx">vars</span><span class="p">,</span>
+	<span class="nx">nested</span><span class="p">,</span>
+	<span class="nx">rucksack</span><span class="p">,</span>
+	<span class="nx">pxtorem</span><span class="p">({</span>
+		<span class="na">root_value</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+		<span class="na">unit_precision</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+		<span class="na">prop_white_list</span><span class="p">:</span> <span class="p">[</span><span class="s1">'font-size'</span><span class="p">,</span> <span class="s1">'line-height'</span><span class="p">,</span> <span class="s1">'padding'</span><span class="p">],</span>
+		<span class="na">replace</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+		<span class="na">media_query</span><span class="p">:</span> <span class="kc">false</span>
+	<span class="p">}),</span>
+	<span class="nx">autoprefixer</span><span class="p">,</span>
+	<span class="nx">sorting</span><span class="p">({</span>
+		<span class="s2">"sort-order"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"font-family"</span><span class="p">,</span> <span class="s2">"font-size"</span><span class="p">,</span> <span class="s2">"font-weight"</span><span class="p">,</span> <span class="s2">"line-height"</span><span class="p">]</span>
+	<span class="p">}),</span>
+	<span class="nx">lost</span>
+<span class="p">];</span></code></pre></figure>
+
+<h2 id="variables">Variables</h2>
+
+<p>Por defecto Lost trae tres valores por defecto.</p>
+
+<p>El primero de ellos es <em>gutter</em> el cual se encarga del margen entre los bloques, por defecto su valor es de 30px.</p>
+
+<p>El segundo de ellos es <em>flexbox</em> por defecto su valor es no-flex.</p>
+
+<p>El tercero de ellos es <em>cycle</em>, Lost por defecto aplica un <code class="highlighter-rouge">margin-right: gutter</code> a todos los elementos excepto al último de cada fila al cuál aplica un <code class="highlighter-rouge">margin-right: 0</code>. Para modificar este comportamiento tenemos este valor, el cuál podemos utilizar junto a <code class="highlighter-rouge">lost-column: 1/5 2;</code> en el cual <em>cycle</em> es el último valor, o por separado con la propiedad <code class="highlighter-rouge">lost-cycle: 2</code>.</p>
+
+<p>Tenemos la posibilidad de modificar estas tres variables, para ello tendremos que declararlas en la parte superior de nuestro archivo <strong>CSS</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@lost</span> <span class="n">gutter</span> <span class="m">60px</span><span class="p">;</span>
+<span class="k">@lost</span> <span class="n">flexbox</span> <span class="n">flex</span><span class="p">;</span>
+<span class="k">@lost</span> <span class="n">cycle</span> <span class="nb">none</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="opciones-y-ejemplos">Opciones y ejemplos</h2>
+
+<p>Vamos a ver las diferentes opciones que tenemos a nuestra disposición y algunos ejemplos para ilustrar las opciones.</p>
+
+<h3 id="lost-column">lost-column</h3>
+
+<p>Con esta opción vamos a crear columnas, vamos a definir su tamaño en fracciones. La fracción sera relativa al tamaño del contenedor teniendo en cuenta el <em>gutter</em>. Admite cuatro valores. El primero de ellos es la fracción. El segundo es <em>cycle</em>. El tercero es <em>gutter</em>. Y por último si queremos que el contenedor use Flexbox.</p>
+
+<p>Vamos a ver un sencillo ejemplo en el que vamos a crear un grid horizontal que se divida en tres.</p>
+
+<p>Para ello vamos a nuestro archivo de <strong>postCSS</strong> y escribimos lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.primero</span> <span class="p">{</span>
+	<span class="py">lost-utility</span><span class="p">:</span> <span class="n">clearfix</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">31</span><span class="p">,</span> <span class="m">63</span><span class="p">,</span><span class="m">.8</span><span class="p">);</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-column</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#001F3F</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p>En el contenedor padre utilizamos <code class="highlighter-rouge">lost-utility: clearfix;</code> y en los hijos utilizamos <code class="highlighter-rouge">lost-column: 1/3;</code> para dividir el contenedor en tres partes.</p>
+
+<p>El resultado lo podéis ver en la siguiente demo:</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/primer-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-offset">lost-offset</h3>
+
+<p>Con esta opción vamos a dejar un margen a izquierda o derecha, abajo o arriba, esto dependerá de si pasamos un valor negativo o positivo a la fracción, y también de si el valor que utilizamos es <em>row</em> o <em>column</em>. También admite el valor <em>gutter</em>.</p>
+
+<p>Vamos a ver dos ejemplos, uno utilizando un valor positivo para <code class="highlighter-rouge">lost-offset</code> y otro utilizando un valor negativo.</p>
+
+<p>Al primer ejemplo le vamos a pasar un valor positivo para dejar un espacio entre los hijos.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.segundo</span><span class="o">,</span>
+<span class="nc">.segundo-negativo</span> <span class="p">{</span>
+	<span class="py">lost-utility</span><span class="p">:</span> <span class="n">clearfix</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span> <span class="m">220</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span><span class="m">.5</span><span class="p">);</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="m">#121</span><span class="p">;</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-column</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#FFDC00</span><span class="p">;</span>
+		<span class="err">&amp;:first-child</span> <span class="err">{</span>
+			<span class="py">lost-offset</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="err">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p>En el segundo vamos a pasar un valor negativo para desplazar a los hijos dos fracciones a la derecha.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.segundo-negativo</span> <span class="p">{</span>
+	<span class="py">article</span><span class="p">:</span><span class="n">first-child</span> <span class="err">{</span>
+		<span class="n">lost-offset</span><span class="p">:</span> <span class="m">-2</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/segundo-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-center">lost-center</h3>
+
+<p>Con esta opción vamos a centrar horizontalmente un contenedor. Admite tres valores. El primero de ellos es <em>max-width</em>, sera el ancho máximo del contenedor. El segundo de ellos es <em>padding</em>, al contenedor se le aplicará un <em>padding-left</em> y un <em>padding-rigth</em>. El tercero es <em>flex</em> o <em>no-flex</em> para determinar si el contenedor usará Flexbox o no lo usará.</p>
+
+<p>Vamos a ver un ejemplo donde vamos a centrar el contenedor, el cual va a tener una anchura máxima de 900px y lo vamos a dividir en tres secciones.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.tercero</span> <span class="p">{</span>
+	<span class="py">lost-center</span><span class="p">:</span> <span class="m">900px</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">112</span><span class="p">,</span> <span class="m">.5</span><span class="p">);</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="m">#001F3F</span><span class="p">;</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-column</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">112</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/tercer-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-flex-container">lost-flex-container</h3>
+
+<p>Con esta opción vamos a crear un contenedor con <em>flexbox</em>, admite dos valores. El primero de ellos es row y el último column.</p>
+
+<h3 id="lost-align">lost-align</h3>
+
+<p>Con esta opción vamos a alinear los hijos. Esta opción siempre se la vamos a pasar al padre. Las opciones a nuestra disposición: <em>reset horizontal vertical top-left top-center top top-right middle-left left middle-center center middle-right right bottom-left bottom-center bottom bottom-right</em>. También tenemos la opción de determinar si el contenedor usará Flexbox.</p>
+
+<p>Vamos a ver un par de ejemplos. El primero lo vamos a desplazar a la parte superior izquierda.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.cuarto</span> <span class="p">{</span>
+	<span class="py">lost-align</span><span class="p">:</span> <span class="n">top-left</span><span class="p">;</span>
+  	<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  	<span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">127</span><span class="p">,</span> <span class="m">219</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">.5</span><span class="p">);</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#7FDBFF</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="m">#121</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	  	<span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p>El segundo lo vamos a mandar a la parte inferior derecha.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.cuarto-bottom-right</span> <span class="p">{</span>
+	<span class="py">lost-align</span><span class="p">:</span> <span class="n">top-left</span><span class="p">;</span>
+  	<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  	<span class="nl">height</span><span class="p">:</span> <span class="m">350px</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">127</span><span class="p">,</span> <span class="m">219</span><span class="p">,</span> <span class="m">255</span><span class="p">,</span> <span class="m">.5</span><span class="p">);</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#7FDBFF</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="m">#121</span><span class="p">;</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	  	<span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span>
+
+<span class="nc">.cuarto-bottom-right</span> <span class="p">{</span>
+	<span class="py">lost-align</span><span class="p">:</span> <span class="n">bottom-right</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/cuarto-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-utility">lost-utility</h3>
+
+<p>Esta opción admite dos valores. El primero de ellos es <em>edit</em>, el cual va a colorear toda la estructura del grid que vamos a crear. El segundo valor es <em>clearfix</em>, y hace exactamente lo que dice su nombre.</p>
+
+<p>En el ejemplo anterior hemos utilizado uno de los dos valores de <code class="highlighter-rouge">lost-utility</code>, ahora vamos a utilizar el otro valor.</p>
+
+<p>Para ello simplemente vamos a escribir lo siguiente:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.quinto</span> <span class="p">{</span>
+	<span class="py">lost-utility</span><span class="p">:</span> <span class="n">edit</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>En la demo veréis como se colorean todos los hijos del contenedor.</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/quinto-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-row">lost-row</h3>
+
+<p>Es igual que <em>lost-column</em> pero en lugar de columnas va a crear líneas. En este caso y como es obvio no tenemos la opción de <em>cycle</em>.</p>
+
+<p>Vamos a crear un grid vertical utilizando <code class="highlighter-rouge">lost-row</code>. Al padre le vamos a dar un <code class="highlighter-rouge">height: 100%</code>, y vamos a dividir el grid en tres fracciones.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.sexto</span> <span class="p">{</span>
+	<span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">133</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">75</span><span class="p">,</span><span class="m">.8</span><span class="p">);</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-row</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">3</span><span class="p">;</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#85144B</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/sexto-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-waffle">lost-waffle</h3>
+
+<p>Con esta opción vamos a crear un grid donde los bloques tendrán <em>margin-right:</em> y <em>margin-bottom:</em>. Admite también los valores <em>cycle</em>, <em>gutter</em> y <em>flex</em>.</p>
+
+<p>Vamos a crear un grid con varías líneas. Al padre le vamos a dar un <code class="highlighter-rouge">height: 100%</code>, y vamos a dividir el grid en dos partes por línea.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.septimo</span> <span class="p">{</span>
+	<span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+	<span class="py">bgc</span><span class="p">:</span> <span class="m">#121</span><span class="p">;</span>
+	<span class="py">lost-utility</span><span class="p">:</span> <span class="n">clearfix</span><span class="p">;</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-waffle</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">2</span><span class="p">;</span>
+		<span class="py">bgc</span><span class="p">:</span> <span class="m">#f1f1f1</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/septimo-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="lost-move">lost-move</h3>
+
+<p>Con esta opción vamos a poder desplazar los bloques a izquierda o derecha, abajo o arriba, esto dependerá de si pasamos un valor negativo o positivo a la fracción, y también de si el valor que utilizamos es <em>row</em> o <em>column</em>. También admite el valor <em>gutter</em>.</p>
+
+<p>Vamos a intercambiar el orden de los hijos.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.octavo</span> <span class="p">{</span>
+	<span class="err">article</span> <span class="err">{</span>
+		<span class="py">lost-column</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">2</span><span class="p">;</span>
+		<span class="err">&amp;:first-child</span> <span class="err">{</span>
+			<span class="py">lost-move</span><span class="p">:</span> <span class="m">1</span><span class="p">/</span><span class="m">2</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="o">&amp;</span><span class="nd">:last-child</span> <span class="p">{</span>
+			<span class="py">lost-move</span><span class="p">:</span> <span class="m">-1</span><span class="p">/</span><span class="m">2</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="err">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/lost-grid-postcss/octavo-ejemplo.html">IR AL EJEMPLO</a>
+</button></p>
+
+<p>El código de los ejemplos está disponible en <a href="https://github.com/jorgeatgu/gulp-postCSS">GitHub</a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/jquery-svg-addclass/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/tota11y-accesibilidad-web/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

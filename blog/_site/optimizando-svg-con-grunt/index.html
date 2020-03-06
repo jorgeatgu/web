@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Optimizando SVG con Grunt</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/optimizando-svg-con-grunt/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Optimizando SVG con Grunt</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-11-21 00:00:00 +0100">
+                El
+                21 de
+                
+                noviembre
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#grunt">Grunt</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Esta semana hemos estado en el trabajo implementando Grunt para todos nuestros proyectos. No voy a hablar de todas las tareas que hemos implementado para eso y para aquellos a que les suene raro esto de Grunt <a href="https://twitter.com/flodar" target="_blank">Felix Ortega</a> ha escrito un <a href="http://trip2themoon.com/primeros-pasos-con-grunt-para-disenadores-web/" target="_blank">artículo</a> con una gran introducción a Grunt.</p>
+
+<!--more-->
+
+<h2 id="grunt-svgmin">Grunt-svgmin</h2>
+
+<p>Lo primero que vamos a hacer es instalar <a href="https://github.com/sindresorhus/grunt-svgmin" target="_blank">svgmin</a> desde el terminal.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>npm <span class="nb">install</span> <span class="nt">--save-dev</span> grunt-svgmin</code></pre></figure>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>Ahora vamos a incluir la tarea en nuestro archivo <code class="highlighter-rouge">gruntfile.js</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">            <span class="nx">svgmin</span><span class="p">:</span> <span class="p">{</span>
+                 <span class="nl">options</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nl">plugins</span><span class="p">:</span> <span class="p">[</span>
+
+                     <span class="p">]</span>
+                 <span class="p">},</span>
+                 <span class="nx">dist</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nl">files</span><span class="p">:</span> <span class="p">[]</span>
+                <span class="p">}</span>
+             <span class="p">},</span></code></pre></figure>
+
+<p>Ahora vamos a configurar los plugins a nuestra tarea. A nuestra disposición tenemos todos los <a href="https://github.com/svg/svgo/tree/master/plugins" target="_blank">plugins de SVGO</a>, esto ya es configurable por cada uno, la lista de plugins es bastante extensa, a continuación los que yo he implementado.</p>
+
+<h3 id="removeviewbox">removeViewBox</h3>
+
+<p>Para que no elimine el atributo viewBox.</p>
+
+<h3 id="removetitle-y-removedesc">removeTitle y removeDesc</h3>
+
+<p>Para mí estos dos plugins son los más importantes. Si queremos que Google muestre un título y una descripción de nuestro SVG debemos de añadir las etiquetas <code class="highlighter-rouge">&lt;title&gt;</code> y <code class="highlighter-rouge">&lt;desc&gt;</code> para que lo muestre en los resultados. Con este plugin en <code class="highlighter-rouge">false</code> <em>SVGO</em> no eliminará estas dos etiquetas.</p>
+
+<h3 id="removeuselessstrokeandfill">removeUselessStrokeAndFill</h3>
+
+<p>Para que elimine los <code class="highlighter-rouge">stroke</code> y <code class="highlighter-rouge">fill</code> que no tengan valor alguno.</p>
+
+<h3 id="cleanupids">cleanupIDs</h3>
+
+<p>Para que elimine los IDs que no contengan ningún script o estilo.</p>
+
+<h3 id="removeeditornsdata">removeEditorNSData</h3>
+
+<p>Para que elimine los <strong>namespaces</strong> que se crean al exportar desde Illustrator, Sketch y Inkscape</p>
+
+<h3 id="cleanupnumericvalues">cleanupNumericValues</h3>
+
+<p>Para que elimine las unidades por defecto. Si a los atributos no les asignamos ninguna unidad de medidad <em>SVG</em> tomará la unidad por defecto, la cual es el pixel. Así que no sirve de nada escribir <code class="highlighter-rouge">px</code>.</p>
+
+<h3 id="convertcolors">convertColors</h3>
+
+<p>Para que convierta los colores en <em>RGB y keywords</em> a su valor hexadecimal,en caso de que el que color se pueda representar con tres valores(por ejemplo #000000 #ffffff) hexadecimales el plugin hará la conversión.</p>
+
+<h2 id="files">Files</h2>
+
+<p>Por último vamos a configurar las rutas donde tiene que coger nuestros archivos y optimizarlos</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">dist</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nl">files</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="na">expand</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="na">cwd</span><span class="p">:</span> <span class="s1">'images/'</span><span class="p">,</span>  <span class="c1">//La ruta donde se alojan nuestros archivos</span>
+          <span class="na">src</span><span class="p">:</span> <span class="p">[</span><span class="s1">'**/*.svg'</span><span class="p">],</span>     <span class="c1">//El * indica que optimize todos los archivos con extensión .svg</span>
+          <span class="na">dest</span><span class="p">:</span> <span class="s1">'dist/images'</span><span class="p">,</span>  <span class="c1">// La carpeta donde guardara nuestros archivos ya optimizados.</span>
+          <span class="na">ext</span><span class="p">:</span> <span class="s1">'.svg'</span>
+        <span class="p">}]</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>Podéis consultar todo el código en el siguiente <a href="https://gist.github.com/jorgeatgu/a0656c47a11e741befb2" target="_blank">Gist en mi cuenta de GitHub</a></p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/taller-svg-en-escuelait/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/optimizando-svg-desde-adobe-illustrator/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

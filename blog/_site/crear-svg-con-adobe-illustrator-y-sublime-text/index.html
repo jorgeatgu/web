@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crear SVG con Adobe Illustrator y Sublime Text</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Crear SVG con Adobe Illustrator y Sublime Text</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-11 00:00:00 +0100">
+                El
+                11 de
+                
+                noviembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#tutorial">tutorial</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Cuando exportamos un SVG con Adobe Illustrator el siguiente paso suele ser olvidarnos de el, confiamos en Illustrator y no tocamos el código que genera a la hora de exportar, esto es un error ya que Illustrator como muchos programas genera código <a href="http://jorgeatgu.com/blog/optimizar-svg-illustrator/" target="_blank">que no sirve para nada</a> y en el caso de los SVG abusa de la etiqueta <code class="highlighter-rouge">path</code> para trazar multitud de objetos que se pueden conseguir con menos líneas de código.</p>
+
+<!--more-->
+
+<p>En este post vamos a ver como el propio Illustrator nos va a servir de guía para generar nuestro propio SVG, vamos a prescindir del paso de exportar desde Illustrator.</p>
+
+<p>Para este caso en particular voy a utilizar el logo de Codepen, y es que el otro día buscando el logo de codepen para añadirlo a mi <a href="http://jorgeatgu.com/blog/cmyk-free-icons-social-media-vector-svg/" target="_blank">pack de iconos gratuitos</a> me encontre con este pen de Chris Coyier(uno de los fundadores de Codepen), a continuación podemos ver el código.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"logo"</span><span class="nt">&gt;&lt;g&gt;&lt;path</span> <span class="na">class=</span><span class="s">"outer-ring"</span> <span class="na">d=</span><span class="s">"M60.048 0C26.884 0 0 26.9 0 60.048s26.884 60 60 60.047c33.163 0 60.047-26.883 60.047-60.047 S93.211 0 60 0z M60.048 110.233c-27.673 0-50.186-22.514-50.186-50.186S32.375 9.9 60 9.9 c27.672 0 50.2 22.5 50.2 50.186S87.72 110.2 60 110.233z"</span><span class="nt">/&gt;&lt;path</span> <span class="na">class=</span><span class="s">"inner-box"</span> <span class="na">d=</span><span class="s">"M97.147 48.319c-0.007-0.047-0.019-0.092-0.026-0.139c-0.016-0.09-0.032-0.18-0.056-0.268 c-0.014-0.053-0.033-0.104-0.05-0.154c-0.025-0.078-0.051-0.156-0.082-0.232c-0.021-0.053-0.047-0.105-0.071-0.156 c-0.033-0.072-0.068-0.143-0.108-0.211c-0.029-0.051-0.061-0.1-0.091-0.148c-0.043-0.066-0.087-0.131-0.135-0.193 c-0.035-0.047-0.072-0.094-0.109-0.139c-0.051-0.059-0.104-0.117-0.159-0.172c-0.042-0.043-0.083-0.086-0.127-0.125 c-0.059-0.053-0.119-0.104-0.181-0.152c-0.048-0.037-0.095-0.074-0.145-0.109c-0.019-0.012-0.035-0.027-0.053-0.039L61.817 23.5 c-1.072-0.715-2.468-0.715-3.54 0L24.34 46.081c-0.018 0.012-0.034 0.027-0.053 0.039c-0.05 0.035-0.097 0.072-0.144 0.1 c-0.062 0.049-0.123 0.1-0.181 0.152c-0.045 0.039-0.086 0.082-0.128 0.125c-0.056 0.055-0.108 0.113-0.158 0.2 c-0.038 0.045-0.075 0.092-0.11 0.139c-0.047 0.062-0.092 0.127-0.134 0.193c-0.032 0.049-0.062 0.098-0.092 0.1 c-0.039 0.068-0.074 0.139-0.108 0.211c-0.024 0.051-0.05 0.104-0.071 0.156c-0.031 0.076-0.057 0.154-0.082 0.2 c-0.017 0.051-0.035 0.102-0.05 0.154c-0.023 0.088-0.039 0.178-0.056 0.268c-0.008 0.047-0.02 0.092-0.025 0.1 c-0.019 0.137-0.029 0.275-0.029 0.416V71.36c0 0.1 0 0.3 0 0.418c0.006 0 0 0.1 0 0.1 c0.017 0.1 0 0.2 0.1 0.268c0.015 0.1 0 0.1 0.1 0.154c0.025 0.1 0.1 0.2 0.1 0.2 c0.021 0.1 0 0.1 0.1 0.154c0.034 0.1 0.1 0.1 0.1 0.213c0.029 0 0.1 0.1 0.1 0.1 c0.042 0.1 0.1 0.1 0.1 0.193c0.035 0 0.1 0.1 0.1 0.139c0.05 0.1 0.1 0.1 0.2 0.2 c0.042 0 0.1 0.1 0.1 0.125c0.058 0.1 0.1 0.1 0.2 0.152c0.047 0 0.1 0.1 0.1 0.1 c0.019 0 0 0 0.1 0.039L58.277 96.64c0.536 0.4 1.2 0.5 1.8 0.537c0.616 0 1.233-0.18 1.77-0.537 l33.938-22.625c0.018-0.012 0.034-0.027 0.053-0.039c0.05-0.035 0.097-0.072 0.145-0.109c0.062-0.049 0.122-0.1 0.181-0.152 c0.044-0.039 0.085-0.082 0.127-0.125c0.056-0.055 0.108-0.113 0.159-0.172c0.037-0.045 0.074-0.09 0.109-0.139 c0.048-0.062 0.092-0.127 0.135-0.193c0.03-0.049 0.062-0.098 0.091-0.146c0.04-0.07 0.075-0.141 0.108-0.213 c0.024-0.051 0.05-0.102 0.071-0.154c0.031-0.078 0.057-0.156 0.082-0.234c0.017-0.051 0.036-0.102 0.05-0.154 c0.023-0.088 0.04-0.178 0.056-0.268c0.008-0.045 0.02-0.092 0.026-0.137c0.018-0.139 0.028-0.277 0.028-0.418V48.735 C97.176 48.6 97.2 48.5 97.1 48.319z M63.238 32.073l25.001 16.666L77.072 56.21l-13.834-9.254V32.073z M56.856 32.1 v14.883L43.023 56.21l-11.168-7.471L56.856 32.073z M29.301 54.708l7.983 5.34l-7.983 5.34V54.708z M56.856 88.022L31.855 71.4 l11.168-7.469l13.833 9.252V88.022z M60.048 67.597l-11.286-7.549l11.286-7.549l11.285 7.549L60.048 67.597z M63.238 88.022V73.14 l13.834-9.252l11.167 7.469L63.238 88.022z M90.794 65.388l-7.982-5.34l7.982-5.34V65.388z"</span><span class="nt">/&gt;&lt;/g&gt;&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Vemos esto y seguramente la mayoría nos perdemos en el galimatías de coordenadas que tienen los dos <code class="highlighter-rouge">path</code> que ha generado Adobe Illustrator. Este código nos servirá de guía a la hora de rehacer el logo con menos código.</p>
+
+<p>Ahora lo que vamos a hacer es crear un nuevo archivo en nuestro editor de texto, en mi caso utilizo Sublime Text 2. Vamos a la pestaña View &gt; Syntax y seleccionamos XML</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/syntax.png" alt="syntax xml" /></p>
+
+<h3 id="etiqueta-svg">Etiqueta SVG</h3>
+
+<p>Lo siguiente será añadir la etiqueta SVG, en width y height le indicamos el tamaño, en el ejemplo utilizaremos un documento de 800 x 600 pero podéis utilizar el tamaño que mas os convenga siempre que no sea mas pequeño que el propio logo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+	<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+	<span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+	<span class="na">width=</span><span class="s">"800px"</span> <span class="na">height=</span><span class="s">"600px"</span>
+	<span class="na">viewBox=</span><span class="s">"0 0 800 600"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Ahora copiamos el código correspondiente al logo de Codepen(el que esta al principio del post) y lo pegamos en nuestro editor de texto, el archivo debería de quedar así</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+	<span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+	<span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+	<span class="na">width=</span><span class="s">"800px"</span> <span class="na">height=</span><span class="s">"600px"</span>
+	<span class="na">viewBox=</span><span class="s">"0 0 800 600"</span><span class="nt">&gt;</span>
+
+	<span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"black"</span> <span class="na">d=</span><span class="s">"M60.048 0C26.884 0 0 26.9 0 60.048s26.884 60 60 60.047c33.163 0 60.047-26.883 60.047-60.047 S93.211 0 60 0z M60.048 110.233c-27.673 0-50.186-22.514-50.186-50.186S32.375 9.9 60 9.9 c27.672 0 50.2 22.5 50.2 50.186S87.72 110.2 60 110.233z"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"black"</span> <span class="na">d=</span><span class="s">"M97.147 48.319c-0.007-0.047-0.019-0.092-0.026-0.139c-0.016-0.09-0.032-0.18-0.056-0.268 c-0.014-0.053-0.033-0.104-0.05-0.154c-0.025-0.078-0.051-0.156-0.082-0.232c-0.021-0.053-0.047-0.105-0.071-0.156 c-0.033-0.072-0.068-0.143-0.108-0.211c-0.029-0.051-0.061-0.1-0.091-0.148c-0.043-0.066-0.087-0.131-0.135-0.193 c-0.035-0.047-0.072-0.094-0.109-0.139c-0.051-0.059-0.104-0.117-0.159-0.172c-0.042-0.043-0.083-0.086-0.127-0.125 c-0.059-0.053-0.119-0.104-0.181-0.152c-0.048-0.037-0.095-0.074-0.145-0.109c-0.019-0.012-0.035-0.027-0.053-0.039L61.817 23.5 c-1.072-0.715-2.468-0.715-3.54 0L24.34 46.081c-0.018 0.012-0.034 0.027-0.053 0.039c-0.05 0.035-0.097 0.072-0.144 0.1 c-0.062 0.049-0.123 0.1-0.181 0.152c-0.045 0.039-0.086 0.082-0.128 0.125c-0.056 0.055-0.108 0.113-0.158 0.2 c-0.038 0.045-0.075 0.092-0.11 0.139c-0.047 0.062-0.092 0.127-0.134 0.193c-0.032 0.049-0.062 0.098-0.092 0.1 c-0.039 0.068-0.074 0.139-0.108 0.211c-0.024 0.051-0.05 0.104-0.071 0.156c-0.031 0.076-0.057 0.154-0.082 0.2 c-0.017 0.051-0.035 0.102-0.05 0.154c-0.023 0.088-0.039 0.178-0.056 0.268c-0.008 0.047-0.02 0.092-0.025 0.1 c-0.019 0.137-0.029 0.275-0.029 0.416V71.36c0 0.1 0 0.3 0 0.418c0.006 0 0 0.1 0 0.1 c0.017 0.1 0 0.2 0.1 0.268c0.015 0.1 0 0.1 0.1 0.154c0.025 0.1 0.1 0.2 0.1 0.2 c0.021 0.1 0 0.1 0.1 0.154c0.034 0.1 0.1 0.1 0.1 0.213c0.029 0 0.1 0.1 0.1 0.1 c0.042 0.1 0.1 0.1 0.1 0.193c0.035 0 0.1 0.1 0.1 0.139c0.05 0.1 0.1 0.1 0.2 0.2 c0.042 0 0.1 0.1 0.1 0.125c0.058 0.1 0.1 0.1 0.2 0.152c0.047 0 0.1 0.1 0.1 0.1 c0.019 0 0 0 0.1 0.039L58.277 96.64c0.536 0.4 1.2 0.5 1.8 0.537c0.616 0 1.233-0.18 1.77-0.537 l33.938-22.625c0.018-0.012 0.034-0.027 0.053-0.039c0.05-0.035 0.097-0.072 0.145-0.109c0.062-0.049 0.122-0.1 0.181-0.152 c0.044-0.039 0.085-0.082 0.127-0.125c0.056-0.055 0.108-0.113 0.159-0.172c0.037-0.045 0.074-0.09 0.109-0.139 c0.048-0.062 0.092-0.127 0.135-0.193c0.03-0.049 0.062-0.098 0.091-0.146c0.04-0.07 0.075-0.141 0.108-0.213 c0.024-0.051 0.05-0.102 0.071-0.154c0.031-0.078 0.057-0.156 0.082-0.234c0.017-0.051 0.036-0.102 0.05-0.154 c0.023-0.088 0.04-0.178 0.056-0.268c0.008-0.045 0.02-0.092 0.026-0.137c0.018-0.139 0.028-0.277 0.028-0.418V48.735 C97.176 48.6 97.2 48.5 97.1 48.319z M63.238 32.073l25.001 16.666L77.072 56.21l-13.834-9.254V32.073z M56.856 32.1 v14.883L43.023 56.21l-11.168-7.471L56.856 32.073z M29.301 54.708l7.983 5.34l-7.983 5.34V54.708z M56.856 88.022L31.855 71.4 l11.168-7.469l13.833 9.252V88.022z M60.048 67.597l-11.286-7.549l11.286-7.549l11.285 7.549L60.048 67.597z M63.238 88.022V73.14 l13.834-9.252l11.167 7.469L63.238 88.022z M90.794 65.388l-7.982-5.34l7.982-5.34V65.388z"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo guardamos añadiéndole la extensión .svg <code class="highlighter-rouge">codepen.svg</code> y una vez guardado lo abrimos con Adobe Illustrator, también mantenemos abierto el mismo archivo en nuestro editor de código.</p>
+
+<h3 id="etiqueta-polygon">Etiqueta Polygon</h3>
+
+<p>Vamos a empezar a crear de nuevo el logo, para ello en nuestro editor de código a continuación del código del logo de codepen abrimos y cerramos una etiqueta <code class="highlighter-rouge">g</code>, con un <code class="highlighter-rouge">transform="translate(150)</code> para mover hacia la derecha nuestro código, dentro de la etiqueta <code class="highlighter-rouge">g</code> añadimos la etiqueta <code class="highlighter-rouge">polygon</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nt">&lt;g</span> <span class="na">transform=</span><span class="s">"translate(150)"</span><span class="nt">&gt;</span>
+
+    	<span class="nt">&lt;polygon</span> <span class="na">points=</span><span class="s">""</span> <span class="na">stroke=</span><span class="s">""</span> <span class="na">stroke-width=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>En Adobe Illustrator nos vamos a Ventana y pinchamos en información, solo necesitaremos este inspector así que el resto lo podemos cerrar. Ahora seleccionamos la herramienta de selección directa y nos vamos a la esquina superior del logo y apuntamos las coordenadas X e Y que salen en el inspector de información.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/primer-punto.png" alt="primer punto coordenadas" /></p>
+
+<p>Hacemos lo propio con las siguientes esquinas del logo y obtendremos las siguientes coordenadas</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/coordenadas.png" alt="segundo punto coordenadas" /></p>
+
+<p>Ahora añadiremos la siguiente información a la etiqueta <code class="highlighter-rouge">polygon</code> en el apartado <code class="highlighter-rouge">points</code>, también le diremos que no queremos relleno en el apartado <code class="highlighter-rouge">fill</code> y añadiremos el color de la línea en el apartado <code class="highlighter-rouge">stroke</code>, para conseguir que las esquinas seas redondeadas añadiremos <code class="highlighter-rouge">stroke-linejoin="round"</code>, por último añadimos el grosor de la línea en <code class="highlighter-rouge">stroke-width</code>.</p>
+
+<p>Para poder visualizar nuestros avances en un navegador vamos a añadirle la etiqueta de <code class="highlighter-rouge">HTML5</code> al documento y lo guardamos como .html</p>
+
+<p>En el siguiente código falta la parte del logo original de codepen, lo he suprimido para que no ocupara tanto espacio.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+</pre></td><td class="code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+
+    <span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+    <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+    <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+    <span class="na">width=</span><span class="s">"800px"</span> <span class="na">height=</span><span class="s">"600px"</span>
+    <span class="na">viewBox=</span><span class="s">"0 0 800 600"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;g</span> <span class="na">transform=</span><span class="s">"translate(150)"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,22.93 23.36,47 60.16,73.45 96.96,47"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"5"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/g&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span>
+
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>El resultado que deberíamos ver en el navegador es el siguiente</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/visualizacion-1024x506.png" alt="resultado final imagen codepen" /></p>
+
+<p>Ahora vamos a aprovechar el trabajo realizado hasta este punto, a nuestra etiqueta <code class="highlighter-rouge">polygon</code> le añadimos un <code class="highlighter-rouge">id="parte"</code> y abrimos una etiqueta <code class="highlighter-rouge">use</code> para aprovechar el primer polygon, a esta etiqueta le añadiremos un <code class="highlighter-rouge">transform="translate(0,26)"</code> para desplazar hacia abajo la figura.</p>
+
+<p>El código debería de quedar de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="nt">&lt;polygon</span>
+        <span class="na">id=</span><span class="s">"parte"</span>
+        <span class="na">points=</span><span class="s">"60.16,22.93 23.36,47 60.16,73.45 96.96,47"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"5"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;use</span>
+        <span class="na">xlink:href=</span><span class="s">"#parte"</span>
+        <span class="na">transform=</span><span class="s">"translate(0,26)"</span>
+        <span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>También tenemos otra opción, la cúal es copiar y pegar toda la etiqueta <code class="highlighter-rouge">polygon</code> y sumar 26 a la coordenada <code class="highlighter-rouge">Y</code>, el resultado es el mismo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,22.93 23.36,47 60.16,73.45 96.96,47"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"5"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,48.93 23.36,73 60.16,99.45 96.96,73"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"5"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/use-o-polygon-1024x512.png" alt="use polygon svg" /></p>
+
+<h3 id="etiqueta-line">Etiqueta Line</h3>
+
+<p>Ya solo nos faltan las líneas y el círculo para terminar. Vamos a añadir cuatro etiquetas <code class="highlighter-rouge">line</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">""</span> <span class="na">y1=</span><span class="s">""</span> <span class="na">x2=</span><span class="s">""</span> <span class="na">y2=</span><span class="s">""</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">""</span> <span class="na">y1=</span><span class="s">""</span> <span class="na">x2=</span><span class="s">""</span> <span class="na">y2=</span><span class="s">""</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">""</span> <span class="na">y1=</span><span class="s">""</span> <span class="na">x2=</span><span class="s">""</span> <span class="na">y2=</span><span class="s">""</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">""</span> <span class="na">y1=</span><span class="s">""</span> <span class="na">x2=</span><span class="s">""</span> <span class="na">y2=</span><span class="s">""</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"5"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Y vamos a aprovechar las coordenadas de los <code class="highlighter-rouge">polygon</code> para situar las líneas.</p>
+
+<p>Tanto <code class="highlighter-rouge">x1</code> como <code class="highlighter-rouge">x2</code> llevaran la coordenada de la <code class="highlighter-rouge">x</code> del primer <code class="highlighter-rouge">polygon</code>, en este caso <code class="highlighter-rouge">x1="60.16" x2="60.16"</code>
+La <code class="highlighter-rouge">y1</code> llevara la coordenada de la <code class="highlighter-rouge">y</code>, en este caso <code class="highlighter-rouge">y1="22.93"</code>
+La <code class="highlighter-rouge">x2</code> llevara la coordenada de la <code class="highlighter-rouge">y</code> mas la suma de 26, lo cual da el resultado de <code class="highlighter-rouge">y2="48.93"</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"60.16"</span> <span class="na">y1=</span><span class="s">"22.93"</span> <span class="na">x2=</span><span class="s">"60.16"</span> <span class="na">y2=</span><span class="s">"48.93"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Repetimos la operación con las tres líneas siguientes y nos dara este resultado:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="code"><pre><span class="nt">&lt;g</span> <span class="na">transform=</span><span class="s">"translate(150)"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,22.93 23.36,47 60.16,73.45 96.96,47"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"7"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,48.93 23.36,73 60.16,99.45 96.96,73"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"7"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"60.16"</span> <span class="na">y1=</span><span class="s">"22.93"</span> <span class="na">x2=</span><span class="s">"60.16"</span> <span class="na">y2=</span><span class="s">"48.93"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"23.36"</span> <span class="na">y1=</span><span class="s">"47"</span> <span class="na">x2=</span><span class="s">"23.36"</span> <span class="na">y2=</span><span class="s">"73"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"60.16"</span> <span class="na">y1=</span><span class="s">"73"</span> <span class="na">x2=</span><span class="s">"60.16"</span> <span class="na">y2=</span><span class="s">"99.45"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"96.96"</span> <span class="na">y1=</span><span class="s">"47"</span> <span class="na">x2=</span><span class="s">"96.96"</span> <span class="na">y2=</span><span class="s">"73"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Las líneas quedaban un pelín delgadas así que he cambiado el <code class="highlighter-rouge">stroke-width="7"</code></p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/sin-circulo-1024x507.png" alt="sin circulo" /></p>
+
+<h3 id="etiqueta-circle">Etiqueta Circle</h3>
+
+<p>Y ya lo último es añadir el círculo</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"60"</span> <span class="na">cy=</span><span class="s">"58"</span> <span class="na">r=</span><span class="s">"58"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"9"</span> <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Resultado final</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/resultado-final-800x500.png" alt="resultado final" /></p>
+
+<p>El código completo</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+    <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+    <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span>
+    <span class="na">width=</span><span class="s">"800px"</span> <span class="na">height=</span><span class="s">"600px"</span>
+    <span class="na">viewBox=</span><span class="s">"0 0 800 600"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"black"</span> <span class="na">d=</span><span class="s">"M60.048 0C26.884 0 0 26.9 0 60.048s26.884 60 60 60.047c33.163 0 60.047-26.883 60.047-60.047 S93.211 0 60 0z M60.048 110.233c-27.673 0-50.186-22.514-50.186-50.186S32.375 9.9 60 9.9 c27.672 0 50.2 22.5 50.2 50.186S87.72 110.2 60 110.233z"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"black"</span> <span class="na">d=</span><span class="s">"M97.147 48.319c-0.007-0.047-0.019-0.092-0.026-0.139c-0.016-0.09-0.032-0.18-0.056-0.268 c-0.014-0.053-0.033-0.104-0.05-0.154c-0.025-0.078-0.051-0.156-0.082-0.232c-0.021-0.053-0.047-0.105-0.071-0.156 c-0.033-0.072-0.068-0.143-0.108-0.211c-0.029-0.051-0.061-0.1-0.091-0.148c-0.043-0.066-0.087-0.131-0.135-0.193 c-0.035-0.047-0.072-0.094-0.109-0.139c-0.051-0.059-0.104-0.117-0.159-0.172c-0.042-0.043-0.083-0.086-0.127-0.125 c-0.059-0.053-0.119-0.104-0.181-0.152c-0.048-0.037-0.095-0.074-0.145-0.109c-0.019-0.012-0.035-0.027-0.053-0.039L61.817 23.5 c-1.072-0.715-2.468-0.715-3.54 0L24.34 46.081c-0.018 0.012-0.034 0.027-0.053 0.039c-0.05 0.035-0.097 0.072-0.144 0.1 c-0.062 0.049-0.123 0.1-0.181 0.152c-0.045 0.039-0.086 0.082-0.128 0.125c-0.056 0.055-0.108 0.113-0.158 0.2 c-0.038 0.045-0.075 0.092-0.11 0.139c-0.047 0.062-0.092 0.127-0.134 0.193c-0.032 0.049-0.062 0.098-0.092 0.1 c-0.039 0.068-0.074 0.139-0.108 0.211c-0.024 0.051-0.05 0.104-0.071 0.156c-0.031 0.076-0.057 0.154-0.082 0.2 c-0.017 0.051-0.035 0.102-0.05 0.154c-0.023 0.088-0.039 0.178-0.056 0.268c-0.008 0.047-0.02 0.092-0.025 0.1 c-0.019 0.137-0.029 0.275-0.029 0.416V71.36c0 0.1 0 0.3 0 0.418c0.006 0 0 0.1 0 0.1 c0.017 0.1 0 0.2 0.1 0.268c0.015 0.1 0 0.1 0.1 0.154c0.025 0.1 0.1 0.2 0.1 0.2 c0.021 0.1 0 0.1 0.1 0.154c0.034 0.1 0.1 0.1 0.1 0.213c0.029 0 0.1 0.1 0.1 0.1 c0.042 0.1 0.1 0.1 0.1 0.193c0.035 0 0.1 0.1 0.1 0.139c0.05 0.1 0.1 0.1 0.2 0.2 c0.042 0 0.1 0.1 0.1 0.125c0.058 0.1 0.1 0.1 0.2 0.152c0.047 0 0.1 0.1 0.1 0.1 c0.019 0 0 0 0.1 0.039L58.277 96.64c0.536 0.4 1.2 0.5 1.8 0.537c0.616 0 1.233-0.18 1.77-0.537 l33.938-22.625c0.018-0.012 0.034-0.027 0.053-0.039c0.05-0.035 0.097-0.072 0.145-0.109c0.062-0.049 0.122-0.1 0.181-0.152 c0.044-0.039 0.085-0.082 0.127-0.125c0.056-0.055 0.108-0.113 0.159-0.172c0.037-0.045 0.074-0.09 0.109-0.139 c0.048-0.062 0.092-0.127 0.135-0.193c0.03-0.049 0.062-0.098 0.091-0.146c0.04-0.07 0.075-0.141 0.108-0.213 c0.024-0.051 0.05-0.102 0.071-0.154c0.031-0.078 0.057-0.156 0.082-0.234c0.017-0.051 0.036-0.102 0.05-0.154 c0.023-0.088 0.04-0.178 0.056-0.268c0.008-0.045 0.02-0.092 0.026-0.137c0.018-0.139 0.028-0.277 0.028-0.418V48.735 C97.176 48.6 97.2 48.5 97.1 48.319z M63.238 32.073l25.001 16.666L77.072 56.21l-13.834-9.254V32.073z M56.856 32.1 v14.883L43.023 56.21l-11.168-7.471L56.856 32.073z M29.301 54.708l7.983 5.34l-7.983 5.34V54.708z M56.856 88.022L31.855 71.4 l11.168-7.469l13.833 9.252V88.022z M60.048 67.597l-11.286-7.549l11.286-7.549l11.285 7.549L60.048 67.597z M63.238 88.022V73.14 l13.834-9.252l11.167 7.469L63.238 88.022z M90.794 65.388l-7.982-5.34l7.982-5.34V65.388z"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;g</span> <span class="na">transform=</span><span class="s">"translate(150,5)"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,22.93 23.36,47 60.16,73.45 96.96,47"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"7"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;polygon</span>
+        <span class="na">points=</span><span class="s">"60.16,48.93 23.36,73 60.16,99.45 96.96,73"</span>
+        <span class="na">stroke=</span><span class="s">"black"</span>
+        <span class="na">stroke-width=</span><span class="s">"7"</span>
+        <span class="na">stroke-linejoin=</span><span class="s">"round"</span>
+        <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"60.16"</span> <span class="na">y1=</span><span class="s">"22.93"</span> <span class="na">x2=</span><span class="s">"60.16"</span> <span class="na">y2=</span><span class="s">"48.93"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"23.36"</span> <span class="na">y1=</span><span class="s">"47"</span> <span class="na">x2=</span><span class="s">"23.36"</span> <span class="na">y2=</span><span class="s">"73"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"60.16"</span> <span class="na">y1=</span><span class="s">"73"</span> <span class="na">x2=</span><span class="s">"60.16"</span> <span class="na">y2=</span><span class="s">"99.45"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;line</span> <span class="na">x1=</span><span class="s">"96.96"</span> <span class="na">y1=</span><span class="s">"47"</span> <span class="na">x2=</span><span class="s">"96.96"</span> <span class="na">y2=</span><span class="s">"73"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"7"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;circle</span> <span class="na">cx=</span><span class="s">"60"</span> <span class="na">cy=</span><span class="s">"58"</span> <span class="na">r=</span><span class="s">"58"</span> <span class="na">stroke=</span><span class="s">"black"</span> <span class="na">stroke-width=</span><span class="s">"9"</span> <span class="na">fill=</span><span class="s">"none"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/g&gt;</span>
+
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>El original ocupa 3kB.
+El nuevo ocupa 1kb.
+Si en el nuevo usamos la etiqueta <code class="highlighter-rouge">use</code> ocupa 930 bytes.</p>
+
+<p>En Codepen podéis ver un ejemplo parecido, está con otros tamaños y también he añadido una animación</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="GtiBv" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/mis-notas-sobre-svg-iii-escalar-objetos-desde-el-centro/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/mis-notas-sobre-svg-ii-etiqueta-defs/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mis notas sobre SVG &#8211; Mouseover animate</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/mis-notas-sobre-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Mis notas sobre SVG &#8211; Mouseover animate</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-06-26 00:00:00 +0200">
+                El
+                26 de
+                
+                junio
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-gráfico">Diseño Gráfico</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Empiezo una nueva serie de entradas donde iré relatando los problemas que voy encontrando mientras utilizo <strong>SVG</strong>, y las soluciones a estos problemas. Lo llamare solución por llamarlo de alguna manera, ya que la solución a algunos problemas es directamente no utilizar ciertas cosas, y es que como viene siendo costumbre en este mundo nada funciona de la misma manera si lo vemos en Chrome, Safari, Firefox, Opera o IE.</p>
+
+<!--more-->
+
+<h2 id="mouseover-en-animate"><strong>Mouseover en animate</strong></h2>
+
+<p>En el proceso de rediseño de mi web(si, estoy trabajando en una nueva versión) me decidí a incluir una animación en <strong>SVG</strong> que ocupara una buena parte de la cabecera, la idea era y es no tener que recurrir a <strong>JavaScript</strong> y conseguir todos los efectos con <strong>SVG</strong>, y para que la animación funcione poner todas y cada una de las animaciones en el <strong>HTML</strong>.</p>
+
+<p>La parte principal de la animación consta de 288 polígonos a través de la etiqueta <code class="highlighter-rouge">polygon</code>, cada uno de ellos con sus respectivas animaciones a través de la etiqueta <code class="highlighter-rouge">animate</code>, cuando conseguí implementar todas las ideas que tenía para la animación me di cuenta de que aquello se me había ido completamente de las manos, la animación ocupaba mas o menos el 90% del HTML con un total de 1700 líneas, lo cual es una barbaridad y hace que el tamaño de un simple HTML alcance un peso de 158KB, así que me puse a buscar alguna solución para aquellas animaciones que eran iguales y se repetían continuamente en cada uno de los polígonos.</p>
+
+<p>Si en lugar de tener un <code class="highlighter-rouge">animate </code>tenemos un <code class="highlighter-rouge">linearGradient </code>o un <code class="highlighter-rouge">filter </code>tenemos la etiqueta <code class="highlighter-rouge">defs</code> para almacenar los efectos, simplemente le colocamos un <code class="highlighter-rouge">id </code>y luego lo invocamos a través de la etiqueta <code class="highlighter-rouge">filter</code> o con el atributo <code class="highlighter-rouge">url</code>, para hacer lo mismo pero con las animaciones ya sea <code class="highlighter-rouge">animate </code>o <code class="highlighter-rouge">animateTransform</code>(no pongo <code class="highlighter-rouge">animateColor </code>ya que se ha desestimado para SVG 2) no disponemos de la etiqueta <code class="highlighter-rouge">defs </code>para almacenar las animaciones.</p>
+
+<p>Como había dicho anteriormente tengo 288 polígonos, y muchos de ellos reciben la misma animación, asi que vamos a intentar ahorrar código. Lo primero es declarar al principio un <code class="highlighter-rouge">polygon </code>y dentro de las etiquetas cada una de nuestras animaciones a través de la etiqueta <code class="highlighter-rouge">animate</code>, luego lo invocamos con la etiqueta <code class="highlighter-rouge">use</code> y obtendremos un polygon con la mismas medidas y con todas las animaciones que tengamos declaradas, para mover de posicion el polygon nos bastara con utilizar las coordenadas <code class="highlighter-rouge">x </code>e <code class="highlighter-rouge">y</code> dentro de la etiqueta <code class="highlighter-rouge">use</code>, parece fácil ¿no? pues deberemos olvidarnos de esto si a nuestra animación tiene la orden de comenzar con <code class="highlighter-rouge">begin="mouseover"</code>, y es que los navegadores Chrome y Opera interpretan que estas declarando la animación sobre todos y cada uno de los polígonos, así que aunque tengamos declarados 288 <code class="highlighter-rouge">use </code>si me posiciono en el número 1 se va a activar inmediatamente la animación en los 287 restantes y yo lo que quiero es que la animación de cada <code class="highlighter-rouge">polygon </code>sea individual e independiente del resto. En cambio si probamos en Firefox si que se consigue el efecto deseado, es decir cada polygon es tratado de manera individual y solo se activaran las animaciones si nos posicionamos sobre uno de ellos. En Safari ni tan siquiera veremos los polígonos. Así que llegados a este punto si queremos conservar la animación deberemos declararla dentro de cada una de las etiquetas <code class="highlighter-rouge">use </code>o si optamos por declarar los <code class="highlighter-rouge">polygon </code>por separado pues dentro de su etiqueta correspondiente.</p>
+
+<p>Aquí dejo el código por si alguien encuentra una solución, quizás este haciendo algo mal y si que se puede hacer : D!</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">class=</span><span class="s">"svgfondo"</span> <span class="na">version=</span><span class="s">"1.1"</span>
+      <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span>
+      <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span>
+      <span class="na">x=</span><span class="s">"0px"</span> <span class="na">y=</span><span class="s">"0px"</span> <span class="na">width=</span><span class="s">"100%"</span> <span class="na">height=</span><span class="s">"100%"</span>
+      <span class="na">viewBox=</span><span class="s">"0 0 2000 800"</span>
+      <span class="na">enable-background=</span><span class="s">"new 0 0 2000 800"</span>
+      <span class="na">xml:space=</span><span class="s">"preserve"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;polygon</span> <span class="na">id=</span><span class="s">"animacion"</span>
+          <span class="na">fill=</span><span class="s">"#000"</span> <span class="na">points=</span><span class="s">"948.742,46.109 923.149,90.439 897.556,46.109"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span> <span class="na">dur=</span><span class="s">"8s"</span>
+          <span class="na">values=</span><span class="s">"#121;#EEBE0F"</span> <span class="na">repeatCount=</span><span class="s">"1"</span>
+          <span class="na">begin=</span><span class="s">"4s"</span> <span class="na">fill=</span><span class="s">"remove"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+          <span class="na">values=</span><span class="s">"#056158"</span> <span class="na">repeatCount=</span><span class="s">"1"</span>
+          <span class="na">begin=</span><span class="s">"mouseover"</span>  <span class="nt">/&gt;</span>
+          <span class="nt">&lt;animateTransform</span>  <span class="na">attributeName=</span><span class="s">"transform"</span>
+          <span class="na">type=</span><span class="s">"rotate"</span> <span class="na">from=</span><span class="s">"0 32 32"</span> <span class="na">to=</span><span class="s">"-360 32 32"</span>
+          <span class="na">dur=</span><span class="s">"15s"</span> <span class="na">repeatDur=</span><span class="s">"5"</span> <span class="na">begin=</span><span class="s">"mouseover"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/polygon&gt;</span>
+
+        <span class="nt">&lt;g&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"100"</span> <span class="na">y=</span><span class="s">"60"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/g&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"110"</span> <span class="na">y=</span><span class="s">"105"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"150"</span> <span class="na">y=</span><span class="s">"105"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"200"</span> <span class="na">y=</span><span class="s">"105"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"250"</span> <span class="na">y=</span><span class="s">"105"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"#animacion"</span> <span class="na">x=</span><span class="s">"300"</span> <span class="na">y=</span><span class="s">"105"</span> <span class="nt">/&gt;</span>
+
+          <span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#000"</span>
+          <span class="na">points=</span><span class="s">"974.337,90.439 948.742,134.77 923.149,90.439  "</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span>  <span class="na">dur=</span><span class="s">"8s"</span>
+            <span class="na">values=</span><span class="s">"#121;#EEBE0F"</span> <span class="na">repeatCount=</span><span class="s">"1"</span>
+            <span class="na">begin=</span><span class="s">"4s"</span> <span class="na">fill=</span><span class="s">"freeze"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+            <span class="na">values=</span><span class="s">"#056158"</span> <span class="na">repeatCount=</span><span class="s">"1"</span> <span class="na">begin=</span><span class="s">"mouseover"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span>
+            <span class="na">type=</span><span class="s">"rotate"</span> <span class="na">from=</span><span class="s">"0 32 32"</span> <span class="na">to=</span><span class="s">"-360 32 32"</span>
+            <span class="na">dur=</span><span class="s">"15s"</span> <span class="na">repeatDur=</span><span class="s">"5"</span> <span class="na">begin=</span><span class="s">"mouseover"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/polygon&gt;</span>
+        <span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Aquí un vídeo donde se ve lo que hace cada navegador, el orden de aparición es: Opera, Firefox, Chrome y Safari.</p>
+
+<iframe class="vine-embed" src="https://vine.co/v/huhihlUxgIA/embed/simple" width="480" height="480" frameborder="0"></iframe>
+<script async="" src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+
+<p>Parece ser que es un error de los navegadores que llevan webkit, aquí una entrada de stackoverflow hablando sobre los animate en Chrome.</p>
+
+<p><a href="http://stackoverflow.com/questions/13530894/chrome-svg-animate-tag" target="_blank">http://stackoverflow.com/questions/13530894/chrome-svg-animate-tag</a></p>
+
+<p>Y el post de bugs.webkit</p>
+
+<p><a href="https://bugs.webkit.org/show_bug.cgi?id=21371" target="_blank">https://bugs.webkit.org/show_bug.cgi?id=21371</a></p>
+
+<p><a href="http://www.w3.org/Graphics/SVG/Test/20061213/svggen/animate-elem-34-t.svg" target="_blank">Y de regalo otro SVG(creado en 2003) que tan solo funciona en Firefox. </a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/libros-sobre-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/inspiracion-diseno-grafico-xi/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

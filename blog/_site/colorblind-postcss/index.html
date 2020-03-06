@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Como ve tu web un daltónico</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/colorblind-postcss/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Como ve tu web un daltónico</h1>
+        <p class="articulo-fecha">
+            <time datetime="2016-03-29 00:00:00 +0200">
+                El
+                29 de
+                
+                marzo
+                
+                de
+                2016
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#accesibilidad-web">Accesibilidad Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#postcss">postCSS</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>En este artículo voy a tratar un tema que rara vez entra en los presupuestos de un proyecto web. Mientras se emplean cantidades ingentes de tiempo y dinero en dar soporte a navegadores <strong>totalmente</strong> obsoletos se da con la puertas en las narices al tema de la <a href="http://jorgeatgu.com/blog/archivo/#accesibilidad-web">accesibilidad web</a>.</p>
+
+<!--more-->
+
+<p>Antes de seguir voy a recordar la definión de daltonismo según la <a href="https://es.wikipedia.org/wiki/Daltonismo">Wikipedia</a>.</p>
+
+<blockquote>
+El daltonismo es un defecto genético que ocasiona dificultad para distinguir los colores. La palabra daltonismo proviene del químico y matemático John Dalton que padecía este trastorno.1 El grado de afectación es muy variable y oscila entre la falta de capacidad para discernir cualquier color (acromatopsia) y un ligero grado de dificultad para distinguir algunos matices de rojo, verde y ocasionalmente azul. A pesar de que la sociedad en general considera que el daltonismo pasa inadvertido en la vida diaria, supone un problema para los afectados en ámbitos tan diversos como: valorar el estado de frescura de determinados alimentos, identificar códigos de colores de planos o elegir determinadas profesiones para las que es preciso superar un reconocimiento médico que implica identificar correctamente los colores (militar de carrera, piloto, capitán de marina mercante, policía, árbitro de fútbol, etc.)
+</blockquote>
+
+<p>Con el plugin <a href="https://github.com/btholt/postcss-colorblind">postcss-colorblind</a> vamos a ver nuestras webs con los ojos de una persona que sufre los diferentes tipos de daltonismo.</p>
+
+<p>Con este plugin tenemos los siguientes métodos:</p>
+
+<ul>
+  <li>
+    <p>protanomaly</p>
+  </li>
+  <li>
+    <p>protanopia</p>
+  </li>
+  <li>
+    <p>deuteranomaly</p>
+  </li>
+  <li>
+    <p>deuteranopia</p>
+  </li>
+  <li>
+    <p>tritanomaly</p>
+  </li>
+  <li>
+    <p>tritanopia</p>
+  </li>
+  <li>
+    <p>achromatomaly</p>
+  </li>
+  <li>
+    <p>achromatopsia</p>
+  </li>
+</ul>
+
+<p>Ahora vamos a instalar el plugin a traves de <strong>NPM</strong></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm i postcss-colorblind <span class="nt">--save-dev</span></code></pre></figure>
+
+<p>También nos va a hacer falta otra dependencia de <strong>NPM</strong> para que funcione el plugin</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm i hexa-color-regex <span class="nt">--save-dev</span></code></pre></figure>
+
+<p>Una vez instaladas las dependencias vamos a nuestro <code class="highlighter-rouge">gulpfile.js</code> para configurar las diferentes tareas. Como tenemos varias opciones vamos a crear una tarea por cada tipo de daltonismo. Como voy a crear uno por cada tipo voy a añadir a cada <strong>CSS</strong> el sufijo del tipo de daltonismo que es.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'blind'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span><span class="nx">colorblind</span><span class="p">({</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s1">'achromatopsia'</span>
+    <span class="p">})];</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">'./css/styles.css'</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rename</span><span class="p">({</span>
+            <span class="na">suffix</span><span class="p">:</span> <span class="s1">'.achromatopsia'</span>
+        <span class="p">}))</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'./css'</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Pódeis consultar el resto de tareas que he creado en el <code class="highlighter-rouge">gulpfile.js</code> en <a href="https://github.com/jorgeatgu/gulp-postCSS/blob/master/color-blind/gulpfile.js#L105-L187">GitHub</a></p>
+
+<p>Para ilustrar el artículo he creado un <strong>HTML</strong> con colores como el verde, azul y amarillo, los que no aprecian las personas con daltonismo. Vamos a compararlos con el <strong>HTML</strong> original.</p>
+
+<h3 id="achromatomaly">Achromatomaly</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Achromatomaly</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/achromatomaly.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-achromatomaly.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="achromatopsia">Achromatopsia</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Achromatopsia</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/achromatopsia.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-achromatopsia.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="deuteranomaly">Deuteranomaly</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Deuteranomaly</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/deuteranomaly.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-deuteranomaly.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="deuteranopia">Deuteranopia</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Deuteranopia</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/deuteranopia.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-deuteranopia.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="protanomaly">Protanomaly</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Protanomaly</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/protanomaly.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-protanomaly.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="protanopia">Protanopia</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" /></p>
+
+<p><strong>Protanopia</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/protanopia.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-protanopia.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="tritanomaly">Tritanomaly</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" />
+<strong>Tritanomaly</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/tritanomaly.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-tritanomaly.html">IR AL EJEMPLO</a>
+</button></p>
+
+<h3 id="tritanopia">Tritanopia</h3>
+
+<p><strong>Original</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/original.png" alt="" />
+<strong>Tritanopia</strong>
+<img src="http://jorgeatgu.com/ejemplos/colorblind/trinatopia.png" alt="" /></p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/ejemplos/colorblind/index-tritanopia.html">IR AL EJEMPLO</a>
+</button></p>
+
+<p>Todo el código a vuestra disposición en <a href="https://github.com/jorgeatgu/gulp-postCSS">GitHub</a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/svg-offset-getbounding/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/cambios-blog/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

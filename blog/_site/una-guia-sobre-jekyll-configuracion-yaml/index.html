@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Una guía sobre Jekyll - YAML</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Una guía sobre Jekyll - YAML</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-10-13 00:00:00 +0200">
+                El
+                13 de
+                
+                octubre
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#jekyll">Jekyll</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>El archivo de configuración de <strong>Jekyll</strong> se llama <code class="highlighter-rouge">_config.yml</code> esta en <strong>YAML</strong>. <strong>YAML</strong> es el acrónimo de <em>Ain’t Markup Language</em>, un lenguaje de marcado con una sintaxis bastante sencilla.</p>
+
+<p><a href="http://www.yaml.org/spec/1.2/spec.html" target="_blank">Aqui le podéis echar un vistazo a la especificación de YAML</a></p>
+
+<p>También vamos a ver cosas de <a href="http://docs.shopify.com/themes/liquid-documentation/basics" target="_blank">LIQUID</a>, un lenguaje creado por Shopify. A continuación un par de enlaces en castellano que son de obligada lectura <a href="https://github.com/Shopify/liquid/wiki/ES-Liquid-para-dise%C3%B1adores" target="_blank">Liquid para diseñadores</a> y <a href="https://github.com/Shopify/liquid/wiki/ES-Liquid-para-programadores" target="_blank">Liquid para programadores</a></p>
+
+<p>Como ya he dicho anteriormente la sintaxis es bastante sencilla. Lo primero es definir una variable seguida de : y después de dejar un espacio le vamos a asignar un valor.</p>
+
+<p>Un apunte antes de empezar, con <strong>YAML no podemos usar tabulaciones</strong>. Así que hay que utilizar los espacios normales.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">title</span><span class="pi">:</span> <span class="s">Una guía sobre Jekyll</span></code></pre></figure>
+
+<p>Como bien supondréis <strong>title</strong> es la variable y <strong>Una guía sobre Jekyll</strong> es el valor.</p>
+
+<p>Si vamos a pasar más de un valor a la variable lo podemos hacer de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">exclude</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">config.codekit"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">.sass-cache"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">.gitignore"</span> <span class="pi">]</span></code></pre></figure>
+
+<p>Esta variable le dice a <strong>Jekyll</strong> que a la hora de compilar excluya los archivos y carpetas que le hemos indicado.</p>
+
+<p>También lo podemos hacer en forma de lista por ejemplo a la hora de indicar las categorías en las que ira por ejemplo este post.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Diseño Web</span>
+  <span class="pi">-</span> <span class="s">Jekyll</span></code></pre></figure>
+
+<p>Esto último es parte del código que incluyo al principio de cada post.</p>
+
+<p>Ahora vamos a crear un array</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">estructura</span><span class="pi">:</span>
+  <span class="na">post</span><span class="pi">:</span> <span class="s">diez</span>
+  <span class="na">categorias</span><span class="pi">:</span> <span class="s">cinco</span></code></pre></figure>
+
+<h2 id="_configyml">_config.yml</h2>
+
+<p>Ya conocemos algo más sobre <strong>YAML</strong> así que ahora vamos a ver mi archivo de configuración y voy a ir explicando para que utilizo cada variable en mi tema.</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="c1"># Inicio</span>
+<span class="na">name</span><span class="pi">:</span> <span class="s">Scalable</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Un blog sobre SVG · CSS3 · HTML5</span>
+<span class="na">themeJekyll</span><span class="pi">:</span> <span class="s">Amanixer</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">0.1.0</span>
+<span class="na">timezone</span><span class="pi">:</span> <span class="s">Europe/Madrid</span>
+
+<span class="c1"># Configuracion</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s">http://jorgeatgu.com/blog</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s">/blog</span>
+<span class="na">paginate</span><span class="pi">:</span> <span class="s">5</span>
+<span class="na">paginate_path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">page:num"</span>
+<span class="na">highlighter</span><span class="pi">:</span> <span class="s">pygments</span>
+<span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+
+<span class="c1"># Redes Sociales</span>
+<span class="na">author</span><span class="pi">:</span> <span class="s">Jorge Aznar Tobajas</span>
+<span class="na">twitter</span><span class="pi">:</span> <span class="s">https://twitter.com/jorgeatgu</span>
+<span class="na">CodePen</span><span class="pi">:</span> <span class="s">https://codepen.io/jorgeatgu</span>
+<span class="na">GooglePlus</span><span class="pi">:</span> <span class="s">https://plus.google.com/+JorgeATGU/</span>
+<span class="na">GitHub</span><span class="pi">:</span> <span class="s">https://github.io/jorgeatgu/</span>
+<span class="na">Behance</span><span class="pi">:</span> <span class="s">https://www.behance.net/jorgeatgu</span>
+<span class="na">Facebook</span><span class="pi">:</span> <span class="s">https://facebok.com/jorgeatgu</span>
+<span class="na">Vimeo</span><span class="pi">:</span> <span class="s">https://vimeo.com/jorgeatgu</span>
+<span class="na">dribbble</span><span class="pi">:</span> <span class="s">http://www.dribbble.com/jorgeATGU</span>
+
+<span class="na">exclude</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">config.codekit</span> <span class="pi">]</span></code></pre></figure>
+
+<p>Para utilizar las variables que hemos almacenado en <code class="highlighter-rouge">config.yml</code> siempre las vamos a invocar en nuestros archivos a través de <code class="highlighter-rouge">site.</code> y seguido el nombre de la variable. Para utilizar la variable <code class="highlighter-rouge">url:</code> lo haremos de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-liquid" data-lang="liquid"><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">}}</span></code></pre></figure>
+
+<p>En este caso dará este resultado</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">http://jorgeatgu.com/blog</code></pre></figure>
+
+<p>Sin duda alguna esta es la variable que más vamos a ir utilizando a la hora de construir nuestro tema de <strong>Jekyll</strong>. Así cada vez que necesitemos escribir la dirección simplemente tenemos que llamarla con site.url y así nos ahorraremos el tener que escribir la dirección de nuestra web donde se aloja <strong>Jekyll</strong>.</p>
+
+<h3 id="inicio">Inicio</h3>
+
+<p>Vamos a ir viendo por bloques las parte de mi archivo <code class="highlighter-rouge">config.yml</code>. Las secciones las podéis llamar como más os apetezca. Esta sección que vamos a ver tiene partes prescindibles como <strong>themeJekyll</strong> y <strong>version</strong></p>
+
+<p>name: <strong>el nombre de vuestro blog</strong></p>
+
+<p>description: <strong>la descripción de vuestro blog</strong></p>
+
+<p>themeJekyll: <strong>el nombre de vuestro tema</strong></p>
+
+<p>version: <strong>la versión de vuestro tema</strong></p>
+
+<p>timezone: <strong>la zona horaria en la que os encontréis. <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank">Más información</a></strong></p>
+
+<h3 id="configuración">Configuración</h3>
+
+<p>Vamos a ver la sección configuración. Aquí vamos a adjuntar la dirección de nuestro blog, y algo bastante importante como el número de post que irá en cada página.</p>
+
+<p>url: <strong>la dirección de vuestro blog</strong></p>
+
+<p>baseurl: <strong>nos vendrá bien cuando no tengamos que utilizar la dirección completa de nuestro blog</strong></p>
+
+<p>paginate: <strong>el número de post por páginas</strong></p>
+
+<p>paginate_path: <strong>la nomenclatura que tendrá la paginación. Por ejemplo “page:num” da como resultado: /page1/</strong></p>
+
+<p>highlighter: <strong>para incluir snippets de código. <a href="http://pygments.org/languages/" target="_blank">Más información</a></strong></p>
+
+<p>markdown: <strong>interprete de Markdown. Imprescindible si vas a <a href="https://help.github.com/articles/migrating-your-pages-site-from-maruku/" target="_blank">alojar tu blog en GitHub Pages</a></strong></p>
+
+<h3 id="redes-sociales">Redes Sociales</h3>
+
+<p>Aquí vamos a ir incluyendo todos los enlaces a nuestros perfiles en redes sociales. Otra buena manera de no andar repitiendo toda la dirección cuando queremos incluir un enlace a nuestro perfil.</p>
+
+<p>En mi header y footer utilizo las variables con cada nombre de red social de la siguiente manera</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"{{ site.twitter }}"</span> <span class="na">title=</span><span class="s">"Twitter"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ site.urliconos }}#twitter"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/svg&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"{{ site.CodePen }}"</span> <span class="na">title=</span><span class="s">"codepen"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ site.urliconos }}#codepen"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/svg&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"{{ site.GitHub }}"</span> <span class="na">title=</span><span class="s">"GitHub"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ site.urliconos }}#github"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/svg&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">href=</span><span class="s">"{{ site.Behance }}"</span> <span class="na">title=</span><span class="s">"behance"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">viewBox=</span><span class="s">"0 0 32 32"</span> <span class="na">class=</span><span class="s">"iconos-footer"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;use</span> <span class="na">xlink:href=</span><span class="s">"{{ site.urliconos }}#behance"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/svg&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<p>Cada vez que hagamos una modificación en <code class="highlighter-rouge">config.yml</code> tenemos que ejecutar un build para volver a compilar todo y que los cambios se hagan efectivos sobre nuestro sitio. Recordad que se ejecutaba con el siguiente comando desde el Terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>jekyll build</code></pre></figure>
+
+<p>Si tenéis el server en funcionamiento no hace falta cerrarlo, simplemente abrid otra ventana del Terminal y ejecutad el comando desde esa ventana.</p>
+
+<p>En la documentación oficial de <strong>Jekyll</strong> tenemos más <a href="http://jekyllrb.com/docs/configuration/" target="_blank">variables para incluir en nuestro archivo de configuración</a>.</p>
+
+<p>Si queréis echarle un ojo a archivos de configuraciones curradisimos y de paso sacar alguna idea daros una vuelta por <a href="http://jekyllthemes.org" target="_blank">Jekyll Themes</a>, basta con mirar en los repositorios de los temas para ver los archivos sin necesidad de tener que descargar todo el tema.</p>
+
+<p><button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll/"> PRIMERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-yaml/"> TERCERA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-wordpress/"> CUARTA PARTE DE LA GUÍA</a>
+</button>
+<button class="boton-centrar">
+  <a class="btn" href="http://jorgeatgu.com/blog/una-guia-sobre-jekyll-configuracion-post/"> QUINTA PARTE DE LA GUÍA</a>
+</button></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/una-guia-sobre-jekyll-configuracion-wordpress/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/una-guia-sobre-jekyll-configuracion/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

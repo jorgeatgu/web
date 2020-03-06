@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clip-path o trazados de recorte en SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/clip-path-o-trazados-de-recorte-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Clip-path o trazados de recorte en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-03-21 00:00:00 +0100">
+                El
+                21 de
+                
+                marzo
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Los trazados de recorte – mascaras de recorte – se utilizan en SVG a través del elemento <code class="highlighter-rouge">clipPath</code>.</p>
+
+<!--more-->
+
+<p>El elemento <code class="highlighter-rouge">clipPath</code> puede contener <code class="highlighter-rouge">path</code>, <code class="highlighter-rouge">text</code> y las diferentes <a href="http://jorgeatgu.com/blog/las-formas-basicas-en-svg/" target="_blank">formas básicas</a> que tenemos disponibles en SVG.</p>
+
+<p>Con <code class="highlighter-rouge">clipPath</code> conseguimos que las figuras que declaramos dentro de <code class="highlighter-rouge">clipPath</code> hagan un efecto de recorte sobre el objeto que le indicamos. Como siempre esto lo vamos a ver mucho mejor con un ejemplo.</p>
+
+<p>Para el ejemplo utilizare como trazado de recorte este buzón que podéis ver en CodePen.</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="DLjey" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Ahora lo que haremos sera incluir este código dentro de <code class="highlighter-rouge">clipPath</code> con el id buzon. Lo siguiente que haremos sera aplicarlo sobre un <code class="highlighter-rouge">rect</code>, esto lo hacemos con este trozo de código dentro de la propia etiqueta <code class="highlighter-rouge">rect</code> <code class="highlighter-rouge">clip-path="url(#buzon)"</code>.</p>
+
+<p>A continuación podeis ver todo el código:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+</pre></td><td class="code"><pre><span class="nt">&lt;clipPath</span> <span class="na">id=</span><span class="s">"buzon"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span>
+  <span class="na">stroke-width=</span><span class="s">"7"</span>
+  <span class="na">x1=</span><span class="s">"261.7"</span> <span class="na">y1=</span><span class="s">"395.1"</span> <span class="na">x2=</span><span class="s">"126.7"</span> <span class="na">y2=</span><span class="s">"395.1"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#95A5A6"</span>
+  <span class="na">stroke-width=</span><span class="s">"15"</span>
+  <span class="na">x1=</span><span class="s">"410.3"</span> <span class="na">y1=</span><span class="s">"532.3"</span> <span class="na">x2=</span><span class="s">"410.3"</span> <span class="na">y2=</span><span class="s">"398.7"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#6D7575"</span>
+  <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">x1=</span><span class="s">"410.3"</span> <span class="na">y1=</span><span class="s">"417.6"</span> <span class="na">x2=</span><span class="s">"410.3"</span> <span class="na">y2=</span><span class="s">"398.7"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#34495E"</span>
+  <span class="na">d=</span><span class="s">"M550.725,399.876H253.01c0,0,0.372-132.317,3.637-142.253c2.234,0.034,285.124-0.132,286.8,0
+    C552.773,259.225,550.725,399.876,550.725,399.876z"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#2C3E50"</span>
+  <span class="na">d=</span><span class="s">"M550.725,399.876H253.01c0,0,288.764-142.385,290.437-142.253
+    C552.773,259.225,550.725,399.876,550.725,399.876z"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#47C9AF"</span>
+  <span class="na">points=</span><span class="s">"167.908,338.555 239.688,380.977 239.688,291.115 "</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#16A085"</span>
+  <span class="na">points=</span><span class="s">"97.901,291.198 97.901,380.997 240.075,380.997 "</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;polyline</span> <span class="na">fill=</span><span class="s">"none"</span>
+  <span class="na">stroke=</span><span class="s">"#E74C3C"</span> <span class="na">stroke-width=</span><span class="s">"15"</span> <span class="na">points=</span><span class="s">"286,335,286,220 330,220"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#E74C3C"</span>
+  <span class="na">stroke-width=</span><span class="s">"19"</span> <span class="na">x1=</span><span class="s">"277.58"</span> <span class="na">y1=</span><span class="s">"215.5"</span> <span class="na">x2=</span><span class="s">"338.4"</span> <span class="na">y2=</span><span class="s">"215.5"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;line</span> <span class="na">stroke=</span><span class="s">"#E74C3C"</span>
+  <span class="na">stroke-width=</span><span class="s">"13"</span> <span class="na">x1=</span><span class="s">"286.2"</span> <span class="na">y1=</span><span class="s">"335.4"</span> <span class="na">x2=</span><span class="s">"286.2"</span> <span class="na">y2=</span><span class="s">"211.4"</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;polygon</span> <span class="na">fill=</span><span class="s">"#47C9AF"</span>
+  <span class="na">points=</span><span class="s">"175.828,333.536 97.901,291.115 97.901,380.977 "</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;polyline</span> <span class="na">fill=</span><span class="s">"#237C6B"</span>
+  <span class="na">points=</span><span class="s">"239.688,291.115 171.27,340.936 97.901,291.198 "</span><span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"281.7"</span> <span class="na">y=</span><span class="s">"323"</span>
+  <span class="na">fill=</span><span class="s">"#2C3E50"</span> <span class="na">width=</span><span class="s">"9.3"</span> <span class="na">height=</span><span class="s">"9.3"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/clipPath&gt;</span>
+
+
+<span class="nt">&lt;rect</span> <span class="na">width=</span><span class="s">"1000px"</span>
+<span class="na">height=</span><span class="s">"1000px"</span>
+<span class="na">fill=</span><span class="s">"black"</span> <span class="na">clip-path=</span><span class="s">"url(#buzon)"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/clippath/clippath.html">VER EJEMPLO</a>
+</button></p>
+
+<p>Vamos a ver otro ejemplo donde vamos a utilizar <code class="highlighter-rouge">clipPath</code> con texto, este recorte lo vamos a aplicar a un <code class="highlighter-rouge">g</code>, este grupo esta compuesto por dos rectángulos uno de ellos de color negro y el otro de color rojo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre></td><td class="code"><pre><span class="nt">&lt;clipPath</span> <span class="na">id=</span><span class="s">"texto"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;text</span>
+  <span class="na">font-size=</span><span class="s">"90px"</span>
+  <span class="na">font-family=</span><span class="s">"Arial"</span>
+  <span class="na">x=</span><span class="s">"100"</span> <span class="na">y=</span><span class="s">"100"</span><span class="nt">&gt;</span>
+  Hola que pasa que tal
+  <span class="nt">&lt;/text&gt;</span>
+<span class="nt">&lt;/clipPath&gt;</span>
+
+<span class="nt">&lt;g</span> <span class="na">clip-path=</span><span class="s">"url(#texto)"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;rect</span>
+    <span class="na">width=</span><span class="s">"1000px"</span>
+    <span class="na">height=</span><span class="s">"100px"</span>
+    <span class="na">fill=</span><span class="s">"black"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rect</span>
+    <span class="na">x=</span><span class="s">"0"</span> <span class="na">y=</span><span class="s">"78"</span>
+    <span class="na">width=</span><span class="s">"1000px"</span>
+    <span class="na">height=</span><span class="s">"100px"</span>
+    <span class="na">fill=</span><span class="s">"red"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/clippath/clippathtexto.html">VER EJEMPLO</a>
+</button></p>
+
+<p>Por último comentar que Adobe Illustrator exporta bastante bien los trazados de recorte, en alguna ocasión utiliza el elemento <code class="highlighter-rouge">clipPath</code> para resolver otro tipo de problemas, pero si hacemos un trazado de recorte el resultado a la hora de exportar como SVG suele ser bastante bueno.</p>
+
+<p>Me ha gustado mucho el ejemplo con el que ilustran el trazado de recorte en <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Clipping_and_masking" target="_blank">Mozilla Developers</a>.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/tercera-semana-del-concurso-rodeo-pattern-codepen/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/ya-esta-disponible-el-ebook-de-fpo-awards-2012-2013/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

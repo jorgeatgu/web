@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blink implementa path en CSS</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/blink-path-css/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Blink implementa path en CSS</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-12-16 00:00:00 +0100">
+                El
+                16 de
+                
+                diciembre
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#css">CSS</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#chrome">Chrome</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Hace unas horas <a href="https://twitter.com/erikdahlstrom/">Erik Dahlström</a> <a href="https://twitter.com/erikdahlstrom/status/676659751435042816">twitteaba</a> que Blink acababa de implementar el atributo d:path en <a href="https://download-chromium.appspot.com/">Chromium</a>. El atributo <code class="highlighter-rouge">d</code> se utiliza en el elemento <code class="highlighter-rouge">&lt;path&gt;</code> de <strong>SVG</strong> para trazar todas aquellas formas que son imposibles de hacer con las formas básicas como <code class="highlighter-rouge">&lt;polygon&gt;</code> <code class="highlighter-rouge">&lt;rect&gt;</code> <code class="highlighter-rouge">&lt;circle&gt;</code> <code class="highlighter-rouge">&lt;line&gt;</code>.</p>
+
+<!--more-->
+
+<p>Para aquellos que no estén familirizados con el elemento <code class="highlighter-rouge">&lt;path&gt;</code> os dejo este <a href="https://github.com/jorgeatgu/scalable/blob/master/capitulo4/chapter4.md#path">enlace</a> al capítulo de mi libro <a href="https://leanpub.com/scalable/">SCALABLE, un libro sobre SVG</a>.</p>
+
+<p>Lo primero y aviso para todos, esta propiedad solo esta disponible en <a href="https://download-chromium.appspot.com/">Chromium</a>. Una vez descargado tendrás que ir a chrome://flags y activar los experimentos de Web Platform. Así que la cosa esta muy pero que muy verde. Hay que tener en cuenta que el commit y la versión de Chromium es de hace unas horas. Y que la propuesta para implementar <code class="highlighter-rouge">d:path</code> en <strong>CSS</strong> parte del grupo de <strong>SVG en septiembre de 2015</strong>.</p>
+
+<h2 id="dpath">d:path</h2>
+
+<p>Para empezar a utilizar este atributo vamos a crear un <strong>SVG</strong> con un path al que solamente le vamos a dar un <code class="highlighter-rouge">stroke-width="20px"</code>. El resto lo vamos a hacer con <strong>CSS</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;svg</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">width=</span><span class="s">"1000"</span> <span class="na">height=</span><span class="s">"400"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"path"</span> <span class="na">stroke-width=</span><span class="s">"20"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></code></pre></figure>
+
+<p>Ahora vamos a utilizar el atributo <code class="highlighter-rouge">d:path</code>, al cual le vamos a pasar las coordenadas del trazado que queremos mostrar.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#path</span> <span class="p">{</span>
+  <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175 L675,275 L775,175 L875,275 L925,225'</span><span class="p">);</span>
+  <span class="py">stroke</span><span class="p">:</span> <span class="m">#1EFE64</span><span class="p">;</span>
+  <span class="py">fill</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="animando-el-path-con-css">Animando el path con CSS</h2>
+
+<h3 id="actualización">Actualización</h3>
+
+<p>Esta madrugada ha salido un <a href="https://chromium.googlesource.com/chromium/src.git/+/5994f089fd585f4ac9629b3f52db05044db55592">nuevo commit y version de Chromium</a> que también implementa las animaciones CSS.</p>
+
+<p>Este atributo también se puede animar con animaciones <strong>CSS</strong>, por desgracia el resultado <strong>todavía</strong> dista mucho de ser el mismo que con <strong>SMIL</strong>.</p>
+
+<p>Vamos a crear los @keyframes necesarios para animar el <code class="highlighter-rouge">path</code></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">path</span> <span class="p">{</span>
+
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nt">25</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175 L675,275'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nt">75</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175 L675,275 L775,175'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nt">90</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175 L675,275 L775,175 L875,275'</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+     <span class="py">d</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M425,225 L475,275 L575,175 L675,275 L775,175 L875,275 L925,225'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="bEEemM" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Adjunto vídeo para aquellos que no quieran hacer todo la movida de descargarse Chromium y activar los experimentos.</p>
+
+<iframe src="http://player.vimeo.com/video/149000855" width="500" height="286" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<p>A diferencia de <strong>SMIL</strong> por ahora con <strong>CSS</strong> no tenemos que pasarle todas las coordenadas que tiene el <code class="highlighter-rouge">path</code> para que este se pueda animar. Esto hace que la animación sea muy brusca y carezca de fluidez, simplemente va de un nodo a otro.</p>
+
+<p><strong>Actualizacion 17 de diciembre. Ahora si le pasamos a la animación todos los nodos la animación es tan fluída como con SMIL</strong></p>
+
+<iframe src="http://player.vimeo.com/video/149338498" width="500" height="286" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<h3 id="smil-vs-css">SMIL vs CSS</h3>
+
+<p>No podía faltar la comparación entre estos dos métodos de animación. Para ello voy a utilizar un pen que esta mañana ha creado <a href="https://twitter.com/elrumordelaluz">Lionel</a>.</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="BjjQyX" data-user="elrumordelaluz"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Adjunto vídeo para ver las diferencias</p>
+
+<iframe src="http://player.vimeo.com/video/149063045" width="500" height="286" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+<p>Si inspeccionamos el código vemos como el método animate de <strong>SMIL</strong> necesita todos los nodos que componen un <code class="highlighter-rouge">path</code> para que este se pueda animar.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">values="
+        M449.5 449.5L134.1 378.9 350 350 378.9 134.1;
+        M171 171L134.1 378.9 134.1 134.1 378.9 134.1;
+        M449.5 449.5L134.1 378.9 350 350 378.9 134.1"</code></pre></figure>
+
+<p>Habrá que darle tiempo a los chicos de Blink para que las animaciones vayan tan finas como con <strong>SMIL</strong>.</p>
+
+<p><strong>Actualizacion 17 de diciembre. Ahora si le pasamos a la animación todos los nodos la animación es tan fluída como con SMIL</strong></p>
+
+<iframe src="http://player.vimeo.com/video/149338499" width="500" height="286" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/postcss-sorting/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/postcss-internet-explorer-ocho/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

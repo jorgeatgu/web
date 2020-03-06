@@ -1,39 +1,99 @@
-.proyectos {
-    max-width: 90%;
-    display: grid;
-    margin: 2rem auto;
-    margin-top: 0;
-    grid-template-columns: 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    justify-items: stretch;
-    align-items: stretch;
+main {
+  background-color: var(--background);
 }
 
+.proyectos {
+  max-width: 90%;
+  display: grid;
+  margin: 2rem auto;
+  margin-top: 0;
+  grid-template-columns: 1fr;
+  grid-column-gap: 3rem;
+  grid-row-gap: 3rem;
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+.proyectos-element {
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  transition: all .3s ease-in;
+  position: relative;
+  background-color: var(--blanco);
+  border-radius: 4px;
+  border: 1px solid #eaebeb;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 2px 9px 0 rgba(0, 0, 0, .2);
+
+  &:hover {
+    transform: translateY(-.25rem);
+    opacity: .9;
+  }
+}
+
+.proyectos-element-img {
+  width: 100%;
+  border-radius: .5rem;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom: 1px solid #eaebeb;
+  object-fit: cover;
+  max-height: 200px;
+}
 
 .proyectos-element-title {
-    font-size: 1rem;
-    font-family: var(--plex);
-    color: var(--negro);
-    display: block;
-    font-weight: 500;
-    margin: 0;
-    padding-bottom: .25rem;
+  font-size: 1.25rem;
+  font-family: var(--title);
+  color: var(--negro);
+  font-weight: bold;
+  display: block;
+  margin: 0;
+  padding: .5rem;
+  padding-top: 0;
+}
+
+.proyectos-element-subtitle,
+.proyectos-element-tech {
+  font-size: .75rem;
+  font-family: var(--text);
+  color: var(--negro);
+  padding: .5rem;
+  background-color: rgba(241, 240, 240, .8);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.proyectos-element-tech {
+  top: initial;
+  bottom: 0;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.project-year {
+  font-size: 12px;
+  font-weight: bold;
+  font-family: var(--monospace);
 }
 
 @media only screen and (min-width: 48em) {
 
-    .proyectos {
-        grid-template-columns: 1fr 1fr;
-        max-width: 42rem;
-    }
+  .proyectos {
+    grid-template-columns: 1fr 1fr;
+    max-width: 42rem;
+  }
 
 }
 
 @media only screen and (min-width: 64em) {
 
-    .proyectos {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        max-width: 58rem;
-    }
+  .proyectos {
+    grid-template-columns: 1fr 1fr;
+    max-width: 58rem;
+  }
 }

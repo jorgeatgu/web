@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG en Sublime Text</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/svg-en-sublime-text/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>SVG en Sublime Text</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-07-23 00:00:00 +0200">
+                El
+                23 de
+                
+                julio
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#sublime-text">Sublime Text</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Desde hace un tiempo vengo utilizando una serie de <em>snippets</em> a la hora de escribir SVG en Sublime Text.</p>
+
+<!--more-->
+
+<p>Para el que lo desconozca un <em>snippet</em> es un trozo de código que activamos con una palabra clave que nosotros hemos predefinido anteriormente.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;snippet&gt;</span>
+	<span class="nt">&lt;content&gt;</span><span class="cp">&lt;![CDATA[&lt;use xlink:href="#$1" x="$2" y="$3"/&gt;]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+	<span class="nt">&lt;description&gt;</span>SVG - DRY: use<span class="nt">&lt;/description&gt;</span>
+	<span class="nt">&lt;tabTrigger&gt;</span>use<span class="nt">&lt;/tabTrigger&gt;</span>
+	<span class="nt">&lt;scope&gt;</span>text.html, text.xml<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/snippet&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>El código que queremos que muestre lo incluímos dentro de <code class="highlighter-rouge">content![CDATA[ aquí tu código ]]/content</code>
+Añadimos una descripción en <code class="highlighter-rouge">description</code>
+El <code class="highlighter-rouge">tabTrigger</code> es la palabra clave que activará nuestro <em>snippet</em>, para ello también tendremos que darle al tabulador
+Por último con el <code class="highlighter-rouge">scope</code> le decimos los archivos donde va actuar.</p>
+
+<h2 id="svg-snippets">SVG-Snippets</h2>
+
+<p>Bueno pues como tenía un montón de <em>snippets</em> creados para escribir SVG, decidí ayer crear unos cuantos mas(38 en total), cree un repositorio en GitHub y lo subí para que estuvieran disponibles a través del <a href="https://sublime.wbond.net/installation" title="package control">package control</a> de Sublime Text.</p>
+
+<p>Ahora vais a Sublime Text y en mac le dais a <code class="highlighter-rouge">comando+mayus+p</code> o en win <code class="highlighter-rouge">ctrl+mayus+p</code> os saldrá el <em>command palette</em> ahora tan solo hay que escribir y seleccionar Install Package, por último escribid SVG y os saldra SVG-Snippets le dais y ya está instalado.</p>
+
+<p>Todas las palabras clave están en el repositorio de <a href="https://github.com/jorgeatgu/SVG-Snippets">SVG-Snippets en GitHub</a></p>
+
+<p>El funcionamiento es sencillo, escribimos la palabra clave, le damos al tabulador y saldrá el trozo de código correspondiente.</p>
+
+<p>Si por ejemplo escribimos re y presionamos ctrl+barra espaciadora nos saldrá todos los <em>snippets</em> que contenga re y una pequeña descripción de cada <em>snippet</em>.</p>
+
+<p>Si le vamos dando al tabulador nos irá llevando a las zonas que tenemos que rellenar, por ejemplo a la coordenada x, a la coordenada y, al width etc…</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/wordpress/svg-snippets.png" alt="svg-snippets" /></p>
+
+<p>Por último os dejo un vídeo utilizando el package</p>
+
+<iframe src="http://player.vimeo.com/video/101490820" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="http://vimeo.com/101490820">SVG-Snippets</a> from <a href="http://vimeo.com/jorgeatgu">Jorge Aznar</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/amanixer-mi-tema-de-wordpress/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/charla-sobre-animaciones-css3-sobre-svg/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Configurando postCSS en Gulp</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v2.5.3">
+    <link rel="stylesheet" href="/blog/css/style.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/postcss-gulp/">
+</head>
+
+  <body>
+
+    <header class="article-contenido">
+    <nav class="proxima-nova  post-contenido">
+        <ul class="menu-principal">
+            <li><a href="http://jorgeatgu.com/index">WEB</a></li>
+            <li><a href="http://jorgeatgu.com/blog">BLOG</a></li>
+        </ul>
+        <ul class="social-header  post-contenido">
+            <a target="_blank" href="https://twitter.com/jorgeatgu" title="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#twitter" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://codepen.io/jorgeatgu" title="codepen">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#codepen" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://github.com/jorgeatgu/" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#github" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://www.behance.net/jorgeatgu" title="behance">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#behance" />
+                </svg>
+            </a>
+        </ul>
+    </nav>
+</header>
+
+
+    <article class="article-contenido">
+        		  <article class="categoria-titulo">
+		    <h1>Configurando postCSS en Gulp</h1>
+		    <p class="post-autores-categoria">
+			    El
+			    25 de
+
+		        noviembre
+
+		        de
+		        2015
+		    </p>
+		    <!-- Categorías: CSS, POSTCSS, GULP -->
+
+		  </article>
+
+		  <article class="post-contenido">
+		    <p>Ayer contaba mi corta pero exitosa historia con <strong>postCSS</strong>. En el artículo comentaba que utilizo <strong>postCSS</strong> con Gulp. En este artículo voy a profundizar en como añadir <strong>postCSS</strong> a <strong>Gulp</strong> desde el principio hasta el final. Si ya has trabajado con <strong>Gulp</strong> seguramente todo esto te resultará familiar.</p>
+
+<!--more-->
+
+<p>Soy usuario de OSX así voy a hacer todo tirando de <a href="https://www.iterm2.com/">iTerm2</a>.</p>
+
+<h2 id="creando-el-proyecto-y-su-estructura">Creando el proyecto y su estructura</h2>
+
+<p>Voy a empezar creando el proyecto con todos sus directorios. Lo podéis hacer a manopla creando carpeta y archivos. Yo lo voy a hacer a lo viejuno(también es más rápido) tirando de cli.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir gulp-postcss
+
+<span class="nb">cd </span>gulp-postcss
+
+mkdir dist
+
+mkdir src
+
+touch index.html
+
+touch gulpfile.js
+
+<span class="nb">cd </span>dist
+
+mkdir css
+
+<span class="nb">cd </span>css
+
+touch styles.css
+
+<span class="nb">cd</span> ..
+
+<span class="nb">cd</span> ..
+
+<span class="nb">cd </span>src
+
+mkdir css
+
+<span class="nb">cd </span>css
+
+touch styles.css</code></pre></figure>
+
+<h2 id="npm">Npm</h2>
+
+<p>Vamos a empezar a instalar todo lo necesario. Para aquellos que no tengan instalado Gulp, vamos a instalarlo de forma global, para ello vamos a escribir en el terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g gulp</code></pre></figure>
+
+<p>Ahora nos vamos a la carpeta que hemos creado y vamos a escribir lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm init</code></pre></figure>
+
+<p>En el terminal nos va a ir saliendo una serie de campos que vamos a ir rellenando y que más tarde se verán reflejados en el <code>package.json</code> que nos ha creado el <code>npm init</code></p>
+
+<p>Ahora vamos a empezar a instalar dependencias. La primera de ellas Gulp</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev gulp</code></pre></figure>
+
+<p>Escribiendo <code>–save-dev</code> agregará este paquete como un dependencia a nuestro proyecto, y también lo añadirá al <code>package.json</code></p>
+
+<h2 id="gulpfile">Gulpfile</h2>
+
+<p>Ahora vamos a abrir Gulpfile.js con un IDE, en mi caso Sublime Text 3. Una vez abierto vamos a escribir lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="gulp-postcss">gulp-postcss</h2>
+
+<p>Ahora vamos a instalar gulp-postcss. Volvemos a nuestra ventana del terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev gulp-postcss</code></pre></figure>
+
+<p>Y en nuestro gulpfile.js añadimos lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-postcss&#39;</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1">//Aqui irán los plugins que vayamos instalando</span>
+    <span class="p">];</span>
+    <span class="c1">//Aquí la ruta de donde coge nuestros css</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./src/css/styles.css&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+        <span class="c1">//Aqui la ruta de destino</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./dist/css&#39;</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Vamos a instalar todos los paquetes que vamos a utilizar del tirón. Y luego lo vamos a añadir todo a nuestro gulpfile.js</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev gulp-autoprefixer
+
+npm install --save-dev postcss-pxtorem
+
+npm install rucksack-css --save-dev
+
+npm install --save-dev postcss-nested
+
+npm install --save-dev postcss-simple-vars</code></pre></figure>
+
+<p>Ahora vamos a volver a abrir nuestro gulpfile.js y vamos a ir añadiendo todos los paquetes que hemos instalado anteriormente. A algunos plugins les podemos pasar opciones, en este caso vamos configurar <strong>pxtorem</strong>, que el valor de root sea 16, que lo transforme solo con dos decimales, y que solo transforme de px a rem las propiedades: <code>font-size</code> <code>line-height</code> <code>padding</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-postcss&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-autoprefixer&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">vars</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;postcss-simple-vars&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nested</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;postcss-nested&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">rucksack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;gulp-rucksack&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">pxtorem</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;postcss-pxtorem&#39;</span><span class="p">);</span>
+
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">&#39;css&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">vars</span><span class="p">,</span>
+        <span class="nx">nested</span><span class="p">,</span>
+        <span class="nx">rucksack</span><span class="p">,</span>
+        <span class="nx">pxtorem</span><span class="p">({</span>
+            <span class="nx">root_value</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+            <span class="nx">unit_precision</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nx">prop_white_list</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;font-size&#39;</span><span class="p">,</span> <span class="s1">&#39;line-height&#39;</span><span class="p">,</span> <span class="s1">&#39;padding&#39;</span><span class="p">],</span>
+            <span class="nx">replace</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nx">media_query</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="p">}),</span>
+        <span class="nx">autoprefixer</span><span class="p">({</span>
+            <span class="nx">browsers</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;last 2 version&#39;</span><span class="p">]</span>
+        <span class="p">})</span>
+    <span class="p">];</span>
+    <span class="c1">//Aquí la ruta de donde coge nuestros css</span>
+    <span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./src/css/styles.css&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rucksack</span><span class="p">())</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+        <span class="c1">//Aqui la ruta de destino</span>
+        <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./dist/css&#39;</span><span class="p">));</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Y ya por último vamos a instalar y activar los sourcemaps.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save-dev gulp-sourcemaps</code></pre></figure>
+
+<p>Vamos a nuestro gulpfile.js y vamos a añadir dos .pipe()</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="k">return</span> <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="s1">&#39;./src/css/styles.css&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">rucksack</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">init</span><span class="p">())</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sourcemaps</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">&#39;./dist/css&#39;</span><span class="p">));</span></code></pre></figure>
+
+<h2 id="comenzando-a-escribir">Comenzando a escribir</h2>
+
+<p>Ahora vamos al terminal y escribimos lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gulp css</code></pre></figure>
+
+<p>Si esta todo bien nos debería de salir el siguiente mensaje en el terminal</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Starting <span class="s1">&#39;css&#39;</span>...
+Finished <span class="s1">&#39;css&#39;</span> after <span class="m">14</span> ms</code></pre></figure>
+
+<p>Ahora vamos a nuestro <code>styles.css</code> y por fin empezamos a escribir líneas de <strong>CSS</strong> :d</p>
+
+<p>Vamos a utilizar el plugin de las variables como SASS</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span><span class="nt">Utilizando</span> <span class="nt">las</span> <span class="nt">variables</span>
+<span class="o">$</span><span class="nt">color-background</span><span class="o">:</span> <span class="nf">#001F3F</span><span class="o">;</span>
+<span class="o">$</span><span class="nt">color-texto</span><span class="o">:</span> <span class="nf">#FFDC00</span><span class="o">;</span></code></pre></figure>
+
+<p>Vamos a crear @alias con Rucksack. Uno para la propiedad background-color y otro para el box-sizing. Esta funcionalidad del plugin es difícil de utilizar para aquellos que somos adictos a emmet y todos sus shorthands.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span><span class="nt">Creando</span> <span class="nt">alias</span> <span class="nt">con</span> <span class="nt">rucksack</span>
+<span class="k">@alias</span> <span class="p">{</span>
+  <span class="nt">bgc</span><span class="o">:</span> <span class="nt">background-color</span><span class="o">;</span>
+  <span class="nt">bxz</span><span class="o">:</span> <span class="nt">box-sizing</span><span class="o">;</span>
+  <span class="nt">bbx</span><span class="o">:</span> <span class="nt">border-box</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="o">//</span><span class="n">Utilizando</span> <span class="n">un</span> <span class="n">alias</span> <span class="n">creado</span> <span class="n">con</span> <span class="n">rucksack</span><span class="o">,</span> <span class="n">tambi</span><span class="err">é</span><span class="n">n</span> <span class="n">una</span> <span class="n">variable</span>
+    <span class="n">bgc</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="o">-</span><span class="k">background</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Los valores de las siguientes propiedades serán transformados de pixel a REM.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span><span class="nt">El</span> <span class="nt">pixel</span> <span class="nt">del</span> <span class="nt">padding</span> <span class="nt">se</span> <span class="nt">transformara</span> <span class="nt">en</span> <span class="nt">REM</span>
+<span class="nt">padding</span><span class="o">:</span> <span class="nt">0</span> <span class="nt">20px</span><span class="o">;</span>
+<span class="o">//</span><span class="nt">El</span> <span class="nt">pixel</span> <span class="nt">del</span> <span class="nt">font-size</span> <span class="nt">se</span> <span class="nt">transformara</span> <span class="nt">en</span> <span class="nt">REM</span>
+<span class="nt">font-size</span><span class="o">:</span> <span class="nt">16px</span><span class="o">;</span>
+<span class="o">//</span><span class="nt">El</span> <span class="nt">pixel</span> <span class="nt">del</span> <span class="nt">line-height</span> <span class="nt">se</span> <span class="nt">transformara</span> <span class="nt">en</span> <span class="nt">REM</span>
+<span class="nt">line-height</span><span class="o">:</span> <span class="nt">20px</span><span class="o">;</span></code></pre></figure>
+
+<p>Y ya por último vamos a anidar como SASS</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span><span class="nt">Nested</span> <span class="nt">como</span> <span class="nt">SASS</span> <span class="o">&amp;</span> <span class="nt">pxtorem</span>
+<span class="nt">section</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">80%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">article</span> <span class="err">{</span>
+        <span class="k">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+        <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">Utilizando</span> <span class="n">un</span> <span class="n">alias</span> <span class="n">creado</span> <span class="n">con</span> <span class="n">rucksack</span>
+        <span class="n">bxz</span><span class="o">:</span> <span class="n">bbx</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">padding</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">20px</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">font-size</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">line-height</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">line-height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+        <span class="k">color</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="o">-</span><span class="n">texto</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<h2 id="io">IO</h2>
+
+<p>Ahora vamos a ver las diferencias entre lo que hemos escrito en nuestro <code>src/css/styles.css</code> y lo que ha generado <strong>postCSS</strong> en <code>dist/css/styles.css</code></p>
+
+<p><code>src/css/styles.css</code></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span><span class="nt">Utilizando</span> <span class="nt">las</span> <span class="nt">variables</span>
+<span class="o">$</span><span class="nt">color-background</span><span class="o">:</span> <span class="nf">#001F3F</span><span class="o">;</span>
+<span class="o">$</span><span class="nt">color-texto</span><span class="o">:</span> <span class="nf">#FFDC00</span><span class="o">;</span>
+
+<span class="o">//</span><span class="nt">Creando</span> <span class="nt">alias</span> <span class="nt">con</span> <span class="nt">rucksack</span>
+<span class="k">@alias</span> <span class="p">{</span>
+  <span class="nt">bgc</span><span class="o">:</span> <span class="nt">background-color</span><span class="o">;</span>
+  <span class="nt">bxz</span><span class="o">:</span> <span class="nt">box-sizing</span><span class="o">;</span>
+  <span class="nt">bbx</span><span class="o">:</span> <span class="nt">border-box</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="o">//</span><span class="n">Utilizando</span> <span class="n">un</span> <span class="n">alias</span> <span class="n">creado</span> <span class="n">con</span> <span class="n">rucksack</span><span class="o">,</span> <span class="n">tambi</span><span class="err">é</span><span class="n">n</span> <span class="n">una</span> <span class="n">variable</span>
+    <span class="n">bgc</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="o">-</span><span class="k">background</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="o">//</span><span class="nt">Nested</span> <span class="nt">como</span> <span class="nt">SASS</span> <span class="o">&amp;</span> <span class="nt">pxtorem</span>
+<span class="nt">section</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">80%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="n">article</span> <span class="err">{</span>
+        <span class="k">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+        <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">Utilizando</span> <span class="n">un</span> <span class="n">alias</span> <span class="n">creado</span> <span class="n">con</span> <span class="n">rucksack</span>
+        <span class="n">bxz</span><span class="o">:</span> <span class="n">bbx</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">padding</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">20px</span><span class="p">;</span>
+        <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">font-size</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">font-size</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+        <span class="o">//</span><span class="n">El</span> <span class="n">pixel</span> <span class="n">del</span> <span class="k">line-height</span> <span class="n">se</span> <span class="n">transformara</span> <span class="n">en</span> <span class="n">REM</span>
+        <span class="k">line-height</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+        <span class="k">color</span><span class="o">:</span> <span class="err">$</span><span class="k">color</span><span class="o">-</span><span class="n">texto</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="err">}</span></code></pre></figure>
+
+<p><code>dist/css/styles.css</code></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="o">:</span> <span class="m">#001F3F</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">80%</span><span class="p">;</span>
+    <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="k">auto</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">section</span> <span class="nt">article</span> <span class="p">{</span>
+    <span class="k">width</span><span class="o">:</span> <span class="m">50%</span><span class="p">;</span>
+    <span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="o">-</span><span class="k">block</span><span class="p">;</span>
+    <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+    <span class="k">padding</span><span class="o">:</span> <span class="m">0</span> <span class="m">1</span><span class="o">.</span><span class="m">25</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">font-family</span><span class="o">:</span> <span class="n">Arial</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="o">:</span> <span class="m">1</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="o">.</span><span class="m">25</span><span class="n">rem</span><span class="p">;</span>
+    <span class="k">color</span><span class="o">:</span> <span class="m">#FFDC00</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Todo el código del artículo lo tenéis a vuestra disposición en <a href="https://github.com/jorgeatgu/gulp-postCSS">GitHub</a></p>
+
+		  </article>
+
+	  		<article class="paginacion">
+
+
+	                <a class="btn-anterior" href="/blog/postcss-primeros-pasos/">Artículo anterior</a>
+
+	        </article>
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+
+    </article>
+
+      </div>
+        <script src="//use.typekit.net/ybu3pxw.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+        <script async src="/js/svg4everybody.min.js"></script>
+
+
+  </body>
+
+</html>

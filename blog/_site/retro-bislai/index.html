@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nueva version de Bislai</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/retro-bislai/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Nueva version de Bislai</h1>
+        <p class="articulo-fecha">
+            <time datetime="2018-01-21 00:00:00 +0100">
+                El
+                21 de
+                
+                enero
+                
+                de
+                2018
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#bislai">Bislai</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#opendata">opendata</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Unas cuantas notas sobre la nueva versión de <a href="http://bislai.co">Bislai</a>.</p>
+
+<!--more-->
+
+<p>Esta es la versión que me hubiera gustado sacar el año pasado. Me puse de tope hasta el verano pero me puse a jugar con los datos abiertos de la AEMET y me pase buena parte del verano con d3.js de aquello nació <a href="http://jorgeatgu.com/forno/">FORNO</a>.</p>
+
+<p>Me han encantado esta definición de Bislai</p>
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Esto es la leche. Poder decidir el voto no en función de declaraciones, tuiteos, o un supuesto programa, sino auditando lo que realmente se ha votado en los plenos &lt;3 &lt;3 &lt;3 <a href="https://t.co/0WUaR3YYv1">https://t.co/0WUaR3YYv1</a></p>&mdash; Luis Artola (@artolamola) <a href="https://twitter.com/artolamola/status/954452914533265410?ref_src=twsrc%5Etfw">January 19, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="diseño">Diseño</h2>
+
+<p>En esta nueva version he cambiado el aspecto visual de casi todo. Aprovechando que <a href="https://github.com/jorgeatgu/astral">Astral</a> se basa en un <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632">sistema de 8</a> lo he aprovechado a la hora de rediseñar. Así que todos margenes, padding, tamaños de letras(aquí no siempre), y distancias se han basado en este sistema.</p>
+
+<p>Me hubiera gustado poder emplear alguna de las fotos que encontré en el archivo fotográfico de Zaragoza. Tienen fotos increíbles de la llegada de la democracia a Zaragoza. Eso sí, cuesta horrores encontrarlas. Y estaría genial que de primeras te informarán de si se están libres de derechos. Es de locos que en los tiempos actuales alguien tenga que presentarse de cuerpo presente para intentar utilizar una foto. Y si, al final unsplash. En este tema, no quiero olvidarme de Chunta Aragonesista, los únicos que comparten todo en Flickr bajo licencia CC.</p>
+
+<h2 id="datos">Datos</h2>
+
+<p>Lo primero y principal están todos las mociones que se han presentado en esta legislatura. Y nunca más dejaré que se acumule más de una, sobre todo por mi salud. Y es que la extracción de datos sigue siendo mucho más laboriosa de lo que yo creía. En este último tramo he conseguido automatizarlo y ahorrar algo de tiempo. Aún así la peor parte es la incluir los datos, es la única parte que no me gusta del proyecto, es casi tan horrible como hacer una landing y usar bootstrap. Siempre tuve la idea de montar todo con Jekyll y crearme plantillas como las de este blog, es más, cree alguna pero en alguna momento estupido decidí que iba a perder más tiempo y continue por el camino equivocado. Quizás sea buen momento de probar Hugo o aprovechar todo lo que se sobre Jekyll.</p>
+
+<blockquote>Si vas a copiar algo al menos intenta mejorarlo.</blockquote>
+
+<h3 id="mocionesjson">Mociones.json</h3>
+
+<p>A la vez que avanzaba con esta versión he ido recopilando todas las votaciones(de las mociones) que se han llevado a cabo en el pleno. <a href="https://github.com/jorgeatgu/bislai/blob/master/mociones.json">He creado un JSON con diferentes apartados</a>. Si alguien quiere utilizarlo para lo que sea que se le ocurra, todo el proyecto esta bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC 4.0</a>. Lo he revisado tres veces, y en cada revisión he ido encontrando fallos, en la última solo encontré un par, así que es posible que al ser tantos datos se haya colado algún error.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"fecha": "27-07-2015",
+"presentada": "C'S",
+"resultado": "ganada",
+"a_favor": "PP + ZEC + PSOE + C'S + CHA",
+"votos_contra": 31,
+"unanimidad": "si",
+"numero": 30
+</code></pre></div></div>
+
+<p>El día del pleno.
+Quien la presento.
+El resultado, aquí hay tres opciones, ganada, perdida y retirada.
+Quien vota a favor.
+Quien vota en contra.
+Quien se abstiene.
+El número de votos a favor.
+El número de votos en contra.
+El número de abstenciones.
+Si la moción se vota por unanimidad.
+Y por último el número de moción.</p>
+
+<p>También he actualizado los <a href="https://github.com/jorgeatgu/bislai/blob/master/datos-votaciones-2015-2016-2017.md">datos con las diferentes estadísticas</a>. Solo están los resultados. El que quiera que los utilice.</p>
+
+<h3 id="mapa">Mapa</h3>
+
+<p>Anteriormente para mostrar los datos de las elecciones del 2015 cree una gráfica animada con mo.js. Ahora la he sustituido por un mapa de Mapbox, y por encima he pintado una capa con d3.js con los diferentes distritos electorales. Quería mostrar mas datos pero aquí cada organismo trocea la ciudad como le da la gana.</p>
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Estamos trabajando en ello... :) <a href="https://t.co/8xykNnPzK9">pic.twitter.com/8xykNnPzK9</a></p>&mdash; Bislai (@debislai) <a href="https://twitter.com/debislai/status/930916273210437632?ref_src=twsrc%5Etfw">November 15, 2017</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="partidos">Partidos</h2>
+
+<p>Esto es algo que tenía en mente desde casi el principio pero la falta de tiempo me ha hecho ir troceando todo por versiones. En la primera versión saque una parte de ello con las estadísticas generales. Ahora lo he ampliado a cada partido. He sacado gráficas con los votos de cada partido, ¿quién vota en su contra? ¿quién vota a su favor? ahora con todos los datos divididos por partido ves cosas muy curiosas.</p>
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">BRUTAL <a href="https://twitter.com/hashtag/transparencia?src=hash&amp;ref_src=twsrc%5Etfw">#transparencia</a> <a href="https://twitter.com/hashtag/Zaragoza?src=hash&amp;ref_src=twsrc%5Etfw">#Zaragoza</a> <a href="https://t.co/3cNMLXfnXC">https://t.co/3cNMLXfnXC</a><br /><br />Enhorabuena <a href="https://twitter.com/jorgeATGU?ref_src=twsrc%5Etfw">@jorgeATGU</a> 👏👏👏</p>&mdash; Javi Rubio (@jrubr) <a href="https://twitter.com/jrubr/status/954368931480985600?ref_src=twsrc%5Etfw">January 19, 2018</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3 id="ayuntamiento">Ayuntamiento</h3>
+
+<p><strong>¡Por fin!</strong> En noviembre de 2017 sacaron un buscador de mociones :) Es una de las razones por las que me líe la manta a la cabeza y decidí crear <a href="http://bislai.co">Bislai</a>. Es un buen paso por parte de la oficina electrónica del Ayuntamiento, pero sigue siendo un paso pequeño, solamente deja buscar en las mociones del 2017, y la pagina de resultados es muy mejorable.</p>
+
+<h2 id="gracias">Gracias</h2>
+
+<p>A todos por los ánimos y los agradecimientos. Si alguien es capaz de no perder dos días de su vida(es el tiempo que invertí en encontrar la moción que inspiro todo esto) en encontrar el resultado de una votación me doy por satisfecho.</p>
+
+<p>Mención especial para <a href="https://twitter.com/PallasR">Ricardo</a> por interesarse siempre por como va la <em>movida</em>. Y por la siempre generosa ayuda creando funciones complicadas y puras con JavaScript. Y a <a href="https://twitter.com/eckelon">Jesús</a> y <a href="https://twitter.com/misstechin">Mónica</a> por el feedback y como recopilador de votos para los premios de Aragón en la red.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    
+    <a class="btn-anterior" href="/blog/vuelve-octuweb-cuarta-edicion/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

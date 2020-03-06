@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>El futuro de SMIL</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/el-futuro-de-smil-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>El futuro de SMIL</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-05-01 00:00:00 +0200">
+                El
+                1 de
+                
+                mayo
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#w3c">W3C</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Ayer a primera hora Erik Dahlström twiteaba lo siguiente</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Intent to deprecate: SMIL - <a href="https://t.co/4m5GmPNvPi">https://t.co/4m5GmPNvPi</a></p>&mdash; Erik Dahlström (@erikdahlstrom) <a href="https://twitter.com/erikdahlstrom/status/593683154902351872?ref_src=twsrc%5Etfw">April 30, 2015</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>La gente que esta desarrollando <strong>Blink/Chromium</strong> quiere pasar <strong>SMIL</strong> a deprecated. Recordad que SMIL no tiene soporte en ninguna de las versiones de Internet Explorer, aunque hasta la version de IE8 soportaba <a href="http://www.w3.org/TR/XHTMLplusSMIL/">XHTML+SMIL</a>, curioso ¿no?</p>
+
+<!--more-->
+
+<p>Estaba claro que desde que <a href="http://blogs.msdn.com/b/ie/archive/2010/08/04/html5-modernized-fourth-ie9-platform-preview-available-for-developers.aspx">Microsoft en 2010</a> decidió apoyar las animaciones CSS3 en lugar de SMIL la especificación quedaba tocada. Lo divertido de esto es que las transformaciones de CSS3 no funcionan sobre elementos de SVG en ninguna de la versiones de Internet Explorer. Así se apoya un método de animación, epic.</p>
+
+<h2 id="la-opinión-del-svgwg">La opinión del SVGWG</h2>
+
+<p>Ayer como todas las semanas había un Minutes del SVGWG, es una reunión semanal que llevaba acabo el grupo de SVG para tratar diferentes temas de la especificación. Una de los temas del minutes de ayer era <strong>blink’s intent to deprecate SMIL</strong></p>
+
+<p>Aquí os paso el enlace <a href="http://lists.w3.org/Archives/Public/www-svg/2015Apr/0058.html">Minutes, 30 April / 1 May 2015 SVG WG telcon</a></p>
+
+<p>La conversación es bastante interesante.</p>
+
+<p>El resultado final es separar SMIL de SVG, para ello se va a crear una especificación donde ubicarlo. Es un mal menor, como bien dicen no tiene sentido deshacerse de SMIL cuando todavía esta muy verde WebAnimationsJS.</p>
+
+<p>También se va a hacer un analisis entre SVG Animation y CSS animations/transitions.</p>
+
+<p>Por su parte Brian Birties creador de WebAnimationsJS escribía un post esta mañana sobre el tema: <a href="https://birtles.wordpress.com/2015/05/01/what-do-we-do-with-smil/">What do we do with SMIL?</a></p>
+
+<h2 id="mi-opinión">Mi opinión</h2>
+
+<p>El gran ramajero virtual me pedía mi opinión sobre el tema.</p>
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">Me gustaría saber la opinión de <a href="https://twitter.com/jorgeATGU?ref_src=twsrc%5Etfw">@jorgeATGU</a> <br />&quot;Goodbye SMIL?&quot; <a href="https://t.co/TTR8pSycvt">https://t.co/TTR8pSycvt</a></p>&mdash; * {will-change: mandatory;} (@Kseso) <a href="https://twitter.com/Kseso/status/593725524960227328?ref_src=twsrc%5Etfw">April 30, 2015</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Si con algo he me he divertido a la vez que lo he ido aprendiendo es con Freehand y con SMIL. Así que me da pena que termine desapareciendo. Entiendo que se quiera integrar SMIL+CSS3 en una sola especificación como WebAnimationsJS para ver si así todo el mundo da soporte de una maldita vez a un método de animaciones para la web.</p>
+
+<ul>
+  <li>
+    <p>La parte de potencial que le sigo viendo a SMIL es la facilidad a la hora de concatenar animaciones.</p>
+  </li>
+  <li>
+    <p>La posibilidad de animar casi todos los elementos que forman parte de la especificación, esto lo hacemos con <strong>animate</strong> y <strong>atributeName</strong></p>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">“”</span> <span class="na">values=</span><span class="s">“”</span> <span class="na">begin=</span><span class="s">“”</span> <span class="na">dur=</span><span class="s">“”</span> <span class="na">calcMode=</span><span class="s">“”</span> <span class="na">keyTimes=</span><span class="s">“”</span> <span class="na">fill=</span><span class="s">“”/</span><span class="nt">&gt;</span></code></pre></figure>
+
+<ul>
+  <li>
+    <p>La simplicidad de incluir eventos como begin, end, click, hover a la hora de comenzar animaciones.</p>
+  </li>
+  <li>
+    <p>La elasticidad que se le pueden dar a las animaciones haciendo un buen uso de keyTimes, keySplines.</p>
+  </li>
+  <li>
+    <p>La sencillez a la hora de aprender.</p>
+  </li>
+</ul>
+
+<p>En su día hice una <em>review</em> <a href="http://jorgeatgu.com/blog/animando-svg-de-smil-a-css3/">comparando SMIL vs CSS3</a></p>
+
+<h3 id="svg">SVG</h3>
+<pre class="codepen" data-height="300" data-type="result" data-href="qvzLm" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<h3 id="css3">CSS3</h3>
+<pre class="codepen" data-height="300" data-type="result" data-href="EvyhL" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p><a href="http://codepen.io/collection/chefj/">Aquí una colección de CodePen con multitud de animaciones creadas principalmente con SMIL</a></p>
+
+<p><a href="https://github.com/jorgeatgu/SMIL">También subí todo el código de todas mis animaciones a un repositorio GitHub</a></p>
+
+<p>Y el pasado verano también cree un <a href="https://packagecontrol.io/packages/SVG-SMIL-Snippets">pequeño plugin para Sublime Text 2/3</a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/vuelvo-a-escribir/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/smil-is-dead-long-live-the-smil/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

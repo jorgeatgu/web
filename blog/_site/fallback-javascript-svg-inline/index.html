@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fallback en JavaScript para SVG inline</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/fallback-javascript-svg-inline/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Fallback en JavaScript para SVG inline</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-01-20 00:00:00 +0100">
+                El
+                20 de
+                
+                enero
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#fallback">Fallback</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#javascript">Javascript</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Aunque <strong>SVG</strong> tiene un soporte bastante amplio, <strong>Android 2.3+ e IE9+</strong>. Si tienes que dar soporte a estos navegadores y quieres seguir usando todo el potencial de <strong>SVG</strong> <a href="https://twitter.com/chriscoyier/" target="_blank">Chris Coyier</a> ha creado un pequeño script en <strong>JavaScript</strong>.</p>
+
+<!--more-->
+
+<p>Cuando el navegador no soporta <strong>SVG</strong> el script añade un <code class="highlighter-rouge">&lt;span&gt;</code> y a este se le añade una clase que contiene un <code class="highlighter-rouge">background-image</code> con la misma imagen en formato <strong>PNG</strong>. Como veis es bastante simple y una solución bastante limpia.</p>
+
+<p>A continuación el pen que ha creado <strong>Chris Coyier</strong> en <strong>CodePen</strong></p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="qEmpMx" data-user="chriscoyier"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Y como <strong>Chris Coyier</strong> añade el fallback a un <strong>SVG</strong> que se ha creado a través de la etiqueta <code class="highlighter-rouge">use</code> he modificado un poco el código para que el fallback se aplique sobre un <strong>SVG</strong> <em>a pelo</em>.</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="LEydVY" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>En el tweet que ha publicado Chris Coyier podéis ver en la imagen que el fallback funciona perfectamente sobre Internet Explorer 8 en Windows XP</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A fallback for inline &lt;svg&gt; can be: replace with &lt;span&gt; which has background-image as needed.<a href="http://t.co/WdpRs7FYyP">http://t.co/WdpRs7FYyP</a> <a href="http://t.co/4yRoC6NcoV">pic.twitter.com/4yRoC6NcoV</a></p>&mdash; Chris Coyier (@chriscoyier) <a href="https://twitter.com/chriscoyier/status/557605362543886337?ref_src=twsrc%5Etfw">January 20, 2015</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Recordar que existen tras soluciones de la que he hablado anteriormente en el blog para dar soporte a <strong>SVG</strong> en navegadores antiguos como <a href="http://jorgeatgu.com/blog/svgeezy-plugin-javascript-para-sustituir-svg-por-png/" target="_blank">SVGeezy</a> y <a href="http://jorgeatgu.com/blog/svgmagic-fallback-para-sustituir-svg-por-png/" target="_blank">SVGMagic</a>.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/optimizando-svg-a-mano/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/package-control-donad-malditos/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

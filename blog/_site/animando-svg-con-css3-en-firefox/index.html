@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animando SVG con CSS3 en Firefox</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/animando-svg-con-css3-en-firefox/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animando SVG con CSS3 en Firefox</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-03-28 00:00:00 +0100">
+                El
+                28 de
+                
+                marzo
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Este post es para documentar la conversación que mantuvimos ayer por Twitter <a href="https://twitter.com/elrumordelaluz" target="_blank">Lionel</a> y un servidor buscando la solución al efecto que genera Firefox con <code class="highlighter-rouge">transform-origin:</code></p>
+
+<!--more-->
+
+<p>Cuando intentamos animar un SVG con CSS3 y utilizamos la propiedad <code class="highlighter-rouge">transform-origin: center center;</code> como podemos ver a continuación el resultado que obtenemos en Firefox no es ni parecido al que obtenemos en Chrome.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2014/03/firefoxvschrome1.gif" alt="rotacion CSS3 firefox" /></p>
+
+<p>La ventana de la izquierda es de Firefox y la derecha pertenece a Google Chrome.</p>
+
+<p>Aquí podéis ver el pen que dio comienzo a todo</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="fInpG" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Como mucho de nuestros problemas con CSS, SVG y JS la solución se encuentra como no en <a href="http://stackoverflow.com/questions/18938331/transform-origin-for-css-animation-on-svg-working-in-chrome-not-ff/18943090#18943090" target="_blank">Stackoverflow</a>. El problema radica en que en Firefox no aplica la traslación a los elementos de SVG, este problema se repite si utilizamos <code class="highlighter-rouge">rect</code>, <code class="highlighter-rouge">polygon</code> o cualquiera de las formas básicas que tenemos disponibles en SVG.</p>
+
+<p>La solución-fix consiste en envolver el objeto que va a ser animado en un <code class="highlighter-rouge">g</code> y a este le vamos a aplicar una clase con el siguiente código</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nc">.corregir</span> <span class="p">{</span>
+    <span class="nl">transform</span><span class="p">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">200px</span><span class="p">,</span><span class="m">200px</span><span class="p">);</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Los valores van a depender de la posición del elemento al que aplicamos la transformación.</p>
+
+<p>También vamos a aplicar otra clase al elemento que recibe la transformación, en este caso es un path.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre>path {
+transform: translate(-200px,-200px);
+}</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Lo mismo que antes, los valores van a depender del elemento al que aplicamos la transformación.</p>
+
+<p>Aquí podemos ver el resultado del fix:</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="uEaDF" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Y aquí el resultado final ajustando los pixeles por Lionel:</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="gpsoL" data-user="elrumordelaluz"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/filtros-svg-acelerados-por-gpu-en-google-chrome/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/tercera-semana-del-concurso-rodeo-pattern-codepen/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

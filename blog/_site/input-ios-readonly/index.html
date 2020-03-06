@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Deshabilitando el teclado en iOS en un input</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/input-ios-readonly/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Deshabilitando el teclado en iOS en un input</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-02-11 00:00:00 +0100">
+                El
+                11 de
+                
+                febrero
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#html">HTML</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#ios">iOS</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#input">input</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#ux">UX</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Hace un tiempo me estuve pegando con un input vinculado a un <a href="http://jqueryui.com/datepicker/" target="_blank">datepicker</a>. El problema se reproducía en iPad/iPhone, y es que al pinchar en el input para seleccionar una fecha el teclado del iPhone/iPad aparecía ocupando buena parte de la pantalla, un gran problema de usabilidad sobre todo en iPhone. La solución es bastante sencilla gracias al atributo readonly=”readonly”. Si añadimos este atributo al input el teclado no aparece a la hora de seleccionar ese input.</p>
+
+<!--more-->
+
+<p>Pero hoy estaba testeando un proyecto y me ha vuelto a pasar lo mismo. Esta vez el input con el atributo readonly=”readonly” no guardaba las fechas seleccionadas. Esto solamente me pasaba en un iPad 1 con iOS 5.1.1, al cual le tenemos que dar soporte. El problema no se reproducía ni en iOS7 ni en iOS8. El problema venía por culpa de un type=”datetime”, es más, con este atributo saca el calendario propio de iOS, por lo tanto si ese input esta vinculado a un datepicker el usuario se va a armar un lío al ver dos calendarios y un teclado. Así que prescindid del datetime que además tiene muy <a href="http://caniuse.com/#search=datetime" target="_blank">poco soporte</a>.</p>
+
+<p>Aquí un ejemplo con input y varias opciones.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/readonly/index.html">EJEMPLO!</a>
+</button></p>
+
+<p>Un apunte, según la web <a href="https://developer.apple.com/support/appstore/" target="_blank">developers Apple</a> los dispositivos con una versión anterior a iOS 7 solamente representan el 3%.</p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/descubre-y-domina-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/optimizando-svg-a-mano/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

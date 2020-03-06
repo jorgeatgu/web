@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animando path con SMIL SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/animando-path-con-smil-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animando path con SMIL SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-21 00:00:00 +0100">
+                El
+                21 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Acabo de hablar de <a href="http://jorgeatgu.com/blog/elemento-path-svg/" target="_blank">la etiqueta path</a> y todo el potencial que tiene, ahora que ya conocemos todos sus comandos vamos a animarlos con SMIL.</p>
+
+<!--more-->
+
+<p>Por desgracia si queremos animar trazados con SMIL tenemos que recurrir a <code class="highlighter-rouge">path</code>, ya que por ahora <a href="http://jorgeatgu.com/blog/animando-polyline-y-polygon-en-svg/" target="_blank">polygon y polyline no tienen soporte en WebKit</a>(Chrome, Safari y Opera).</p>
+
+<p>Vamos a utilizar como ejemplo la animación que ilustra la cabecera de mi web. La cual esta disponible en CodePen.</p>
+
+<pre class="codepen" data-height="300" data-type="result" data-href="cpgDL" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Antes de comenzar he de decir que intentando animar mi logo me di cuenta de que WebKit no soporta la animación en polygon y polyline. Después de descubrir que no funcionaba en WebKit intente animarlo con <code class="highlighter-rouge">path</code> y mientras erraba en el concepto – intentaba animar el conjunto del poligono a la vez – recurrí a animar las coordenadas(x y) de<code class="highlighter-rouge">line</code> y la cosa funciono así que me olvide de <code class="highlighter-rouge">path</code>, ahora vamos a buscar el mismo resultado con <code class="highlighter-rouge">path</code>.</p>
+
+<p>El camino equivocado con path</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"logo"</span> <span class="na">fill-opacity=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#C0392B"</span> <span class="na">d=</span><span class="s">"M585.6,116.3l41.3-33.8l22.7,62.2l9.9,29.3H616L585.6,116.3z"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"d"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+                <span class="na">from=</span><span class="s">"M631.658,174h20.092h4.703h3.047H616H631.658z"</span>
+                <span class="na">to=</span><span class="s">"M585.6,116.3l41.3-33.8l22.7,62.2l9.9,29.3H616L585.6,116.3z"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/path&gt;</span>
+            <span class="nt">&lt;path</span> <span class="na">fill=</span><span class="s">"#16A085"</span> <span class="na">d=</span><span class="s">"M661.7,66.1l58.5,34.6L675.6,174h-47.7L661.7,66.1z"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"d"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+                <span class="na">from=</span><span class="s">"M640.079,174h33.971h1.55h-47.7H640.079z"</span>
+                <span class="na">to=</span><span class="s">"M661.7,66.1l58.5,34.6L675.6,174h-47.7L661.7,66.1z"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/path&gt;</span>
+        <span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>El camino correcto con line</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+</pre></td><td class="code"><pre><span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"turquesa"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#c0392b"</span> <span class="na">x1=</span><span class="s">"616"</span> <span class="na">y1=</span><span class="s">"174"</span> <span class="na">x2=</span><span class="s">"616"</span> <span class="na">y2=</span><span class="s">"174"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"primeraT"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"616"</span> <span class="na">to=</span><span class="s">"585.6"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"174"</span> <span class="na">to=</span><span class="s">"116.3"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#c0392b"</span> <span class="na">x1=</span><span class="s">"585.6"</span> <span class="na">y1=</span><span class="s">"116.3"</span> <span class="na">x2=</span><span class="s">"585.6"</span> <span class="na">y2=</span><span class="s">"116.3"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"segundaT"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"585.6"</span> <span class="na">to=</span><span class="s">"626.9"</span> <span class="na">begin=</span><span class="s">"primeraT.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"116.3"</span> <span class="na">to=</span><span class="s">"82.5"</span> <span class="na">begin=</span><span class="s">"primeraT.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#c0392b"</span> <span class="na">x1=</span><span class="s">"626.9"</span> <span class="na">y1=</span><span class="s">"82.5"</span> <span class="na">x2=</span><span class="s">"626.9"</span> <span class="na">y2=</span><span class="s">"82.5"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"terceraT"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"626.9"</span> <span class="na">to=</span><span class="s">"659.5"</span> <span class="na">begin=</span><span class="s">"segundaT.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"82.5"</span> <span class="na">to=</span><span class="s">"174"</span> <span class="na">begin=</span><span class="s">"segundaT.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+        <span class="nt">&lt;/g&gt;</span>
+        <span class="nt">&lt;g</span> <span class="na">id=</span><span class="s">"rojo"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#16a085"</span> <span class="na">x1=</span><span class="s">"627.9"</span> <span class="na">y1=</span><span class="s">"174"</span> <span class="na">x2=</span><span class="s">"627.9"</span> <span class="na">y2=</span><span class="s">"174"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"primeraR"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"627.9"</span> <span class="na">to=</span><span class="s">"661.7"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"174"</span> <span class="na">to=</span><span class="s">"66.1"</span> <span class="na">begin=</span><span class="s">"1s"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#16a085"</span> <span class="na">x1=</span><span class="s">"661.7"</span> <span class="na">y1=</span><span class="s">"66.1"</span> <span class="na">x2=</span><span class="s">"661.7"</span> <span class="na">y2=</span><span class="s">"66.1"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"segundaR"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"661.7"</span> <span class="na">to=</span><span class="s">"719"</span> <span class="na">begin=</span><span class="s">"primeraR.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"66.1"</span> <span class="na">to=</span><span class="s">"102"</span> <span class="na">begin=</span><span class="s">"primeraR.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+                <span class="nt">&lt;line</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#16a085"</span> <span class="na">x1=</span><span class="s">"719"</span> <span class="na">y1=</span><span class="s">"102"</span> <span class="na">x2=</span><span class="s">"719"</span> <span class="na">y2=</span><span class="s">"102"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">id=</span><span class="s">"terceraR"</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">"719"</span> <span class="na">to=</span><span class="s">"675.6"</span> <span class="na">begin=</span><span class="s">"segundaR.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">"102"</span> <span class="na">to=</span><span class="s">"174"</span> <span class="na">begin=</span><span class="s">"segundaR.end"</span> <span class="na">dur=</span><span class="s">"2s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/line&gt;</span>
+        <span class="nt">&lt;/g&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Como se puede observar la animación con <code class="highlighter-rouge">line</code> genera mucho mas código. Vamos a intentar crear la misma animación con menos código gracias a lo aprendido con <a href="http://jorgeatgu.com/blog/elemento-path-svg/" target="_blank">elemento path en SVG</a></p>
+
+<p>Lo primero, vamos a utilizar el código del logo como guía para crear el path y su animación. Vamos primero con el rojo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;polygon</span> <span class="na">id=</span><span class="s">"rojo"</span> <span class="na">fill=</span><span class="s">"#C0392B"</span> <span class="na">points=</span><span class="s">"585.6,116.3 626.9,82.5 659.5,174 616,174"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Por si alguien no esta acostumbrado a descifrar las coordenadas vamos con una imagen y también le recomiendo la lectura de <a href="http://jorgeatgu.com/blog/crear-svg-con-adobe-illustrator-y-sublime-text/" target="_blank">Crear SVG con Adobe Illustrator y Sublime Text</a>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/12/coordenadas-800x453.png" alt="coordenadas svg" /></p>
+
+<p>La primera corresponde con 585.6,116.3<br />
+La segunda corresponde con 626.9,82.5<br />
+La tercera corresponde con 659.5,174<br />
+La cuarta corresponde con 616,174<br /></p>
+
+<p>Con estas coordenadas vamos a empezar a crear el <code class="highlighter-rouge">path</code>. Lo primero la etiqueta <code class="highlighter-rouge">path fill="none" stroke="#C0392B"</code>. Sin relleno y con el borde de color “rojo-granate-loquemuestretumonitor”.</p>
+
+<p>Ahora vamos a empezar a animarlo, dentro de <code class="highlighter-rouge">path</code> colocamos la etiqueta <code class="highlighter-rouge">animate attributeName="d" begin="0s" dur="5s" values="" fill="freeze"</code>. La animación comenzara nada mas cargar, durara cinco segundos y el efecto será permanente, para que el efecto desaparezca tendríamos que sustituir <em>freeze</em> por <em>remove</em>.</p>
+
+<p>Vamos a ver el código completo y luego la explicación de los <code class="highlighter-rouge">values</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"trazando"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#C0392B"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"d"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+      <span class="na">values=</span><span class="s">"
+      M616,174 L616,174 L616,174 L616,174;
+      M616,174 L585.6,116.3 L585.6,116.3 L585.6,116.3;
+      M616,174 L585.6,116.3 L626.9,82.5 L626.9,82.5;
+      M616,174 L585.6,116.3 L626.9,82.5 L659.5,174;
+      M616,174 L585.6,116.3 L626.9,82.5 L659.5,174z;"</span>
+      <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/path&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>La primera línea de <em>values</em> <code class="highlighter-rouge">M616,174 L616,174 L616,174 L616,174;</code>, iniciamos el trazado con la creación de un punto con M616,174, los siguiente valores L616,174 estarán en la misma posición esperando a que llegue su turno.</p>
+
+<p>La segunda línea de <em>values</em> <code class="highlighter-rouge">M616,174 L585.6,116.3 L585.6,116.3 L585.6,116.3;</code>, el trazado sigue con su punto de partida con M616,174, ahora los valores progresan hasta L585.6,116.3.</p>
+
+<p>La tercera línea de <em>values</em> <code class="highlighter-rouge">M616,174 L585.6,116.3 L626.9,82.5 L626.9,82.5;</code>, el primer(M616,174) y segundo valor(L585.6,116.3) mantienen su posición, el tercero y el cuarto progresan hasta L626.9,82.5.</p>
+
+<p>La cuarta línea de <em>values</em> ` M616,174 L585.6,116.3 L626.9,82.5 L659.5,174;`, tanto el primer(M616,174) como segundo valor(L585.6,116.3) y tercer valor(L626.9,82.5) mantienen su posición, y el último progresa hasta L659.5,174.</p>
+
+<p>La última línea es una repetición de la cuarta con el único añadido de la letra z al último valor para así cerrar el trazado.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/12/coordenadasnumericas-1024x550.png" alt="svg coordenadas" /></p>
+
+<p>Para colorear el <code class="highlighter-rouge">path</code> añadimos el siguiente código, simplemente creamos el <code class="highlighter-rouge">path</code> entero pero le decimos que tenga opacidad 0 y que en el momento que la animación del trazado finalice la opacidad del <code class="highlighter-rouge">path</code> pase de 0 a 1.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">fill-opacity=</span><span class="s">"0"</span> <span class="na">fill=</span><span class="s">"#C0392B"</span> <span class="na">d=</span><span class="s">"M616,174 L585.6,116.3 L626.9,82.5 L659.5,174z"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill-opacity"</span> <span class="na">attributeType=</span><span class="s">"CSS"</span> <span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1"</span> <span class="na">begin=</span><span class="s">"trazando.end-0.2s"</span> <span class="na">dur=</span><span class="s">"0.1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/path&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Por último un ejemplo con todos los pasos que hemos ido dando hasta llegar a completar la animación.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animatepath/animatepathrojo.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>Vamos con la otra parte del logo.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;polygon</span> <span class="na">id=</span><span class="s">"turquesa"</span> <span class="na">fill=</span><span class="s">"#16A085"</span> <span class="na">points=</span><span class="s">"661.7,66.1 720.2,100.7 675.6,174 627.9,174"</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Vamos a seguir el mismo método, vamos a ver el código completo y luego la explicación de los <code class="highlighter-rouge">values</code>.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"trazandoturquesa"</span> <span class="na">fill=</span><span class="s">"none"</span> <span class="na">stroke=</span><span class="s">"#16A085"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"d"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"5s"</span>
+      <span class="na">values=</span><span class="s">"
+      M627.9,174 L627.9,174 L627.9,174 L627.9,174;
+      M627.9,174 L661.7,66.1 L661.7,66.1 L661.7,66.1;
+      M627.9,174 L661.7,66.1 L720.2,100.7 L720.2,100.7;
+      M627.9,174 L661.7,66.1 L720.2,100.7 L675.6,174;
+      M627.9,174 L661.7,66.1 L720.2,100.7 L675.6,174z;"</span>
+      <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/path&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>La primera línea de <em>values</em> <code class="highlighter-rouge">M627.9,174 L627.9,174 L627.9,174 L627.9,174;</code>, iniciamos el trazado con la creación de un punto con &gt;M627.9,174, los siguiente valores L627.9,174 estarán en la misma posición esperando a que llegue su turno.</p>
+
+<p>La segunda línea de <em>values</em> <code class="highlighter-rouge">M627.9,174 L661.7,66.1 L661.7,66.1 L661.7,66.1;</code>, el trazado sigue con su punto de partida con M627.9,174, ahora los valores progresan hasta L661.7,66.1.</p>
+
+<p>La tercera línea de <em>values</em> <code class="highlighter-rouge">M627.9,174 L661.7,66.1 L720.2,100.7 L720.2,100.7;</code>, el primer(M627.9,174) y segundo valor(L661.7,66.1) mantienen su posición, el tercero y el cuarto progresan hasta L720.2,100.7.</p>
+
+<p>La cuarta línea de <em>values</em> ` M627.9,174 L661.7,66.1 L720.2,100.7 L675.6,174;`, tanto el primer(M627.9,174) como segundo valor(L661.7,66.1) y tercer valor(L720.2,100.7) mantienen su posición, y el último progresa hasta L675.6,174.</p>
+
+<p>La última línea es una repetición de la cuarta con el único añadido de la letra z al último valor para así cerrar el trazado.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/12/turquesa-coordenadas-1024x441.png" alt="coordenadas svg turquesa" /></p>
+
+<p>Para colorear el <code class="highlighter-rouge">path</code> añadimos el siguiente código, simplemente creamos el <code class="highlighter-rouge">path</code> entero pero le decimos que tenga opacidad 0 y que en el momento que la animación del trazado finalice la opacidad del <code class="highlighter-rouge">path</code> pase de 0 a 1.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">fill-opacity=</span><span class="s">"0"</span> <span class="na">fill=</span><span class="s">"#16A085"</span> <span class="na">d=</span><span class="s">"M627.9,174 L661.7,66.1 L720.2,100.7 L675.6,174z"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill-opacity"</span> <span class="na">attributeType=</span><span class="s">"CSS"</span> <span class="na">from=</span><span class="s">"0"</span> <span class="na">to=</span><span class="s">"1"</span> <span class="na">begin=</span><span class="s">"turquesa.end-0.2s"</span> <span class="na">dur=</span><span class="s">"0.1s"</span> <span class="na">fill=</span><span class="s">"freeze"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/path&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Por último un ejemplo con todos los pasos que hemos ido dando hasta llegar a completar la animación.</p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animatepath/animatepathturquesa.html">VER EJEMPLO!</a>
+&lt;/div&gt;</button></p>
+
+<p>Y hasta aquí.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/svgeneration-texturas-gratuitas-en-formato-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/elemento-path-svg/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

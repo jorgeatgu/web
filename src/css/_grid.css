@@ -1,94 +1,97 @@
 .bio {
-    margin: 0 auto;
-    max-width: 90vw;
+  margin: 0 auto;
+  max-width: 90vw;
+  color: var(--font);
 }
 
 .bio-element {
-    width: max-content;
-    max-width: 25rem;
+  width: max-content;
+  max-width: 25rem;
 }
 
 .bio-element-title {
-    font-size: 1.75rem;
-    margin: 1rem 0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-family: var(--rubik);
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: bold;
+  font-family: var(--title);
 }
 
 .bio-element-subtitle {
-    font-size: 1.25rem;
-    margin: 0;
-    font-family: var(--fontSystem);
+  font-size: 1.25rem;
+  margin: 0;
+  font-family: var(--fontSystem);
 }
 
 .bio-element-text {
-    font-size: 1rem;
-    font-family: var(--plex);
-    margin: 0 0 1rem;
-    max-width: 35rem;
-    width: 100%;
-    .trough {
-        text-decoration: line-through;
-    }
+  font-size: 1rem;
+  font-family: var(--text);
+  margin: 0 0 1rem;
+  max-width: 35rem;
+  width: 100%;
+
+  .trough {
+    text-decoration: line-through;
+  }
 }
 
 .charla-element {
-    width: 100%;
-    &:not(:last-child) {
-        margin-bottom: 1rem;
-    }
+  width: 100%;
+  padding-left: 1rem;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 }
 
 .charla-element-year {
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: var(--monospace);
-    display: block;
-    margin-bottom: .25rem;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: var(--title);
+  display: block;
+  margin-bottom: .25rem;
 }
 
 .charla-element-title {
-    font-size: 1rem;
-    font-family: var(--plex);
-    font-weight: 500;
-    color: var(--negro);
-    display: block;
-    margin-left: 1rem;
+  font-size: 1rem;
+  font-family: var(--text);
+  font-weight: 500;
+  color: var(--negro);
+  display: block;
+  margin-left: 1rem;
 }
 
 .charla-element-text {
-    color: #515456;
-    font-family: var(--plex);
-    margin-bottom: .75rem;
-    display: inline-block;
-    margin-left: 1rem;
+  color: #515456;
+  font-family: var(--text);
+  margin-bottom: .75rem;
+  display: inline-block;
+  margin-left: 1rem;
 }
 
 .charla-element-link {
-    font-size: 1rem;
-    font-family: var(--plex);
-    display: inline-block;
-    vertical-align: middle;
+  font-size: 1rem;
+  font-family: var(--text);
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @media only screen and (min-width: 48rem) {
 
-    .bio {
-        max-width: 42rem;
-    }
+  .bio {
+    max-width: 42rem;
+  }
 
-    .bio-element {
-        width: 100%;
-        padding: 2rem 0;
-    }
+  .bio-element {
+    width: 100%;
+    padding: 2rem 0;
+  }
 
 }
 
 @media only screen and (min-width: 64rem) {
 
-    .bio {
-        max-width: 58rem;
-    }
+  .bio {
+    max-width: 58rem;
+  }
 
 }

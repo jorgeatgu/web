@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Motion path disponible en Chrome 46 y Opera 33</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/motion-path-css/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Motion path disponible en Chrome 46 y Opera 33</h1>
+        <p class="articulo-fecha">
+            <time datetime="2015-10-04 00:00:00 +0200">
+                El
+                4 de
+                
+                octubre
+                
+                de
+                2015
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css">CSS</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#animaciones">Animaciones</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Esta semana llego una nueva actualización de <strong>Google Chrome</strong>. Está nueva version(46) llega con un nuevo método para animar a través de <strong>CSS</strong>. Este nuevo método se llama <a href="https://drafts.fxtf.org/motion-1/"><strong>Motion path</strong></a>. Aquellos pocos que hayan tenido el placer de animar <strong>SVG</strong> con <strong>SMIL</strong> conocerán este método ya que es una parte de la propiedad <code class="highlighter-rouge">animateMotion</code> de <strong>SMIL</strong>.</p>
+
+<!--more-->
+
+<h3 id="animatemotion">AnimateMotion</h3>
+
+<p>En su día ya hable de animateMotion en un <a href="http://jorgeatgu.com/blog/animaciones-con-animatemotion-en-svg/">artículo del blog</a></p>
+
+<p>También hable sobre ello en un hangout de <a href="https://www.youtube.com/watch?v=vZef4HhybhQ">VectoresIO</a></p>
+
+<h3 id="motion-path">Motion path</h3>
+
+<p>Con este nuevo método vamos a animar objetos a lo largo de un path. <a href="http://jorgeatgu.com/blog/elemento-path-svg/">Un path es un elemento de SVG</a> con el que podemos trazar las formas que a nosotros se nos ocurran. Los múltiples comandos que tenemos disponibles para dibujar con path nos dan una libertad absoluta para hacer lo que queramos, eso sí, esta libertad tiene un precio la dificultad extrema de dibujar con ella. Así que como siempre digo este trabajo lo hacen a la perfección programas vectoriales como <strong>Illustrator</strong>, <strong>Sketch</strong> o <strong>Inkscape</strong>.</p>
+
+<p>La propiedad principal para animar es <strong>motion-path</strong>, a la cual le vamos a pasar las coordenadas del path por el cual queremos que fluya nuestro objeto. Su uso es bastante sencillo, declaramos la propiedad, a continuación va path y entre paréntesis y comillas las coordenadas del path.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">motion-path</span><span class="o">:</span> <span class="nt">path</span><span class="o">(</span><span class="s2">'M-42,238l310-9h268'</span><span class="o">);</span></code></pre></figure>
+
+<h3 id="motion-offset">Motion offset</h3>
+
+<p>Una propiedad que representa la distancia del path descrita en la longitud o porcentajes del path. Si le pasamos un valor de 50% la animación comenzará en la mitad del path.</p>
+
+<h3 id="motion-rotation">Motion rotation</h3>
+
+<p>Esta propiedad sirve para dotar de rotación a nuestro objeto. Una de sus propiedades es reverse, con ella vamos a dar la vuelta al objeto que estamos animando, desde mi punto de vista poca utilidad. También le podemos pasar un valor en grados, bastante más útil que la anterior.</p>
+
+<h3 id="demos">DEMOS</h3>
+
+<p>Motion path con reverse</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="meqOgp" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<p>Vamos a ver un par de demos para ver los efectos de las tres propiedades. Para ello voy a aprovechar una parte de una animación que hice en su día <a href="http://codepen.io/jorgeatgu/details/qvzLm/">City &amp; Clock</a>. Vamos a animar a lo largo de un path un sol y un par de nubes creados con <strong>SVG</strong>.</p>
+
+<p>Para los tres objetos a animar voy a utilizar la misma animación. Utilizando la propiedad <code class="highlighter-rouge">motion-offset</code> le indicamos que la animación comience(0%) al principio(0%) del path, a la mitad(50%) de la animación llegará al final(100%) del path, y al final(100%) de la animación llegará de nuevo al principio(0%) del path.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@keyframes</span> <span class="n">rotando</span> <span class="p">{</span>
+
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+    <span class="py">motion-offset</span><span class="p">:</span> <span class="m">0%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+    <span class="py">motion-offset</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+    <span class="py">motion-offset</span><span class="p">:</span> <span class="m">0%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<p>Para el sol he dibujado un path con forma de parabola. Ese path lo vamos a pasar a través del motion-path. La animación durará 20 segundos, con un easing ease-in y se repetirá infinitamente.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.sol</span> <span class="p">{</span>
+  <span class="py">motion-path</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M-43,389c192.8-230.5,382.2-177.7,570,0'</span><span class="p">);</span>
+  <span class="nl">animation-name</span><span class="p">:</span> <span class="n">rotando</span><span class="p">;</span>
+  <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">20s</span><span class="p">;</span>
+  <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
+  <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Para las nubes he dibujado dos path casi en línea recta. A la nube alta le añado también la propiedad <code class="highlighter-rouge">motion-rotation: reverse;</code> para que veáis el efecto. A la nube baja le añado también el <code class="highlighter-rouge">motion-rotation: 4deg;</code></p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.nube-alta</span> <span class="p">{</span>
+  <span class="py">motion-path</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M-42,238l310-9h268'</span><span class="p">);</span>
+  <span class="nl">animation-name</span><span class="p">:</span> <span class="n">rotando</span><span class="p">;</span>
+  <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">20s</span><span class="p">;</span>
+  <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
+  <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="py">motion-rotation</span><span class="p">:</span> <span class="n">reverse</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.nube-baja</span> <span class="p">{</span>
+  <span class="py">motion-path</span><span class="p">:</span> <span class="n">path</span><span class="p">(</span><span class="s2">'M-34,283h292h262'</span><span class="p">);</span>
+  <span class="nl">animation-name</span><span class="p">:</span> <span class="n">rotando</span><span class="p">;</span>
+  <span class="nl">animation-duration</span><span class="p">:</span> <span class="m">20s</span><span class="p">;</span>
+  <span class="nl">animation-delay</span><span class="p">:</span> <span class="m">2s</span><span class="p">;</span>
+  <span class="nl">animation-timing-function</span><span class="p">:</span> <span class="n">ease-in</span><span class="p">;</span>
+  <span class="nl">animation-iteration-count</span><span class="p">:</span> <span class="n">infinite</span><span class="p">;</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="py">motion-rotation</span><span class="p">:</span> <span class="m">4deg</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Motion path con rotation</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="xwPRNO" data-user="jorgeatgu"><code> </code></pre>
+<script async="" src="http://codepen.io:/assets/embed/ei.js"></script>
+
+<h3 id="convirtiendo-a-path-en-illustrator">Convirtiendo a path en Illustrator</h3>
+
+<p>Pongamonos en el caso de que queremos animar un objeto alrededor de una forma básica como puede ser un rectángulo, círculo o cuadrado. A la hora de exportar como SVG si utilizamos algunas de estas formas vamos a obtener etiquetas como <code class="highlighter-rouge">rect</code>, <code class="highlighter-rouge">circle</code> o <code class="highlighter-rouge">ellipse</code>. Para convertir estas formas en un <code class="highlighter-rouge">path</code> simplemente vamos a Illustrator nos posicionamos sobre la forma y dando al botón derecho sobre la forma le damos a la opción de crear trazado compuesto. Ahora volvemos a exportar como SVG y veremos una etiqueta <code class="highlighter-rouge">path</code> la cúal ya podemos utilizar con <code class="highlighter-rouge">motion-path</code>.</p>
+
+<p>Todo el código está disponible en <a href="https://github.com/jorgeatgu/jorgeatgu.github.io/tree/master/motion-path">GitHub</a></p>
+
+<p>Más demos usando motion-path</p>
+
+<p><a href="http://codepen.io/danwilson/pen/ZGmeRO">Spiral</a></p>
+
+<p><a href="http://codepen.io/yisi/pen/zGzJYd">Heart</a></p>
+
+<p><a href="http://codepen.io/ericwilligers/pen/zGRdxQ">Triangle</a></p>
+
+<p><a href="http://codepen.io/ericwilligers/pen/pJarJO">Scissors</a></p>
+
+<p><a href="http://jsfiddle.net/ericwilligers/v79bdL3p/">Eyes</a></p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/vuelve-octuweb/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/sass-bourbon-compass-el-capitan-osx/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

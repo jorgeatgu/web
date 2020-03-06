@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Filtros SVG en Adobe Illustrator</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/filtros-svg-en-adobe-illustrator/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Filtros SVG en Adobe Illustrator</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-19 00:00:00 +0100">
+                El
+                19 de
+                
+                noviembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#adobe-illustrator">Adobe Illustrator</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-gráfico">Diseño Gráfico</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Vamos a aplicar filtros SVG desde Adobe Illustrator, en anteriores post ya había tratado levemente el tema de los <a href="http://jorgeatgu.com/blog/los-filtros-en-svg/" target="_blank">filtros SVG</a>. Ahora vamos a ver a través de ejemplos los efectos que podemos conseguir aplicando los filtros SVG desde Adobe Illustrator.</p>
+
+<!--more-->
+
+<h3 id="soporte-en-navegadores">SOPORTE EN NAVEGADORES</h3>
+
+<p>Lo primero es ver el soporte que tiene en los diferentes navegadores.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/filters-svg.png" alt="soporte filtros svg navegadores" /></p>
+
+<p>Exceptuando Android Browser podemos ver en la imagen que el soporte es mayoritario en las últimas versiones de los diferentes navegadores, por desgracia no todos los usuarios utilizan estas versIonEs.</p>
+
+<p>En <a href="http://caniuse.com" target="_blank">Can I use</a> nos avisan de que antiguas versiones de Google Chrome y Firefox no dan soporte a ` feConvolveMatrix`.</p>
+
+<h3 id="adobe-illustrator-cs6">Adobe Illustrator CS6</h3>
+
+<p>Antes de nada avisar de que estos ejemplos están realizados con la version CS6, por ahora desconozco si la última version de Illustrator que en estos momentos es CC dispone de mas filtros.</p>
+
+<p>Adobe nos da la opción de añadir mas filtros SVG a Adobe Illustrator, para ello tendremos que modificar el archivo de filtros que lleva Illustrator. A continuación os copio y pego <a href="http://help.adobe.com/es_ES/illustrator/cs/using/WS714a382cdf7d304e7e07d0100196cbc5f-6360a.html#WS714a382cdf7d304e7e07d0100196cbc5f-635da" target="_blank">el texto que nos facilita Adobe en su web</a>.</p>
+
+<blockquote>
+  <p>Para modificar los filtros de SVG por defecto de Illustrator, utilice un editor de texto para editar el archivo Filtros SVG Adobe.svg de la carpeta Documents and Settings/<dir_usuario>/Datos de programa/Adobe/Adobe Illustrator CS5 Settings/<ubicación>. Es posible modificar y eliminar definiciones de filtros existentes y añadir nuevas.
+Ruta Mac: /Applications/Adobe Illustrator CS5/Adobe Illustrator.app/Required/Resources/es_ES/Adobe SVG Filters.svg*</ubicación></dir_usuario></p>
+</blockquote>
+
+<p>También podemos utilizar filtros que estén dentro de archivos SVG, para ello hay que importar el archivo a través de Adobe Illustrator.</p>
+
+<p><em>Elija Efecto &gt; Filtro SVG &gt; Importar filtro SVG.
+Seleccione el archivo SVG desde el que desee importar efectos y haga clic en Abrir.</em></p>
+
+<p>Y ahora vamos a ver de los filtros que disponemos por defecto en Adobe Illustrator CS6.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/filtros-svg-adobe-illustrator.png" alt="filtros disponibles en Adobe Illustrator CS6" /></p>
+
+<p>En total disponemos de 11 filtros SVG, algunos de los filtros de los que disponemos en Adobe Illustrator son el resultado de una combinación de varios filtros SVG. Mas adelante veremos el código de los filtros que empleare en el ejemplo, y recordad que si queréis modificar o añadir mas tenéis que buscar en vuestra carpeta de Adobe Illustrator el archivo Adobe SVG Filters.svg</p>
+
+<p>Para los ejemplos he utilizado esta foto que podéis <a href="http://www.flickr.com/photos/61749588@N05/8855522875/sizes/c/in/set-72157633739593007/" target="_blank">descargar de mi cuenta de Flickr</a></p>
+
+<p>Ahora abrimos un nuevo documento y colocamos la foto. Una vez colocada, muy importante seleccionar la capa donde tenemos la foto y a la que vamos a aplicar el filtro. Ahora vamos a Efecto &gt; Filtros SVG &gt; Aplicar Filtros SVG y nos saldrá esta pantalla</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/aplicar-filtro-SVG.png" alt="aplicar filtro SVG" /></p>
+
+<p>Pinchamos en previsualizar para así poder ver al instante como afecta cada filtro a nuestra selección, lo siguiente sera seleccionar el filtro AI_Sombra2</p>
+
+<p>Aquí podemos ver el resultado del filtro</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/filtro-svg-illustrator-sombra.png" alt="svg filtro sombra" /></p>
+
+<p>Si pinchamos en la primera opción(fX) se abrirá una pantalla con el código del filtro en la cuál tenemos la opción de modificar el código y ver los resultados de las modificaciones.</p>
+
+<p>Si por ejemplo queremos alargar la sombra tan solo tenemos que ir a la línea <code class="highlighter-rouge">feOffset  dx="8" dy="8" in="blur" result="offsetBlurredAlpha"</code>y sustituir los valores de las coordenadas <code class="highlighter-rouge">dx</code> y <code class="highlighter-rouge">dy</code> por 20, ahora actualizamos previsualización para ver los cambios.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/filtro-svg-illustraro-sombra-20.png" alt="svg filtro sombra veinte mas" /></p>
+
+<p>Si quisiéramos aumentar la potencia del desenfoque gausiano nos bastaría con ir a la línea de código <code class="highlighter-rouge">feGaussianBlur  stdDeviation="6" in="SourceAlpha" result="blur"</code> y cambiar el valor <code class="highlighter-rouge">stdDeviation="6"</code> por uno superior.</p>
+
+<h3 id="aplicar-un-nuevo-filtro">Aplicar un nuevo filtro</h3>
+
+<p>A continuación vamos a aplicar un filtro que no esta disponible en Adobe Illustrator, para ello lo primero vamos a utilizar un recurso de Microsoft que ya he mencionando anteriormente <a href="http://ie.microsoft.com/testdrive/graphics/hands-on-css3/hands-on_svg-filter-effects.htm" target="_blank">Hands On:SVG Filter Effect</a>.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/Hands-On-SVG-Filter-Effect-1024x534.png" alt="herramienta online filtro svg microsoft" /></p>
+
+<p>Ya en la página nos vamos al selector de filtros y seleccionamos feColorMatrix-sepiatone, justo debajo de la foto aparecerá el código del filtro, nos bastara con copiar solamente lo siguiente</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="nt">&lt;feColorMatrix</span> <span class="na">type=</span><span class="s">"matrix"</span> <span class="na">values=</span><span class="s">".343 .669 .119 0 0 .249 .626 .130 0 0 .172 .334 .111 0 0 .000 .000 .000 1 0"</span> <span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Ahora volvemos a Adobe Illustrator</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/nuevo-filtro.png" alt="nuevo filtro adobe illustrator" /></p>
+
+<p>En el menú de Aplicar Filtro pinchamos en la segunda opción como muestra la imagen anterior, y una vez allí pegamos el código entre las etiquetas filter y cambiamos el id por feColorMatrix-sepiatone actualizamos previsualización y el filtro se habra aplicado sobre la foto.</p>
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/feColorMatrix-sepiatone-800x496.png" alt="fecolormatrix sepiatone" /></p>
+
+<p>Si cerramos Adobe Illustrator el filtro se pierde, si queremos conservarlo a la hora de guardar como SVG tendremos que pinchar en “conservar capacidades de edición de Illustrator” pero el problema es que SOLO estará disponible en ese archivo, a la hora de querer aplicarlo a otro documento el filtro no esta disponible. He estado intentado añadirlo al archivo Filtros SVG Adobe.svg pero no hay manera de que salga en el menú de filtros SVG, tiene que existir algún método así que seguiré investigando y cuando lo consiga editare el post.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/mis-notas-sobre-svg-iv-calcmode-keytimes-y-keysplines/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/iconos-svg-3264px/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animaciones SMIL SVG en Internet Explorer con Fake Smile</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/fake-smile-animaciones-smil-svg-en-internet-explorer/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animaciones SMIL SVG en Internet Explorer con Fake Smile</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-13 00:00:00 +0100">
+                El
+                13 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#javascript">Javascript</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Fake Smile se creo en 2008, básicamente es un *fallback *que da respaldo a las animaciones realizadas con **SMIL **en Internet Explorer.</p>
+
+<!--more-->
+
+<p><img src="http://jorgeatgu.com/blog/img/2013/11/SVG-SMIL-ANIMATION.png" alt="svg smil caniuse" /></p>
+
+<p>Como vemos en la imagen no todos los navegadores soportan <strong>SMIL</strong>, en el caso de <strong>Internet Explorer ninguna de sus versiones</strong> ya sean pasadas o futuras soportan <strong>SMIL</strong>, y en <a href="http://tavmjong.free.fr/SVG/ANIMATION/" target="_blank">palabras de Taj Jamovah</a> uno de los desarrolladores de <a href="http://inkscape.org/es/" target="_blank">Inkscape</a>, SMIL nunca tendrá soporte en IE.</p>
+
+<blockquote>
+  <p>Not natively supported by IE (and never will be)</p>
+</blockquote>
+
+<p>El soporte que nos brinda Fake Smile <strong>es parcial</strong>, en esta página <a href="http://leunen.me/fakesmile/status.html" target="_blank">fake smile </a>podemos ver que atributos tienen soporte y cuales no.</p>
+
+<p>En <a href="http://bazaar.launchpad.net/~smilteam/smil/MAIN/revision/52?start_revid=52" target="_blank">Launchapd </a>podemos estar al tanto de las nuevas versiones, la última versión publicada de Fake Smile es de Octubre de 2012.</p>
+
+<p>La implementación es bastante sencilla, como podemos ver en el ejemplo simplemente añadimos el código entre las etiquetas SVG.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">xmlns:svg=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">xmlns:xlink=</span><span class="s">"http://www.w3.org/1999/xlink"</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">width=</span><span class="s">"550"</span> <span class="na">height=</span><span class="s">"150"</span> <span class="na">viewBox=</span><span class="s">"0 0 150 40"</span> <span class="na">xml:space=</span><span class="s">"preserve"</span> <span class="na">xmlns:xml=</span><span class="s">"http://www.w3.org/XML/1998/namespace"</span> <span class="na">smiling=</span><span class="s">"fake"</span><span class="nt">&gt;&lt;script/&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/ecmascript"</span> <span class="nx">xlink</span><span class="p">:</span><span class="nx">href</span><span class="o">=</span><span class="s2">"smil.user.js"</span><span class="o">/&gt;</span>
+
+
+<span class="o">&lt;</span><span class="sr">/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Y por último, una vez implementado es primordial comprobar como van a ver las animaciones los usuarios de Internet Explorer, en algunos casos va a ser preferible no utilizar el <em>fallback</em> como en el ejemplo que os pongo a continuación</p>
+
+<iframe src="http://player.vimeo.com/video/81697134" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="http://vimeo.com/81697134">Fake Smile en IE9</a> from <a href="http://vimeo.com/jorgeatgu">Jorge Aznar</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/repetir-animaciones-svg-con-value/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/svgeezy-plugin-javascript-para-sustituir-svg-por-png/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

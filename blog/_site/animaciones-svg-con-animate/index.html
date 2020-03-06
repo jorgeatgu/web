@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animaciones SVG con animate</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/animaciones-svg-con-animate/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animaciones SVG con animate</h1>
+        <p class="articulo-fecha">
+            <time datetime="2014-02-14 00:00:00 +0100">
+                El
+                14 de
+                
+                febrero
+                
+                de
+                2014
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Voy a compartir la chuleta que me cree hace no mucho con varios de los <code class="highlighter-rouge">attributeName</code> que podemos animar con SMIL en SVG a través de la etiqueta <code class="highlighter-rouge">animate</code>. No están todos ya que la etiqueta tiene muchas posibilidades y no todas funcionan en todos los navegadores, para empezar <strong>ninguna funciona en Internet Explorer</strong> ya que Microsoft no da soporte a SMIL.</p>
+
+<!--more-->
+
+<p>He incluido las version <code class="highlighter-rouge">from="" to=""</code> y <code class="highlighter-rouge">values=""</code>, soy partidario de utilizar <code class="highlighter-rouge">values=""</code> en la mayoría de los casos ya que para mi ofrece muchas mas posibilidades.</p>
+
+<p>He preferido no añadir los atributos <code class="highlighter-rouge">keyTimes</code>, <code class="highlighter-rouge">keySplines</code> y <code class="highlighter-rouge">calcMode</code> ya que no siempre se usan.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+</pre></td><td class="code"><pre><span class="c">&lt;!-- TRANSLATE VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- TRANSLATE VERSION VALUE--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"translate"</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">values=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ROTACIÓN  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"rotate"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ROTACIÓN  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"rotate"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ESCALA  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"scale"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- ESCALA  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"scale"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- SKEWX  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"skewX"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- SKEWX  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"skewX"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- SKEWY  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"skewY"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- SKEWY  VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animateTransform</span> <span class="na">attributeName=</span><span class="s">"transform"</span> <span class="na">type=</span><span class="s">"skewY"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- CAMBIAR COLOR FONDO --&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill"</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- CAMBIAR COLOR LÍNEA --&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"stroke"</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- OPACIDAD COLOR FONDO --&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"fill-opacity"</span> <span class="na">attributeType=</span><span class="s">"CSS"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- OPACIDAD LÍNEA --&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"stroke-opacity"</span> <span class="na">attributeType=</span><span class="s">"CSS"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- COORDENADA X1 Y1 --- VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- COORDENADA X1 Y1 --- VERSION VALUES--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"x1"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y1"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- COORDENADA X Y --- VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"x"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- COORDENADA X Y --- VERSION VALUES--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"x"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"y"</span> <span class="na">values=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- WIDTH HEIGHT --- VERSION FROM TO--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"width"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"height"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+
+<span class="c">&lt;!-- WIDTH HEIGHT --- VERSION VALUES--&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"width"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"height"</span> <span class="na">from=</span><span class="s">""</span> <span class="na">to=</span><span class="s">""</span> <span class="na">begin=</span><span class="s">""</span> <span class="na">dur=</span><span class="s">""</span> <span class="na">fill=</span><span class="s">""</span><span class="nt">/&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/doc/animateElement.zip">DOWNLOAD!</a>
+</button></p>
+
+<p><a href="http://www.w3.org/TR/SVG/animate.html#AnimateElement" target="_blank">Atributos animateElement</a></p>
+
+<p><a href="http://svg-whiz.com/svg/colorKeywords.svg" target="_blank">ColorsKeywords</a></p>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/animaciones-con-animatemotion-en-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/animando-filtros-svg-con-smil/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

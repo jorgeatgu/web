@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animando polyline y polygon en SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/animando-polyline-y-polygon-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Animando polyline y polygon en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-12-19 00:00:00 +0100">
+                El
+                19 de
+                
+                diciembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>Por desgracia y a fecha de hoy el enunciado de este post no es del todo cierto.</p>
+
+<!--more-->
+
+<p>Si queremos dotar de movimiento a un <code class="highlighter-rouge">polygon</code> o <code class="highlighter-rouge">polyline</code> a través de <code class="highlighter-rouge">animate attributeName="points"</code> deberemos olvidarnos de ello a no ser que solo queramos que los usuarios de Firefox vean la animación.</p>
+
+<p>En este vídeo he ejecutado el mismo código en Chrome, Safari, Firefox y Opera, como se puede ver solo Firefox soporta <code class="highlighter-rouge">animate attributeName="points"</code></p>
+
+<iframe class="vine-embed" src="https://vine.co/v/h2AL5dwVXHp/embed/simple" width="480" height="480" frameborder="0"></iframe>
+<script async="" src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+
+<p>El código es el siguiente</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"5cm"</span> <span class="na">height=</span><span class="s">"5cm"</span>  <span class="na">viewBox=</span><span class="s">"0 0 1000 1000"</span>
+  <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;polyline</span> <span class="na">stroke=</span><span class="s">"red"</span> <span class="na">stroke-width=</span><span class="s">"3"</span> <span class="na">fill=</span><span class="s">"none"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"points"</span> <span class="na">dur=</span><span class="s">"5s"</span> <span class="na">repeatCount=</span><span class="s">"indefinite"</span>
+    <span class="na">from=</span><span class="s">"100,100 900,100 900,900 100,900 100,100"</span>
+      <span class="na">to=</span><span class="s">"200,200 800,500 800,500 200,800 200,200"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/polyline&gt;</span>
+<span class="nt">&lt;/svg&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://jorgeatgu.com/ejemplos/animatepoints/points.html">VER EJEMPLO!</a>
+</button></p>
+
+<p>La única solución que he encontrado es recurrir a Adobe Illustrator y a convertir trazado los elementos que estén con las etiquetas <code class="highlighter-rouge">polygon</code> y <code class="highlighter-rouge">polyline</code>, una vez hecho esto volvemos a exportar el SVG desde Adobe Illustrator y tanto <code class="highlighter-rouge">polygon</code> como <code class="highlighter-rouge">polyline</code> se habrán convertido en <code class="highlighter-rouge">path</code>, y podremos animarlo a través de <code class="highlighter-rouge">animate attributeName = "d</code>.</p>
+
+<p>Funciona en Chrome, Safari, Firefox y Opera. Podéis ver un ejemplo alojado en <a href="http://docs.webplatform.org/" target="_blank">WebPlatform Docs</a></p>
+
+<p><button class="boton-centrar">
+  <a target="_blank" class="btn" href="http://letmespellitoutforyou.com/samples/svg/anim_morph.svg">VER EJEMPLO!</a>
+</button></p>
+
+<p>Y aquí el código</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="nt">&lt;path</span> <span class="na">id=</span><span class="s">"shape"</span> <span class="na">d=</span><span class="s">"M 115,169 S 149,424 460,555 S 608,367 568,157 S 438,108 174,57 S 97,90 115,169"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;animate</span> <span class="na">attributeName=</span><span class="s">"d"</span> <span class="na">begin=</span><span class="s">"0s"</span> <span class="na">dur=</span><span class="s">"20s"</span>
+  <span class="na">from=</span><span class="s">"M 115,169 S 149,424 460,555 S 608,367 568,157 S 438,108 174,57 S 97,90 115,169"</span>
+  <span class="na">to=</span><span class="s">"M 115,169 S 149,424 460,555 S 608,367 568,157 S 438,108 174,57 S 97,90 115,169"</span>
+  <span class="na">values=</span><span class="s">"M 115,169 S 149,424 460,555 S 608,367 568,157 S 438,108 174,57 S 97,90 115,169;M
+    284,81 S 117,248 91 ,478 S 240,595 547,608 S 608,349 588,140 S 420,48 284,81;M
+    360,313 S 413,253 475,308 S 491,422 464,508 S 293,511 217,424 S 254,297 360,313;M
+    381,643 S 574,490 580,225 S 468,133 297,38 S 103,144 62,382 S 172,641 381,643;M
+    456,56 S 579,221 603,479 S 449,59 5 196,636 S 64,367 96,111 S 371,28 456,56;M
+    552,89 S 326,83 111,219 S 66,407 104,623 S 426,653 605,503 S 655,263 552,89;M
+    628,3 55 S 563,183 397,79 S 199,79 65,270 S 65,464 258,650 S 467,623 628,355;M
+    84,239 S 223,528 336,620 S 516,606 630,347 S 587,153 3 25,70 S 76,87 84,239;M
+    115,169 S 149,424 460,555 S 608,367 568,157 S 438,108 174,57 S 97,90 115,169"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/path&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/elemento-path-svg/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/svg-firefox-error-id-utilizan-numeros/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Solución para el problema del height en SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="/blog/css/styles.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/solucion-para-el-problema-del-height-en-svg/">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,500|Rubik:400,500" rel="stylesheet">
+</head>
+
+
+<body>
+    <header class="header">
+    <nav class="header-nav">
+        <div class="header-elements">
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/index">WEB</a>
+            <a class="header-links header-links-bold" href="http://jorgeatgu.com/blog">BLOG</a>
+            <a class="header-links header-links-bold" href="/blog/archivo/">CATEGORIAS</a>
+            <a class="header-links header-links-bold" href="http://feedpress.me/scalable">RSS</a>
+        </div>
+        <div class="header-elements">
+            <a class="header-links" href="http://github.com/jorgeatgu">GitHub</a>
+            <a class="header-links" href="http://twitter.com/jorgeatgu">Twitter</a>
+            <a class="header-links" href="https://jorgeatgu.carto.com/me">Carto</a>
+            <a class="header-links" href="http://codepen.io/jorgeatgu">CodePen</a>
+        </div>
+    </nav>
+</header>
+
+    <section class="container-boira">
+
+        <article>
+            <main>
+    <article class="categoria-titulo">
+        <h1>Solución para el problema del height en SVG</h1>
+        <p class="articulo-fecha">
+            <time datetime="2013-11-29 00:00:00 +0100">
+                El
+                29 de
+                
+                noviembre
+                
+                de
+                2013
+            </time>
+        </p>
+        <span class="archivado">Archivado en:
+            
+            <a class="archivado-texto" href="/blog/archivo/#css3">CSS3</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#diseño-web">Diseño Web</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#smil">SMIL</a>
+            
+            <a class="archivado-texto" href="/blog/archivo/#svg">SVG</a>
+            
+        </span>
+        <!-- Categorías:  -->
+    </article>
+    <article class="post-contenido">
+        <p>El problema principal viene a la hora de insertar SVG a través de las etiquetas <code class="highlighter-rouge">object</code> o <code class="highlighter-rouge">img</code>, la cuestión es que navegadores como IE9, IE10 y Safari para iOS5.1 añaden mas <em>height</em> a los archivos, así que una vez insertados nos encontramos con archivos excesivamente altos.</p>
+
+<!--more-->
+
+<p>Esta captura de pantalla esta hecha antes de la última actualización de Safari la cual corrige el error.
+<img src="http://jorgeatgu.com/blog/img/2013/11/heightsafarinormaljunio.png" alt="safari height svg" /></p>
+
+<p>En esta imagen se puede ver como IE9 y IE10 añaden mas altura al SVG.
+<img src="http://jorgeatgu.com/blog/img/2013/11/iesinmaxheight.png" alt="height svg internet explorer" /></p>
+
+<p>En esta imagen se puede ver como en iOS se crea un height de 456395px.
+<img src="http://jorgeatgu.com/blog/img/2013/11/sinmaxheightIOS2.png" alt="ios max height" /></p>
+
+<p>Una locura a la hora de hacer scroll como podemos ver en el siguiente vídeo</p>
+
+<iframe class="vine-embed" src="https://vine.co/v/hPWMjA2PmzI/embed/simple" width="480" height="480" frameborder="0"></iframe>
+<script async="" src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+
+<p>El problema con el <em>height</em> se ha ido subsanando en Chrome, Opera y Firefox en diferentes actualizaciones, Safari ha sido el último en corregir el problema pero <strong>el problema sigue en IE9, IE10 y iOS 5.1,</strong> este último afecta sobre todo afecta a los que tenemos el primer modelo de iPad, el cual se quedo fuera del ciclo de actualizaciones de Apple y <strong>vivirá para siempre con iOS 5.1</strong>.</p>
+
+<p><strong>SOLUCION</strong></p>
+
+<p>La solución al problema es bastante sencilla, <strong>simplemente tenemos que añadir a nuestro SVG una clase que tenga <code class="highlighter-rouge">max-height</code></strong> con la altura que nosotros queramos y así conseguimos limitar el <em>height</em> del SVG.</p>
+
+<p><strong>Safari iOS5.1</strong>
+<img src="http://jorgeatgu.com/blog/img/2013/11/maxheight-iOS.png" alt="maxheight ios" /></p>
+
+<p><strong>Internet Explorer 10</strong>
+<img src="http://jorgeatgu.com/blog/img/2013/11/ie10conmaxheightwindows8.png" alt="maxheight internet explorer" /></p>
+
+<p><strong>Internet Explorer 9</strong>
+<img src="http://jorgeatgu.com/blog/img/2013/11/iemaxheight.png" alt="maxheight internet explorer 9" /></p>
+
+
+        <a href="https://leanpub.com/scalable/" class="scalable-leanpub">SCALABLE, un libro sobre SVG<span>A lo largo de 15 capítulos, 120 páginas y más de 70 ejemplos vamos a ver todo lo que podemos hacer con SVG.</span>
+            <span>Tu pones el precio, disponible desde 0$ para descargar desde LeanPub(PDF, ePUB y MOBI).</span>
+        </a>
+    </article>
+</main>
+<article class="paginacion post-contenido">
+    
+    <a class="btn-posterior" href="/blog/atributo-begin-svg-smil/">Artículo posterior</a>
+    
+    
+    <a class="btn-anterior" href="/blog/degradados-en-svg/">Artículo anterior</a>
+    
+</article>
+
+<article id="disqus_thread"></article>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+        </article>
+          <footer class="panel-poison post-contenido">
+    <h3 class="panel-poison-left"><a class="footer-l" href="https://github.com/jorgeatgu/boira">Boira</a> por <a class="footer-l" href="http://jorgeatgu.com">Jorge Aznar</a></h3>
+    <h3 class="panel-poison-right"><a href="http://github.com/jorgeatgu" class="footer-l">GitHub</a> <strong>·</strong> <a href="https://jorgeatgu.carto.com/me" class="footer-l">Carto</a> <strong>·</strong> <a href="http://twitter.com/jorgeatgu" class="footer-l">Twitter</a> <strong>·</strong> <a href="http://codepen.io/jorgeatgu" class="footer-l">CodePen</a></h3>
+  </footer>
+
+    </section>
+</body>
+
+</html>

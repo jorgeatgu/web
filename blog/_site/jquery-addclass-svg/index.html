@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>jQuery ya soporta el addClass en SVG</title>
+    <meta name="description" content="Un blog sobre SVG · CSS3 · HTML5">
+    <meta name="generator" content="Jekyll v3.0.1">
+    <link rel="stylesheet" href="/blog/css/style.css">
+    <link rel="canonical" href="http://jorgeatgu.com/blog/jquery-addclass-svg/">
+</head>
+
+  <body>
+
+    <header class="article-contenido">
+    <nav class="proxima-nova  post-contenido">
+        <ul class="menu-principal">
+            <li><a href="http://jorgeatgu.com/index">WEB</a></li>
+            <li><a href="http://jorgeatgu.com/blog">BLOG</a></li>
+        </ul>
+        <ul class="social-header  post-contenido">
+            <a target="_blank" href="https://twitter.com/jorgeatgu" title="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#twitter" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://codepen.io/jorgeatgu" title="codepen">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#codepen" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://github.com/jorgeatgu/" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#github" />
+                </svg>
+            </a>
+            <a target="_blank" href="https://www.behance.net/jorgeatgu" title="behance">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="iconos-footer">
+                    <use xlink:href="/img/social-sprite.svg#behance" />
+                </svg>
+            </a>
+        </ul>
+    </nav>
+</header>
+
+
+    <article class="article-contenido">
+        			<a href="https://leanpub.com/scalable/" class="categoria-titulo scalable-leanpub">SCALABLE, un libro sobre SVG</a>
+		  <article class="categoria-titulo">
+		    <h1>jQuery ya soporta el addClass en SVG</h1>
+		    <p class="post-autores-categoria">
+			    El
+			    21 de
+
+		        enero
+
+		        de
+		        2016
+		    </p>
+		    <!-- Categorías: JQUERY, SVG -->
+
+		  </article>
+
+		  <article class="post-contenido">
+		    <p>El 14 de enero <strong>jQuery</strong> <a href="http://ejohn.org/blog/10th-anniversary-of-jquery/">cumplió una década</a>, casi nada. Y unos días antes se liberó la version 2.2 y 1.12 con una gran novedad para <strong>SVG</strong>.</p>
+
+<!--more-->
+
+<p>En más de una ocasión he echado mucho de menos el addClass de jQuery en <strong>SVG</strong>, en lugar de ello para añadir una clase a un <strong>SVG</strong> teníamos que recurrir a lo siguiente.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tu-svg&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>Y para elimnar la clase</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tu-svg&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>Pero con esta nueva version de <strong>jQuery</strong> ya podemos utilizar métodos como <code>addClass</code>, <code>removeClass()</code>, <code>.toggleClass()</code> y <code>.hasClass()</code>.</p>
+
+<p><a href="http://blog.jquery.com/2016/01/08/jquery-2-2-and-1-12-released/">El resto de los cambios de esta version</a></p>
+
+
+		  </article>
+
+	  		<article class="paginacion">
+
+	                <a class="btn-posterior" href="/blog/grid-lost-postcss/">Artículo posterior</a>
+
+
+	                <a class="btn-anterior" href="/blog/grid-lost-postcss/">Artículo anterior</a>
+
+	        </article>
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'jorgeatgu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+           dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+           (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+       })();
+   </script>
+
+    </article>
+
+      </div>
+        <script src="//use.typekit.net/ybu3pxw.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+        <script async src="/js/svg4everybody.min.js"></script>
+
+
+  </body>
+
+</html>
