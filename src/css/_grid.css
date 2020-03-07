@@ -10,7 +10,7 @@
 }
 
 .bio-element-title {
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin: 1rem 0;
   font-weight: bold;
   font-family: var(--title);
@@ -54,7 +54,7 @@
 .charla-element-title {
   font-size: 1rem;
   font-family: var(--text);
-  font-weight: 500;
+  font-weight: bold;
   color: var(--negro);
   display: block;
   margin-left: 1rem;

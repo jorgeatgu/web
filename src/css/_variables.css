@@ -1,12 +1,10 @@
 :root {
   --fontSystem: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Helvetica, sans-serif;
   --monospace: monospace;
-  --title: 'graph_ff_condensedblack';
-  --text: 'Inter';
+  --text: 'Inter', sans-serif;
   --blanco: #fff;
   --f1: #f1f1f1;
-  --background: #eaf6c1;
-  --font: #300e67;
+  --background: #483d66;
+  --color-text: #c1f1f1;
   --negro: #111;
-  --fondoproyectos: #300e67;
 }
