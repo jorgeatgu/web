@@ -4,12 +4,22 @@
 }
 
 html {
-  background-color: #fff;
+  background-color: #031539;
+  color: #d1dde5;
+}
+
+a {
+  color: var(--blanco);
 }
 
 .project {
-  width: 90%;
+  width: 90vw;
   margin: 0 auto;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  color: var(--color-text);
 }
 
 .project-grid {
@@ -27,11 +37,15 @@ html {
   width: 100%;
   display: inline-block;
   text-decoration: none;
-  background-color: var(--background);
-  color: var(--color-text);
-  border-radius: 8px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  color: var(--background);
+  padding-bottom: .5rem;
+  &:after {
+    content: '';
+    height: 1px;
+    width: 10rem;
+    background-color: var(--color-text);
+    display: inline-block;
+  }
 }
 
 .project-element-title {
@@ -42,32 +56,29 @@ html {
   text-decoration: none;
   display: block;
   margin: 0;
-  padding: 1rem;
   padding-bottom: 0;
   letter-spacing: .5px;
 }
 
 .project-links {
   width: 100%;
-  background-color: var(--color-text);
   border-bottom: 1px solid var(--background);
   font-size: 0;
-  padding: .5rem;
 }
 
 .project-links-element {
-  width: 50%;
   display: inline-block;
   font-family: var(--text);
   font-size: .75rem;
   font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none;
-  color: var(--background);
+  color: #f7cff4;
   text-align: center;
   transition: letter-spacing .3s ease-in;
   &:first-child {
-    border-right: 1px solid #111;
+    border-right: 1px solid var(--white);
+    padding-right: .5rem;
   }
   &:hover {
     letter-spacing: 3px;
@@ -76,7 +87,6 @@ html {
 
 .project-element-subtitle {
   font-size: 1rem;
-  padding: 0 1rem;
   display: block;
   font-family: var(--text);
   color: var(--color-text);
@@ -85,10 +95,10 @@ html {
 .project-year {
   font-size: 12px;
   font-weight: bold;
-  padding: 0 1rem;
   padding-bottom: 1rem;
   display: inline-block;
   font-family: var(--monospace);
+  color: var(--blanco);
 }
 
 @media only screen and (min-width: 48em) {
@@ -111,7 +121,8 @@ html {
     max-width: 58rem;
   }
 
-  .project {
+  .project,
+  .footer {
     max-width: 58rem;
   }
 }

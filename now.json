@@ -1,7 +1,9 @@
 {
-    "name": "jorgeatgu",
-    "alias": [
-        "jorgeatgu.com"
-    ],
-    "version": 2
+  "alias": [
+    "jorgeatgu.com"
+  ],
+  "version": 2,
+  "routes": [
+     {"src": "^/.well-known/brave-rewards-verification.txt", "dest": "/.well-known/brave-rewards-verification.txt"}
+   ]
 }

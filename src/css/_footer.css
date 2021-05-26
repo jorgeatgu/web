@@ -1,12 +1,7 @@
 .footer {
-  width: 100%;
-  padding: 2rem;
-  background-color: var(--background);
-}
-
-.footer-container {
-  max-width: 50rem;
+  width: 90vw;
   margin: 0 auto;
+  background-color: var(--background);
 }
 
 .footer-email,

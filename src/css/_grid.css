@@ -36,7 +36,6 @@
 
 .charla-element {
   width: 100%;
-  padding-left: 1rem;
 
   &:not(:last-child) {
     margin-bottom: 1rem;
@@ -55,17 +54,14 @@
   font-size: 1rem;
   font-family: var(--text);
   font-weight: bold;
-  color: var(--negro);
   display: block;
-  margin-left: 1rem;
 }
 
 .charla-element-text {
-  color: #515456;
+  color: var(--blanco);
   font-family: var(--text);
   margin-bottom: .75rem;
   display: inline-block;
-  margin-left: 1rem;
 }
 
 .charla-element-link {
