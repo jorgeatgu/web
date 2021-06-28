@@ -4,12 +4,14 @@
 }
 
 html {
-  background-color: #031539;
-  color: #d1dde5;
+  background-color: var(--background);
+  color: var(--color-text);
+  font-family: var(--text);
 }
 
 a {
-  color: var(--blanco);
+  color: var(--color-text);
+  font-weight: bold;
 }
 
 .project {
@@ -18,7 +20,8 @@ a {
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
   color: var(--color-text);
 }
 
@@ -29,100 +32,59 @@ a {
   grid-template-columns: 1fr;
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
-  justify-items: stretch;
-  align-items: stretch;
 }
 
 .project-element {
-  width: 100%;
-  display: inline-block;
+  display: grid;
+  place-content: space-between;
   text-decoration: none;
   color: var(--background);
-  padding-bottom: .5rem;
-  &:after {
-    content: '';
-    height: 1px;
-    width: 10rem;
-    background-color: var(--color-text);
-    display: inline-block;
+  background: var(--f1);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background .3s ease-in;
+  &:hover {
+    background: var(--background-element);
   }
 }
 
 .project-element-title {
   font-size: 1.25rem;
-  font-family: var(--title);
-  color: var(--blanco);
-  font-weight: bold;
-  text-decoration: none;
-  display: block;
+  color: var(--color-text);
   margin: 0;
   padding-bottom: 0;
-  letter-spacing: .5px;
-}
-
-.project-links {
-  width: 100%;
-  border-bottom: 1px solid var(--background);
-  font-size: 0;
-}
-
-.project-links-element {
-  display: inline-block;
-  font-family: var(--text);
-  font-size: .75rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #f7cff4;
-  text-align: center;
-  transition: letter-spacing .3s ease-in;
-  &:first-child {
-    border-right: 1px solid var(--white);
-    padding-right: .5rem;
-  }
-  &:hover {
-    letter-spacing: 3px;
-  }
 }
 
 .project-element-subtitle {
   font-size: 1rem;
+  font-weight: normal;
+  padding: .5rem 0 1rem;
   display: block;
-  font-family: var(--text);
   color: var(--color-text);
 }
 
 .project-year {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  padding-bottom: 1rem;
   display: inline-block;
   font-family: var(--monospace);
-  color: var(--blanco);
+  color: var(--color-text);
 }
 
 @media only screen and (min-width: 48em) {
 
   .project-grid {
-    grid-template-columns: 1fr 1fr;
-    max-width: 42rem;
-  }
-
-  .project {
-    max-width: 42rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
 }
 
 @media only screen and (min-width: 64em) {
 
-  .project-grid {
-    grid-template-columns: 1fr 1fr;
-    max-width: 58rem;
-  }
-
+  .project-grid,
   .project,
   .footer {
-    max-width: 58rem;
+    max-width: 60rem;
   }
+
 }

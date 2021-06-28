@@ -2,16 +2,17 @@
   width: 90vw;
   margin: 0 auto;
   background-color: var(--background);
+  padding: 2rem 0;
 }
 
 .footer-email,
 .footer-links,
 .footer-copyright {
   font-size: 1rem;
-  font-family: var(--plex);
+  font-family: var(--title);
   text-decoration: none;
   display: block;
-  color: var(--blanco);
+  color: var(--color-text);
 }
 
 .footer-links {
@@ -20,6 +21,6 @@
 }
 
 .footer-dots {
-  color: var(--blanco);
+  color: var(--color-text);
   padding: 0 .5rem;
 }

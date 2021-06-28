@@ -10,7 +10,7 @@
 }
 
 .bio-element-title {
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   margin: 1rem 0;
   font-weight: bold;
   font-family: var(--title);
@@ -24,7 +24,7 @@
 
 .bio-element-text {
   font-size: 1rem;
-  font-family: var(--text);
+  font-family: var(--title);
   margin: 0 0 1rem;
   max-width: 35rem;
   width: 100%;
@@ -51,22 +51,19 @@
 }
 
 .charla-element-title {
-  font-size: 1rem;
-  font-family: var(--text);
+  font-size: 1.5rem;
   font-weight: bold;
   display: block;
 }
 
 .charla-element-text {
-  color: var(--blanco);
-  font-family: var(--text);
+  color: var(--color-text);
   margin-bottom: .75rem;
   display: inline-block;
 }
 
 .charla-element-link {
   font-size: 1rem;
-  font-family: var(--text);
   display: inline-block;
   vertical-align: middle;
 }
